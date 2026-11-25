@@ -1,0 +1,96 @@
+﻿<!-- vessel_data is the big wrapper for all the vessel objects -->
+<vessel_data version="1.66">
+
+  <hullRace ID="0" name="TSN" keys="player">
+    <taunt immunity="is uncultured" text="Hey donkey breath! Make like Romeo and kill thyself!"/>
+    <taunt immunity="is disrespectful" text="Your brother is so ugly he taught the Horsehead Nebula to whinny!"/>
+    <taunt immunity="is humble" text="You call that a ship? It should be hauled away AS garbage!"/>
+  </hullRace>
+  <hullRace ID="1" name="TSN" keys="friendly">
+    <taunt immunity="is uncultured" text="Hey donkey breath! Make like Romeo and kill thyself!"/>
+    <taunt immunity="is disrespectful" text="Your brother is so ugly he taught the Horsehead Nebula to whinny!"/>
+    <taunt immunity="is humble" text="You call that a ship? It should be hauled away AS garbage!"/>
+  </hullRace>
+  <hullRace ID="2" name="Kralien" keys="enemy standard">
+    <taunt immunity="does not practice the Kralien religion faithfully" text="Hey wormface! Can I borrow your Holy Scroll of Amborax? I need to wipe my stinky feet!"/>
+    <taunt immunity="complained to Kralien High Command that Kralien ships are too weak" text="You call that a warship? I could crush that toy with my bare hands."/>
+    <taunt immunity="is unmarried" text="You're so ugly that your husband will thank me for killing you!"/>
+  </hullRace>
+
+
+
+  <!-- vessel is the definition for a single type of vessel -->
+  <vessel    uniqueID="0"    side="0"       classname="Light Cruiser" broadType="player">
+    <art     meshfile="dat/artemis.dxs"    diffuseFile="dat/artemis_diffuse.png"
+             glowFile="dat/artemis_illum.png"    specularFile="dat/artemis_specular.png" scale="0.2" pushRadius="150"/>
+    <internal_data file="dat/artemis.snt"/>
+    <shields front="80" back="80"/>
+    <performance turnrate="0.004" topspeed="0.6" efficiency="1.0"/>
+    <beam_port x="-102.14" y="8.35" z="258.74" damage="12" arcwidth="0.4" cycletime="6.0" range="1000"/>
+    <beam_port x=" 102.14" y="8.35" z="258.74" damage="12" arcwidth="0.4" cycletime="6.0" range="1000"/>
+    <torpedo_tube x="0" y="8.35" z="258.74"/>
+    <torpedo_tube x="0" y="8.35" z="258.74"/>
+    <torpedo_storage type="0" amount="8"/>
+    <!-- Type 1 Homing"-->
+    <torpedo_storage type="1" amount="2"/>
+    <!-- Type 4 LR Nuke-->
+    <torpedo_storage type="2" amount="6"/>
+    <!-- Type 6 Mine"-->
+    <torpedo_storage type="3" amount="4"/>
+    <!-- Type 9 ECM"-->
+    <engine_port x=" 82.93" y="5" z="-240.89"/>
+    <engine_port x="-82.93" y="5" z="-240.89"/>
+    <engine_port x="0" y="-9.22" z="-300"/>
+    <engine_port x="0" y="29.64" z="-300"/>
+    <long_desc text="TSN Cruiser^Standard long patrol vessel of the TSN.^2 forward beams^2 Torpedo tubes^Stores for 2 nukes, 8 homing, 6 mines, 4 ECM."/>
+  </vessel>
+
+
+
+
+  <!-- ****************************** unmoving bases **************************************** -->
+
+  <vessel    uniqueID="1000"    side="1"       classname="Deep Space Base" broadType="base">
+    <!-- the player's standard base -->
+    <art     meshfile="dat/stationPipes.dxs"    diffuseFile="dat/stationA_pipes_diffuse.png" specularFile="dat/stationA_pipes_specular.png" />
+    <art     meshfile="dat/stationTower.dxs"    diffuseFile="dat/stationA_tower_diffuse.png"
+             glowFile="dat/stationA_tower_illum.png"    specularFile="dat/stationA_tower_specular.png" scale="0.3" pushRadius="250"/>
+    <art     meshfile="dat/stationWings.dxs"    diffuseFile="dat/stationA_wings_diffuse.png"
+             glowFile="dat/stationA_wings_illum.png"    specularFile="dat/stationA_wings_specular.png" />
+    <shields front="400" back="0"/>
+    <!-- the base has only one shield facing, the "front" -->
+    <beam_port x="0" y="250" z="0" damage="7" arcwidth="0.4" cycletime="6.0" range="1000"/>
+    <long_desc text="TSN Starbase with strong shields. It is unarmed, but can manufacture torpedos for your ship. Stations need help if attacked."/>
+    <production coeff="1.0"/>
+  </vessel>
+
+
+
+  <!-- ****************************** KRALIEN VESSELS **************************************** -->
+
+  <vessel    uniqueID="2000"    side="2"       classname="Cruiser" broadType="small">
+    <art     meshfile="dat/ENE_RoundA.dxs"    diffuseFile="dat/roundA_diffuse.png"
+             glowFile="dat/roundA_illum.png"    specularFile="dat/roundA_specular.png" scale="0.2" pushRadius="150"/>
+    <shields front="40" back="40"/>
+    <performance turnrate="0.002" topspeed="0.3"/>
+    <fleet_ai commonality="100"/>
+    <beam_port x=" 84" y="-3" z="286" damage="1.0" arcwidth="0.3" cycletime="6.0" range="1000"/>
+    <beam_port x="-84" y="-3" z="286" damage="1.0" arcwidth="0.3" cycletime="6.0" range="1000"/>
+    <engine_port x="-72.43" y="27.65" z="-260"/>
+    <engine_port x=" 72.43" y="27.65" z="-260"/>
+    <engine_port x="-76.22" y="-18.78" z="-250"/>
+    <engine_port x=" 76.22" y="-18.78" z="-250"/>
+    <impulse_point x="104.414703" y="42.085434" z="-166.859009"/>
+    <impulse_point x="-104.414703" y="42.085434" z="-166.859009"/>
+    <maneuver_point x="173.576767" y="-0.981873" z="158.842682"/>
+    <maneuver_point x="-173.576767" y="-0.981873" z="158.842682"/>
+    <long_desc text="Displacement: 9 kt. Armamant: 2 x standard beams. The most common vessel in the known universe."/>
+  </vessel>
+
+
+
+
+
+
+
+</vessel_data>

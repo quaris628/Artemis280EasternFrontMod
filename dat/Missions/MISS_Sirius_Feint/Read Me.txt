@@ -1,0 +1,36 @@
+"The Sirius Feint"
+
+(a Canonical Battle for Artemis 2.2x)
+
+by Mike Substelny
+
+Recommended for TSN Battleship
+
+This mission script lets your crew experience the actual battle conditions faced by a crew in the
+canon of the Artemis universe. It is a very difficult battle, late enough in the timeline that ships
+on both sides are equipped with advanced technology.
+
+Your crew has volunteered for a suicide mission. Your antiquated Battleship was actually decomissioned
+two wars ago and was scheduled to be scrapped, but these are dire times and the TSN doesn't have modern
+ships to spare. Your ship has been hauled out of mothballs and rushed back into service to be the flagship
+of a diversionary force. Your fleet is composed of small picket ships disguised to look like capital ships.
+The real TSN fleet is in the Epsilon Pegasi sector, laying a trap for the enemy.
+
+Can you hold out long enough for the trap to spring? The fate of the war hangs in the balance. For this
+mission your crew is considered expendable. Your duty is to tie up the enemy in the Sirius Sector long enough
+for the main fleet to win its battle at Epsilon Pegasi.
+
+This script will override to difficulty setting 8.
+
+The author recommends a full crew of six veteran players experienced with the Battleship.
+
+DO NOT RENAME YOUR sHIP TO ANYTHING OTHER THAN ARTEMIS.
+ 
+
+Good luck and have fun!
+
+Hints:
+On a broken down wreck like this, your engineer will be VERY busy.
+Remember the Communications Officer can hail friendly ships.
+The Communications Officer should micro-manage your allied ships. Try to protect them as long as possible.
+If your allies defeat an enemy they must be told to attack another or they will wander off.

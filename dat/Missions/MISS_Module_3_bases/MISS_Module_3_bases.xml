@@ -1,0 +1,160 @@
+﻿<!-- mission_data is the big wrapper for all the parts of a mission -->
+<mission_data version="1.61">
+
+  <!-- all the things that exist at the start of the mission -->
+  <start>
+    <create type ="station" raceKeys="friendly" hullKeys="base" x="15000" y="0" z="50000" name="DS1"/>
+    <create type ="station" raceKeys="friendly" hullKeys="base" x="20000" y="0" z="30000" name="DS2"/>
+    <create type ="station" raceKeys="friendly" hullKeys="base" x="15000" y="0" z="70000" name="DS3"/>
+    <create type ="player"  x="50000" y="0" z="50000" name="Artemis"/>
+
+    <set_gm_button text="Create Enemy/Small Standard" menu_w="150"/>
+    <set_gm_button text="Create Enemy/Medium Standard"/>
+    <set_gm_button text="Create Enemy/Large Standard" />
+    <set_gm_button text="Create Enemy/Small Skaraan" />
+    <set_gm_button text="Create Enemy/Medium Skaraan" />
+    <set_gm_button text="Create Enemy/Large Skaraan" />
+
+    <set_gm_button text="Delete\Selected ship" />
+    <set_gm_button text="Delete\non-ships near" />
+
+    <set_gm_button text="Create Enemy/Extras/Minefield arc" />
+    <set_gm_button text="Create Enemy/Extras/Nebulas" />
+    <set_gm_button text="Create Enemy/Extras/Asteroids" />
+
+    <set_gm_button text="Create Transport/going north" />
+    <set_gm_button text="Create Transport/going east" />
+    <set_gm_button text="Create Transport/alien going east" />
+
+    <set_gm_button text="Teleport Selection" x="30" y="200" w="200" h="30"/>
+
+    <set_gm_button text="Enemy Brain/chase stations" />
+    <set_gm_button text="Enemy Brain/chase player" />
+
+
+    <gm_instructions title="Three Bases">
+      This GM mission script is designed to place one player ship and 3 bases in a sector, and then let the GM
+      add certain enemies and terrain.^^
+      Remember, left-click to select a ship or station, right-click to select a location in space.  many of the
+      menu commands require you to select an object or location first.^^
+      This script was written by Thom Robertson.
+    </gm_instructions>
+
+
+  </start>
+
+  <!-- add small basic enemy -->
+  <event>
+    <if_gm_button text="Create Enemy/Small Standard" />
+    <create type ="enemy" raceKeys="enemy standard" hullKeys="small" use_gm_position="yes" angle="90" fleetnumber="-1"/>
+  </event>
+
+  <!-- add medium basic enemy -->
+  <event>
+    <if_gm_button text="Create Enemy/Medium Standard" />
+    <create type ="enemy" raceKeys="enemy standard" hullKeys="medium" use_gm_position="yes" angle="90" fleetnumber="-1"/>
+  </event>
+
+  <!-- add large basic enemy -->
+  <event>
+    <if_gm_button text="Create Enemy/Large Standard" />
+    <create type ="enemy" raceKeys="enemy standard" hullKeys="large" use_gm_position="yes" angle="90" fleetnumber="-1"/>
+  </event>
+
+  <!-- add small elite enemy -->
+  <event>
+    <if_gm_button text="Create Enemy/Small Skaraan" />
+    <create type ="enemy" raceKeys="enemy hasspecials" hullKeys="small" use_gm_position="yes" angle="90" fleetnumber="-1"/>
+  </event>
+
+  <!-- add medium elite enemy -->
+  <event>
+    <if_gm_button text="Create Enemy/Medium Skaraan" />
+    <create type ="enemy" raceKeys="enemy hasspecials" hullKeys="medium" use_gm_position="yes" angle="90" fleetnumber="-1"/>
+  </event>
+
+  <!-- add large elite enemy -->
+  <event>
+    <if_gm_button text="Create Enemy/Large Skaraan" />
+    <create type ="enemy" raceKeys="enemy hasspecials" hullKeys="large" use_gm_position="yes" angle="90" fleetnumber="-1"/>
+  </event>
+
+
+  <!-- remove selected object -->
+  <event>
+    <if_gm_button text="Delete\Selected ship" />
+    <destroy use_gm_selection="yes"/>
+  </event>
+
+  <!-- remove small circle of unnamed objects -->
+  <event>
+    <if_gm_button text="Delete\non-ships near" />
+    <destroy_near type="asteroids" use_gm_position="yes" radius="5000"/>
+    <destroy_near type="nebulas" use_gm_position="yes" radius="5000"/>
+    <destroy_near type="mines" use_gm_position="yes" radius="5000"/>
+  </event>
+
+  <!-- add protective minefield arc -->
+  <event>
+    <if_gm_button text="Create Enemy/Extras/Minefield arc" />
+    <create type="mines" count="50" use_gm_position="yes" radius="10000" startAngle="230" endAngle="310"/>
+  </event>
+
+  <!-- add small circle of nebulas -->
+  <event>
+    <if_gm_button text="Create Enemy/Extras/Nebulas" />
+    <create type="nebulas" count="30" use_gm_position="yes" radius="5000" randomRange="3000"/>
+  </event>
+
+  <!-- add small circle of asteroids -->
+  <event>
+    <if_gm_button text="Create Enemy/Extras/Asteroids" />
+    <create type="asteroids" count="50" use_gm_position="yes" radius="5000" randomRange="3000"/>
+  </event>
+
+  
+  <!-- make selected enemy only really care about stations -->r
+  <event>
+    <if_gm_button text="Enemy Brain/chase stations" />
+    <clear_ai use_gm_selection="yes"/>
+    <add_ai use_gm_selection="yes" type ="CHASE_PLAYER"/>
+    <add_ai use_gm_selection="yes" type ="CHASE_STATION"/>
+    <add_ai use_gm_selection="yes" type ="CHASE_PLAYER" value1="3000" value2="500"/>
+  </event>
+
+
+  <!-- make selected enemy only really care about players -->
+  <event>
+    <if_gm_button text="Enemy Brain/chase player" />
+    <clear_ai use_gm_selection="yes"/>
+    <add_ai use_gm_selection="yes" type ="CHASE_PLAYER"/>
+  </event>
+
+
+  <!-- teleport selected -->
+  <event>
+    <if_gm_button text="Teleport Selection" />
+    <set_to_gm_position use_gm_selection="yes"/>
+  </event>
+
+  <!-- add transport pointing north -->
+  <event>
+    <if_gm_button text="Create Transport/going north" />
+    <create type ="neutral" raceKeys="friendly" hullKeys="cargo" use_gm_position="yes" angle="0"/>
+  </event>
+
+  <!-- add transport pointing east -->
+  <event>
+    <if_gm_button text="Create Transport/going east" />
+    <create type ="neutral" raceKeys="friendly" hullKeys="cargo" use_gm_position="yes" angle="90"/>
+  </event>
+
+  <!-- add alien transport pointing east -->
+  <event>
+    <if_gm_button text="Create Transport/alien going east" />
+    <create type ="neutral" raceKeys="enemy standard" hullKeys="small" use_gm_position="yes" angle="90"/>
+  </event>
+
+
+
+</mission_data>

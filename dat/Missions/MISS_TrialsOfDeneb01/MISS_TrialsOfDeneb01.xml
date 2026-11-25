@@ -1,0 +1,106 @@
+﻿<!-- mission_data is the big wrapper for all the parts of a mission -->
+<mission_data version="1.60">
+
+  <!-- all the things that exist at the start of the mission -->
+  <start>
+
+    <big_message title="Trials of Deneb 01" subtitle1="written by Thom Robertson"/>
+
+    <create type ="station" raceKeys="friendly" hullKeys="base" x="10000" y="0" z="50000" name="DS1"/>
+    <create type ="player" x="90000" y="0" z="50000" name="Artemis" angle="90"/>
+
+    <create type ="mines" count="20" startX="20000" startY="0" startZ="60000" endX="20000" endY="0" endZ="40000"/>
+    <create type ="mines" count="20" startX="20700" startY="0" startZ="60000" endX="20700" endY="0" endZ="40000"/>
+    <create type ="mines" count="20" startX="21400" startY="0" startZ="60000" endX="21400" endY="0" endZ="40000"/>
+    <create type ="mines" count="20" startX="22100" startY="0" startZ="60000" endX="22100" endY="0" endZ="40000"/>
+
+    <create type ="nebulas" count="30" startX="80000" startY="0" startZ="70000" endX="20000" endY="0" endZ="50000" randomRange="2000" randomSeed="10"/>
+
+
+    <!--     
+    <create type ="nebulas" count="10" startX="30000" startY="0" startZ="0000" endX="0000" endY="0" endZ="30000" randomRange="1000"/>
+    <create type ="nebulas" count="10" startX="60000" startY="0" startZ="60000" radius ="10000" 
+            startAngle="90" endAngle="180" randomRange="3000" randomSeed="10"/>
+    <create type ="nebulas" count="10" startX="80000" startY="0" startZ="60000" radius ="5000" startAngle="180" endAngle="360" randomRange="3000"/>
+
+    <create type ="asteroids" count="200" startX="30000" startY="0" startZ="0000" endX="0000" endY="0" endZ="30000" randomRange="1000"/>
+    <create type ="asteroids" count="100" startX="60000" startY="0" startZ="60000" radius ="10000"
+            startAngle="90" endAngle="180" randomRange="3000" randomSeed="10"/>
+    <create type ="asteroids" count="100" startX="80000" startY="0" startZ="60000" radius ="5000" startAngle="180" endAngle="360" randomRange="3000"/>
+
+    <create type ="mines" count="200" startX="70000" startY="0" startZ="0000" endX="0000" endY="0" endZ="70000"/>
+    <create type ="mines" count="100" startX="20000" startY="0" startZ="60000" radius ="10000"
+            startAngle="90" endAngle="180" randomRange="3000" randomSeed="10"/>
+    <create type ="mines" count="100" startX="40000" startY="0" startZ="60000" radius ="5000" startAngle="180" endAngle="360" randomRange="3000"/>
+
+ -->
+
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small"  x="80000" y="0" z="45000" angle="180" name="KR01" fleetnumber="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small"  x="80000" y="0" z="45100" angle="180" name="KR02" fleetnumber="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small"  x="80000" y="0" z="45200" angle="180" name="KR03" fleetnumber="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small"  x="80000" y="0" z="45300" angle="180" name="KR04" fleetnumber="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="medium"  x="80000" y="0" z="45400" angle="180" name="KR05" fleetnumber="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="medium"  x="80000" y="0" z="45500" angle="180" name="KR06" fleetnumber="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="large"  x="80000" y="0" z="45600" angle="180" name="KR07" fleetnumber="1"/>
+
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small"  x="70000" y="0" z="55000" angle="180" name="KB01" fleetnumber="2"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small"  x="70000" y="0" z="55100" angle="180" name="KB02" fleetnumber="2"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small"  x="70000" y="0" z="55200" angle="180" name="KB03" fleetnumber="2"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small"  x="70000" y="0" z="55300" angle="180" name="KB04" fleetnumber="2"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="medium"  x="70000" y="0" z="55400" angle="180" name="KB05" fleetnumber="2"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="medium"  x="70000" y="0" z="55500" angle="180" name="KB06" fleetnumber="2"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="large"  x="70000" y="0" z="55600" angle="180" name="KB07" fleetnumber="2"/>
+
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="small"  x="60000" y="0" z="45000" angle="180" name="KZ01" fleetnumber="3"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="small"  x="60000" y="0" z="45100" angle="180" name="KZ02" fleetnumber="3"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="small"  x="60000" y="0" z="45200" angle="180" name="KZ03" fleetnumber="3"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="small"  x="60000" y="0" z="45300" angle="180" name="KZ04" fleetnumber="3"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="medium"  x="60000" y="0" z="45400" angle="180" name="KZ05" fleetnumber="3"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="medium"  x="60000" y="0" z="45500" angle="180" name="KZ06" fleetnumber="3"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="large"  x="60000" y="0" z="45600" angle="180" name="KZ07" fleetnumber="3"/>
+
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="small"  x="50000" y="0" z="55000" angle="180" name="KV01" fleetnumber="4"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="small"  x="50000" y="0" z="55100" angle="180" name="KV02" fleetnumber="4"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="small"  x="50000" y="0" z="55200" angle="180" name="KV03" fleetnumber="4"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="small"  x="50000" y="0" z="55300" angle="180" name="KV04" fleetnumber="4"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="medium"  x="50000" y="0" z="55400" angle="180" name="KV05" fleetnumber="4"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="medium"  x="50000" y="0" z="55500" angle="180" name="KV06" fleetnumber="4"/>
+    <create type ="enemy" raceKeys="Arvonian enemy" hullKeys="large"  x="50000" y="0" z="55600" angle="180" name="KV07" fleetnumber="4"/>
+
+    <create type ="enemy" raceKeys="Torgoth enemy" hullKeys="small"  x="40000" y="0" z="45000" angle="180" name="KD01" fleetnumber="5"/>
+    <create type ="enemy" raceKeys="Torgoth enemy" hullKeys="small"  x="40000" y="0" z="45100" angle="180" name="KD02" fleetnumber="5"/>
+    <create type ="enemy" raceKeys="Torgoth enemy" hullKeys="small"  x="40000" y="0" z="45200" angle="180" name="KD03" fleetnumber="5"/>
+    <create type ="enemy" raceKeys="Torgoth enemy" hullKeys="small"  x="40000" y="0" z="45300" angle="180" name="KD04" fleetnumber="5"/>
+    <create type ="enemy" raceKeys="Torgoth enemy" hullKeys="medium"  x="40000" y="0" z="45400" angle="180" name="KD05" fleetnumber="5"/>
+    <create type ="enemy" raceKeys="Torgoth enemy" hullKeys="medium"  x="40000" y="0" z="45500" angle="180" name="KD06" fleetnumber="5"/>
+    <create type ="enemy" raceKeys="Torgoth enemy" hullKeys="large"  x="40000" y="0" z="45600" angle="180" name="KD07" fleetnumber="5"/>
+
+    <create type ="enemy" raceKeys="Skaraan enemy elite" hullKeys="large"  x="20000" y="0" z="20000" angle="180" name="SK01" fleetnumber="6"/>
+    <set_object_property name="SK01" property="eliteAbilityBits" value="9"/>
+    <set_object_property name="SK01" property="eliteAIType" value="0"/>
+
+    <create type ="enemy" raceKeys="Skaraan enemy elite" hullKeys="large" x="20000" y="0" z="80000" angle="180" name="SK02" fleetnumber="7"/>
+    <set_object_property name="SK02" property="eliteAbilityBits" value="64"/>
+    <set_object_property name="SK02" property="eliteAIType" value="0"/>
+
+  </start>
+
+  <!-- end game when you destroy all enemies -->
+  <event>
+    <if_fleet_count comparator="LESS_EQUAL" value="0"/>
+    <big_message title="MISSION SUCCESS" subtitle1="Artemis was victorious"/>
+    <end_mission/>
+
+  </event>
+
+  <!-- end game when you're destroyed -->
+  <event>
+    <if_not_exists name="Artemis"/>
+    <big_message title="MISSION FAILED" subtitle1="Artemis was destroyed"/>
+    <end_mission/>
+  </event>
+
+
+
+
+</mission_data>

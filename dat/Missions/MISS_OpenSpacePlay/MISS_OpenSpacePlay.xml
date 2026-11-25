@@ -1,0 +1,949 @@
+<mission_data version="1.0" background_id_arme="" playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana">
+  <!-- Author: David Trinh, October 2018 -->
+  <!-- Edited: Davis Whitley, November 2018 -->
+  <!-- email: a1on5678@tsn-artemis.ca  -->
+  <!-- MIT License -->
+  <!-- Copyright (c) 2018 David Trinh -->
+  <!-- Permission is hereby granted, free of charge, to any person obtaining a copy -->
+  <!-- of this software and associated documentation files (the "Software"), to deal -->
+  <!-- in the Software without restriction, including without limitation the rights -->
+  <!-- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell -->
+  <!-- copies of the Software, and to permit persons to whom the Software is -->
+  <!-- furnished to do so, subject to the following conditions: -->
+  <!-- The above copyright notice and this permission notice shall be included in all -->
+  <!-- copies or substantial portions of the Software. -->
+  <!-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR -->
+  <!-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, -->
+  <!-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE -->
+  <!-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER -->
+  <!-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, -->
+  <!-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE -->
+  <!-- SOFTWARE. -->
+  <!-- Orignal Code By David Trinh -->
+  <!-- 
+<?xml version="1.0"?>
+
+-<mission_data playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana" background_id_arme="" version="1.0">  
+-<start>
+
+<create name="Artemis" angle="270" z="50000" y="0" x="50100.0" type="player"/>
+
+<set_variable name="x" integer="yes" value="0"/>
+
+<set_variable name="z" integer="yes" value="0"/>
+
+<set_variable name="Coming Home" integer="yes" value="1.0"/>
+
+<set_variable name="Left Home" integer="yes" value="0.0"/>
+
+</start>
+
+
+-<event name="PositionLeftX" id_arme="fa8a67b4-5a1e-43a9-ad35-2602adbc9140">
+
+<if_object_property name="Artemis" value="99990" comparator="GREATER" property="positionX"/>
+
+<set_object_property name="Artemis" value="100" property="positionX"/>
+
+<set_variable name="x" value="x-1"/>
+
+<incoming_comms_text from="DSTAN AND ONBOARD NAVIGATION">Current position (|x|.|z|)</incoming_comms_text>
+
+</event>
+
+
+-<event name="PositionBottomZ" id_arme="cfc9a0f8-ef90-437c-8902-83715517672f">
+
+<if_object_property name="Artemis" value="99990" comparator="GREATER" property="positionZ"/>
+
+<set_object_property name="Artemis" value="100" property="positionZ"/>
+
+<set_variable name="z" value="z-1"/>
+
+<incoming_comms_text from="DSTAN AND ONBOARD NAVIGATION">Current position (|x|.|z|)</incoming_comms_text>
+
+</event>
+
+
+-<event name="PositionRightX" id_arme="e50cbad1-15cf-4f8c-9edf-8126b9e1011c">
+
+<if_object_property name="Artemis" value="10" comparator="LESS" property="positionX"/>
+
+<set_object_property name="Artemis" value="99900" property="positionX"/>
+
+<set_variable name="x" value="x+1"/>
+
+<incoming_comms_text from="DSTAN AND ONBOARD NAVIGATION">Current position (|x|.|z|)</incoming_comms_text>
+
+</event>
+
+
+-<event name="PositionTopZ" id_arme="798e41b3-ca54-4162-bc6e-f899b0cbb287">
+
+<if_object_property name="Artemis" value="10" comparator="LESS" property="positionZ"/>
+
+<set_object_property name="Artemis" value="99900" property="positionZ"/>
+
+<set_variable name="z" value="z+1"/>
+
+<incoming_comms_text from="DSTAN AND ONBOARD NAVIGATION">Current position (|x|.|z|)</incoming_comms_text>
+
+</event>
+
+<folder_arme name="Home Base" id_arme="680a0199-d8d5-4438-b6f4-3e60757e574a" expanded_arme=""/>
+
+
+-<event name="Coming Home" id_arme="26683d08-8364-41f8-91a9-7c6dcf9c4dd9" parent_id_arme="680a0199-d8d5-4438-b6f4-3e60757e574a">
+
+<if_variable name="x" value="0.0" comparator="EQUALS"/>
+
+<if_variable name="z" value="0.0" comparator="EQUALS"/>
+
+<if_variable name="Coming Home" value="1.0" comparator="EQUALS"/>
+
+<destroy_near type="all" centerZ="50000.0" centerY="0.0" centerX="50000.0" radius="99999"/>
+
+<create name="DS Home" angle="360" z="50000.0" y="0.0" x="50000.0" type="station" hullKeys="Home Base" raceKeys="Human"/>
+
+<set_variable name="Coming Home" value="0.0"/>
+
+<set_variable name="Left Home" value="1.0"/>
+
+</event>
+
+
+-<event name="Leaving Home" id_arme="fa7154e8-97ac-48e0-9a47-a2bc8de3ae52" parent_id_arme="680a0199-d8d5-4438-b6f4-3e60757e574a">
+
+<if_variable name="Coming Home" value="0.0" comparator="EQUALS"/>
+
+<if_variable name="x" value="0.0" comparator="NOT"/>
+
+<if_variable name="z" value="0.0" comparator="NOT"/>
+
+<if_variable name="Left Home" value="1.0" comparator="EQUALS"/>
+
+<destroy name="DS Home"/>
+
+<set_variable name="Left Home" value="0.0"/>
+
+</event>
+
+</mission_data>
+  -->
+  <start>
+    <!--Setting up the ship-->
+    <create type="player" x="50100.0" y="0.0" z="50000.0" angle="270" name="Artemis" warp="yes" jump="no" />
+    <set_object_property property="sensorSetting" value="1" />
+    <!--These varables are for returning to home base-->
+    <set_variable name="Coming Home" value="1.0" integer="yes" />
+    <set_variable name="Left Home" value="0.0" integer="yes" />
+    <set_variable name="StartEnviroment" value="0.0" integer="yes" />
+    <!--These varibles are for location-->
+    <set_variable name="x" value="0.0" integer="yes" />
+    <set_variable name="z" value="0.0" integer="yes" />
+    <!--These Var are for missions-->
+    <set_variable name="dockfor info" value="0.0" />
+    <set_variable name="Interaction" value="0.0" integer="yes" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+    <set_variable name="onsight" value="0.0" integer="yes" />
+    <set_variable name="Starting" value="1.0" integer="yes" />
+    <set_variable name="Middle" value="0.0" integer="yes" />
+    <set_variable name="Ending" value="0.0" integer="yes" />
+    <set_variable name="Onsight" value="0.0" integer="yes" />
+    <set_variable name="Scanedit" value="0.0" integer="yes" />
+    <set_variable name="triger2" value="0.0" integer="yes" />
+    <!-- BEGIN GM BUTTON DEFINITIONS -->
+    <set_gm_button text="Sector/Lock" menu_w="120" />
+    <set_gm_button text="Sector/Unlock" />
+    <set_gm_button text="Delete\Selected ship" />
+    <set_gm_button text="Delete\non-ships near" />
+    <set_gm_button text="Create Cargo/going north" />
+    <set_gm_button text="Create/Friendly Targets" />
+    <set_gm_button text="Create Enemy/Small Standard" />
+    <set_gm_button text="Create Enemy/Medium Standard" />
+    <set_gm_button text="Create Enemy/Large Standard" />
+    <set_gm_button text="Create Enemy/Small Skaraan" />
+    <set_gm_button text="Create Enemy/Medium Skaraan" />
+    <set_gm_button text="Create Enemy/Large Skaraan" />
+    <set_gm_button text="Give Command/Go To GM Selection" />
+    <gm_instructions title="Sector Locking">
+
+			You must unlock the sector in order for the vessels to continue the transition after you lock it.
+
+			^^
+
+			Use GM selection to define start location when creating vessels
+
+			</gm_instructions>
+    <!-- END GM BUTTON DEFINITIONS -->
+  </start>
+  <event name="PositionLeftX" id_arme="fa8a67b4-5a1e-43a9-ad35-2602adbc9140">
+    <if_object_property property="positionX" name="Artemis" comparator="GREATER" value="99990" />
+    <set_object_property property="positionX" value="100" name="Artemis" />
+    <set_variable name="x" value="x-1" integer="yes" />
+    <incoming_comms_text from="DSTAN AND ONBOARD NAVIGATION">Current position (|x|.|z|)</incoming_comms_text>
+    <set_variable name="Killtriger" value="1.0" integer="yes" />
+    <set_variable name="OKtoSpawn" value="1.0" integer="yes" />
+  </event>
+  <event name="PositionBottomZ" id_arme="cfc9a0f8-ef90-437c-8902-83715517672f">
+    <if_object_property property="positionZ" name="Artemis" comparator="GREATER" value="99990" />
+    <set_object_property property="positionZ" value="100" name="Artemis" />
+    <set_variable name="z" value="z-1" integer="yes" />
+    <incoming_comms_text from="DSTAN AND ONBOARD NAVIGATION">Current position (|x|.|z|)</incoming_comms_text>
+    <set_variable name="Killtriger" value="1.0" integer="yes" />
+    <set_variable name="OKtoSpawn" value="1.0" integer="yes" />
+  </event>
+  <event name="PositionRightX" id_arme="e50cbad1-15cf-4f8c-9edf-8126b9e1011c">
+    <if_object_property property="positionX" name="Artemis" comparator="LESS" value="10" />
+    <set_object_property property="positionX" value="99900" name="Artemis" />
+    <set_variable name="x" value="x+1" integer="yes" />
+    <incoming_comms_text from="DSTAN AND ONBOARD NAVIGATION">Current position (|x|.|z|)</incoming_comms_text>
+    <set_variable name="Killtriger" value="1.0" integer="yes" />
+    <set_variable name="OKtoSpawn" value="1.0" integer="yes" />
+  </event>
+  <event name="PositionTopZ" id_arme="798e41b3-ca54-4162-bc6e-f899b0cbb287">
+    <if_object_property property="positionZ" name="Artemis" comparator="LESS" value="10" />
+    <set_object_property property="positionZ" value="99900" name="Artemis" />
+    <set_variable name="z" value="z+1" integer="yes" />
+    <incoming_comms_text from="DSTAN AND ONBOARD NAVIGATION">Current position (|x|.|z|)</incoming_comms_text>
+    <set_variable name="Killtriger" value="1.0" integer="yes" />
+    <set_variable name="OKtoSpawn" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Home Base" id_arme="680a0199-d8d5-4438-b6f4-3e60757e574a" expanded_arme="" />
+  <event name="Coming Home" id_arme="26683d08-8364-41f8-91a9-7c6dcf9c4dd9" parent_id_arme="680a0199-d8d5-4438-b6f4-3e60757e574a">
+    <if_variable name="x" comparator="EQUALS" value="0.0" />
+    <if_variable name="z" comparator="EQUALS" value="0.0" />
+    <if_variable name="Coming Home" comparator="EQUALS" value="1.0" />
+    <set_variable name="OKtoSpawn" value="0.0" integer="yes" />
+    <destroy name="Shark" />
+    <destroy name="Scout" />
+    <destroy_near type="all" radius="99999" centerX="50000.0" centerY="0.0" centerZ="50000.0" />
+    <create type="station" x="50000.0" y="0.0" z="50000.0" angle="360" name="DS Home" raceKeys="Human" hullKeys="Home Base" />
+    <incoming_comms_text from="DS Home" type="STATION">Welcome Home.  Please Dock with DS Home to recive mission updates.</incoming_comms_text>
+    <set_variable name="Coming Home" value="0.0" integer="yes" />
+    <set_variable name="Left Home" value="1.0" integer="yes" />
+  </event>
+  <event name="Leaving Side" id_arme="4387eb3b-1854-42ab-b172-3a2ca606dab1" parent_id_arme="680a0199-d8d5-4438-b6f4-3e60757e574a">
+    <if_variable name="x" comparator="NOT" value="0.0" />
+    <if_variable name="Left Home" comparator="EQUALS" value="1.0" />
+    <if_variable name="Coming Home" comparator="EQUALS" value="0.0" />
+    <destroy name="DS Home" />
+    <incoming_comms_text from="DS Home" type="STATION">Good Luck.  Rember that we are always at 0.0</incoming_comms_text>
+    <set_variable name="Left Home" value="0.0" integer="yes" />
+    <set_variable name="Coming Home" value="1.0" integer="yes" />
+    <set_variable name="OKtoSpawn" value="1.0" integer="yes" />
+  </event>
+  <event name="Leaving top or botom" id_arme="d965c6e0-7290-4e72-9cfd-d2bd04a4f589" parent_id_arme="680a0199-d8d5-4438-b6f4-3e60757e574a">
+    <if_variable name="z" comparator="NOT" value="0.0" />
+    <if_variable name="Left Home" comparator="EQUALS" value="1.0" />
+    <if_variable name="Coming Home" comparator="EQUALS" value="0.0" />
+    <destroy name="DS Home" />
+    <incoming_comms_text from="DS Home" type="STATION">Good Luck.  Rember that we are always at 0.0</incoming_comms_text>
+    <set_variable name="Left Home" value="0.0" integer="yes" />
+    <set_variable name="Coming Home" value="1.0" integer="yes" />
+    <set_variable name="OKtoSpawn" value="1.0" integer="yes" />
+  </event>
+  <event name="docking for mission" id_arme="0ab4e4b2-c75a-48da-9049-3692b2af1abf" parent_id_arme="680a0199-d8d5-4438-b6f4-3e60757e574a">
+    <if_variable name="dockfor info" comparator="EQUALS" value="0.0" />
+    <if_docked player_name="Artemis" name="DS Home" />
+    <set_variable name="MX" randomIntLow="-5" randomIntHigh="5" />
+    <set_variable name="MZ" randomIntLow="-5" randomIntHigh="5" />
+    <set_variable name="Middle" value="0.0" integer="yes" />
+    <set_variable name="Ending" value="0.0" integer="yes" />
+    <set_variable name="MissionNum" randomIntLow="1" randomIntHigh="3" integer="yes" />
+    <set_variable name="Starting" value="1.0" integer="yes" />
+    <set_variable name="dockfor info" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Missions" id_arme="62b5734e-172d-4384-b884-fe33308fe55d" parent_id_arme="680a0199-d8d5-4438-b6f4-3e60757e574a" expanded_arme="" />
+  <folder_arme name="Mission1 (Search and Rescue)" id_arme="e09d37d5-e409-4e44-84ef-8581e1382a2f" parent_id_arme="62b5734e-172d-4384-b884-fe33308fe55d" expanded_arme="" />
+  <event name="Docking for mission asignment" id_arme="f1601cd3-6409-47bd-9766-6fbe54c4b918" parent_id_arme="e09d37d5-e409-4e44-84ef-8581e1382a2f">
+    <if_variable name="dockfor info" comparator="EQUALS" value="1.0" />
+    <if_docked name="DS Home" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="Starting" comparator="EQUALS" value="1.0" />
+    <set_variable name="MissionNum" value="1.0" integer="yes" />
+    <incoming_comms_text from="DS Home" type="STATION">Your Mission is to go to coordinates (|MX|.|MZ|) and recon the area. We have reason to believe that a ship in that sector is in trouble. Afterwards return back here to receive further updates.</incoming_comms_text>
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+    <set_variable name="Onsight" value="0.0" integer="yes" />
+    <set_variable name="Starting" value="0.0" integer="yes" />
+    <set_variable name="Middle" value="1.0" integer="yes" />
+  </event>
+  <event name="Entering sector" id_arme="f4431885-b07b-4f2f-838d-0ceaafc94464" parent_id_arme="e09d37d5-e409-4e44-84ef-8581e1382a2f">
+    <if_variable name="x" comparator="EQUALS" value="MX" />
+    <if_variable name="z" comparator="EQUALS" value="MZ" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_variable name="Onsight" comparator="EQUALS" value="0.0" />
+    <set_variable name="RandomA" randomIntLow="10" randomIntHigh="50000" />
+    <set_variable name="RandomB" randomIntLow="50000" randomIntHigh="99999" />
+    <set_variable name="RandomC" randomIntLow="10" randomIntHigh="50000" />
+    <set_variable name="RandomD" randomIntLow="50000" randomIntHigh="99999" />
+    <create type="monster" monsterType="8" age="2" x="RandomB" y="0.0" z="RandomA" angle="360" name="Destroyed Ship" />
+    <create type="monster" monsterType="8" age="1" x="RandomD" y="0.0" z="RandomC" angle="360" name="Wreck of a Ship" />
+    <incoming_comms_text from="Navagation" sideValue="2" type="STATUS">We have entered your curent mission location.</incoming_comms_text>
+    <set_variable name="Onsight" value="1.0" integer="yes" />
+  </event>
+  <event name="If not on top or bottem" id_arme="11aae22e-d1e9-40c6-bbcc-432a94584cc2" parent_id_arme="e09d37d5-e409-4e44-84ef-8581e1382a2f">
+    <if_variable name="z" comparator="NOT" value="MZ" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="Onsight" comparator="EQUALS" value="1.0" />
+    <destroy name="Destroyed Ship" />
+    <destroy name="Wreck of a Ship" />
+    <set_variable name="Scanedit" value="1.0" />
+    <set_variable name="Interaction" value="1.0" integer="yes" />
+    <set_variable name="Onsight" value="0.0" integer="yes" />
+  </event>
+  <event name="If not left or right" id_arme="5221e3b8-a775-404b-99ba-926195c3e748" parent_id_arme="e09d37d5-e409-4e44-84ef-8581e1382a2f">
+    <if_variable name="x" comparator="NOT" value="MX" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="Onsight" comparator="EQUALS" value="1.0" />
+    <destroy name="Destroyed Ship" />
+    <destroy name="Wreck of a Ship" />
+    <set_variable name="Scanedit" value="1.0" />
+    <set_variable name="Interaction" value="1.0" integer="yes" />
+    <set_variable name="Onsight" value="0.0" integer="yes" />
+  </event>
+  <event name="Scaning ship" id_arme="01c4303d-5436-4a4a-83b0-9a2c61e606ab" parent_id_arme="e09d37d5-e409-4e44-84ef-8581e1382a2f">
+    <if_scan_level name="Wreck of a Ship" side="0" comparator="EQUALS" value="0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="0.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Wreck Sight" type="FRIEND">Please help Artemis.... life support  systems..... please come withi...... 500 ...</incoming_comms_text>
+    <set_variable name="Scanedit" value="1.0" integer="yes" />
+    <set_variable name="Triger set" value="1.0" integer="yes" />
+  </event>
+  <event name="After scan" id_arme="ae48b995-9522-4b79-8541-ee3868a7ed5f" parent_id_arme="e09d37d5-e409-4e44-84ef-8581e1382a2f">
+    <if_variable name="Scanedit" comparator="EQUALS" value="1.0" />
+    <if_scan_level name="Wreck of a Ship" comparator="EQUALS" value="1" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="Wreck Sight" type="FRIEND">Please help Artemis.... life support  systems..... please come withi...... 500 ...</incoming_comms_text>
+    <set_variable name="Interaction" value="1.0" integer="yes" />
+    <set_variable name="Scanedit" value="0.0" integer="yes" />
+  </event>
+  <event name="Picking up crew" id_arme="92f6b1ad-0b35-41ff-a4b4-87f88b58de02" parent_id_arme="e09d37d5-e409-4e44-84ef-8581e1382a2f">
+    <if_variable name="Interaction" comparator="EQUALS" value="1.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_distance name1="Artemis" name2="Wreck of a Ship" comparator="LESS" value="1500.0" />
+    <destroy name="Wreck of a Ship" />
+    <incoming_comms_text from="Recovery Team " type="STATUS">We were able to beam all the survivors onboard before the wreck was destroyed. We highly recommend returning to DS Home in 0.0 to give them further medical help.</incoming_comms_text>
+    <set_variable name="Middle" value="0.0" integer="yes" />
+    <set_variable name="Ending" value="1.0" integer="yes" />
+    <set_variable name="Interaction" value="0.0" integer="yes" />
+  </event>
+  <event name="Ending the mission" id_arme="47c8e597-5f4e-448e-b8a3-799c9b621d7e" parent_id_arme="e09d37d5-e409-4e44-84ef-8581e1382a2f">
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_docked player_name="Artemis" name="DS Home" />
+    <if_variable name="Ending" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="DS Home" sideValue="2" type="STATION">We have received the injured crew. Good work Artemis.</incoming_comms_text>
+    <set_variable name="MissionNum" value="2.0" integer="yes" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+    <set_variable name="Starting" value="1.0" integer="yes" />
+    <set_variable name="Ending" value="0.0" integer="yes" />
+    <set_variable name="dockfor info" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Mission 2 (Seek and Destroy)" id_arme="b4274de9-1f4c-4322-bd09-ce407a5ed4f3" parent_id_arme="62b5734e-172d-4384-b884-fe33308fe55d" expanded_arme="" />
+  <event name="Docking for mission asignment" id_arme="17ce2e31-7a34-4a14-a161-c2e2aded092e" parent_id_arme="b4274de9-1f4c-4322-bd09-ce407a5ed4f3">
+    <if_docked name="DS Home" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="2.0" />
+    <if_variable name="Starting" comparator="EQUALS" value="1.0" />
+    <if_variable name="dockfor info" comparator="EQUALS" value="1.0" />
+    <set_variable name="MissionNum" value="2.0" integer="yes" />
+    <incoming_comms_text from="DS Home" type="STATION">Your Mission is to go to coordinates (|MX|.|MZ|) and clear the area. We have reason to believe that an enemy ship that we have been tracking is there. Afterwards return back here to receive further updates.</incoming_comms_text>
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+    <set_variable name="Onsight" value="0.0" integer="yes" />
+    <set_variable name="Middle" value="1.0" integer="yes" />
+    <set_variable name="Ending" value="0.0" integer="yes" />
+    <set_variable name="In location" value="0.0" integer="yes" />
+    <set_variable name="Starting" value="0.0" integer="yes" />
+  </event>
+  <event name="combat" id_arme="57befe3a-4744-41f8-959c-abc632f72687" parent_id_arme="b4274de9-1f4c-4322-bd09-ce407a5ed4f3">
+    <if_variable name="Triger set" comparator="EQUALS" value="0.0" />
+    <if_variable name="In location" comparator="EQUALS" value="0.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="2.0" />
+    <if_variable name="z" comparator="EQUALS" value="MZ" />
+    <if_variable name="x" comparator="EQUALS" value="MX" />
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <create type="enemy" x="RandomB*RandomTimesNumD" y="0.0" z="RandomA*RandomTimesNumB" angle="RandomDirB" name="Killer Class" raceKeys="Ximni" hullKeys="Missile Cruiser" sideValue="1" fleetnumber="90" />
+    <add_ai type="ATTACK" targetName="Artemis" value1="5.0" name="Killer Class" />
+    <add_ai type="CHASE_FLEET" value1="50000" name="Artemis" />
+    <incoming_comms_text from="Intelligence" sideValue="2" type="STATUS">DS home has givin intell that a ship named Killer Class is in this sector.  We need to destroy this ship then report back to DS Home for futher information.</incoming_comms_text>
+    <set_variable name="Triger set" value="1.0" integer="yes" />
+    <set_variable name="In location" value="1.0" integer="yes" />
+  </event>
+  <event name="If not in top or bottem" id_arme="1d1e97ce-f175-4c4e-b5cb-11fc0328cb19" parent_id_arme="b4274de9-1f4c-4322-bd09-ce407a5ed4f3">
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="1.0" />
+    <if_variable name="z" comparator="NOT" value="MZ" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="2.0" />
+    <destroy name="Killer Class" />
+    <set_variable name="In location" value="0.0" integer="yes" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+  </event>
+  <event name="If not left of right" id_arme="92a6086b-50f2-469e-ad0a-6edeaebf5092" parent_id_arme="b4274de9-1f4c-4322-bd09-ce407a5ed4f3">
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="1.0" />
+    <if_variable name="x" comparator="NOT" value="MX" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="2.0" />
+    <destroy name="Killer Class" />
+    <set_variable name="In location" value="0.0" integer="yes" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+  </event>
+  <event name="Enemy is destroyed" id_arme="5eb2382c-134a-4fa2-ab8e-23337a26b1b8" parent_id_arme="b4274de9-1f4c-4322-bd09-ce407a5ed4f3">
+    <if_variable name="In location" comparator="EQUALS" value="1.0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="1.0" />
+    <if_variable name="z" comparator="EQUALS" value="MZ" />
+    <if_variable name="x" comparator="EQUALS" value="MX" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="2.0" />
+    <if_not_exists name="Killer Class" />
+    <destroy />
+    <incoming_comms_text from="Intell" sideValue="2" type="STATUS">Now that the Killer Class has been destroyed we need to report back to DS Home in 0.0 For futher updates.</incoming_comms_text>
+    <set_variable name="Middle" value="0.0" integer="yes" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+    <set_variable name="Ending" value="1.0" integer="yes" />
+  </event>
+  <event name="Docking back with home" id_arme="7397fd51-4e6d-4e61-8125-9b4706c9eb3c" parent_id_arme="b4274de9-1f4c-4322-bd09-ce407a5ed4f3">
+    <if_variable name="MissionNum" comparator="EQUALS" value="2.0" />
+    <if_variable name="Ending" comparator="EQUALS" value="1.0" />
+    <if_docked player_name="Artemis" name="DS Home" />
+    <incoming_comms_text from="DS Home" sideValue="2" type="STATION">Good job dystroying the Killer Class.</incoming_comms_text>
+    <set_variable name="MissionNum" value="0.0" integer="yes" />
+    <set_variable name="dockfor info" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Mission 3 (Pirates)" id_arme="8d19340c-329b-48c3-b32f-f579a530b277" parent_id_arme="b4274de9-1f4c-4322-bd09-ce407a5ed4f3" expanded_arme="" />
+  <event name="Docking for mission asignment" id_arme="5df709e7-4811-4e41-88e4-6e0310deb42a" parent_id_arme="8d19340c-329b-48c3-b32f-f579a530b277">
+    <if_docked name="DS Home" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="3.0" />
+    <if_variable name="Starting" comparator="EQUALS" value="1.0" />
+    <if_variable name="dockfor info" comparator="EQUALS" value="1.0" />
+    <set_variable name="MissionNum" value="2.0" integer="yes" />
+    <incoming_comms_text from="DS Home" type="STATION">Your Mission is to go to coordinates (|MX|.|MZ|) and recon the area. We have reason to believe that a ship in that sector is in trouble. Afterwards return back here to receive further updates.</incoming_comms_text>
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+    <set_variable name="Onsight" value="0.0" integer="yes" />
+    <set_variable name="Middle" value="1.0" integer="yes" />
+    <set_variable name="Ending" value="0.0" integer="yes" />
+    <set_variable name="In location" value="0.0" integer="yes" />
+    <set_variable name="Starting" value="0.0" integer="yes" />
+  </event>
+  <event name="Entering playing area" id_arme="a3374c43-9944-4705-a93d-3e56ac5ef350" parent_id_arme="8d19340c-329b-48c3-b32f-f579a530b277">
+    <if_variable name="Triger set" comparator="EQUALS" value="0.0" />
+    <if_variable name="In location" comparator="EQUALS" value="0.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="3.0" />
+    <if_variable name="z" comparator="EQUALS" value="MZ" />
+    <if_variable name="x" comparator="EQUALS" value="MX" />
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <create type="enemy" x="RandomD*RandomTimesNumA" y="0.0" z="RandomA*RandomTimesNumD" angle="RandomDirB" name="The Adventure" raceKeys="TSN" hullKeys="Light Cruiser" sideValue="2" fleetnumber="70" />
+    <add_ai type="DIR_THROTTLE" value1="RandomBarring" value2="0.0" name="The Adventure" />
+    <create type="enemy" x="RandomB*RandomTimesNumD" y="0.0" z="RandomA*RandomTimesNumB" angle="RandomDirB" name="Whydah" raceKeys="Pirate" hullKeys="Longbow" sideValue="1" fleetnumber="91" />
+    <incoming_comms_text from="The Adventure" sideValue="2" type="PLAYER">Our Systems are down. We are in the process of fixing them now but we are dead in the water at this moment. Please cover us as we repair.</incoming_comms_text>
+    <set_timer name="Untill fixed" seconds="120" />
+    <set_variable name="Triger set" value="1.0" integer="yes" />
+    <set_variable name="In location" value="1.0" integer="yes" />
+  </event>
+  <event name="If not in top or bottem" id_arme="ef165dfb-1e3c-421a-8c64-5c29d6b8ec83" parent_id_arme="8d19340c-329b-48c3-b32f-f579a530b277">
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="1.0" />
+    <if_variable name="z" comparator="NOT" value="MZ" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="3.0" />
+    <destroy name="Whydah" />
+    <destroy name="The Adventure" />
+    <set_variable name="In location" value="0.0" integer="yes" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+  </event>
+  <event name="If not left of right" id_arme="ee1e9820-99d7-4243-881a-c19ad04d5412" parent_id_arme="8d19340c-329b-48c3-b32f-f579a530b277">
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="1.0" />
+    <if_variable name="x" comparator="NOT" value="MX" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="3.0" />
+    <destroy name="The Adventure" />
+    <destroy name="Whydah" />
+    <set_variable name="In location" value="0.0" integer="yes" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+  </event>
+  <event name="ShipFixed" id_arme="4beded5d-d0d1-4bc0-ba43-dcf2c405bbd0" parent_id_arme="8d19340c-329b-48c3-b32f-f579a530b277">
+    <if_variable name="In location" comparator="EQUALS" value="1.0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="1.0" />
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="3.0" />
+    <if_variable name="z" comparator="EQUALS" value="MZ" />
+    <if_variable name="x" comparator="EQUALS" value="MX" />
+    <if_timer_finished name="Untill fixed" />
+    <incoming_comms_text from="The Adventure" sideValue="2" type="FRIEND">We have Made our repairs.  Thank you for the assist.  Please cover us as we Jump out of this sector.</incoming_comms_text>
+    <set_timer name="warpout" seconds="30" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+  </event>
+  <event name="Shipwarpout" id_arme="a9585349-5e50-4f87-aec2-bccd16ff507e" parent_id_arme="8d19340c-329b-48c3-b32f-f579a530b277">
+    <if_variable name="In location" comparator="EQUALS" value="1.0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="0.0" />
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="3.0" />
+    <if_variable name="z" comparator="EQUALS" value="MZ" />
+    <if_variable name="x" comparator="EQUALS" value="MX" />
+    <if_timer_finished name="warpout" />
+    <destroy name="The Adventure" />
+    <incoming_comms_text from="Intell" sideValue="2" type="STATUS">The Adventure has warped out of the system.  We should return to DS Home for futher instructions in 0.0</incoming_comms_text>
+    <set_timer name="warpout" seconds="30" />
+    <set_variable name="Middle" value="0.0" integer="yes" />
+    <set_variable name="Ending" value="1.0" integer="yes" />
+  </event>
+  <event name="Docking back with home" id_arme="edfd5e5c-a15b-42d0-b21d-803db2ccffef" parent_id_arme="8d19340c-329b-48c3-b32f-f579a530b277">
+    <if_variable name="MissionNum" comparator="EQUALS" value="3.0" />
+    <if_variable name="Ending" comparator="EQUALS" value="1.0" />
+    <if_docked player_name="Artemis" name="DS Home" />
+    <incoming_comms_text from="DS Home" sideValue="2" type="STATION">Good job Defending The Adventure.</incoming_comms_text>
+    <set_variable name="MissionNum" value="0.0" integer="yes" />
+    <set_variable name="dockfor info" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Fuel collection" id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab" expanded_arme="" />
+  <event name="End FGS" id_arme="acae631b-e0e0-4d79-89c0-a44feb94442c" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_object_property property="energy" name="Artemis" comparator="GREATER_EQUAL" value="1000" />
+    <if_variable name="startticker" comparator="EQUALS" value="1.0" />
+    <set_variable name="startticker" value="0.0" integer="yes" />
+    <set_variable name="FGSactive" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">We are all toped off</incoming_comms_text>
+  </event>
+  <event name="not in nebula" id_arme="fd084d3f-6f6a-4303-b65c-41f6ffdda345" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_in_nebula name="Artemis" compare="0" />
+    <if_variable name="FGSactive" comparator="EQUALS" value="1.0" />
+    <set_variable name="FGSactive" value="0.0" integer="yes" />
+    <set_variable name="startticker" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">We have left the nebula for fuel collection.</incoming_comms_text>
+  </event>
+  <event name="not fast enough" id_arme="9ce7e2bc-15c1-47a2-abc6-392d3cc84558" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_in_nebula name="Artemis" compare="2" />
+    <if_timer_finished name="FGSinput" />
+    <if_variable name="startticker" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Artemis" comparator="LESS" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">We are not going fast enough</incoming_comms_text>
+    <set_variable name="startticker" value="0.0" integer="yes" />
+  </event>
+  <event name="activation on purple" id_arme="04da40ab-b9b3-4cf6-8e74-e6b6f88845c3" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_in_nebula name="Artemis" compare="1" />
+    <if_variable name="startticker" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Artemis" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Artemis" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput" seconds="10" />
+    <set_variable name="startticker" value="1.0" integer="yes" />
+    <set_variable name="FGSactive" value="1.0" integer="yes" />
+    <set_variable name="amounttogive" value="50.0" />
+  </event>
+  <event name="activation on yellow" id_arme="0ac687f0-373e-4682-bd5f-4bd7f6ad3186" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_in_nebula name="Artemis" compare="3" />
+    <if_variable name="startticker" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Artemis" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Artemis" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput" seconds="10" />
+    <set_variable name="startticker" value="1.0" integer="yes" />
+    <set_variable name="FGSactive" value="1.0" integer="yes" />
+    <set_variable name="amounttogive" value="30.0" />
+  </event>
+  <event name="activation on blue" id_arme="7eae04c4-a976-40c5-a128-ff5c2b8b96b2" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_in_nebula name="Artemis" compare="2" />
+    <if_variable name="startticker" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Artemis" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Artemis" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput" seconds="10" />
+    <set_variable name="startticker" value="1.0" integer="yes" />
+    <set_variable name="FGSactive" value="1.0" integer="yes" />
+    <set_variable name="amounttogive" value="20.0" />
+  </event>
+  <event name="FGSticker" id_arme="003a935c-fd7a-4272-964f-be0926b61d43" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_timer_finished name="FGSinput" />
+    <if_variable name="startticker" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Artemis" comparator="GREATER_EQUAL" value="0.325" />
+    <addto_object_property value="amounttogive" property="energy" name="Artemis" />
+    <set_timer name="FGSinput" seconds="5" />
+  </event>
+  <folder_arme name="Random enviroment" id_arme="093e1097-27da-443f-9789-80186a2adea6" expanded_arme="" />
+  <folder_arme name="kill" id_arme="2ce3226c-7bd4-473e-932e-fea83305e8a6" parent_id_arme="093e1097-27da-443f-9789-80186a2adea6" expanded_arme="" />
+  <event name="Killcode" id_arme="6a8b7496-8572-4fa9-b23b-46c34b43f2a1" parent_id_arme="2ce3226c-7bd4-473e-932e-fea83305e8a6">
+    <if_variable name="Killtriger" comparator="EQUALS" value="1.0" />
+    <destroy_near type="all" radius="100000" centerX="50000.0" centerY="0.0" centerZ="50000.0" />
+    <set_variable name="killblackholes" value="1.0" integer="yes" />
+    <set_variable name="Killtriger" value="0.0" integer="yes" />
+  </event>
+  <event name="killsBlackHoleON" id_arme="33868031-06b7-41fd-aa00-cb17b4f398dd" parent_id_arme="2ce3226c-7bd4-473e-932e-fea83305e8a6">
+    <if_variable name="killblackholes" comparator="EQUALS" value="1.0" />
+    <if_variable name="KillBlackHoleamount" comparator="GREATER" value="0.0" />
+    <destroy name="BlackHole" />
+    <set_variable name="KillBlackHoleamount" value="KillBlackHoleamount-1" integer="yes" />
+  </event>
+  <event name="killBlackHoleOff" id_arme="287ae963-44f5-4b88-90de-0e1d9bfe34d0" parent_id_arme="2ce3226c-7bd4-473e-932e-fea83305e8a6">
+    <if_variable name="killblackholes" comparator="EQUALS" value="1.0" />
+    <if_variable name="KillBlackHoleamount" comparator="EQUALS" value="0.0" />
+    <set_variable name="killsharktriger" value="1.0" integer="yes" />
+    <set_variable name="killblackholes" value="0.0" integer="yes" />
+  </event>
+  <event name="killsSharkON" id_arme="cebce2a3-ddab-4eb0-a946-4ccdba3bb72c" parent_id_arme="2ce3226c-7bd4-473e-932e-fea83305e8a6">
+    <if_variable name="killsharktriger" comparator="EQUALS" value="1.0" />
+    <if_variable name="KillShark" comparator="GREATER" value="0.0" />
+    <destroy name="SHARK" />
+    <set_variable name="KillShark" value="KillShark-1" integer="yes" />
+  </event>
+  <event name="killSharkOff" id_arme="7a228170-d73b-4994-8351-e2d329ab272f" parent_id_arme="2ce3226c-7bd4-473e-932e-fea83305e8a6">
+    <if_variable name="KillShark" comparator="EQUALS" value="0.0" />
+    <if_variable name="killsharktriger" comparator="EQUALS" value="1.0" />
+    <set_variable name="killsharktriger" value="0.0" integer="yes" />
+    <set_variable name="killbattleship" value="1.0" integer="yes" />
+  </event>
+  <event name="killsBattleShipON" id_arme="de697d5b-72e1-4ac7-893d-2482b35ff910" parent_id_arme="2ce3226c-7bd4-473e-932e-fea83305e8a6">
+    <if_variable name="killbattleship" comparator="EQUALS" value="1.0" />
+    <if_variable name="KillBattleshipamount" comparator="GREATER" value="0.0" />
+    <destroy name="B|KillBattleshipamount|" />
+    <set_variable name="KillBattleshipamount" value="KillBattleshipamount-1" integer="yes" />
+  </event>
+  <event name="killBattleshipOff" id_arme="26b5a1e2-32c8-4e30-b73d-87b0f32eee4b" parent_id_arme="2ce3226c-7bd4-473e-932e-fea83305e8a6">
+    <if_variable name="KillBattleshipamount" comparator="EQUALS" value="0.0" />
+    <if_variable name="killbattleship" comparator="EQUALS" value="1.0" />
+    <set_variable name="killbattleship" value="0.0" integer="yes" />
+    <set_variable name="killscout" value="1.0" integer="yes" />
+  </event>
+  <event name="killscoutON" id_arme="82b57711-b948-43ad-892c-840a82a8b343" parent_id_arme="2ce3226c-7bd4-473e-932e-fea83305e8a6">
+    <if_variable name="killscout" comparator="EQUALS" value="1.0" />
+    <if_variable name="KillScoutamount" comparator="GREATER" value="0.0" />
+    <destroy name="S|KillScoutamount|" />
+    <set_variable name="KillScoutamount" value="KillScoutamount-1" integer="yes" />
+  </event>
+  <event name="killscoutOff" id_arme="e88d7915-92b4-488a-9464-f858e1d7d279" parent_id_arme="2ce3226c-7bd4-473e-932e-fea83305e8a6">
+    <if_variable name="KillScoutamount" comparator="EQUALS" value="0.0" />
+    <if_variable name="killscout" comparator="EQUALS" value="1.0" />
+    <set_variable name="killscout" value="0.0" integer="yes" />
+    <set_variable name="StartEnviroment" value="1.0" integer="yes" />
+  </event>
+  <event name="Startup Enviroment" id_arme="d79bb4d4-9351-4297-8fad-bacefeab55ce" parent_id_arme="093e1097-27da-443f-9789-80186a2adea6">
+    <if_variable name="StartEnviroment" comparator="EQUALS" value="1.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <!--Astroids-->
+    <set_variable name="Astroidswillhappen" randomIntLow="1" randomIntHigh="3" />
+    <set_variable name="AmountofAstroids" randomIntLow="1" randomIntHigh="3" />
+    <!--Blue Stright Nebula-->
+    <set_variable name="NebulaBluewillhappen" randomIntLow="1" randomIntHigh="2" />
+    <set_variable name="AmountofBlue" randomIntLow="1" randomIntHigh="3" />
+    <!--Blue Circle Nebula-->
+    <set_variable name="NebulaBlueCirclewillhappen" randomIntLow="1" randomIntHigh="2" />
+    <set_variable name="AmountofBlueCircle" randomIntLow="1" randomIntHigh="3" />
+    <!--Yellow Circle Nebula-->
+    <set_variable name="NebulaYellowCirclewillhappen" randomIntLow="1" randomIntHigh="3" />
+    <set_variable name="AmountofYellowCircle" randomIntLow="1" randomIntHigh="3" />
+    <!--Yellow Nebula-->
+    <set_variable name="NebulaYellowillhappen" randomIntLow="1" randomIntHigh="3" />
+    <set_variable name="AmountofYellow" randomIntLow="1" randomIntHigh="3" />
+    <!--Purple Nebula-->
+    <set_variable name="NebulaPurplewillhappen" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofPurple" randomIntLow="1" randomIntHigh="2" />
+    <!--Circle Purple Nebula-->
+    <set_variable name="NebulaPurpleCirclewillhappen" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofPurpleCircle" randomIntLow="1" randomIntHigh="2" />
+    <!--Scouts-->
+    <set_variable name="Scoutwillhappen" randomIntLow="1" randomIntHigh="5" />
+    <set_variable name="AmountofScout" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="KillScoutamount" value="AmountofScout" integer="yes" />
+    <!--Battleships-->
+    <set_variable name="AmountofBattleShip" randomIntLow="1" randomIntHigh="5" />
+    <set_variable name="Battleshipwillhappen" randomIntLow="1" randomIntHigh="6" />
+    <set_variable name="KillBattleshipamount" value="AmountofBattleShip" integer="yes" />
+    <!--Whales-->
+    <set_variable name="Whalewillhappen" randomIntLow="1" randomIntHigh="2" />
+    <set_variable name="AmountofWhale" randomIntLow="1" randomIntHigh="5" />
+    <!--Sharks-->
+    <set_variable name="Sharkwillhappen" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofShark" randomIntLow="1" randomIntHigh="5" />
+    <set_variable name="KillShark" value="AmountofShark" integer="yes" />
+    <!--Blackholes-->
+    <set_variable name="BlackHoleswillhappen" randomIntLow="1" randomIntHigh="4" />
+    <set_variable name="AmountofBlackHoles" randomIntLow="1" randomIntHigh="2" />
+    <set_variable name="KillBlackHoleamount" value="AmountofBlackHoles" integer="yes" />
+    <!--End Event-->
+    <set_variable name="StartEnviroment" value="0.0" integer="yes" />
+  </event>
+  <event name="create astroids" id_arme="59129d9c-1621-411e-a4b9-bc1fa2f4fa0f" parent_id_arme="093e1097-27da-443f-9789-80186a2adea6">
+    <if_variable name="Astroidswillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofAstroids" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create count="RanomamountThings" type="asteroids" startX="RandomA*RandomTimesNumA" startY="RandomhighthA" startZ="RandomB*RandomTimesNumB" endX="RandomC*RandomTimesNumC" endY="RandomhighthB" endZ="RandomD*RandomTimesNumD" randomRange="RandomB*RandomTimesNumD" randomSeed="RandomC" />
+    <set_variable name="AmountofAstroids" value="AmountofAstroids-1" integer="yes" />
+  </event>
+  <event name="create blue nebulas" id_arme="6a107c64-8f43-483b-abaf-ac1b7ae7def1" parent_id_arme="093e1097-27da-443f-9789-80186a2adea6">
+    <if_variable name="NebulaBluewillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofBlue" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create count="RanomamountThings" type="nebulas" nebType="2" startX="RandomA*RandomTimesNumA" startY="RandomhighthA" startZ="RandomB*RandomTimesNumB" endX="RandomC*RandomTimesNumC" endY="RandomhighthB" endZ="RandomD*RandomTimesNumD" randomRange="RandomC*RandomTimesNumA" randomSeed="RandomB" />
+    <set_variable name="AmountofBlue" value="AmountofBlue-1" integer="yes" />
+  </event>
+  <event name="create blue Circle nebulas" id_arme="d96e1871-bccc-421b-b25d-f7fd21de2c1d" parent_id_arme="093e1097-27da-443f-9789-80186a2adea6">
+    <if_variable name="NebulaBlueCirclewillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofBlueCircle" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="50" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="15000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create count="RanomamountThings" type="nebulas" nebType="2" startX="RandomA*RandomTimesNumA" startY="0.0" startZ="RandomB*RandomTimesNumB" radius="RandomD" randomRange="RandomTimesNumD" />
+    <set_variable name="AmountofBlueCircle" value="AmountofBlueCircle-1" integer="yes" />
+  </event>
+  <event name="create Yellow Circle nebulas" id_arme="36844122-34e5-4465-9500-b42a9d836866" parent_id_arme="093e1097-27da-443f-9789-80186a2adea6">
+    <if_variable name="NebulaYellowCirclewillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofYellowCircle" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="50" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="15000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create count="RanomamountThings" type="nebulas" nebType="3" startX="RandomA*RandomTimesNumA" startY="0.0" startZ="RandomB*RandomTimesNumB" radius="RandomD" randomRange="RandomTimesNumD" />
+    <set_variable name="AmountofYellowCircle" value="AmountofYellowCircle-1" integer="yes" />
+  </event>
+  <event name="create Yellow nebulas" id_arme="c226f6d9-7e0a-4743-b61a-0ff727039b20" parent_id_arme="093e1097-27da-443f-9789-80186a2adea6">
+    <if_variable name="NebulaYellowillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofYellow" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create count="RanomamountThings" type="nebulas" nebType="3" startX="RandomA*RandomTimesNumA" startY="RandomhighthA" startZ="RandomB*RandomTimesNumB" endX="RandomC*RandomTimesNumC" endY="RandomhighthB" endZ="RandomD*RandomTimesNumD" randomRange="RandomD*RandomTimesNumA" />
+    <set_variable name="AmountofYellow" value="AmountofYellow-1" integer="yes" />
+  </event>
+  <event name="create Purple nebulas" id_arme="51f42386-472c-4f4d-887f-4b311a9eb117" parent_id_arme="093e1097-27da-443f-9789-80186a2adea6">
+    <if_variable name="NebulaPurplewillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofPurple" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create count="RanomamountThings" type="nebulas" nebType="1" startX="RandomA*RandomTimesNumA" startY="RandomhighthA" startZ="RandomB*RandomTimesNumB" endX="RandomC*RandomTimesNumC" endY="RandomhighthB" endZ="RandomD*RandomTimesNumD" randomRange="RandomB*RandomTimesNumD" />
+    <set_variable name="AmountofPurple" value="AmountofPurple-1" integer="yes" />
+  </event>
+  <event name="create Purple Circle nebulas" id_arme="6ae6b3a7-7009-4d52-a599-4077798523ad" parent_id_arme="093e1097-27da-443f-9789-80186a2adea6">
+    <if_variable name="NebulaPurpleCirclewillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofPurpleCircle" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="50" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="15000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create count="RanomamountThings" type="nebulas" nebType="1" startX="RandomA*RandomTimesNumA" startY="0.0" startZ="RandomB*RandomTimesNumB" radius="RandomD" randomRange="RandomTimesNumD" />
+    <set_variable name="AmountofPurpleCircle" value="AmountofPurpleCircle-1" integer="yes" />
+  </event>
+  <event name="create Whales" id_arme="ec866c91-129f-4037-9a77-1d4a414bccc4" parent_id_arme="093e1097-27da-443f-9789-80186a2adea6">
+    <if_variable name="Whalewillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofWhale" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create type="monster" monsterType="1" age="2" x="RandomA*RandomTimesNumA" y="RandomhighthA" z="RandomB*RandomTimesNumB" angle="RandomBarring" />
+    <set_variable name="AmountofWhale" value="AmountofWhale-1" integer="yes" />
+  </event>
+  <folder_arme name="non enviromentals" id_arme="5b1d9ed4-72bc-4fdb-9b18-3cd3ff2c11cb" parent_id_arme="093e1097-27da-443f-9789-80186a2adea6" expanded_arme="" />
+  <event name="create Black Hole" id_arme="68c7b158-51f9-4242-8b32-53463868a91a" parent_id_arme="5b1d9ed4-72bc-4fdb-9b18-3cd3ff2c11cb">
+    <if_variable name="BlackHoleswillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofBlackHoles" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="5000" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="5000" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="5000" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="5000" randomIntHigh="10000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create type="blackHole" x="RandomA*RandomTimesNumA" y="0.0" z="RandomB*RandomTimesNumB" name="BlackHole" />
+    <set_variable name="AmountofBlackHoles" value="AmountofBlackHoles-1" integer="yes" />
+  </event>
+  <event name="create Sharks" id_arme="bf8e2032-7af9-45ee-8702-a3dd03ad7647" parent_id_arme="5b1d9ed4-72bc-4fdb-9b18-3cd3ff2c11cb">
+    <if_variable name="Sharkwillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofShark" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create type="monster" monsterType="2" age="2" x="RandomA*RandomTimesNumA" y="RandomhighthA" z="RandomB*RandomTimesNumB" angle="RandomBarring" name="SHARK" />
+    <set_variable name="AmountofShark" value="AmountofShark-1" integer="yes" />
+  </event>
+  <event name="create BattleShip" id_arme="ac1df9f7-9caa-484c-a80e-42bdb3e7e814" parent_id_arme="5b1d9ed4-72bc-4fdb-9b18-3cd3ff2c11cb">
+    <if_variable name="Battleshipwillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofBattleShip" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create type="enemy" x="RandomA*RandomTimesNumA" y="RandomhighthA" z="RandomB*RandomTimesNumB" angle="RandomBarring" name="B|AmountofBattleShip|" raceKeys="Ximni" hullKeys="Battleship" sideValue="1" />
+    <set_variable name="AmountofBattleShip" value="AmountofBattleShip-1" integer="yes" />
+  </event>
+  <event name="create Scouts" id_arme="2cd6c6bf-7b84-4385-8f39-1f25f2b1f546" parent_id_arme="5b1d9ed4-72bc-4fdb-9b18-3cd3ff2c11cb">
+    <if_variable name="Scoutwillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofScout" comparator="GREATER" value="0.0" />
+    <if_variable name="OKtoSpawn" comparator="EQUALS" value="1.0" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create type="enemy" x="RandomA*RandomTimesNumA" y="RandomhighthA" z="RandomB*RandomTimesNumB" angle="RandomBarring" name="S|AmountofScout|" raceKeys="Ximni" hullKeys="Scout" sideValue="1" />
+    <set_variable name="AmountofScout" value="AmountofScout-1" integer="yes" />
+  </event>
+  <folder_arme name="GM Functions" id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1" expanded_arme="" />
+  <event name="SectorLocking" id_arme="0e223870-db04-47ac-afea-11b6286fd1f2">
+    <if_gm_button text="Sector/Lock" />
+    <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
+    <set_variable name="IsSectorLocked" value="1" />
+    <big_message title="Priority Message" subtitle1="Incoming Transmission" subtitle2="See Communications Console" />
+    <warning_popup_message message="Incoming Transmission" consoles="MHWESCO" />
+    <incoming_comms_text from="Command">Hold your position in this sector, Priority Message for Commanding Officer incoming.</incoming_comms_text>
+  </event>
+  <event name="SectorUnLocking" id_arme="dcd76216-740c-4ccf-b42c-838a4d202d78">
+    <if_gm_button text="Sector/Unlock" />
+    <if_variable name="IsSectorLocked" comparator="EQUALS" value="1" />
+    <set_variable name="IsSectorLocked" value="0" />
+    <incoming_comms_text from="Command">Commanding Officer, carry out debrief session with your crew if neccessary, then carry on.</incoming_comms_text>
+  </event>
+  <event name="friendly_targets" id_arme="5468d916-6ef0-4abe-ba54-f619392b1b53">
+    <if_gm_button text="Create/Friendly Targets" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="friendly" hullKeys="light" fleetnumber="-1" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="friendly" hullKeys="medium" fleetnumber="-1" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="friendly" hullKeys="heavy" fleetnumber="-1" />
+  </event>
+  <event name="cargo_going_0" id_arme="46effacf-ceae-4d64-b30e-ddac675385b1">
+    <if_gm_button text="Create Cargo/going north" />
+    <create type="neutral" use_gm_position="yes" angle="0" name="CARGO_1" raceKeys="friendly" hullKeys="cargo" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="CARGO_1" />
+    <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="CARGO_1" />
+    <set_ship_text name="CARGO_1" desc="We are enroute through the sector for The Telleron Consortium. Moving passenger and cargo across the galaxy." scan_desc="More info at www.telleron.com" hailtext="We are enroute through the sector for The Telleron Consortium. Moving passenger and cargo across the galaxy." />
+  </event>
+  <event name="delete_selectedship" id_arme="a23e75ac-68ae-4d66-94be-4d89c924aa65">
+    <if_gm_button text="Delete\Selected ship" />
+    <destroy use_gm_selection="yes" />
+  </event>
+  <event name="Create Enemy Small Standard" id_arme="5b2b5dba-5f98-4d8c-ae19-de5851102965">
+    <if_gm_button text="Create Enemy/Small Standard" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy standard" hullKeys="small" fleetnumber="-1" />
+  </event>
+  <event name="Create Enemy Medium Standard" id_arme="09f96709-0742-4048-b115-b263d68b7d9f">
+    <if_gm_button text="Create Enemy/Medium Standard" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy standard" hullKeys="medium" fleetnumber="-1" />
+  </event>
+  <event name="Create Enemy Large Standard" id_arme="b141bae4-6a8f-421e-bdef-efeb9c0308a2">
+    <if_gm_button text="Create Enemy/Large Standard" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy standard" hullKeys="large" fleetnumber="-1" />
+  </event>
+  <event name="Create Enemy Small Skaraan" id_arme="a540804b-b87c-4922-b5cf-77b55c4a729d">
+    <if_gm_button text="Create Enemy/Small Skaraan" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy hasspecials" hullKeys="small" fleetnumber="-1" />
+  </event>
+  <event name="Create Enemy Medium Skaraan" id_arme="4d9fd73c-f143-4e59-8d6c-900daeedd2b8">
+    <if_gm_button text="Create Enemy/Medium Skaraan" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy hasspecials" hullKeys="medium" fleetnumber="-1" />
+  </event>
+  <event name="Create Enemy Large Skaraan" id_arme="29f50576-2b01-4d67-83b7-0574561430d1">
+    <if_gm_button text="Create Enemy/Large Skaraan" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy hasspecials" hullKeys="large" fleetnumber="-1" />
+  </event>
+  <event name="Delete non-ships near" id_arme="e8ffcc80-54b1-4de0-8d74-1072cef92818">
+    <if_gm_button text="Delete\non-ships near" />
+    <destroy_near type="asteroids" radius="5000" use_gm_position="yes" />
+    <destroy_near type="nebulas" radius="5000" use_gm_position="yes" />
+    <destroy_near type="mines" radius="5000" use_gm_position="yes" />
+  </event>
+  <event name="Go To" id_arme="7eb116aa-0fda-44ac-bc9c-472041f3c9cc">
+    <if_gm_button text="Give Command/Go To GM Selection" />
+    <add_ai type="PROCEED_TO_EXIT" use_gm_selection="" />
+  </event>
+</mission_data>

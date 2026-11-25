@@ -1,0 +1,1178 @@
+<!-- THE SIRIUS FEINT -->
+<mission_data version="2.2x">
+  <!-- ************************************************************ -->
+  <!-- The Start block creates everything that exists  -->
+  <!-- the moment the mission starts -->
+  <start name="THE SIRIUS FEINT">
+    <!-- Players start in the upper left quadrant of the 100,000 x 100,000 sector -->
+
+    <create type="player" x="61000" y="0" z="41000" angle="90" name="Artemis"/>
+
+    <create type="station" x="62000" y="0" z="39500" name="Outpost Sirius" raceKeys="USFP friendly" hullKeys="Civilian Base"/>
+
+    <create type="neutral" x="60500" y="-500" z="40000" angle="90" name="Invincible" raceKeys="player" hullKeys="Dreadnought large"/>
+    <create type="neutral" x="60500" y="0" z="42000" angle="90" name="Indefatigable" raceKeys="player" hullKeys="Dreadnought large"/>
+    <create type="neutral" x="60500" y="500" z="39000" angle="90" name="Indomitable" raceKeys="player" hullKeys="Dreadnought"/>
+    <set_special name="Invincible" ship="-1.0" captain="-1.0"/>
+    <set_special name="Indefatigable" ship="-1.0" captain="-1.0"/>
+    <set_special name="Indefatigable" ship="-1.0" captain="-1.0"/>
+
+    <create type="neutral" x="60500" y="-500" z="38000" angle="90" name="Agamemnon" raceKeys="player" hullKeys="Battleship"/>
+    <create type="neutral" x="60400" y="0" z="43000" angle="90" name="Apollo" raceKeys="player" hullKeys="Battleship"/>
+    <create type="neutral" x="60500" y="500" z="44000" angle="90" name="Mercury" raceKeys="player" hullKeys="Battleship"/>
+    <set_special name="Agamemnon" ship="-1.0" captain="-1.0"/>
+    <set_special name="Apollo" ship="-1.0" captain="-1.0"/>
+    <set_special name="Mercury" ship="-1.0" captain="-1.0"/>
+    
+    <create type ="blackHole" x="81990" y="0" z="44010" name="H1"/>
+
+
+
+    <set_ship_text name="Invincible" race="Disguised ship" hailtext="Remember, Artemis, we are really a destroyer using a low frequency energy signature to appear as a dreadnought."/>
+    <set_ship_text name="Indefatigable" race="Disguised ship" hailtext="Artemis, our disguise will fail if our shields take any damage at all."/>
+    <set_ship_text name="Indomitable" race="Disguised ship" hailtext="If our shields are damaged they will know we are just a destroyer in disguise."/>
+    <set_ship_text name="Agamemnon" race="Disguised ship" hailtext="Don't go crazy, Artemis. We are just an escort using a low frequency energy signature to appear as a battleship."/>
+    <set_ship_text name="Apollo" race="Disguised ship" hailtext="Use us carefully, Artemis. We are just an escort that gives a battleship sensor image."/>
+    <set_ship_text name="Mercury" race="Disguised ship" hailtext="We must keep up the ruse as long as possible. If the enemy suspects this is a trap they will withdraw and crush out fleet at Epsilon Pegasi."/>
+    
+    <create type="enemy" x="9200" y="0" z="47600" angle="200" name="K01" raceKeys="Kralien enemy" hullKeys="Cruiser small" fleetnumber="20"/>
+    <create type="enemy" x="9100" y="500" z="47700" angle="200" name="K02" raceKeys="Kralien enemy" hullKeys="Cruiser small" fleetnumber="20"/>
+    <create type="enemy" x="9300" y="-500" z="47500" angle="200" name="K03" raceKeys="Kralien enemy" hullKeys="Cruiser small" fleetnumber="20"/>
+
+    <create type="enemy" x="8200" y="0" z="27600" angle="200" name="P11" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="20"/>
+    <create type="enemy" x="8100" y="500" z="27700" angle="200" name="Q12" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="20"/>
+    <create type="enemy" x="8300" y="-500" z="27500" angle="200" name="P13" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="20"/>
+
+    <set_ship_text name="Q12" class="Flag Carrier" desc="Captain Lady LaRala has been knighted by the Queen."/>
+
+
+    <create type="enemy" x="8500" y="0" z="27900" angle="200" name="Stone Demon" raceKeys="Skaraan enemy" hullKeys="Defiler small" fleetnumber="20"/>
+    <set_object_property property="eliteAbilityBits" value="552" name="Stone Demon"/>
+    <set_object_property property="eliteAIType" value="1" name="Stone Demon"/>
+    
+    <create type="enemy" x="8200" y="0" z="67600" angle="60" name="P14" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="21"/>
+    <create type="enemy" x="8100" y="500" z="67700" angle="60" name="Q15" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="21"/>
+    <create type="enemy" x="8300" y="-500" z="67500" angle="60" name="P16" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="21"/>
+
+    <set_ship_text name="Q15" class="Flag Carrier" desc="Captain Olnah commanding" scan_desc="Library Computer: Captain Lady Olnah has been knighted by the Queen."/>
+
+
+    <create type="enemy" x="8500" y="0" z="67900" angle="60" name="Storm Demon" raceKeys="Skaraan enemy" hullKeys="Defiler small" fleetnumber="21"/>
+    <set_object_property property="eliteAbilityBits" value="552" name="Storm Demon"/>
+    <set_object_property property="eliteAIType" value="1" name="Storm Demon"/>
+    
+    <create type="enemy" x="8200" y="0" z="77600" angle="320" name="H17" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="22"/>
+    <create type="enemy" x="8100" y="500" z="77700" angle="320" name="H18" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="22"/>
+    <create type="enemy" x="8300" y="-500" z="77500" angle="320" name="H19" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="22"/>
+    <create type="enemy" x="8800" y="-700" z="78500" angle="320" name="H20" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="22"/>
+    <create type="enemy" x="8800" y="700" z="77000" angle="320" name="H21" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="22"/>
+
+    <set_ship_text name="H17" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H18" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H19" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H20" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H21" class="Strike Carrier" desc="High Performance Light Carrier"/>
+
+
+    <create type="enemy" x="8500" y="0" z="77000" angle="60" name="Patience" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="22"/>
+    <set_object_property property="eliteAbilityBits" value="1800" name="Patience"/>
+    <set_object_property property="eliteAIType" value="1" name="Patience"/>
+
+    <create type="enemy" x="8400" y="0" z="76500" angle="60" name="Anger" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="22"/>
+    <set_object_property property="eliteAbilityBits" value="1800" name="Anger"/>
+    <set_object_property property="eliteAIType" value="1" name="Anger"/>
+    
+    <create type="enemy" x="48400" y="0" z="55500" angle="270" name="Time God" raceKeys="Skaraan enemy" hullKeys="Executor large" fleetnumber="77"/>
+    <set_object_property property="eliteAbilityBits" value="1012" name="Time God"/>
+    <set_object_property property="eliteAIType" value="0" name="Time God"/>
+
+    <create type="enemy" x="47500" y="0" z="51400" angle="250" name="Bad Luck God" raceKeys="Skaraan enemy" hullKeys="Executor large" fleetnumber="77"/>
+    <set_object_property property="eliteAbilityBits" value="948" name="Bad Luck God"/>
+    <set_object_property property="eliteAIType" value="0" name="Bad Luck God"/>
+
+    
+    <create count="50" type="asteroids" startAngle="160" endAngle="200" startX="50000" startY="0" startZ="-50000" radius="100000" randomRange="20000" randomSeed="2"/>
+    <create count="60" type="asteroids" startAngle="160" endAngle="200" startX="50000" startY="-500" startZ="-50000" radius="100000" randomRange="20000" randomSeed="5"/>
+    <create count="60" type="asteroids" startAngle="160" endAngle="200" startX="50000" startY="500" startZ="-50000" radius="100000" randomRange="20000" randomSeed="9"/>
+    <create count="100" type="nebulas" startAngle="160" endAngle="200" startX="50000" startY="0" startZ="-50000" radius="100000" randomRange="30000" randomSeed="2"/>
+    <create type="anomaly" x="24500" y="0" z="21000" name="THX 1138"/>
+    <create type="anomaly" x="24500" y="0" z="21000" name="31337"/>
+    <create type="anomaly" x="76500" y="0" z="31000" name="anomaly 68"/>
+    <create type="anomaly" x="76800" y="0" z="41000" name="anomaly 42"/>
+    <create type="anomaly" x="85500" y="0" z="55500" name="anomaly 77"/>
+    <create type="anomaly" x="41500" y="0" z="56000" name="anomaly 31"/>
+    <create type="anomaly" x="76500" y="0" z="66000" name="anomaly 34"/>
+    <create type="anomaly" x="76000" y="0" z="46000" name="anomaly 32"/>
+    <create type="anomaly" x="96500" y="0" z="76000" name="anomaly 30"/>
+    <create type="anomaly" x="56500" y="0" z="86000" name="anomaly 01"/>
+    <create type="anomaly" x="17940" y="0" z="75000" name="anomaly 02"/>
+    <create type="anomaly" x="23560" y="0" z="64500" name="anomaly 06"/>
+    <create type="anomaly" x="22380" y="0" z="78800" name="anomaly 03"/>
+    <create type="anomaly" x="52380" y="0" z="78800" name="anomaly 04"/>
+    <create type="anomaly" x="50380" y="0" z="49800" name="anomaly 05"/>
+     <create type="anomaly" x="22380" y="0" z="58100" name="anomaly 23"/>
+    <create type="anomaly" x="52380" y="0" z="38300" name="anomaly 24"/>
+    <create type="anomaly" x="60380" y="0" z="59100" name="anomaly 25"/>
+
+    <!-- The Start Block can set the difficulty level. -->
+    <!-- This mission puts the players in an old, low-tech ship. In Artemis 2.2.x -->
+    <!-- a high difficulty simulates the ship's poor energy efficiency. -->
+    <set_difficulty_level value="8"/>
+    
+  <create type ="whale" x="61990" y="0" z="88010" name="Biff" angle="275" podnumber="1"/>
+  <create type ="whale" x="61790" y="0" z="88210" name="Harry" angle="275" podnumber="1"/>
+  <create type ="whale" x="61590" y="0" z="88410" name="Maxine" angle="275" podnumber="1"/>
+  <create type ="whale" x="61390" y="0" z="90410" name="Leonid" angle="275" podnumber="1"/>
+
+  <create type ="whale" x="51990" y="0" z="58010" name="Ho Jon" angle="295" podnumber="2"/>
+  <create type ="whale" x="51790" y="0" z="58210" name="Thaddeus" angle="295" podnumber="2"/>
+  <create type ="whale" x="51590" y="0" z="58410" name="Lorain" angle="295" podnumber="2"/>
+  <create type ="whale" x="51390" y="0" z="60410" name="Marne" angle="295" podnumber="2"/>
+
+    <!-- The Start Block also sets the skybox, which will be the main screen background throughout the mission -->
+    <!-- Skybox 15 gives the players a stormy looking sector with lots of blue and white. -->
+    <set_skybox_index index="15"/>
+
+    <!-- The Start Block also presents players with the mission title -->
+    <big_message title="THE SIRIUS FEINT" subtitle1="BY MIKE SUBSTELNY" subtitle2="a Canonical Battle for Artemis 2.2.x"/>
+
+    <!-- Finally, the start block sets timers and variables to start the game -->
+
+    <log text="Starting\n\n"/>
+    <set_variable name="Total_revealed" value="0"/>
+    <set_variable name="Total" value="0"/>
+    <set_variable name="warn_artemis" value="11"/>
+    <set_timer name="credits_timer1" seconds="10"/>
+    <set_timer name="System_Fail_timer" seconds="60"/>
+    <set_timer name="System_Warn_timer" seconds="30"/>
+    <set_timer name="Message_Timer" seconds="60"/>
+    <set_timer name="Reinforcements_timer1" seconds="300"/>
+    <set_timer name="Reinforcements_timer2" seconds="600"/>
+    <set_timer name="Reinforcements_timer3" seconds="1020"/>
+  </start>
+
+ <event name="Fleet Message 1">
+    <if_variable name="Message_Number" comparator="=" value="0"/>
+    <if_timer_finished name="Message_Timer"/>
+    <incoming_comms_text from="TSN COMMAND CODED MESSAGE">
+      The fleet has departed for Epsilon Pegasi. Good luck defending the Sirius Sector. We will report again in fifteen minutes.
+    </incoming_comms_text>
+    <set_timer name="Message_Timer" seconds="900"/>
+    <set_variable name="Message_Number" value="1"/>
+</event>
+
+ <event name="Fleet Message 2">
+    <if_variable name="Message_Number" comparator="=" value="1"/>
+    <if_timer_finished name="Message_Timer"/>
+    <incoming_comms_text from="TSN COMMAND CODED MESSAGE">
+      Our fleet is approaching Epsilon Pegasi. Keep them busy in Sirius Sector for another fourteen minutes.
+    </incoming_comms_text>
+    <set_timer name="Message_Timer" seconds="840"/>
+    <set_variable name="Message_Number" value="2"/>
+</event>
+
+ <event name="Fleet Message 3">
+    <if_variable name="Message_Number" comparator="=" value="2"/>
+    <if_timer_finished name="Message_Timer"/>
+    <incoming_comms_text from="TSN COMMAND CODED MESSAGE">
+      We are attacking Epsilon Pegasi now. Congratulations, you succeeded! If you can hold Sirius Sector another ten minutes we will be there to help you.
+    </incoming_comms_text>
+    <set_timer name="Message_Timer" seconds="600"/>
+    <set_variable name="Message_Number" value="3"/>
+</event>
+
+ <event name="Fleet Message 4">
+    <if_variable name="Message_Number" comparator="=" value="3"/>
+    <if_timer_finished name="Message_Timer"/>
+    <incoming_comms_text from="TAK ALLIANCE COMMAND CODED MESSAGE">
+      The humans are attacking Epsilon Pegasi! All units withdraw to defensive positions immediately!
+    </incoming_comms_text>
+      <set_object_property name="H17" property="hasSurrendered" value="1"/>
+    <set_object_property name="H18" property="hasSurrendered" value="1"/>
+    <set_object_property name="H19" property="hasSurrendered" value="1"/>
+    <set_object_property name="H20" property="hasSurrendered" value="1"/>
+    <set_object_property name="H21" property="hasSurrendered" value="1"/>
+    <set_object_property property="hasSurrendered" value="1" name="Stone Demon"/>
+    <set_object_property property="hasSurrendered" value="1" name="Storm Demon"/>
+    <set_object_property property="hasSurrendered" value="1" name="Patience"/>
+    <set_object_property property="hasSurrendered" value="1" name="Anger"/>
+    <set_object_property property="hasSurrendered" value="1" name="Time God"/>
+    <set_object_property property="hasSurrendered" value="1" name="Bad Luck God"/>
+    <set_object_property property="hasSurrendered" value="1" name="F111"/>
+    <set_object_property name="P11" property="hasSurrendered" value="1"/>
+    <set_object_property name="Q12" property="hasSurrendered" value="1"/>
+    <set_object_property name="P13" property="hasSurrendered" value="1"/>
+    <set_object_property property="hasSurrendered" value="552" name="Pestilence"/>
+    <set_object_property property="hasSurrendered" value="1" name="Harvest God"/>
+    <set_object_property property="hasSurrendered" value="1" name="Charity"/>
+    <set_object_property name="P31" property="hasSurrendered" value="1"/>
+    <set_object_property name="Q32" property="hasSurrendered" value="1"/>
+    <set_object_property name="P33" property="hasSurrendered" value="1"/>
+    <set_object_property name="P34" property="hasSurrendered" value="1"/>
+    <set_object_property name="Q35" property="hasSurrendered" value="1"/>
+    <set_object_property name="P36" property="hasSurrendered" value="1"/>
+    <set_object_property property="hasSurrendered" value="1" name="Happiness"/>
+    <set_object_property property="hasSurrendered" value="1" name="Labor"/>
+    <set_object_property name="H57" property="hasSurrendered" value="1"/>
+    <set_object_property name="H58" property="hasSurrendered" value="1"/>
+    <set_object_property name="H59" property="hasSurrendered" value="1"/>
+    <set_object_property name="H50" property="hasSurrendered" value="1"/>
+    <set_object_property name="H51" property="hasSurrendered" value="1"/>
+    <set_object_property property="hasSurrendered" value="1" name="Anguish"/>
+    <set_object_property property="hasSurrendered" value="1" name="Confusion"/>
+    <set_object_property name="E31" property="hasSurrendered" value="1"/>
+    <set_object_property name="A32" property="hasSurrendered" value="1"/>
+    <set_object_property name="E33" property="hasSurrendered" value="1"/>
+    <set_object_property name="E34" property="hasSurrendered" value="1"/>
+    <set_object_property name="A35" property="hasSurrendered" value="1"/>
+    <set_object_property name="E36" property="hasSurrendered" value="1"/>
+    <set_object_property property="hasSurrendered" value="1" name="F117"/>
+</event>
+
+  
+  <event name="Reveal Invincible Front">
+   <if_variable name="Invincible_revealed" comparator="!=" value="1"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_exists name="Invincible"/>
+   <if_object_property name="Invincible" property="shieldStateFront" comparator="less" value="190"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Destroyer medium" name="Invincible " angle="0"/>
+   <set_relative_position name1="Invincible" name2="Invincible " angle="0" distance="100"/>
+   <copy_object_property name1="Invincible" name2="Invincible " property ="angle"/>
+   <destroy name="Invincible"/>
+   <incoming_comms_text from="Invincible">
+      We've been discovered, Artemis! They know we're just a destroyer!
+    </incoming_comms_text>
+   <set_variable name="Invincible_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+   <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+
+  
+  <event name="Reveal Invincible Rear">
+   <if_variable name="Invincible_revealed" comparator="!=" value="1"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_exists name="Invincible"/>
+   <if_object_property name="Invincible" property="shieldStateBack" comparator="less" value="190"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Destroyer medium" name="Invincible " angle="0"/>
+   <set_relative_position name1="Invincible" name2="Invincible " angle="0" distance="100"/>
+   <copy_object_property name1="Invincible" name2="Invincible " property ="angle"/>
+   <destroy name="Invincible"/>
+   <incoming_comms_text from="Invincible">
+      We've been discovered, Artemis! They know we're just a destroyer!
+    </incoming_comms_text>
+   <set_variable name="Invincible_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+   <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+  
+  <event name="Reveal Indefatigable Front">
+   <if_variable name="Indefatigable_revealed" comparator="!=" value="1"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_exists name="Indefatigable"/>
+   <if_object_property name="Indefatigable" property="shieldStateFront" comparator="less" value="190"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Destroyer medium" name="Indefatigable " angle="0"/>
+   <set_relative_position name1="Indefatigable" name2="Indefatigable " angle="0" distance="100"/>
+   <copy_object_property name1="Indefatigable" name2="Indefatigable " property ="angle"/>
+   <destroy name="Indefatigable"/>
+   <incoming_comms_text from="Indefatigable">
+      The jig is up, Artemis! We've been found out!
+    </incoming_comms_text>
+   <set_variable name="Indefatigable_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+   <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+
+  <event name="Reveal Indefatigable Rear">
+   <if_variable name="Indefatigable_revealed" comparator="!=" value="1"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_exists name="Indefatigable"/>
+   <if_object_property name="Indefatigable" property="shieldStateBack" comparator="less" value="190"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Destroyer medium" name="Indefatigable " angle="0"/>
+   <set_relative_position name1="Indefatigable" name2="Indefatigable " angle="0" distance="100"/>
+   <copy_object_property name1="Indefatigable" name2="Indefatigable " property ="angle"/>
+   <destroy name="Indefatigable"/>
+   <incoming_comms_text from="Indefatigable">
+      The jig is up, Artemis! We've been found out!
+    </incoming_comms_text>
+   <set_variable name="Indefatigable_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+   <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+  
+  <event name="Reveal Indomitable Front">
+   <if_variable name="Indomitable_revealed" comparator="!=" value="1"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_exists name="Indomitable"/>
+   <if_object_property name="Indomitable" property="shieldStateFront" comparator="less" value="190"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Destroyer medium" name="Indomitable " angle="0"/>
+   <set_relative_position name1="Indomitable" name2="Indomitable " angle="0" distance="100"/>
+   <copy_object_property name1="Indomitable" name2="Indomitable " property ="angle"/>
+   <destroy name="Indomitable"/>
+   <incoming_comms_text from="Indomitable">
+      They hit our shields, Artemis! Our identity is revealed! What should we do now?
+    </incoming_comms_text>
+   <set_variable name="Indomitable_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+    <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+
+
+  <event name="Reveal Indomitable Rear">
+   <if_variable name="Indomitable_revealed" comparator="!=" value="1"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_exists name="Indomitable"/>
+   <if_object_property name="Indomitable" property="shieldStateBack" comparator="less" value="190"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Destroyer medium" name="Indomitable " angle="0"/>
+   <set_relative_position name1="Indomitable" name2="Indomitable " angle="0" distance="100"/>
+   <copy_object_property name1="Indomitable" name2="Indomitable " property ="angle"/>
+   <destroy name="Indomitable"/>
+   <incoming_comms_text from="Indomitable">
+      They hit our shields, Artemis! Our identity is revealed! What should we do now?
+    </incoming_comms_text>
+   <set_variable name="Indomitable_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+   <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+  
+   <event name="Reveal Agamemnon Front">
+   <if_variable name="Agamemnon_revealed" comparator="!=" value="1"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_exists name="Agamemnon"/>
+   <if_object_property name="Agamemnon" property="shieldStateFront" comparator="less" value="240"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Escort small" name="Agamemnon " angle="0"/>
+   <set_relative_position name1="Agamemnon" name2="Agamemnon " angle="0" distance="100"/>
+   <copy_object_property name1="Agamemnon" name2="Agamemnon " property ="angle"/>
+   <destroy name="Agamemnon"/>
+   <incoming_comms_text from="Agamemnon">
+      The enemy scanned us, Artemis! If they discover our trap then our fleet at Epsilon Pegasi will be destroyed!
+    </incoming_comms_text>
+   <set_variable name="Agamemnon_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+   <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+
+
+  <event name="Reveal Agamemnon Rear">
+   <if_variable name="Agamemnon_revealed" comparator="!=" value="1"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_exists name="Agamemnon"/>
+   <if_object_property name="Agamemnon" property="shieldStateBack" comparator="less" value="140"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Escort small" name="Agamemnon " angle="0"/>
+   <set_relative_position name1="Agamemnon" name2="Agamemnon " angle="0" distance="100"/>
+   <copy_object_property name1="Agamemnon" name2="Agamemnon " property ="angle"/>
+   <destroy name="Agamemnon"/>
+   <incoming_comms_text from="Agamemnon">
+      The enemy scanned us, Artemis! If they discover our trap then our fleet at Epsilon Pegasi will be destroyed!
+    </incoming_comms_text>
+   <set_variable name="Agamemnon_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+    <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+  
+  <event name="Reveal Apollo Front">
+   <if_variable name="Apollo_revealed" comparator="!=" value="1"/>
+   <if_exists name="Apollo"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_object_property name="Apollo" property="shieldStateFront" comparator="less" value="240"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Escort small" name="Apollo " angle="0"/>
+   <set_relative_position name1="Apollo" name2="Apollo " angle="0" distance="100"/>
+   <copy_object_property name1="Apollo" name2="Apollo " property ="angle"/>
+   <destroy name="Apollo"/>
+   <incoming_comms_text from="Apollo">
+      We've been discovered, Artemis! We need to be careful or the enemy will know they have been tricked!
+    </incoming_comms_text>
+   <set_variable name="Apollo_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+    <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+
+
+  <event name="Reveal Apollo Rear">
+   <if_variable name="Apollo_revealed" comparator="!=" value="1"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_exists name="Apollo"/>
+   <if_object_property name="Apollo" property="shieldStateBack" comparator="less" value="140"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Escort small" name="Apollo " angle="0"/>
+   <set_relative_position name1="Apollo" name2="Apollo " angle="0" distance="100"/>
+   <copy_object_property name1="Apollo" name2="Apollo " property ="angle"/>
+   <destroy name="Apollo"/>
+   <incoming_comms_text from="Apollo">
+      We've been discovered, Artemis! We need to be careful or the enemy will know they have been tricked!
+    </incoming_comms_text>
+   <set_variable name="Apollo_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+   <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+  
+  <event name="Reveal Mercury Front">
+   <if_variable name="Mercury_revealed" comparator="!=" value="1"/>
+   <if_exists name="Mercury"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_object_property name="Mercury" property="shieldStateFront" comparator="less" value="240"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Escort small" name="Mercury " angle="0"/>
+   <set_relative_position name1="Mercury" name2="Mercury " angle="0" distance="100"/>
+   <copy_object_property name1="Mercury" name2="Mercury " property ="angle"/>
+   <destroy name="Mercury"/>
+   <incoming_comms_text from="Mercury">
+      We've been discovered, Artemis! The enemy may become suspicious!
+    </incoming_comms_text>
+   <set_variable name="Mercury_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+    <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+
+
+  <event name="Reveal Mercury Rear">
+   <if_variable name="Mercury_revealed" comparator="!=" value="1"/>
+   <if_exists name="Mercury"/>
+   <if_variable name="credits1" comparator="=" value="1"/>
+   <if_object_property name="Mercury" property="shieldStateBack" comparator="less" value="140"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="TSN friendly" hullKeys="Escort small" name="Mercury " angle="0"/>
+   <set_relative_position name1="Mercury" name2="Mercury " angle="0" distance="100"/>
+   <copy_object_property name1="Mercury" name2="Mercury " property ="angle"/>
+   <destroy name="Mercury"/>
+   <incoming_comms_text from="Mercury">
+      We've been discovered, Artemis! The enemy may become suspicious!
+    </incoming_comms_text>
+   <set_variable name="Mercury_revealed" value="1"/>
+   <set_variable name="Total_revealed" value="Total+1"/>
+   <set_variable name="Total" value="Total_revealed"/>
+    <set_timer name="Suspect_timer" seconds="30"/>
+  </event>
+  
+<event name="Station cautious 1">
+   <if_variable name="Cautious" comparator="=" value="0"/>
+   <if_variable name="Total_revealed" comparator="GREATER" value="0"/>
+   <if_timer_finished name="Suspect_timer"/>
+   <incoming_comms_text from="Outpost Sirius">
+      Be careful with those disguised ships, Artemis. One hit to their shields destroys their disguises!
+    </incoming_comms_text>
+   <set_variable name="Cautious" value="1"/>
+</event>
+
+<event name="Station cautious 2">
+   <if_variable name="Cautious" comparator="=" value="1"/>
+   <if_variable name="Total_revealed" comparator="GREATER" value="1"/>
+   <if_timer_finished name="Suspect_timer"/>
+   <incoming_comms_text from="Outpost Sirius">
+      Now two of your ships have lost their disguises. The enemy may become suspicious soon.
+    </incoming_comms_text>
+   <set_variable name="Cautious" value="2"/>
+</event>
+
+
+<event name="Enemy Suspicious 1">
+   <if_variable name="Suspicious" comparator="=" value="0"/>
+   <if_variable name="Total_revealed" comparator="GREATER" value="2"/>
+   <if_timer_finished name="Suspect_timer"/>
+   <incoming_comms_text from="Torgoth Fleet Command (decoded)">
+      This is suspicious. Three Earth capital ships were mere picket ships in disguise.
+    </incoming_comms_text>
+   <set_variable name="Suspicious" value="1"/>
+</event>
+
+<event name="Enemy Suspicious 2">
+   <if_variable name="Suspicious" comparator="=" value="1"/>
+   <if_variable name="Total_revealed" comparator="GREATER" value="3"/>
+   <if_timer_finished name="Suspect_timer"/>
+   <incoming_comms_text from="Royal Arvonian Fleet Command (decoded)">
+      Perhaps the Earth ships in Sirius Sector are a feint. The humans may have set a trap at Epsilon Pegasi.
+    </incoming_comms_text>
+   <set_variable name="Suspicious" value="2"/>
+</event>
+
+<event name="Enemy Suspicious 3">
+   <if_variable name="Suspicious" comparator="=" value="2"/>
+   <if_variable name="Total_revealed" comparator="GREATER" value="4"/>
+   <if_timer_finished name="Suspect_timer"/>
+   <incoming_comms_text from="Skaraan Executive Committee (decoded)">
+      Another disguised Earth ship! If we find one more we should regroup at Epsilon Pegasi.
+    </incoming_comms_text>
+   <set_variable name="Suspicious" value="3"/>
+   <set_timer name="suspicious_timer" seconds="10"/>
+</event>
+
+<event name="Enemy Suspicious 4">
+   <if_variable name="Suspicious" comparator="=" value="3"/>
+   <if_variable name="Total_revealed" comparator="GREATER" value="5"/>
+   <if_timer_finished name="Suspect_timer"/>
+   <incoming_comms_text from="Skaraan Executive Committee (decoded)">
+      This must be a trap! All ships regroup at Epsilon Pegasi!
+    </incoming_comms_text>
+   <set_variable name="Suspicious" value="4"/>
+   <set_timer name="suspicious_timer" seconds="10"/>
+</event>
+
+
+
+<event name="Damage Artemis 0.1">
+   <if_variable name="warn_artemis" comparator="=" value="11"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="SENSOR FAILURE in 30 seconds." consoles="E"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="0"/>
+</event>
+  
+ <event name="Damage Artemis 0">
+   <if_variable name="damage_artemis" comparator="=" value="0"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemTactical" countFrom="front" index="3" value="1.0"/>
+    <set_player_grid_damage systemType="systemTactical" countFrom="front" index="2" value="1.0"/>
+    <set_timer name="System_Warn_timer" seconds="90"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Fail_timer" seconds="120"/>
+    <set_variable name="damage_artemis" value="1"/>
+</event>
+
+<event name="Damage Artemis 0.5">
+   <if_variable name="warn_artemis" comparator="=" value="0"/>
+   <if_variable name="damage_artemis" comparator="=" value="1"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="BEAM WEAPON breakdown in 30 seconds." consoles="E"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="1"/>
+</event>
+
+
+
+ <event name="Damage Artemis 1">
+   <if_variable name="damage_artemis" comparator="=" value="1"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemBeam" countFrom="front" index="3" value="1.0"/>
+    <set_player_grid_damage systemType="systemBeam" countFrom="front" index="2" value="1.0"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Fail_timer" seconds="105"/>
+    <set_timer name="System_Warn_timer" seconds="75"/>
+    <set_variable name="damage_artemis" value="2"/>
+</event>
+
+<event name="Damage Artemis 1.5">
+   <if_variable name="warn_artemis" comparator="=" value="1"/>
+   <if_variable name="damage_artemis" comparator="=" value="2"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="WARP and STEERING bypass damage. Partial failure in 30 seconds." consoles="E"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="2"/>
+</event>
+
+ <event name="Damage Artemis 2">
+   <if_variable name="damage_artemis" comparator="=" value="2"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="3" value="1.0"/>
+    <set_player_grid_damage systemType="systemTurning" countFrom="front" index="0" value="0.1"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Fail_timer" seconds="65"/>
+    <set_timer name="System_Warn_timer" seconds="35"/>
+    <set_variable name="damage_artemis" value="3"/>
+</event>
+
+<event name="Damage Artemis 2.5">
+   <if_variable name="warn_artemis" comparator="=" value="2"/>
+   <if_variable name="damage_artemis" comparator="=" value="3"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="Conduit overload. Damage to BEAMS and SENSORS in 30 seconds." consoles="E"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="3"/>
+</event>
+
+ <event name="Damage Artemis 3">
+   <if_variable name="damage_artemis" comparator="=" value="3"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemBeam" countFrom="front" index="2" value="1.0"/>
+    <set_player_grid_damage systemType="systemBeam" countFrom="front" index="1" value="1.0"/>
+    <set_player_grid_damage systemType="systemTactical" countFrom="front" index="1" value="0.4"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Warn_timer" seconds="90"/>
+    <set_timer name="System_Fail_timer" seconds="120"/>
+    <set_variable name="damage_artemis" value="4"/>
+</event>
+
+<event name="Damage Artemis 3.5">
+   <if_variable name="warn_artemis" comparator="=" value="3"/>
+   <if_variable name="damage_artemis" comparator="=" value="4"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="IMPULSE reactor rupture. Total failure in 30 seconds." consoles="E"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="4"/>
+</event>
+
+ <event name="Damage Artemis 4">
+   <if_variable name="damage_artemis" comparator="=" value="4"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemImpulse" countFrom="front" index="3" value="1.0"/>
+    <set_player_grid_damage systemType="systemImpulse" countFrom="front" index="2" value="1.0"/>
+    <set_player_grid_damage systemType="systemImpulse" countFrom="front" index="1" value="1.0"/>
+    <set_player_grid_damage systemType="systemImpulse" countFrom="front" index="0" value="1.0"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Warn_timer" seconds="20"/>
+    <set_timer name="System_Fail_timer" seconds="50"/>
+    <set_variable name="damage_artemis" value="5"/>
+</event>
+
+<event name="Damage Artemis 4.5">
+   <if_variable name="warn_artemis" comparator="=" value="4"/>
+   <if_variable name="damage_artemis" comparator="=" value="5"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="Radiation leak in TORPEDO system. All tubes will fail in 30 seconds." consoles="E"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="5"/>
+</event>
+
+ <event name="Damage Artemis 5">
+   <if_variable name="damage_artemis" comparator="=" value="5"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemTorpedo" countFrom="front" index="1" value="1.0"/>
+    <set_player_grid_damage systemType="systemTorpedo" countFrom="front" index="0" value="1.0"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Warn_timer" seconds="150"/>
+    <set_timer name="System_Fail_timer" seconds="180"/>
+    <set_variable name="damage_artemis" value="6"/>
+</event>
+
+<event name="Damage Artemis 5.5">
+   <if_variable name="warn_artemis" comparator="=" value="5"/>
+   <if_variable name="damage_artemis" comparator="=" value="6"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="Maneuvering rudder overstressed. STEERING will fail in 30 seconds." consoles="E"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="6"/>
+</event>
+
+ <event name="Damage Artemis 6">
+   <if_variable name="damage_artemis" comparator="=" value="6"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemTurning" countFrom="front" index="3" value="1.0"/>
+    <set_player_grid_damage systemType="systemTurning" countFrom="front" index="2" value="1.0"/>
+    <set_player_grid_damage systemType="systemTurning" countFrom="front" index="1" value="1.0"/>
+    <set_player_grid_damage systemType="systemTurning" countFrom="front" index="0" value="1.0"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Warn_timer" seconds="90"/>
+    <set_timer name="System_Fail_timer" seconds="120"/>
+    <set_variable name="damage_artemis" value="7"/>
+</event>
+
+<event name="Damage Artemis 6.5">
+   <if_variable name="warn_artemis" comparator="=" value="6"/>
+   <if_variable name="damage_artemis" comparator="=" value="7"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="Power couplings buckling. FRONT SHIELDS will collapse in 30 seconds." consoles="E"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="7"/>
+</event>
+
+
+ <event name="Damage Artemis 7">
+   <if_variable name="damage_artemis" comparator="=" value="7"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemFrontShield" countFrom="front" index="3" value="0.5"/>
+    <set_player_grid_damage systemType="systemFrontShield" countFrom="front" index="2" value="0.5"/>
+    <set_player_grid_damage systemType="systemFrontShield" countFrom="front" index="1" value="0.5"/>
+    <set_player_grid_damage systemType="systemFrontShield" countFrom="front" index="0" value="0.5"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Fail_timer" seconds="65"/>
+    <set_timer name="System_Warn_timer" seconds="35"/>
+    <set_variable name="damage_artemis" value="8"/>
+</event>
+
+<event name="Damage Artemis 7.5">
+   <if_variable name="warn_artemis" comparator="=" value="7"/>
+   <if_variable name="damage_artemis" comparator="=" value="8"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="Warp energizer leaking radiation. Partial warp failure in 30 seconds." consoles="E"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="8"/>
+</event>
+
+ <event name="Damage Artemis 8">
+   <if_variable name="damage_artemis" comparator="=" value="8"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="3" value="0.5"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="2" value="0.5"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="1" value="0.5"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="0" value="0.5"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Fail_timer" seconds="185"/>
+    <set_timer name="System_Warn_timer" seconds="155"/>
+    <set_variable name="damage_artemis" value="9"/>
+</event>
+
+<event name="Damage Artemis 8.5">
+   <if_variable name="warn_artemis" comparator="=" value="8"/>
+   <if_variable name="damage_artemis" comparator="=" value="9"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="Rupture in primary beam weapon wave guides. BEAM WEAPONS will fail in 30 seconds." consoles="E"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="9"/>
+</event>
+
+ <event name="Damage Artemis 9">
+   <if_variable name="damage_artemis" comparator="=" value="9"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemBeam" countFrom="front" index="3" value="1.0"/>
+    <set_player_grid_damage systemType="systemBeam" countFrom="front" index="2" value="1.0"/>
+    <set_player_grid_damage systemType="systemBeam" countFrom="front" index="1" value="1.0"/>
+    <set_player_grid_damage systemType="systemBeam" countFrom="front" index="0" value="1.0"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Fail_timer" seconds="65"/>
+    <set_timer name="System_Warn_timer" seconds="35"/>
+    <set_variable name="damage_artemis" value="10"/>
+</event>
+
+<event name="Damage Artemis 9.5">
+   <if_variable name="warn_artemis" comparator="=" value="9"/>
+   <if_variable name="damage_artemis" comparator="=" value="10"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="Rear shield emitter failing. REAR SHIELD failure in 30 seconds." consoles="E"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="10"/>
+</event>
+
+
+ <event name="Damage Artemis 10">
+   <if_variable name="damage_artemis" comparator="=" value="10"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemBackShield" countFrom="front" index="3" value="1.0"/>
+    <set_player_grid_damage systemType="systemBackShield" countFrom="front" index="2" value="1.0"/>
+    <set_player_grid_damage systemType="systemBackShield" countFrom="front" index="1" value="1.0"/>
+    <set_player_grid_damage systemType="systemBackShield" countFrom="front" index="0" value="1.0"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Fail_timer" seconds="65"/>
+    <set_timer name="System_Warn_timer" seconds="35"/>
+    <set_variable name="damage_artemis" value="11"/>
+</event>
+
+<event name="Damage Artemis 10.5">
+   <if_variable name="warn_artemis" comparator="=" value="10"/>
+   <if_variable name="damage_artemis" comparator="=" value="11"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="Warp intercooler is disrupted. WARP ENGINE failure in 30 seconds." consoles="C"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="11"/>
+</event>
+
+ <event name="Damage Artemis 11">
+   <if_variable name="damage_artemis" comparator="=" value="11"/>
+   <if_timer_finished name="System_Fail_timer"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="3" value="1.0"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="2" value="1.0"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="1" value="1.0"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="0" value="1.0"/>
+    <play_sound_now filename="Alert_Warning_Short.wav"/>
+    <set_timer name="System_Fail_timer" seconds="55"/>
+    <set_timer name="System_Warn_timer" seconds="25"/>
+    <set_variable name="damage_artemis" value="0"/>
+</event>
+
+<!-- event name="Damage Artemis 11.5">
+   <if_variable name="warn_artemis" comparator="=" value="11"/>
+   <if_timer_finished name="System_Warn_timer"/>
+    <warning_popup_message message="Tactical circuits overloading. SENSOR FAILURE in 30 seconds." consoles="C"/>
+    <play_sound_now filename="blip.wav"/>
+    <set_variable name="warn_artemis" value="12"/>
+</event-->
+
+
+
+  <event name="Launch Aegis 1">
+    <if_distance name1="H17" name2="Artemis" comparator="LESS" value ="9000"/>
+    <if_not_exists name="F111"/>
+    <create type="enemy" x="50200" y="0" z="36000" angle="200" name="F111" raceKeys="Skaraan enemy" hullKeys="Defiler small" fleetnumber="55"/>
+    <set_object_property property="eliteAbilityBits" value="512" name="F111"/>
+    <set_ship_text name="F111" race="Arvonian" class="Aegis Fighter" desc="Equipped with anti-torp beams" scan_desc="Launched by H17."/>
+    <set_variable name="Equip_Aegis1" value="0"/>
+  </event>
+
+<event name="Equip Aegis 1">
+    <if_variable name="Launch_Aegis1" comparator="EQUALS" value="1"/>
+    <if_variable name="Equip_Aegis1" comparator="Not" value="1"/>
+    <set_object_property property="turnRate" value="0.3" name="F111"/>
+    <set_object_property property="topSpeed" value="1.55" name="F111"/>
+    <set_object_property name="F111" property="shieldMaxStateFront" value="50"/>
+    <set_object_property name="F111" property="shieldMaxStateBack" value="40"/>
+    <set_variable name="Equip_Aegis1" value="1"/>
+    <set_relative_position name2="F111" name1="H17" angle="0" distance="1500"/>
+    <copy_object_property name1="H17" name2="F111" property ="angle"/>
+    <add_ai name ="F111" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+  </event>
+
+
+  <!-- The enemy is on the board immediately -->
+  <!-- Boost ship abilities to reflect tech level -->
+  <event name="Credits 1">
+    <if_timer_finished name="credits_timer1"/>
+    <if_variable name="credits1" comparator="NOT" value="1"/>
+    <big_message title="Recommended for TSN Battleship" subtitle1="with an experienced crew" subtitle2="Difficulty 8"/>
+    <set_variable name="credits1" value="1"/>
+    <set_special name="K01" ship="0" captain="0"/>
+    <set_special name="K02" ship="0" captain="0"/>
+    <set_special name="K03" ship="0" captain="0"/>
+
+
+    <set_object_property name="P11" property="topSpeed" value="0.35"/>
+    <set_object_property name="Q12" property="topSpeed" value="0.35"/>
+    <set_object_property name="P13" property="topSpeed" value="0.35"/>
+    <set_special name="P11" ship="-1" captain="-1"/>
+    <set_special name="P13" ship="-1" captain="-1"/>
+    <set_special name="Stone Demon" ship="1" captain="4"/>
+    <set_special name="Q12" ship="1" captain="1"/>
+    <set_object_property name="Q12" property="shieldMaxStateFront" value="400"/>
+    <set_object_property name="Q12" property="shieldMaxStateBack" value="400"/>
+    <set_object_property name="Q12" property="surrenderChance" value="0"/>
+
+    <set_object_property name="P14" property="topSpeed" value="0.35"/>
+    <set_object_property name="Q15" property="topSpeed" value="0.35"/>
+    <set_object_property name="P16" property="topSpeed" value="0.35"/>
+    <set_special name="P14" ship="-1" captain="-1"/>
+    <set_special name="P16" ship="-1" captain="-1"/>
+    <set_special name="Storm Demon" ship="1" captain="4"/>
+    <set_special name="Patience" ship="1" captain="4"/>
+    <set_special name="Anger" ship="1" captain="4"/>
+    <set_special name="Time God" ship="1" captain="4"/>
+    <set_special name="Bad Luck God" ship="1" captain="4"/>
+    <set_special name="Q15" ship="1" captain="1"/>
+    <set_object_property name="Q15" property="shieldMaxStateFront" value="400"/>
+    <set_object_property name="Q15" property="shieldMaxStateBack" value="400"/>
+    <set_object_property name="Q15" property="surrenderChance" value="0"/>
+
+    <set_object_property name="H17" property="topSpeed" value="0.75"/>
+    <set_object_property name="H18" property="topSpeed" value="0.75"/>
+    <set_object_property name="H19" property="topSpeed" value="0.75"/>
+    <set_object_property name="H20" property="topSpeed" value="0.75"/>
+    <set_object_property name="H21" property="topSpeed" value="0.75"/>
+
+    <set_object_property name="H17" property="turnRate" value="0.007"/>
+    <set_object_property name="H18" property="turnRate" value="0.007"/>
+    <set_object_property name="H18" property="turnRate" value="0.007"/>
+    <set_object_property name="H20" property="turnRate" value="0.007"/>
+    <set_object_property name="H21" property="turnRate" value="0.007"/>
+
+    <set_object_property name="H17" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H17" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H18" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H18" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H19" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H19" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H20" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H20" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H21" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H21" property="shieldMaxStateBack" value="180"/>
+    <set_variable name="credits1" value="1"/>
+    <add_ai name ="F111" type ="ELITE_AI"/>
+    <set_object_property property="turnRate" value="0.15" name="F111"/>
+    <set_object_property property="topSpeed" value="1.25" name="F111"/>
+    <set_object_property name="F111" property="shieldMaxStateFront" value="15"/>
+    <set_object_property name="F111" property="shieldMaxStateBack" value="15"/>
+  </event>
+
+
+  <event name="Reinforcements 1">
+    <if_variable name="Reinforcements1" comparator="NOT" value="1"/>
+    <if_timer_finished name="Reinforcements_timer1"/>
+
+    <create type="enemy" x="8200" y="0" z="37600" angle="200" name="P31" raceKeys="Torgoth enemy" hullKeys="Behemoth large" fleetnumber="23"/>
+    <create type="enemy" x="8100" y="500" z="37700" angle="200" name="Q32" raceKeys="Torgoth enemy" hullKeys="Leviathan medium" fleetnumber="23"/>
+    <create type="enemy" x="8300" y="-500" z="37500" angle="200" name="P33" raceKeys="Torgoth enemy" hullKeys="Goliath small" fleetnumber="23"/>
+
+    <set_ship_text name="Q32" class="Super Leviathan" desc="Enhanced ship" scan_desc="Superior durability."/>
+
+
+    <create type="enemy" x="8500" y="0" z="37900" angle="200" name="Pestilence" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="23"/>
+    <set_object_property property="eliteAbilityBits" value="552" name="Pestilence"/>
+    <set_object_property property="eliteAIType" value="1" name="Pestilence"/>
+    
+    <create type="enemy" x="7500" y="-100" z="37200" angle="200" name="Harvest God" raceKeys="Skaraan enemy" hullKeys="Executor large" fleetnumber="23"/>
+    <set_object_property property="eliteAbilityBits" value="808" name="Harvest God"/>
+    <set_object_property property="eliteAIType" value="1" name="Harvest God"/>
+
+    <create type="enemy" x="8200" y="0" z="67600" angle="60" name="P34" raceKeys="Torgoth enemy" hullKeys="Leviathan medium" fleetnumber="24"/>
+    <create type="enemy" x="8100" y="500" z="67700" angle="60" name="Q35" raceKeys="Torgoth enemy" hullKeys="Leviathan medium" fleetnumber="24"/>
+    <create type="enemy" x="8300" y="-500" z="67500" angle="60" name="P36" raceKeys="Torgoth enemy" hullKeys="Leviathan medium" fleetnumber="24"/>
+
+    <set_ship_text name="Q35" class="Super Leviathan" desc="Enhanced ship" scan_desc="Superior durability."/>
+
+
+    <create type="enemy" x="8500" y="0" z="67900" angle="60" name="Charity" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="24"/>
+    <set_object_property property="eliteAbilityBits" value="552" name="Charity"/>
+    <set_object_property property="eliteAIType" value="1" name="Charity"/>
+
+    <set_variable name="Reinforcements1" value="1"/>
+  </event>
+  
+  <!-- Boost ship abilities to reflect tech level -->
+   <event name="Boost Reinforcements 1">
+    <if_variable name="Reinforcements2" comparator="NOT" value="0"/>
+    <if_variable name="ReinforcementsBoost1" comparator="NOT" value="1"/>
+
+    <set_object_property name="P31" property="topSpeed" value="0.45"/>
+    <set_object_property name="Q32" property="topSpeed" value="0.45"/>
+    <set_object_property name="P33" property="topSpeed" value="0.45"/>
+
+    <set_object_property name="P31" property="turnRate" value="0.007"/>
+    <set_object_property name="Q32" property="turnRate" value="0.009"/>
+    <set_object_property name="P33" property="turnRate" value="0.007"/>
+
+    <set_object_property name="P34" property="topSpeed" value="0.45"/>
+    <set_object_property name="Q35" property="topSpeed" value="0.45"/>
+    <set_object_property name="P36" property="topSpeed" value="0.45"/>
+
+    <set_object_property name="P34" property="turnRate" value="0.007"/>
+    <set_object_property name="Q35" property="turnRate" value="0.009"/>
+    <set_object_property name="P36" property="turnRate" value="0.007"/>
+
+
+    <set_object_property name="Q32" property="shieldMaxStateFront" value="500"/>
+    <set_object_property name="Q32" property="shieldMaxStateBack" value="500"/>
+    <set_object_property name="Q35" property="shieldMaxStateFront" value="500"/>
+    <set_object_property name="Q35" property="shieldMaxStateBack" value="500"/>
+
+    <set_object_property name="Q32" property="surrenderChance" value="0"/>
+    <set_object_property name="Q35" property="surrenderChance" value="0"/>
+    <set_variable name="ReinforcementsBoost1" value="1"/>
+
+    <set_special name="Pestilence" ship="1" captain="4"/>
+    <set_special name="Charity" ship="1" captain="4"/>
+    <set_special name="Harvest God" ship="1" captain="4"/>
+  </event>
+
+ <event name="Reinforcements 2">
+    <if_variable name="Reinforcements2" comparator="NOT" value="1"/>
+    <if_timer_finished name="Reinforcements_timer2"/>
+
+    <create type="enemy" x="8200" y="0" z="47600" angle="260" name="H57" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="25"/>
+    <create type="enemy" x="8100" y="500" z="47700" angle="260" name="H58" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="25"/>
+    <create type="enemy" x="8300" y="-500" z="47500" angle="260" name="H59" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="25"/>
+    <create type="enemy" x="8800" y="-700" z="48500" angle="260" name="H50" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="25"/>
+    <create type="enemy" x="8800" y="700" z="47000" angle="260" name="H51" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="25"/>
+
+    <set_ship_text name="H57" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H58" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H59" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H50" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H51" class="Strike Carrier" desc="High Performance Light Carrier"/>
+
+
+    <create type="enemy" x="8500" y="0" z="47000" angle="260" name="Happiness" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="25"/>
+    <set_object_property property="eliteAbilityBits" value="584" name="Happiness"/>
+    <set_object_property property="eliteAIType" value="1" name="Happiness"/>
+
+    <create type="enemy" x="8400" y="0" z="46500" angle="260" name="Labor" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="25"/>
+    <set_object_property property="eliteAbilityBits" value="1544" name="Labor"/>
+    <set_object_property property="eliteAIType" value="1" name="Labor"/>
+    <set_variable name="Reinforcements2" value="1"/>
+  </event>
+  
+  
+
+  
+  <event name="Boost Reinforcements 2">
+    <if_variable name="Reinforcements2" comparator="NOT" value="0"/>
+    <if_variable name="ReinforcementsBoost2" comparator="NOT" value="1"/>
+
+    <set_object_property name="H57" property="topSpeed" value="0.85"/>
+    <set_object_property name="H58" property="topSpeed" value="0.85"/>
+    <set_object_property name="H59" property="topSpeed" value="0.85"/>
+    <set_object_property name="H50" property="topSpeed" value="0.85"/>
+    <set_object_property name="H51" property="topSpeed" value="0.85"/>
+
+    <set_object_property name="H57" property="turnRate" value="0.008"/>
+    <set_object_property name="H58" property="turnRate" value="0.008"/>
+    <set_object_property name="H58" property="turnRate" value="0.008"/>
+    <set_object_property name="H50" property="turnRate" value="0.008"/>
+    <set_object_property name="H51" property="turnRate" value="0.008"/>
+
+    <set_object_property name="H57" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H57" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H58" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H58" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H59" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H59" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H50" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H50" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H51" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H51" property="shieldMaxStateBack" value="180"/>
+    <set_variable name="ReinforcementsBoost2" value="1"/>
+    
+    <set_special name="Happiness" ship="1" captain="4"/>
+    <set_special name="Labor" ship="1" captain="4"/>
+  </event>
+  
+   <event name="Reinforcements 3">
+    <if_variable name="Reinforcements1" comparator="NOT" value="1"/>
+    <if_timer_finished name="Reinforcements_timer3"/>
+
+    <create type="enemy" x="8200" y="0" z="37600" angle="200" name="E31" raceKeys="Torgoth enemy" hullKeys="Behemoth large" fleetnumber="33"/>
+    <create type="enemy" x="8100" y="500" z="37700" angle="200" name="A32" raceKeys="Torgoth enemy" hullKeys="Leviathan medium" fleetnumber="33"/>
+    <create type="enemy" x="8300" y="-500" z="37500" angle="200" name="E33" raceKeys="Torgoth enemy" hullKeys="Goliath small" fleetnumber="33"/>
+
+    <set_ship_text name="A32" class="Super Leviathan" desc="Enhanced ship" scan_desc="Superior durability."/>
+
+
+    <create type="enemy" x="8500" y="0" z="37900" angle="200" name="Anguish" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="33"/>
+    <set_object_property property="eliteAbilityBits" value="552" name="Anguish"/>
+    <set_object_property property="eliteAIType" value="1" name="Anguish"/>
+
+    <create type="enemy" x="8200" y="0" z="67600" angle="60" name="E34" raceKeys="Torgoth enemy" hullKeys="Leviathan medium" fleetnumber="34"/>
+    <create type="enemy" x="8100" y="500" z="67700" angle="60" name="A35" raceKeys="Torgoth enemy" hullKeys="Leviathan medium" fleetnumber="34"/>
+    <create type="enemy" x="8300" y="-500" z="67500" angle="60" name="E36" raceKeys="Torgoth enemy" hullKeys="Leviathan medium" fleetnumber="34"/>
+
+    <set_ship_text name="A35" class="Super Leviathan" desc="Enhanced ship" scan_desc="Superior durability."/>
+
+
+    <create type="enemy" x="8500" y="0" z="67900" angle="60" name="Confusion" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="34"/>
+    <set_object_property property="eliteAbilityBits" value="552" name="Confusion"/>
+    <set_object_property property="eliteAIType" value="1" name="Confusion"/>
+
+    <set_variable name="Reinforcements3" value="1"/>
+  </event>
+
+  <!-- Boost ship abilities to reflect tech level -->
+   <event name="Boost Reinforcements 3">
+    <if_variable name="Reinforcements3" comparator="NOT" value="0"/>
+    <if_variable name="ReinforcementsBoost3" comparator="NOT" value="1"/>
+
+    <set_object_property name="E31" property="topSpeed" value="0.45"/>
+    <set_object_property name="A32" property="topSpeed" value="0.45"/>
+    <set_object_property name="E33" property="topSpeed" value="0.45"/>
+
+    <set_object_property name="E31" property="turnRate" value="0.007"/>
+    <set_object_property name="A32" property="turnRate" value="0.009"/>
+    <set_object_property name="E33" property="turnRate" value="0.007"/>
+
+    <set_object_property name="E34" property="topSpeed" value="0.45"/>
+    <set_object_property name="A35" property="topSpeed" value="0.45"/>
+    <set_object_property name="E36" property="topSpeed" value="0.45"/>
+
+    <set_object_property name="E34" property="turnRate" value="0.007"/>
+    <set_object_property name="A35" property="turnRate" value="0.009"/>
+    <set_object_property name="E36" property="turnRate" value="0.007"/>
+
+
+    <set_object_property name="A32" property="shieldMaxStateFront" value="500"/>
+    <set_object_property name="A32" property="shieldMaxStateBack" value="500"/>
+    <set_object_property name="A35" property="shieldMaxStateFront" value="500"/>
+    <set_object_property name="A35" property="shieldMaxStateBack" value="500"/>
+
+    <set_object_property name="A32" property="surrenderChance" value="0"/>
+    <set_object_property name="A35" property="surrenderChance" value="0"/>
+    <set_variable name="ReinforcementsBoost3" value="1"/>
+
+    <set_special name="Anguish" ship="1" captain="4"/>
+    <set_special name="Confusion" ship="1" captain="4"/>
+
+  </event>
+
+  <event name="Launch Aegis 2">
+    <if_distance name1="H57" name2="Artemis" comparator="LESS" value ="10000"/>
+    <if_variable name="Launch_Aegis2" comparator="NOT" value="1"/>
+    <create type="enemy" x="50200" y="0" z="36000" angle="200" name="F117" raceKeys="Skaraan enemy" hullKeys="Defiler small" fleetnumber="55"/>
+    <set_object_property property="eliteAbilityBits" value="512" name="F117"/>
+    <set_ship_text name="F117" race="Arvonian" class="Aegis Fighter" desc="Equipped with anti-torp beams" scan_desc="The ultimate Arvonian technology."/>
+    <set_variable name="Launch_Aegis2" value="1"/>
+  </event>
+
+<event name="Equip Aegis 2">
+    <if_variable name="Launch_Aegis2" comparator="EQUALS" value="1"/>
+    <if_variable name="Equip_Aegis2" comparator="Not" value="1"/>
+    <set_object_property property="turnRate" value="0.25" name="F117"/>
+    <set_object_property property="topSpeed" value="1.35" name="F117"/>
+    <set_object_property name="F117" property="shieldMaxStateFront" value="20"/>
+    <set_object_property name="F117" property="shieldMaxStateBack" value="20"/>
+    <set_variable name="Equip_Aegis2" value="1"/>
+    <set_relative_position name2="F117" name1="H17" angle="0" distance="1500"/>
+    <copy_object_property name1="H57" name2="F111" property ="angle"/>
+    <add_ai name ="F117" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+  </event>
+
+
+  <!-- Winning and losing the mission -->
+  <event name="Victory!">
+    <if_variable name="terminate" comparator="NOT" value="1"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="20"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="21"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="22"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="23"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="24"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="25"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="33"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="34"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="55"/>
+    <big_message title="VICTORY!" subtitle1="You vanquished the Enemies" subtitle2="and saved the sector."/>
+    <play_sound_now filename="Fanfare.wav"/>
+    <set_timer name="endint_timer" seconds="15"/>
+    <set_variable name="terminate" value="1"/>
+  </event>
+
+  <event name="Posthumus Victory">
+    <if_not_exists name="Artemis"/>
+    <if_variable name="Message_Number" comparator="EQUALS" value="2"/>
+    <if_variable name="terminate" comparator="NOT" value="1"/>
+    <big_message title="VICTORY!" subtitle1="Your Sirius Feint distracted the enemy and our fleet won!" subtitle2="You will be remembered as heroes!"/>
+    <set_timer name="endint_timer" seconds="15"/>
+    <set_variable name="terminate" value="1"/>
+  </event>
+
+  <event name="Defeat by Exposure">
+   <if_variable name="Message_Number" comparator="LESS" value="2"/>
+   <if_variable name="Suspicious" comparator="=" value="4"/>
+     <if_timer_finished name="suspicious_timer"/>
+    <if_variable name="terminate" comparator="NOT" value="1"/>
+    <big_message title="DEFEAT" subtitle1="The enemy detected the Sirius feint too soon" subtitle2="and the main fleet was defeated at Epsilon Pegasi."/>
+    <set_timer name="endint_timer" seconds="15"/>
+    <set_variable name="terminate" value="1"/>
+    <set_variable name="Suspicious" value="5"/>
+  </event>
+  
+  <event name="Continue After Exposure">
+   <if_variable name="Message_Number" comparator="GREATER" value="1"/>
+   <if_variable name="Suspicious" comparator="=" value="4"/>
+     <if_timer_finished name="suspicious_timer"/>
+    <if_variable name="fatalistic" comparator="LESS" value="1"/>
+    <incoming_comms_text from="TORGOTH FLEET COMMAND">
+      It's too late! The humans have broken through at Epsilon Pegasi! We must kill them all or die trying!
+    </incoming_comms_text>
+    <set_variable name="fatalistic" value="1"/>
+  </event>
+
+
+
+  <event name="Defeat by Death">
+   <if_variable name="Message_Number" comparator="LESS" value="2"/>
+    <if_not_exists name="Artemis"/>
+    <if_variable name="terminate" comparator="NOT" value="1"/>
+    <big_message title="DEFEAT" subtitle1="Artemis was destroyed" subtitle2="and the main fleet was defeated."/>
+    <set_timer name="endint_timer" seconds="15"/>
+    <set_variable name="terminate" value="1"/>
+  </event>
+
+  <event name="Game Over">
+    <if_variable name="terminate" comparator="EQUALS" value="1"/>
+    <if_variable name="gameOver" comparator="NOT" value="1"/>
+    <if_timer_finished name="endint_timer"/>
+    <end_mission/>
+    <set_variable name="gameOver" value="1"/>
+  </event>
+
+  <!-- *******************************************************-->
+</mission_data>
+
+
+
+
+
+
+
+
+
+
+

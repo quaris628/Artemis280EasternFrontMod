@@ -1,0 +1,67 @@
+﻿<!-- mission_data is the big wrapper for all the parts of a mission -->
+<mission_data version="2.3">
+
+  <!-- all the things that exist at the start of the mission -->
+  <start>
+
+
+    <set_player_carried_type player_slot="0" bay_slot="0" hullID="103" name="Shuttle Alpha" raceKeys="TSN player" hullKeys="singleseat shuttle" />
+    <set_player_carried_type player_slot="0" bay_slot="1" hullID="103" name="Shuttle Beta"  raceKeys="TSN player" hullKeys="singleseat shuttle" />
+    <set_player_carried_type player_slot="0" bay_slot="2" hullID="101" raceKeys="TSN player" hullKeys="singleseat shuttle" />
+    <set_player_carried_type player_slot="0" bay_slot="3" name="Random Fighter" raceKeys="TSN player" hullKeys="singleseat fighter" />
+    <create type="player" x="70000" y="0" z="41000" angle="270" name="TSN Jack" accent_color="90" warp="yes" raceKeys="TSN player" hullKeys="Juggernaut"/>
+
+    <create type="player" x="70000" y="0" z="41300" angle="270" player_slot="1" name="PlayScout" raceKeys="TSN player" hullKeys="Scout" accent_color="70" warp="yes"  sideValue="5"/>
+
+    <create type="player" x="70000" y="0" z="41600" angle="270" player_slot="3" name="PlayBShip" raceKeys="Ximni player" hullKeys="Battleship" accent_color="50" warp="no"/>
+
+
+    <create type="blackHole" x="60500" y="0" z="40000" name="Test Blackhole"/>
+    <create type="station" x="75500" y="0" z="40000" name="Test Station" raceKeys="friendly" hullKeys="base"/>
+
+    <clear_player_station_carried name="Test Station"/>
+    <set_player_station_carried name="Test Station" singleSeatName="Mothball 1" hullID="103" raceKeys="TSN player" hullKeys="singleseat shuttle"/>
+    <set_player_station_carried name="Test Station" singleSeatName="Mothball 2" raceKeys="TSN player" hullKeys="singleseat fighter"/>
+
+    <create type="enemy" x="70500" y="0" z="60000" angle="180" name="TSN Dude" raceKeys="TSN" hullKeys="Scout" fleetnumber="3"/>
+    <set_side_value value="2" name="TSN Dude"/>
+    <set_special name="TSN Dude" ability="Drones"/>
+    <add_ai name="TSN Dude" type="FOLLOW_COMMS_ORDERS"/>
+
+    <create type="enemy" x="74000" y="500" z="60000" angle="90" name="Ximni Dude" raceKeys="Ximni" hullKeys="Scout" fleetnumber="5"/>
+    <set_special name="Ximni Dude" ability="Drones"/>
+
+    <create type="enemy" x="74000" y="500" z="60100" angle="90" name="Ximni Dude 2" raceKeys="Ximni" hullKeys="Scout" fleetnumber="5"/>
+    <set_special name="Ximni Dude 2" ability="Drones"/>
+
+    <set_variable name="var10" value="2.55"/>
+    <set_variable name="intstep" value="0" integer="yes"/>
+
+
+    <set_timer name="specialtimer" seconds="1000"/>
+  </start>
+
+  
+  <!-- ******************************************************************************************** -->
+  <event name="special timer">
+    <if_timer_finished name="specialtimer"/>
+
+    <big_message subtitle1="var10=|var10|  formatted=|3,5,var10| @@" subtitle2="more formatting:  intstep=|5,2,intstep|    var10=|4,var10" sideValue="2"/>
+
+    <set_variable name="var10" value="var10 + 0.33"/>
+    <set_variable name="intstep" value="intstep + 1.33"/>
+
+    <incoming_comms_text from="test code">
+      This is a comms message.  Value of intstep is |5,2,intstep|
+      This is another comms message.  Value of intstep is |3,intstep
+    </incoming_comms_text>
+    
+    <set_timer name="specialtimer" seconds="1000"/>
+  </event>
+
+
+
+
+
+</mission_data>
+

@@ -1,0 +1,1745 @@
+<scene version="1.6">
+  <settings name="new scene" author="" comments="" shadowOpacity="75">
+    <ambient r="255" g="255" b="255" />
+  </settings>
+  <materials highestID="35">
+    <category name="System">
+      <material id="0" name="system" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="System\system.bmp" />
+        </layer>
+      </material>
+      <material id="17" name="(null)" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="color" blend="alphablend">
+          <color r="224" g="224" b="224" a="255" />
+        </layer>
+      </material>
+      <material id="25" name="Asteroid_10_Albedo" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="asteroids2017\Asteroid_10_Albedo.png" />
+        </layer>
+      </material>
+      <material id="26" name="Asteroid_11_Albedo" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="asteroids2017\Asteroid_11_Albedo.png" />
+        </layer>
+      </material>
+      <material id="27" name="Asteroid_1_Albedo" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="asteroids2017\Asteroid_1_Albedo.png" />
+        </layer>
+      </material>
+      <material id="28" name="Asteroid_2_Albedo" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="asteroids2017\Asteroid_2_Albedo.png" />
+        </layer>
+      </material>
+      <material id="29" name="Asteroid_3_Albedo" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="asteroids2017\Asteroid_3_Albedo.png" />
+        </layer>
+      </material>
+      <material id="30" name="Asteroid_4_Albedo" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="asteroids2017\Asteroid_4_Albedo.png" />
+        </layer>
+      </material>
+      <material id="31" name="Asteroid_5_Albedo" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="asteroids2017\Asteroid_5_Albedo.png" />
+        </layer>
+      </material>
+      <material id="32" name="Asteroid_6_Albedo" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="asteroids2017\Asteroid_6_Albedo.png" />
+        </layer>
+      </material>
+      <material id="33" name="Asteroid_7_Albedo" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="asteroids2017\Asteroid_7_Albedo.png" />
+        </layer>
+      </material>
+      <material id="34" name="Asteroid_8_Albedo" used="true" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="asteroids2017\Asteroid_8_Albedo.png" />
+        </layer>
+      </material>
+      <material id="35" name="Asteroid_9_Albedo" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="asteroids2017\Asteroid_9_Albedo.png" />
+        </layer>
+      </material>
+    </category>
+    <category name="Floors">
+      <material id="1" name="Floor02" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Floors\Floor02.jpg" />
+        </layer>
+      </material>
+      <material id="2" name="Floor04" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Floors\Floor04.jpg" />
+        </layer>
+      </material>
+      <material id="3" name="Floor10" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Floors\Floor10.jpg" />
+        </layer>
+      </material>
+      <material id="4" name="Floor11" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Floors\Floor11.jpg" />
+        </layer>
+      </material>
+    </category>
+    <category name="Nature">
+      <material id="5" name="Water01" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Nature\Water01.jpg" />
+        </layer>
+      </material>
+      <material id="16" name="asteroidTexture" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="color" blend="replace">
+          <color r="19" g="19" b="19" a="255" />
+        </layer>
+      </material>
+    </category>
+    <category name="Roofs">
+      <material id="6" name="Roof03" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Roofs\Roof03.jpg" />
+        </layer>
+      </material>
+      <material id="7" name="Roof04" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Roofs\Roof04.jpg" />
+        </layer>
+      </material>
+    </category>
+    <category name="Walls">
+      <material id="8" name="Wall01" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Walls\Wall01.jpg" />
+        </layer>
+      </material>
+      <material id="9" name="Wall02" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Walls\Wall02.jpg" />
+        </layer>
+      </material>
+      <material id="10" name="Wall06" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Walls\Wall06.jpg" />
+        </layer>
+      </material>
+      <material id="11" name="Wall10" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Walls\Wall10.jpg" />
+        </layer>
+      </material>
+      <material id="12" name="Wall11" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Walls\Wall11.jpg" />
+        </layer>
+      </material>
+      <material id="13" name="Wall12" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Walls\Wall12.jpg" />
+        </layer>
+      </material>
+    </category>
+    <category name="Wood">
+      <material id="14" name="Wood01" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Wood\Wood01.jpg" />
+        </layer>
+      </material>
+      <material id="15" name="Wood02" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="replace">
+          <texture file="Wood\Wood02.jpg" />
+        </layer>
+      </material>
+    </category>
+    <category name="Asteroid_1">
+      <material id="18" name="Asteroid_1" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="color" blend="replace">
+          <color r="150" g="150" b="150" a="255" />
+        </layer>
+      </material>
+    </category>
+    <category name="Asteroid_6">
+      <material id="19" name="Asteroid_6" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="color" blend="replace">
+          <color r="150" g="150" b="150" a="255" />
+        </layer>
+      </material>
+    </category>
+    <category name="Asteroid_7">
+      <material id="20" name="Asteroid_7" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="color" blend="replace">
+          <color r="150" g="150" b="150" a="255" />
+        </layer>
+      </material>
+    </category>
+    <category name="Asteroid_8">
+      <material id="21" name="Asteroid_8" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="color" blend="replace">
+          <color r="150" g="150" b="150" a="255" />
+        </layer>
+      </material>
+    </category>
+    <category name="Asteroid_9">
+      <material id="22" name="Asteroid_9" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="color" blend="replace">
+          <color r="150" g="150" b="150" a="255" />
+        </layer>
+      </material>
+    </category>
+    <category name="Asteroid_10">
+      <material id="23" name="Asteroid_10" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="color" blend="replace">
+          <color r="150" g="150" b="150" a="255" />
+        </layer>
+      </material>
+    </category>
+    <category name="Asteroid_11">
+      <material id="24" name="Asteroid_11" used="false" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="color" blend="replace">
+          <color r="150" g="150" b="150" a="255" />
+        </layer>
+      </material>
+    </category>
+  </materials>
+  <primitives highestID="5">
+    <primitive id="5" name="Asteroid_8" type="userdefined" visible="true" snap="none" autoUV="false" groupID="-1" skeletonID="-1">
+      <vertices>
+        <vertex id="0" x="-306.9837" y="-185.6124" z="-216.2442" jointID="-1" />
+        <vertex id="1" x="1.828313" y="-270.1016" z="-274.4447" jointID="-1" />
+        <vertex id="2" x="255.5794" y="-102.9453" z="-396.5919" jointID="-1" />
+        <vertex id="3" x="352.6133" y="-22.9988" z="-32.86029" jointID="-1" />
+        <vertex id="4" x="-392.1091" y="-184.7672" z="171.5241" jointID="-1" />
+        <vertex id="5" x="-111.718" y="339.1091" z="-286.3653" jointID="-1" />
+        <vertex id="6" x="356.6356" y="-356.4276" z="131.8056" jointID="-1" />
+        <vertex id="7" x="459.9425" y="-282.0806" z="45.70998" jointID="-1" />
+        <vertex id="8" x="-332.6094" y="98.78371" z="-95.21761" jointID="-1" />
+        <vertex id="9" x="36.08288" y="361.221" z="-20.10936" jointID="-1" />
+        <vertex id="10" x="-192.4857" y="-45.94125" z="-387.5066" jointID="-1" />
+        <vertex id="11" x="207.8897" y="340.476" z="-256.8517" jointID="-1" />
+        <vertex id="12" x="74.04571" y="-126.6544" z="329.1571" jointID="-1" />
+        <vertex id="13" x="458.4505" y="2.031985" z="230.3755" jointID="-1" />
+        <vertex id="14" x="14.22122" y="-359.1961" z="120.2699" jointID="-1" />
+        <vertex id="15" x="-410.4849" y="92.58391" z="137.1629" jointID="-1" />
+        <vertex id="16" x="218.0346" y="-384.1457" z="-12.67578" jointID="-1" />
+        <vertex id="17" x="285.511" y="268.8935" z="353.8817" jointID="-1" />
+        <vertex id="18" x="24.81203" y="-375.783" z="-112.5221" jointID="-1" />
+        <vertex id="19" x="-179.6522" y="27.43678" z="303.1985" jointID="-1" />
+        <vertex id="20" x="-260.6782" y="180.1637" z="-298.8288" jointID="-1" />
+        <vertex id="21" x="-427.1504" y="-182.5551" z="19.81267" jointID="-1" />
+        <vertex id="22" x="212.8184" y="431.3394" z="-94.49767" jointID="-1" />
+        <vertex id="23" x="-213.3877" y="-235.0417" z="-168.4626" jointID="-1" />
+        <vertex id="24" x="-464.9854" y="-41.12702" z="15.64794" jointID="-1" />
+        <vertex id="25" x="-64.44889" y="205.5086" z="329.2169" jointID="-1" />
+        <vertex id="26" x="397.4214" y="-195.2062" z="262.1359" jointID="-1" />
+        <vertex id="27" x="-143.7671" y="267.6291" z="181.5505" jointID="-1" />
+        <vertex id="28" x="-61.21051" y="207.5357" z="-307.6013" jointID="-1" />
+        <vertex id="29" x="339.4843" y="-313.0703" z="-211.6655" jointID="-1" />
+        <vertex id="30" x="216.2684" y="-346.7313" z="-209.8753" jointID="-1" />
+        <vertex id="31" x="340.5425" y="-219.3386" z="-227.1065" jointID="-1" />
+        <vertex id="32" x="184.6984" y="394.4694" z="214.3024" jointID="-1" />
+        <vertex id="33" x="-30.3473" y="412.3846" z="-121.2095" jointID="-1" />
+        <vertex id="34" x="85.98611" y="-213.8416" z="224.0148" jointID="-1" />
+        <vertex id="35" x="-107.4468" y="-332.4017" z="107.7718" jointID="-1" />
+        <vertex id="36" x="282.5695" y="246.542" z="-106.9771" jointID="-1" />
+        <vertex id="37" x="9.723814" y="180.9823" z="-338.8798" jointID="-1" />
+        <vertex id="38" x="-8.077011" y="-287.7081" z="-149.1259" jointID="-1" />
+        <vertex id="39" x="-98.70483" y="-345.7117" z="-158.3311" jointID="-1" />
+        <vertex id="40" x="277.6567" y="18.01463" z="386.2902" jointID="-1" />
+        <vertex id="41" x="-26.85074" y="-467.4343" z="-6.654274" jointID="-1" />
+        <vertex id="42" x="113.2862" y="-44.67946" z="405.6909" jointID="-1" />
+        <vertex id="43" x="-253.4881" y="56.41265" z="-284.5259" jointID="-1" />
+        <vertex id="44" x="-22.97887" y="-78.78234" z="-363.6299" jointID="-1" />
+        <vertex id="45" x="232.2404" y="-258.3156" z="277.2107" jointID="-1" />
+        <vertex id="46" x="-359.6966" y="87.59665" z="-245.8616" jointID="-1" />
+        <vertex id="47" x="-342.0089" y="162.6091" z="48.19895" jointID="-1" />
+        <vertex id="48" x="124.9418" y="67.7368" z="-342.5295" jointID="-1" />
+        <vertex id="49" x="-270.7818" y="179.7365" z="-153.5608" jointID="-1" />
+        <vertex id="50" x="-462.4126" y="-19.28132" z="-144.8853" jointID="-1" />
+        <vertex id="51" x="382.3093" y="294.2437" z="223.1601" jointID="-1" />
+        <vertex id="52" x="-292.7127" y="-207.5473" z="244.7837" jointID="-1" />
+        <vertex id="53" x="396.921" y="162.4827" z="300.6896" jointID="-1" />
+        <vertex id="54" x="87.27845" y="239.2109" z="275.0266" jointID="-1" />
+        <vertex id="55" x="123.6082" y="214.2187" z="356.3373" jointID="-1" />
+        <vertex id="56" x="-122.0718" y="347.0591" z="-106.8653" jointID="-1" />
+        <vertex id="57" x="383.4886" y="121.3442" z="43.38333" jointID="-1" />
+        <vertex id="58" x="295.2193" y="418.9478" z="54.94315" jointID="-1" />
+        <vertex id="59" x="220.2574" y="229.2164" z="-184.6915" jointID="-1" />
+        <vertex id="60" x="134.3493" y="221.2171" z="-361.3698" jointID="-1" />
+        <vertex id="61" x="-266.697" y="275.3795" z="115.3212" jointID="-1" />
+        <vertex id="62" x="-221.5468" y="145.02" z="308.8034" jointID="-1" />
+        <vertex id="63" x="422.6293" y="-224.5827" z="-123.0502" jointID="-1" />
+        <vertex id="64" x="467.0634" y="-176.9556" z="169.4543" jointID="-1" />
+        <vertex id="65" x="-236.8812" y="-270.2387" z="-71.51794" jointID="-1" />
+        <vertex id="66" x="273.2179" y="-95.03519" z="376.9014" jointID="-1" />
+        <vertex id="67" x="-238.714" y="292.1234" z="-121.8257" jointID="-1" />
+        <vertex id="68" x="136.0955" y="-396.8235" z="101.1101" jointID="-1" />
+        <vertex id="69" x="-328.0907" y="243.7589" z="-67.78977" jointID="-1" />
+        <vertex id="70" x="101.3552" y="-299.5966" z="206.6305" jointID="-1" />
+        <vertex id="71" x="174.0809" y="-249.354" z="-320.3657" jointID="-1" />
+        <vertex id="72" x="-209.1898" y="82.9488" z="-406.7408" jointID="-1" />
+        <vertex id="73" x="-24.87423" y="-12.30555" z="-334.5515" jointID="-1" />
+        <vertex id="74" x="-66.83931" y="82.62137" z="-379.6032" jointID="-1" />
+        <vertex id="75" x="105.1072" y="-434.8594" z="-31.75951" jointID="-1" />
+        <vertex id="76" x="82.62799" y="-16.06695" z="-396.2966" jointID="-1" />
+        <vertex id="77" x="269.0691" y="390.1915" z="151.2476" jointID="-1" />
+        <vertex id="78" x="363.9974" y="-0.5794375" z="-128.8187" jointID="-1" />
+        <vertex id="79" x="433.3065" y="-76.68069" z="65.43143" jointID="-1" />
+        <vertex id="80" x="393.5323" y="-128.9983" z="15.01981" jointID="-1" />
+        <vertex id="81" x="46.01745" y="128.5355" z="397.7075" jointID="-1" />
+        <vertex id="82" x="274.0657" y="34.97424" z="-366.6019" jointID="-1" />
+        <vertex id="83" x="247.5575" y="-346.5649" z="206.2099" jointID="-1" />
+        <vertex id="84" x="16.87656" y="311.5787" z="225.6332" jointID="-1" />
+        <vertex id="85" x="-87.05054" y="-199.5173" z="210.7181" jointID="-1" />
+        <vertex id="86" x="338.0043" y="301.9129" z="134.2135" jointID="-1" />
+        <vertex id="87" x="382.9974" y="-364.2393" z="-6.993685" jointID="-1" />
+        <vertex id="88" x="323.3673" y="-172.4901" z="-328.9878" jointID="-1" />
+        <vertex id="89" x="-61.4448" y="51.79275" z="345.1024" jointID="-1" />
+        <vertex id="90" x="-359.9828" y="-76.43712" z="-279.5185" jointID="-1" />
+        <vertex id="91" x="-343.4557" y="-152.8605" z="-124.6447" jointID="-1" />
+        <vertex id="92" x="405.3635" y="-138.2235" z="-122.7507" jointID="-1" />
+        <vertex id="93" x="-282.106" y="303.0363" z="-22.81263" jointID="-1" />
+        <vertex id="94" x="88.48434" y="355.8344" z="-207.6473" jointID="-1" />
+        <vertex id="95" x="-229.5674" y="271.8177" z="-257.3375" jointID="-1" />
+        <vertex id="96" x="-206.2363" y="-87.35664" z="-289.8365" jointID="-1" />
+        <vertex id="97" x="-407.224" y="51.90455" z="235.0301" jointID="-1" />
+        <vertex id="98" x="153.0032" y="333.6333" z="290.4756" jointID="-1" />
+        <vertex id="99" x="-45.40488" y="-434.1634" z="-95.98969" jointID="-1" />
+        <vertex id="100" x="405.482" y="-108.9654" z="232.0539" jointID="-1" />
+        <vertex id="101" x="-82.13517" y="320.7293" z="-27.85051" jointID="-1" />
+        <vertex id="102" x="273.4827" y="112.0485" z="-262.9782" jointID="-1" />
+        <vertex id="103" x="69.38583" y="282.1636" z="-238.086" jointID="-1" />
+        <vertex id="104" x="131.1349" y="-372.6192" z="-178.2308" jointID="-1" />
+        <vertex id="105" x="-25.65955" y="-60.56894" z="348.3727" jointID="-1" />
+        <vertex id="106" x="53.6867" y="72.39796" z="-388.8217" jointID="-1" />
+        <vertex id="107" x="-82.68353" y="-70.11354" z="262.7681" jointID="-1" />
+        <vertex id="108" x="280.1723" y="-420.7895" z="-86.55148" jointID="-1" />
+        <vertex id="109" x="15.79845" y="-186.8981" z="251.3841" jointID="-1" />
+        <vertex id="110" x="-30.51367" y="357.4409" z="9.545355" jointID="-1" />
+        <vertex id="111" x="82.43497" y="380.3994" z="67.60893" jointID="-1" />
+        <vertex id="112" x="400.4734" y="14.44888" z="332.9264" jointID="-1" />
+        <vertex id="113" x="205.0374" y="463.1183" z="-3.084522" jointID="-1" />
+        <vertex id="114" x="388.3028" y="-108.1495" z="343.3162" jointID="-1" />
+        <vertex id="115" x="98.18073" y="446.4955" z="-80.14945" jointID="-1" />
+        <vertex id="116" x="305.3163" y="-21.37764" z="345.0717" jointID="-1" />
+        <vertex id="117" x="-36.34078" y="304.4964" z="-276.665" jointID="-1" />
+        <vertex id="118" x="-101.4893" y="-177.4653" z="-310.8969" jointID="-1" />
+        <vertex id="119" x="227.7456" y="-373.9289" z="78.13849" jointID="-1" />
+        <vertex id="120" x="-256.1861" y="-41.6541" z="-332.2155" jointID="-1" />
+        <vertex id="121" x="187.3004" y="262.4022" z="-341.6469" jointID="-1" />
+        <vertex id="122" x="51.03933" y="372.3002" z="127.0394" jointID="-1" />
+        <vertex id="123" x="-332.3951" y="142.1357" z="235.7887" jointID="-1" />
+        <vertex id="124" x="-339.3217" y="120.6068" z="-180.6425" jointID="-1" />
+        <vertex id="125" x="-45.6698" y="-116.6772" z="222.894" jointID="-1" />
+        <vertex id="126" x="-121.7045" y="-25.21891" z="-397.3228" jointID="-1" />
+      </vertices>
+      <polygons>
+        <poly mid="34">
+          <vertex vid="80" u0="0.6477" v0="0.3573" />
+          <vertex vid="92" u0="0.6311" v0="0.3025" />
+          <vertex vid="7" u0="0.7148" v0="0.3404" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="1" u0="0.6371" v0="0.09310001" />
+          <vertex vid="71" u0="0.6034" v0="0.1608" />
+          <vertex vid="44" u0="0.508" v0="0.08050001" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="22" u0="0.4315" v0="0.439" />
+          <vertex vid="94" u0="0.3401" v0="0.3909" />
+          <vertex vid="11" u0="0.403" v0="0.3645" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="101" u0="0.3592" v0="0.5549" />
+          <vertex vid="27" u0="0.4102" v0="0.6588" />
+          <vertex vid="61" u0="0.3559" v0="0.6613" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="21" u0="0.2318" v0="0.8312" />
+          <vertex vid="4" u0="0.2955" v0="0.8532" />
+          <vertex vid="35" u0="0.2836" v0="0.9976" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="19" u0="0.4383" v0="0.7985" />
+          <vertex vid="62" u0="0.4285" v0="0.7457" />
+          <vertex vid="81" u0="0.5536" v0="0.7351" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="28" u0="0.1731" v0="0.4878" />
+          <vertex vid="72" u0="0.1215" v0="0.5887" />
+          <vertex vid="37" u0="0.1324" v0="0.4674" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="124" u0="0.2153" v0="0.6511" />
+          <vertex vid="8" u0="0.2415" v0="0.6746" />
+          <vertex vid="50" u0="0.1967" v0="0.7357" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="35" u0="0.2836" v0="0.9976" />
+          <vertex vid="52" u0="0.3373" v0="0.8818" />
+          <vertex vid="85" u0="0.4132" v0="0.9357" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="64" u0="0.712" v0="0.3972" />
+          <vertex vid="13" u0="0.6778" v0="0.4636" />
+          <vertex vid="79" u0="0.6491" v0="0.3883" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="119" u0="0.7826" v0="0.2731" />
+          <vertex vid="70" u0="0.8697" v0="0.3031" />
+          <vertex vid="83" u0="0.8124" v0="0.3286" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="30" u0="0.6682" v0="0.1859" />
+          <vertex vid="108" u0="0.7124" v0="0.2403" />
+          <vertex vid="29" u0="0.6448" v0="0.2285" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="24" u0="0.2401" v0="0.7743" />
+          <vertex vid="97" u0="0.3408" v0="0.764" />
+          <vertex vid="4" u0="0.2955" v0="0.8532" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="52" u0="0.3373" v0="0.8818" />
+          <vertex vid="97" u0="0.3408" v0="0.764" />
+          <vertex vid="19" u0="0.4383" v0="0.7985" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="9" u0="0.389" v0="0.5268" />
+          <vertex vid="33" u0="0.3333" v0="0.4869" />
+          <vertex vid="115" u0="0.397" v0="0.4757" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="51" u0="0.5981" v0="0.5325" />
+          <vertex vid="53" u0="0.6563" v0="0.5331" />
+          <vertex vid="17" u0="0.6356" v0="0.6085" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="23" u0="0.7345" v0="0.003400028" />
+          <vertex vid="39" u0="0.7321" v0="0.07550001" />
+          <vertex vid="118" u0="0.6173" v0="0.0323" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="120" u0="0.1049" v0="0.6678" />
+          <vertex vid="46" u0="0.1878" v0="0.6586" />
+          <vertex vid="90" u0="0.1364" v0="0.7147" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="59" u0="0.4601" v0="0.3647" />
+          <vertex vid="102" u0="0.4871" v0="0.3061" />
+          <vertex vid="36" u0="0.4847" v0="0.4018" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="48" u0="0.439" v0="0.2184" />
+          <vertex vid="37" u0="0.3592" v0="0.2381" />
+          <vertex vid="106" u0="0.4209" v0="0.1858" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="70" u0="0.8697" v0="0.3031" />
+          <vertex vid="34" u0="0.8954" v0="0.3533" />
+          <vertex vid="45" u0="0.8271" v0="0.3747" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="26" u0="0.7531" v0="0.4124" />
+          <vertex vid="64" u0="0.712" v0="0.3972" />
+          <vertex vid="6" u0="0.7695" v0="0.3275" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="45" u0="0.8271" v0="0.3747" />
+          <vertex vid="12" u0="0.9061" v0="0.443" />
+          <vertex vid="26" u0="0.7531" v0="0.4124" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="40" u0="0.7589" v0="0.5334" />
+          <vertex vid="42" u0="0.8462" v0="0.5449" />
+          <vertex vid="17" u0="0.6356" v0="0.6085" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="68" u0="0.8143" v0="0.25" />
+          <vertex vid="16" u0="0.7521" v0="0.2421" />
+          <vertex vid="75" u0="0.7687" v0="0.1941" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="65" u0="0.8136" v0="0.02149999" />
+          <vertex vid="35" u0="0.8905" v0="0.1585" />
+          <vertex vid="41" u0="0.8006" v0="0.1577" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="47" u0="0.3046" v0="0.6925" />
+          <vertex vid="15" u0="0.3149" v0="0.7401" />
+          <vertex vid="24" u0="0.2401" v0="0.7743" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="61" u0="0.3559" v0="0.6613" />
+          <vertex vid="27" u0="0.4102" v0="0.6588" />
+          <vertex vid="62" u0="0.4285" v0="0.7457" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="7" u0="0.7148" v0="0.3404" />
+          <vertex vid="29" u0="0.6448" v0="0.2285" />
+          <vertex vid="87" u0="0.7176" v0="0.2954" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="7" u0="0.7148" v0="0.3404" />
+          <vertex vid="87" u0="0.7176" v0="0.2954" />
+          <vertex vid="6" u0="0.7695" v0="0.3275" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="32" u0="0.5335" v0="0.5642" />
+          <vertex vid="77" u0="0.5332" v0="0.528" />
+          <vertex vid="17" u0="0.6356" v0="0.6085" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="27" u0="0.4102" v0="0.6588" />
+          <vertex vid="25" u0="0.486" v0="0.7062" />
+          <vertex vid="62" u0="0.4285" v0="0.7457" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="75" u0="0.7687" v0="0.1941" />
+          <vertex vid="108" u0="0.7124" v0="0.2403" />
+          <vertex vid="104" u0="0.6919" v0="0.1671" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="99" u0="0.7652" v0="0.1264" />
+          <vertex vid="39" u0="0.7321" v0="0.07550001" />
+          <vertex vid="65" u0="0.8136" v0="0.02149999" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="42" u0="0.5921" v0="0.818" />
+          <vertex vid="89" u0="0.4947" v0="0.7868" />
+          <vertex vid="81" u0="0.5536" v0="0.7351" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="12" u0="0.9061" v0="0.443" />
+          <vertex vid="45" u0="0.8271" v0="0.3747" />
+          <vertex vid="34" u0="0.8954" v0="0.3533" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="5" u0="0.2392" v0="0.499" />
+          <vertex vid="20" u0="0.1892" v0="0.5924" />
+          <vertex vid="72" u0="0.1215" v0="0.5887" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="67" u0="0.288" v0="0.5869" />
+          <vertex vid="95" u0="0.2287" v0="0.561" />
+          <vertex vid="5" u0="0.2392" v0="0.499" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="35" u0="0.2836" v0="0.9976" />
+          <vertex vid="65" u0="0.1503" v0="0.8887" />
+          <vertex vid="21" u0="0.2318" v0="0.8312" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="50" u0="0.1967" v0="0.7357" />
+          <vertex vid="90" u0="0.1364" v0="0.7147" />
+          <vertex vid="46" u0="0.1878" v0="0.6586" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="22" u0="0.4315" v0="0.439" />
+          <vertex vid="11" u0="0.403" v0="0.3645" />
+          <vertex vid="58" u0="0.499" v0="0.4951" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="113" u0="0.4538" v0="0.4808" />
+          <vertex vid="58" u0="0.499" v0="0.4951" />
+          <vertex vid="111" u0="0.4339" v0="0.5505" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="96" u0="0.0764" v0="0.7025" />
+          <vertex vid="0" u0="0.116" v0="0.7716" />
+          <vertex vid="23" u0="0.0807" v0="0.8111" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="50" u0="0.1967" v0="0.7357" />
+          <vertex vid="91" u0="0.1574" v0="0.8007" />
+          <vertex vid="90" u0="0.1364" v0="0.7147" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="21" u0="0.2318" v0="0.8312" />
+          <vertex vid="24" u0="0.2401" v0="0.7743" />
+          <vertex vid="4" u0="0.2955" v0="0.8532" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="50" u0="0.1967" v0="0.7357" />
+          <vertex vid="21" u0="0.2318" v0="0.8312" />
+          <vertex vid="91" u0="0.1574" v0="0.8007" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="55" u0="0.5715" v0="0.6715" />
+          <vertex vid="98" u0="0.5537" v0="0.6051" />
+          <vertex vid="17" u0="0.6356" v0="0.6085" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="42" u0="0.5921" v0="0.818" />
+          <vertex vid="81" u0="0.5536" v0="0.7351" />
+          <vertex vid="17" u0="0.6356" v0="0.6085" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="64" u0="0.712" v0="0.3972" />
+          <vertex vid="100" u0="0.721" v0="0.435" />
+          <vertex vid="13" u0="0.6778" v0="0.4636" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="112" u0="0.715" v0="0.4966" />
+          <vertex vid="40" u0="0.7589" v0="0.5334" />
+          <vertex vid="17" u0="0.6356" v0="0.6085" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="27" u0="0.4102" v0="0.6588" />
+          <vertex vid="101" u0="0.3592" v0="0.5549" />
+          <vertex vid="122" u0="0.4542" v0="0.5745" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="32" u0="0.5335" v0="0.5642" />
+          <vertex vid="122" u0="0.4542" v0="0.5745" />
+          <vertex vid="77" u0="0.5332" v0="0.528" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="72" u0="0.1215" v0="0.5887" />
+          <vertex vid="28" u0="0.1731" v0="0.4878" />
+          <vertex vid="5" u0="0.2392" v0="0.499" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="22" u0="0.4315" v0="0.439" />
+          <vertex vid="33" u0="0.3333" v0="0.4869" />
+          <vertex vid="94" u0="0.3401" v0="0.3909" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="30" u0="0.6682" v0="0.1859" />
+          <vertex vid="31" u0="0.6141" v0="0.2429" />
+          <vertex vid="71" u0="0.6034" v0="0.1608" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="78" u0="0.5745" v0="0.328" />
+          <vertex vid="36" u0="0.4847" v0="0.4018" />
+          <vertex vid="102" u0="0.4871" v0="0.3061" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="104" u0="0.6919" v0="0.1671" />
+          <vertex vid="38" u0="0.7015" v0="0.1033" />
+          <vertex vid="18" u0="0.7323" v0="0.1408" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="104" u0="0.6919" v0="0.1671" />
+          <vertex vid="71" u0="0.6034" v0="0.1608" />
+          <vertex vid="1" u0="0.6371" v0="0.09310001" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="30" u0="0.6682" v0="0.1859" />
+          <vertex vid="29" u0="0.6448" v0="0.2285" />
+          <vertex vid="31" u0="0.6141" v0="0.2429" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="29" u0="0.6448" v0="0.2285" />
+          <vertex vid="7" u0="0.7148" v0="0.3404" />
+          <vertex vid="63" u0="0.6528" v0="0.2898" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="84" u0="0.4816" v0="0.6281" />
+          <vertex vid="122" u0="0.4542" v0="0.5745" />
+          <vertex vid="32" u0="0.5335" v0="0.5642" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="54" u0="0.5318" v0="0.6499" />
+          <vertex vid="84" u0="0.4816" v0="0.6281" />
+          <vertex vid="98" u0="0.5537" v0="0.6051" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="33" u0="0.3333" v0="0.4869" />
+          <vertex vid="5" u0="0.2392" v0="0.499" />
+          <vertex vid="117" u0="0.2345" v0="0.4562" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="56" u0="0.3191" v0="0.5357" />
+          <vertex vid="67" u0="0.288" v0="0.5869" />
+          <vertex vid="5" u0="0.2392" v0="0.499" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="107" u0="0.4588" v0="0.8627" />
+          <vertex vid="52" u0="0.3373" v0="0.8818" />
+          <vertex vid="19" u0="0.4383" v0="0.7985" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="89" u0="0.4947" v0="0.7868" />
+          <vertex vid="105" u0="0.5122" v0="0.8396" />
+          <vertex vid="107" u0="0.4588" v0="0.8627" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="41" u0="0.8006" v0="0.1577" />
+          <vertex vid="35" u0="0.8905" v0="0.1585" />
+          <vertex vid="14" u0="0.8609" v0="0.2208" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="14" u0="0.8609" v0="0.2208" />
+          <vertex vid="35" u0="0.8905" v0="0.1585" />
+          <vertex vid="85" u0="0.9599" v0="0.2567" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="57" u0="0.5781" v0="0.4288" />
+          <vertex vid="36" u0="0.4847" v0="0.4018" />
+          <vertex vid="78" u0="0.5745" v0="0.328" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="51" u0="0.5981" v0="0.5325" />
+          <vertex vid="17" u0="0.6356" v0="0.6085" />
+          <vertex vid="77" u0="0.5332" v0="0.528" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="48" u0="0.439" v0="0.2184" />
+          <vertex vid="60" u0="0.3961" v0="0.2905" />
+          <vertex vid="37" u0="0.3592" v0="0.2381" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="37" u0="0.3592" v0="0.2381" />
+          <vertex vid="60" u0="0.3961" v0="0.2905" />
+          <vertex vid="103" u0="0.3432" v0="0.3299" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="39" u0="0.7321" v0="0.07550001" />
+          <vertex vid="18" u0="0.7323" v0="0.1408" />
+          <vertex vid="38" u0="0.7015" v0="0.1033" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="38" u0="0.7015" v0="0.1033" />
+          <vertex vid="104" u0="0.6919" v0="0.1671" />
+          <vertex vid="1" u0="0.6371" v0="0.09310001" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="39" u0="0.7321" v0="0.07550001" />
+          <vertex vid="1" u0="0.6371" v0="0.09310001" />
+          <vertex vid="118" u0="0.6173" v0="0.0323" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="39" u0="0.7321" v0="0.07550001" />
+          <vertex vid="38" u0="0.7015" v0="0.1033" />
+          <vertex vid="1" u0="0.6371" v0="0.09310001" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="26" u0="0.7531" v0="0.4124" />
+          <vertex vid="12" u0="0.9061" v0="0.443" />
+          <vertex vid="66" u0="0.7994" v0="0.4838" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="100" u0="0.721" v0="0.435" />
+          <vertex vid="114" u0="0.756" v0="0.4611" />
+          <vertex vid="13" u0="0.6778" v0="0.4636" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="14" u0="0.8609" v0="0.2208" />
+          <vertex vid="75" u0="0.7687" v0="0.1941" />
+          <vertex vid="41" u0="0.8006" v0="0.1577" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="39" u0="0.7321" v0="0.07550001" />
+          <vertex vid="99" u0="0.7652" v0="0.1264" />
+          <vertex vid="18" u0="0.7323" v0="0.1408" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="12" u0="0.9061" v0="0.443" />
+          <vertex vid="42" u0="0.8462" v0="0.5449" />
+          <vertex vid="66" u0="0.7994" v0="0.4838" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="105" u0="0.5122" v0="0.8396" />
+          <vertex vid="89" u0="0.4947" v0="0.7868" />
+          <vertex vid="42" u0="0.5921" v0="0.818" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="43" u0="0.1487" v0="0.6371" />
+          <vertex vid="72" u0="0.1215" v0="0.5887" />
+          <vertex vid="20" u0="0.1892" v0="0.5924" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="118" u0="0.0143" v0="0.7066" />
+          <vertex vid="96" u0="0.0764" v0="0.7025" />
+          <vertex vid="23" u0="0.0807" v0="0.8111" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="1" u0="0.6371" v0="0.09310001" />
+          <vertex vid="44" u0="0.508" v0="0.08050001" />
+          <vertex vid="118" u0="0.6173" v0="0.0323" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="37" u0="0.1324" v0="0.4674" />
+          <vertex vid="72" u0="0.1215" v0="0.5887" />
+          <vertex vid="74" u0="0.079" v0="0.5429" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="45" u0="0.8271" v0="0.3747" />
+          <vertex vid="26" u0="0.7531" v0="0.4124" />
+          <vertex vid="83" u0="0.8124" v0="0.3286" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="83" u0="0.8124" v0="0.3286" />
+          <vertex vid="70" u0="0.8697" v0="0.3031" />
+          <vertex vid="45" u0="0.8271" v0="0.3747" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="43" u0="0.1487" v0="0.6371" />
+          <vertex vid="20" u0="0.1892" v0="0.5924" />
+          <vertex vid="46" u0="0.1878" v0="0.6586" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="46" u0="0.1878" v0="0.6586" />
+          <vertex vid="20" u0="0.1892" v0="0.5924" />
+          <vertex vid="49" u0="0.2466" v0="0.6218" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="8" u0="0.2415" v0="0.6746" />
+          <vertex vid="47" u0="0.3046" v0="0.6925" />
+          <vertex vid="24" u0="0.2401" v0="0.7743" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="8" u0="0.2415" v0="0.6746" />
+          <vertex vid="124" u0="0.2153" v0="0.6511" />
+          <vertex vid="69" u0="0.2887" v0="0.6376" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="92" u0="0.6311" v0="0.3025" />
+          <vertex vid="82" u0="0.4928" v0="0.2513" />
+          <vertex vid="88" u0="0.5777" v0="0.2263" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="82" u0="0.4928" v0="0.2513" />
+          <vertex vid="76" u0="0.4701" v0="0.1598" />
+          <vertex vid="2" u0="0.5392" v0="0.2092" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="8" u0="0.2415" v0="0.6746" />
+          <vertex vid="69" u0="0.2887" v0="0.6376" />
+          <vertex vid="47" u0="0.3046" v0="0.6925" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="101" u0="0.3592" v0="0.5549" />
+          <vertex vid="61" u0="0.3559" v0="0.6613" />
+          <vertex vid="93" u0="0.3109" v0="0.6221" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="50" u0="0.1967" v0="0.7357" />
+          <vertex vid="8" u0="0.2415" v0="0.6746" />
+          <vertex vid="24" u0="0.2401" v0="0.7743" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="21" u0="0.2318" v0="0.8312" />
+          <vertex vid="50" u0="0.1967" v0="0.7357" />
+          <vertex vid="24" u0="0.2401" v0="0.7743" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="51" u0="0.5981" v0="0.5325" />
+          <vertex vid="36" u0="0.4847" v0="0.4018" />
+          <vertex vid="57" u0="0.5781" v0="0.4288" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="57" u0="0.5781" v0="0.4288" />
+          <vertex vid="53" u0="0.6563" v0="0.5331" />
+          <vertex vid="51" u0="0.5981" v0="0.5325" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="52" u0="0.3373" v0="0.8818" />
+          <vertex vid="35" u0="0.2836" v0="0.9976" />
+          <vertex vid="4" u0="0.2955" v0="0.8532" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="52" u0="0.3373" v0="0.8818" />
+          <vertex vid="4" u0="0.2955" v0="0.8532" />
+          <vertex vid="97" u0="0.3408" v0="0.764" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="53" u0="0.6563" v0="0.5331" />
+          <vertex vid="57" u0="0.5781" v0="0.4288" />
+          <vertex vid="13" u0="0.6778" v0="0.4636" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="112" u0="0.715" v0="0.4966" />
+          <vertex vid="13" u0="0.6778" v0="0.4636" />
+          <vertex vid="114" u0="0.756" v0="0.4611" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="55" u0="0.5715" v0="0.6715" />
+          <vertex vid="54" u0="0.5318" v0="0.6499" />
+          <vertex vid="98" u0="0.5537" v0="0.6051" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="84" u0="0.4816" v0="0.6281" />
+          <vertex vid="54" u0="0.5318" v0="0.6499" />
+          <vertex vid="25" u0="0.486" v0="0.7062" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="54" u0="0.5318" v0="0.6499" />
+          <vertex vid="55" u0="0.5715" v0="0.6715" />
+          <vertex vid="25" u0="0.486" v0="0.7062" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="81" u0="0.5536" v0="0.7351" />
+          <vertex vid="62" u0="0.4285" v0="0.7457" />
+          <vertex vid="25" u0="0.486" v0="0.7062" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="33" u0="0.3333" v0="0.4869" />
+          <vertex vid="56" u0="0.3191" v0="0.5357" />
+          <vertex vid="5" u0="0.2392" v0="0.499" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="110" u0="0.379" v0="0.5515" />
+          <vertex vid="101" u0="0.3592" v0="0.5549" />
+          <vertex vid="33" u0="0.3333" v0="0.4869" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="3" u0="0.5999" v0="0.3607" />
+          <vertex vid="57" u0="0.5781" v0="0.4288" />
+          <vertex vid="78" u0="0.5745" v0="0.328" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="57" u0="0.5781" v0="0.4288" />
+          <vertex vid="79" u0="0.6491" v0="0.3883" />
+          <vertex vid="13" u0="0.6778" v0="0.4636" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="58" u0="0.499" v0="0.4951" />
+          <vertex vid="11" u0="0.403" v0="0.3645" />
+          <vertex vid="36" u0="0.4847" v0="0.4018" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="51" u0="0.5981" v0="0.5325" />
+          <vertex vid="86" u0="0.5661" v0="0.4945" />
+          <vertex vid="36" u0="0.4847" v0="0.4018" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="36" u0="0.4847" v0="0.4018" />
+          <vertex vid="11" u0="0.403" v0="0.3645" />
+          <vertex vid="59" u0="0.4601" v0="0.3647" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="59" u0="0.4601" v0="0.3647" />
+          <vertex vid="121" u0="0.4008" v0="0.3168" />
+          <vertex vid="102" u0="0.4871" v0="0.3061" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="11" u0="0.403" v0="0.3645" />
+          <vertex vid="94" u0="0.3401" v0="0.3909" />
+          <vertex vid="121" u0="0.4008" v0="0.3168" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="121" u0="0.4008" v0="0.3168" />
+          <vertex vid="59" u0="0.4601" v0="0.3647" />
+          <vertex vid="11" u0="0.403" v0="0.3645" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="47" u0="0.3046" v0="0.6925" />
+          <vertex vid="61" u0="0.3559" v0="0.6613" />
+          <vertex vid="123" u0="0.3746" v0="0.7401" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="93" u0="0.3109" v0="0.6221" />
+          <vertex vid="61" u0="0.3559" v0="0.6613" />
+          <vertex vid="47" u0="0.3046" v0="0.6925" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="97" u0="0.3408" v0="0.764" />
+          <vertex vid="62" u0="0.4285" v0="0.7457" />
+          <vertex vid="19" u0="0.4383" v0="0.7985" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="47" u0="0.3046" v0="0.6925" />
+          <vertex vid="123" u0="0.3746" v0="0.7401" />
+          <vertex vid="15" u0="0.3149" v0="0.7401" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="29" u0="0.6448" v0="0.2285" />
+          <vertex vid="63" u0="0.6528" v0="0.2898" />
+          <vertex vid="31" u0="0.6141" v0="0.2429" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="92" u0="0.6311" v0="0.3025" />
+          <vertex vid="88" u0="0.5777" v0="0.2263" />
+          <vertex vid="31" u0="0.6141" v0="0.2429" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="7" u0="0.7148" v0="0.3404" />
+          <vertex vid="64" u0="0.712" v0="0.3972" />
+          <vertex vid="80" u0="0.6477" v0="0.3573" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="6" u0="0.7695" v0="0.3275" />
+          <vertex vid="64" u0="0.712" v0="0.3972" />
+          <vertex vid="7" u0="0.7148" v0="0.3404" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="39" u0="0.7321" v0="0.07550001" />
+          <vertex vid="23" u0="0.7345" v0="0.003400028" />
+          <vertex vid="65" u0="0.8136" v0="0.02149999" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="23" u0="0.0807" v0="0.8111" />
+          <vertex vid="0" u0="0.116" v0="0.7716" />
+          <vertex vid="91" u0="0.1574" v0="0.8007" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="66" u0="0.7994" v0="0.4838" />
+          <vertex vid="42" u0="0.8462" v0="0.5449" />
+          <vertex vid="40" u0="0.7589" v0="0.5334" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="116" u0="0.7613" v0="0.5093" />
+          <vertex vid="40" u0="0.7589" v0="0.5334" />
+          <vertex vid="112" u0="0.715" v0="0.4966" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="49" u0="0.2466" v0="0.6218" />
+          <vertex vid="95" u0="0.2287" v0="0.561" />
+          <vertex vid="67" u0="0.288" v0="0.5869" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="49" u0="0.2466" v0="0.6218" />
+          <vertex vid="69" u0="0.2887" v0="0.6376" />
+          <vertex vid="124" u0="0.2153" v0="0.6511" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="68" u0="0.8143" v0="0.25" />
+          <vertex vid="75" u0="0.7687" v0="0.1941" />
+          <vertex vid="14" u0="0.8609" v0="0.2208" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="68" u0="0.8143" v0="0.25" />
+          <vertex vid="70" u0="0.8697" v0="0.3031" />
+          <vertex vid="119" u0="0.7826" v0="0.2731" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="49" u0="0.2466" v0="0.6218" />
+          <vertex vid="67" u0="0.288" v0="0.5869" />
+          <vertex vid="69" u0="0.2887" v0="0.6376" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="69" u0="0.2887" v0="0.6376" />
+          <vertex vid="67" u0="0.288" v0="0.5869" />
+          <vertex vid="56" u0="0.3191" v0="0.5357" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="14" u0="0.8609" v0="0.2208" />
+          <vertex vid="85" u0="0.9599" v0="0.2567" />
+          <vertex vid="70" u0="0.8697" v0="0.3031" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="68" u0="0.8143" v0="0.25" />
+          <vertex vid="14" u0="0.8609" v0="0.2208" />
+          <vertex vid="70" u0="0.8697" v0="0.3031" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="2" u0="0.5392" v0="0.2092" />
+          <vertex vid="44" u0="0.508" v0="0.08050001" />
+          <vertex vid="71" u0="0.6034" v0="0.1608" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="31" u0="0.6141" v0="0.2429" />
+          <vertex vid="88" u0="0.5777" v0="0.2263" />
+          <vertex vid="71" u0="0.6034" v0="0.1608" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="10" u0="0.0798" v0="0.6436" />
+          <vertex vid="72" u0="0.1215" v0="0.5887" />
+          <vertex vid="120" u0="0.1049" v0="0.6678" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="74" u0="0.079" v0="0.5429" />
+          <vertex vid="72" u0="0.1215" v0="0.5887" />
+          <vertex vid="126" u0="0.0603" v0="0.6104" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="44" u0="0.002" v0="0.6224" />
+          <vertex vid="73" u0="0.018" v0="0.5767" />
+          <vertex vid="126" u0="0.0603" v0="0.6104" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="44" u0="0.508" v0="0.08050001" />
+          <vertex vid="2" u0="0.5392" v0="0.2092" />
+          <vertex vid="76" u0="0.4701" v0="0.1598" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="73" u0="0.018" v0="0.5767" />
+          <vertex vid="74" u0="0.079" v0="0.5429" />
+          <vertex vid="126" u0="0.0603" v0="0.6104" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="44" u0="0.508" v0="0.08050001" />
+          <vertex vid="76" u0="0.4701" v0="0.1598" />
+          <vertex vid="73" u0="0.4368" v0="0.1145" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="75" u0="0.7687" v0="0.1941" />
+          <vertex vid="104" u0="0.6919" v0="0.1671" />
+          <vertex vid="18" u0="0.7323" v0="0.1408" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="75" u0="0.7687" v0="0.1941" />
+          <vertex vid="18" u0="0.7323" v0="0.1408" />
+          <vertex vid="41" u0="0.8006" v0="0.1577" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="106" u0="0.4209" v0="0.1858" />
+          <vertex vid="37" u0="0.3592" v0="0.2381" />
+          <vertex vid="74" u0="0.374" v0="0.1546" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="74" u0="0.374" v0="0.1546" />
+          <vertex vid="73" u0="0.4368" v0="0.1145" />
+          <vertex vid="106" u0="0.4209" v0="0.1858" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="58" u0="0.499" v0="0.4951" />
+          <vertex vid="77" u0="0.5332" v0="0.528" />
+          <vertex vid="111" u0="0.4339" v0="0.5505" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="86" u0="0.5661" v0="0.4945" />
+          <vertex vid="58" u0="0.499" v0="0.4951" />
+          <vertex vid="36" u0="0.4847" v0="0.4018" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="78" u0="0.5745" v0="0.328" />
+          <vertex vid="102" u0="0.4871" v0="0.3061" />
+          <vertex vid="92" u0="0.6311" v0="0.3025" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="78" u0="0.5745" v0="0.328" />
+          <vertex vid="92" u0="0.6311" v0="0.3025" />
+          <vertex vid="3" u0="0.5999" v0="0.3607" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="92" u0="0.6311" v0="0.3025" />
+          <vertex vid="79" u0="0.6491" v0="0.3883" />
+          <vertex vid="3" u0="0.5999" v0="0.3607" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="79" u0="0.6491" v0="0.3883" />
+          <vertex vid="57" u0="0.5781" v0="0.4288" />
+          <vertex vid="3" u0="0.5999" v0="0.3607" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="79" u0="0.6491" v0="0.3883" />
+          <vertex vid="92" u0="0.6311" v0="0.3025" />
+          <vertex vid="80" u0="0.6477" v0="0.3573" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="64" u0="0.712" v0="0.3972" />
+          <vertex vid="79" u0="0.6491" v0="0.3883" />
+          <vertex vid="80" u0="0.6477" v0="0.3573" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="17" u0="0.6356" v0="0.6085" />
+          <vertex vid="81" u0="0.5536" v0="0.7351" />
+          <vertex vid="55" u0="0.5715" v0="0.6715" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="25" u0="0.486" v0="0.7062" />
+          <vertex vid="55" u0="0.5715" v0="0.6715" />
+          <vertex vid="81" u0="0.5536" v0="0.7351" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="82" u0="0.4928" v0="0.2513" />
+          <vertex vid="48" u0="0.439" v0="0.2184" />
+          <vertex vid="76" u0="0.4701" v0="0.1598" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="82" u0="0.4928" v0="0.2513" />
+          <vertex vid="60" u0="0.3961" v0="0.2905" />
+          <vertex vid="48" u0="0.439" v0="0.2184" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="26" u0="0.7531" v0="0.4124" />
+          <vertex vid="6" u0="0.7695" v0="0.3275" />
+          <vertex vid="83" u0="0.8124" v0="0.3286" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="83" u0="0.8124" v0="0.3286" />
+          <vertex vid="6" u0="0.7695" v0="0.3275" />
+          <vertex vid="119" u0="0.7826" v0="0.2731" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="27" u0="0.4102" v0="0.6588" />
+          <vertex vid="84" u0="0.4816" v0="0.6281" />
+          <vertex vid="25" u0="0.486" v0="0.7062" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="122" u0="0.4542" v0="0.5745" />
+          <vertex vid="84" u0="0.4816" v0="0.6281" />
+          <vertex vid="27" u0="0.4102" v0="0.6588" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="70" u0="0.8697" v0="0.3031" />
+          <vertex vid="85" u0="0.9599" v0="0.2567" />
+          <vertex vid="109" u0="0.9317" v0="0.3433" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="85" u0="0.4132" v0="0.9357" />
+          <vertex vid="52" u0="0.3373" v0="0.8818" />
+          <vertex vid="107" u0="0.4588" v0="0.8627" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="86" u0="0.5661" v0="0.4945" />
+          <vertex vid="77" u0="0.5332" v0="0.528" />
+          <vertex vid="58" u0="0.499" v0="0.4951" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="86" u0="0.5661" v0="0.4945" />
+          <vertex vid="51" u0="0.5981" v0="0.5325" />
+          <vertex vid="77" u0="0.5332" v0="0.528" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="16" u0="0.7521" v0="0.2421" />
+          <vertex vid="6" u0="0.7695" v0="0.3275" />
+          <vertex vid="108" u0="0.7124" v0="0.2403" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="108" u0="0.7124" v0="0.2403" />
+          <vertex vid="75" u0="0.7687" v0="0.1941" />
+          <vertex vid="16" u0="0.7521" v0="0.2421" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="88" u0="0.5777" v0="0.2263" />
+          <vertex vid="82" u0="0.4928" v0="0.2513" />
+          <vertex vid="2" u0="0.5392" v0="0.2092" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="2" u0="0.5392" v0="0.2092" />
+          <vertex vid="71" u0="0.6034" v0="0.1608" />
+          <vertex vid="88" u0="0.5777" v0="0.2263" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="89" u0="0.4947" v0="0.7868" />
+          <vertex vid="19" u0="0.4383" v0="0.7985" />
+          <vertex vid="81" u0="0.5536" v0="0.7351" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="107" u0="0.4588" v0="0.8627" />
+          <vertex vid="19" u0="0.4383" v0="0.7985" />
+          <vertex vid="89" u0="0.4947" v0="0.7868" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="96" u0="0.0764" v0="0.7025" />
+          <vertex vid="90" u0="0.1364" v0="0.7147" />
+          <vertex vid="0" u0="0.116" v0="0.7716" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="0" u0="0.116" v0="0.7716" />
+          <vertex vid="90" u0="0.1364" v0="0.7147" />
+          <vertex vid="91" u0="0.1574" v0="0.8007" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="65" u0="0.1503" v0="0.8887" />
+          <vertex vid="23" u0="0.0807" v0="0.8111" />
+          <vertex vid="91" u0="0.1574" v0="0.8007" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="65" u0="0.1503" v0="0.8887" />
+          <vertex vid="91" u0="0.1574" v0="0.8007" />
+          <vertex vid="21" u0="0.2318" v0="0.8312" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="63" u0="0.6528" v0="0.2898" />
+          <vertex vid="92" u0="0.6311" v0="0.3025" />
+          <vertex vid="31" u0="0.6141" v0="0.2429" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="63" u0="0.6528" v0="0.2898" />
+          <vertex vid="7" u0="0.7148" v0="0.3404" />
+          <vertex vid="92" u0="0.6311" v0="0.3025" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="69" u0="0.2887" v0="0.6376" />
+          <vertex vid="93" u0="0.3109" v0="0.6221" />
+          <vertex vid="47" u0="0.3046" v0="0.6925" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="93" u0="0.3109" v0="0.6221" />
+          <vertex vid="69" u0="0.2887" v0="0.6376" />
+          <vertex vid="56" u0="0.3191" v0="0.5357" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="94" u0="0.3401" v0="0.3909" />
+          <vertex vid="33" u0="0.3333" v0="0.4869" />
+          <vertex vid="117" u0="0.2345" v0="0.4562" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="103" u0="0.3432" v0="0.3299" />
+          <vertex vid="117" u0="0.2968" v0="0.3091" />
+          <vertex vid="37" u0="0.3592" v0="0.2381" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="95" u0="0.2287" v0="0.561" />
+          <vertex vid="20" u0="0.1892" v0="0.5924" />
+          <vertex vid="5" u0="0.2392" v0="0.499" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="95" u0="0.2287" v0="0.561" />
+          <vertex vid="49" u0="0.2466" v0="0.6218" />
+          <vertex vid="20" u0="0.1892" v0="0.5924" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="120" u0="0.1049" v0="0.6678" />
+          <vertex vid="43" u0="0.1487" v0="0.6371" />
+          <vertex vid="46" u0="0.1878" v0="0.6586" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="120" u0="0.1049" v0="0.6678" />
+          <vertex vid="72" u0="0.1215" v0="0.5887" />
+          <vertex vid="43" u0="0.1487" v0="0.6371" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="24" u0="0.2401" v0="0.7743" />
+          <vertex vid="15" u0="0.3149" v0="0.7401" />
+          <vertex vid="97" u0="0.3408" v0="0.764" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="123" u0="0.3746" v0="0.7401" />
+          <vertex vid="97" u0="0.3408" v0="0.764" />
+          <vertex vid="15" u0="0.3149" v0="0.7401" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="98" u0="0.5537" v0="0.6051" />
+          <vertex vid="84" u0="0.4816" v0="0.6281" />
+          <vertex vid="32" u0="0.5335" v0="0.5642" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="17" u0="0.6356" v0="0.6085" />
+          <vertex vid="98" u0="0.5537" v0="0.6051" />
+          <vertex vid="32" u0="0.5335" v0="0.5642" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="99" u0="0.7652" v0="0.1264" />
+          <vertex vid="41" u0="0.8006" v0="0.1577" />
+          <vertex vid="18" u0="0.7323" v0="0.1408" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="99" u0="0.7652" v0="0.1264" />
+          <vertex vid="65" u0="0.8136" v0="0.02149999" />
+          <vertex vid="41" u0="0.8006" v0="0.1577" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="64" u0="0.712" v0="0.3972" />
+          <vertex vid="26" u0="0.7531" v0="0.4124" />
+          <vertex vid="100" u0="0.721" v0="0.435" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="100" u0="0.721" v0="0.435" />
+          <vertex vid="26" u0="0.7531" v0="0.4124" />
+          <vertex vid="114" u0="0.756" v0="0.4611" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="33" u0="0.3333" v0="0.4869" />
+          <vertex vid="101" u0="0.3592" v0="0.5549" />
+          <vertex vid="56" u0="0.3191" v0="0.5357" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="101" u0="0.3592" v0="0.5549" />
+          <vertex vid="93" u0="0.3109" v0="0.6221" />
+          <vertex vid="56" u0="0.3191" v0="0.5357" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="102" u0="0.4871" v0="0.3061" />
+          <vertex vid="121" u0="0.4008" v0="0.3168" />
+          <vertex vid="82" u0="0.4928" v0="0.2513" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="92" u0="0.6311" v0="0.3025" />
+          <vertex vid="102" u0="0.4871" v0="0.3061" />
+          <vertex vid="82" u0="0.4928" v0="0.2513" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="103" u0="0.3432" v0="0.3299" />
+          <vertex vid="60" u0="0.3961" v0="0.2905" />
+          <vertex vid="94" u0="0.3401" v0="0.3909" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="94" u0="0.3401" v0="0.3909" />
+          <vertex vid="117" u0="0.2968" v0="0.3091" />
+          <vertex vid="103" u0="0.3432" v0="0.3299" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="108" u0="0.7124" v0="0.2403" />
+          <vertex vid="30" u0="0.6682" v0="0.1859" />
+          <vertex vid="104" u0="0.6919" v0="0.1671" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="30" u0="0.6682" v0="0.1859" />
+          <vertex vid="71" u0="0.6034" v0="0.1608" />
+          <vertex vid="104" u0="0.6919" v0="0.1671" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="42" u0="0.5921" v0="0.818" />
+          <vertex vid="12" u0="0.5422" v0="0.8889" />
+          <vertex vid="105" u0="0.5122" v0="0.8396" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="12" u0="0.5422" v0="0.8889" />
+          <vertex vid="107" u0="0.4588" v0="0.8627" />
+          <vertex vid="105" u0="0.5122" v0="0.8396" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="106" u0="0.4209" v0="0.1858" />
+          <vertex vid="76" u0="0.4701" v0="0.1598" />
+          <vertex vid="48" u0="0.439" v0="0.2184" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="76" u0="0.4701" v0="0.1598" />
+          <vertex vid="106" u0="0.4209" v0="0.1858" />
+          <vertex vid="73" u0="0.4368" v0="0.1145" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="12" u0="0.5422" v0="0.8889" />
+          <vertex vid="109" u0="0.4842" v0="0.9321" />
+          <vertex vid="125" u0="0.4576" v0="0.8966" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="85" u0="0.4132" v0="0.9357" />
+          <vertex vid="125" u0="0.4576" v0="0.8966" />
+          <vertex vid="109" u0="0.4842" v0="0.9321" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="29" u0="0.6448" v0="0.2285" />
+          <vertex vid="108" u0="0.7124" v0="0.2403" />
+          <vertex vid="87" u0="0.7176" v0="0.2954" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="108" u0="0.7124" v0="0.2403" />
+          <vertex vid="6" u0="0.7695" v0="0.3275" />
+          <vertex vid="87" u0="0.7176" v0="0.2954" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="70" u0="0.8697" v0="0.3031" />
+          <vertex vid="109" u0="0.9317" v0="0.3433" />
+          <vertex vid="34" u0="0.8954" v0="0.3533" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="34" u0="0.8954" v0="0.3533" />
+          <vertex vid="109" u0="0.9317" v0="0.3433" />
+          <vertex vid="12" u0="0.9061" v0="0.443" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="9" u0="0.389" v0="0.5268" />
+          <vertex vid="110" u0="0.379" v0="0.5515" />
+          <vertex vid="33" u0="0.3333" v0="0.4869" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="111" u0="0.4339" v0="0.5505" />
+          <vertex vid="9" u0="0.389" v0="0.5268" />
+          <vertex vid="115" u0="0.397" v0="0.4757" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="9" u0="0.389" v0="0.5268" />
+          <vertex vid="111" u0="0.4339" v0="0.5505" />
+          <vertex vid="110" u0="0.379" v0="0.5515" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="77" u0="0.5332" v0="0.528" />
+          <vertex vid="122" u0="0.4542" v0="0.5745" />
+          <vertex vid="111" u0="0.4339" v0="0.5505" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="53" u0="0.6563" v0="0.5331" />
+          <vertex vid="112" u0="0.715" v0="0.4966" />
+          <vertex vid="17" u0="0.6356" v0="0.6085" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="53" u0="0.6563" v0="0.5331" />
+          <vertex vid="13" u0="0.6778" v0="0.4636" />
+          <vertex vid="112" u0="0.715" v0="0.4966" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="113" u0="0.4538" v0="0.4808" />
+          <vertex vid="22" u0="0.4315" v0="0.439" />
+          <vertex vid="58" u0="0.499" v0="0.4951" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="115" u0="0.397" v0="0.4757" />
+          <vertex vid="33" u0="0.3333" v0="0.4869" />
+          <vertex vid="22" u0="0.4315" v0="0.439" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="114" u0="0.756" v0="0.4611" />
+          <vertex vid="116" u0="0.7613" v0="0.5093" />
+          <vertex vid="112" u0="0.715" v0="0.4966" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="66" u0="0.7994" v0="0.4838" />
+          <vertex vid="114" u0="0.756" v0="0.4611" />
+          <vertex vid="26" u0="0.7531" v0="0.4124" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="113" u0="0.4538" v0="0.4808" />
+          <vertex vid="115" u0="0.397" v0="0.4757" />
+          <vertex vid="22" u0="0.4315" v0="0.439" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="111" u0="0.4339" v0="0.5505" />
+          <vertex vid="115" u0="0.397" v0="0.4757" />
+          <vertex vid="113" u0="0.4538" v0="0.4808" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="66" u0="0.7994" v0="0.4838" />
+          <vertex vid="116" u0="0.7613" v0="0.5093" />
+          <vertex vid="114" u0="0.756" v0="0.4611" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="66" u0="0.7994" v0="0.4838" />
+          <vertex vid="40" u0="0.7589" v0="0.5334" />
+          <vertex vid="116" u0="0.7613" v0="0.5093" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="28" u0="0.1731" v0="0.4878" />
+          <vertex vid="117" u0="0.2345" v0="0.4562" />
+          <vertex vid="5" u0="0.2392" v0="0.499" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="117" u0="0.2345" v0="0.4562" />
+          <vertex vid="28" u0="0.1731" v0="0.4878" />
+          <vertex vid="37" u0="0.1324" v0="0.4674" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="44" u0="0.002" v0="0.6224" />
+          <vertex vid="10" u0="0.0798" v0="0.6436" />
+          <vertex vid="118" u0="0.0143" v0="0.7066" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="96" u0="0.0764" v0="0.7025" />
+          <vertex vid="118" u0="0.0143" v0="0.7066" />
+          <vertex vid="10" u0="0.0798" v0="0.6436" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="6" u0="0.7695" v0="0.3275" />
+          <vertex vid="16" u0="0.7521" v0="0.2421" />
+          <vertex vid="119" u0="0.7826" v0="0.2731" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="68" u0="0.8143" v0="0.25" />
+          <vertex vid="119" u0="0.7826" v0="0.2731" />
+          <vertex vid="16" u0="0.7521" v0="0.2421" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="96" u0="0.0764" v0="0.7025" />
+          <vertex vid="10" u0="0.0798" v0="0.6436" />
+          <vertex vid="120" u0="0.1049" v0="0.6678" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="90" u0="0.1364" v0="0.7147" />
+          <vertex vid="96" u0="0.0764" v0="0.7025" />
+          <vertex vid="120" u0="0.1049" v0="0.6678" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="94" u0="0.3401" v0="0.3909" />
+          <vertex vid="60" u0="0.3961" v0="0.2905" />
+          <vertex vid="121" u0="0.4008" v0="0.3168" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="60" u0="0.3961" v0="0.2905" />
+          <vertex vid="82" u0="0.4928" v0="0.2513" />
+          <vertex vid="121" u0="0.4008" v0="0.3168" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="122" u0="0.4542" v0="0.5745" />
+          <vertex vid="110" u0="0.379" v0="0.5515" />
+          <vertex vid="111" u0="0.4339" v0="0.5505" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="122" u0="0.4542" v0="0.5745" />
+          <vertex vid="101" u0="0.3592" v0="0.5549" />
+          <vertex vid="110" u0="0.379" v0="0.5515" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="97" u0="0.3408" v0="0.764" />
+          <vertex vid="123" u0="0.3746" v0="0.7401" />
+          <vertex vid="62" u0="0.4285" v0="0.7457" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="123" u0="0.3746" v0="0.7401" />
+          <vertex vid="61" u0="0.3559" v0="0.6613" />
+          <vertex vid="62" u0="0.4285" v0="0.7457" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="46" u0="0.1878" v0="0.6586" />
+          <vertex vid="49" u0="0.2466" v0="0.6218" />
+          <vertex vid="124" u0="0.2153" v0="0.6511" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="124" u0="0.2153" v0="0.6511" />
+          <vertex vid="50" u0="0.1967" v0="0.7357" />
+          <vertex vid="46" u0="0.1878" v0="0.6586" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="107" u0="0.4588" v0="0.8627" />
+          <vertex vid="125" u0="0.4576" v0="0.8966" />
+          <vertex vid="85" u0="0.4132" v0="0.9357" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="125" u0="0.4576" v0="0.8966" />
+          <vertex vid="107" u0="0.4588" v0="0.8627" />
+          <vertex vid="12" u0="0.5422" v0="0.8889" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="10" u0="0.0798" v0="0.6436" />
+          <vertex vid="44" u0="0.002" v0="0.6224" />
+          <vertex vid="126" u0="0.0603" v0="0.6104" />
+        </poly>
+        <poly mid="34">
+          <vertex vid="126" u0="0.0603" v0="0.6104" />
+          <vertex vid="72" u0="0.1215" v0="0.5887" />
+          <vertex vid="10" u0="0.0798" v0="0.6436" />
+        </poly>
+      </polygons>
+    </primitive>
+  </primitives>
+  <skeletons />
+  <lights highestID="5" />
+  <paths highestID="5" />
+</scene>

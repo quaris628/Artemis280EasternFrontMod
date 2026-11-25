@@ -1,0 +1,46 @@
+<scene version="1.6"> <materials highestID="16">
+<category name="System">
+    <material id="0" name="mine1" used="true" lightmap="true" castShadows="true" receiveShadows="true">
+    <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+        <specularColor r="255" g="255" b="255" />
+        <reflectiveColor r="255" g="255" b="255" />
+    </raytracing>
+    <layer type="texture" blend="replace">
+        <texture file="Artemis\mine1.png" />
+    </layer>
+    </material>
+</category>
+</materials>
+    <primitives highestID="2"> 
+        <primitive id="1" name="mesh" type="cylinder" visible="true" snap="none" autoUV="false" groupID="-1" skeletonID="-1"> 
+            <vertices> 
+                <vertex id="0" x="0.0" y="0.0" z="50.0" jointID="-1" /> 
+                <vertex id="1" x="47.14045333862305" y="0.0" z="-16.666667938232422" jointID="-1" /> 
+                <vertex id="2" x="-23.570226669311523" y="40.8248291015625" z="-16.666667938232422" jointID="-1" /> 
+                <vertex id="3" x="-23.570226669311523" y="-40.8248291015625" z="-16.666667938232422" jointID="-1" /> 
+            </vertices> 
+            <polygons> 
+                <poly mid="0"> 
+                    <vertex vid="0" u0="0.0" v0="0.0" /> 
+                    <vertex vid="1" u0="1.0" v0="0.0" /> 
+                    <vertex vid="2" u0="1.0" v0="1.0" /> 
+                </poly> 
+                <poly mid="0"> 
+                    <vertex vid="0" u0="0.0" v0="0.0" /> 
+                    <vertex vid="2" u0="1.0" v0="0.0" /> 
+                    <vertex vid="3" u0="1.0" v0="1.0" /> 
+                </poly> 
+                <poly mid="0"> 
+                    <vertex vid="0" u0="0.0" v0="0.0" /> 
+                    <vertex vid="3" u0="1.0" v0="0.0" /> 
+                    <vertex vid="1" u0="1.0" v0="1.0" /> 
+                </poly> 
+                <poly mid="0"> 
+                    <vertex vid="1" u0="0.0" v0="0.0" /> 
+                    <vertex vid="3" u0="1.0" v0="0.0" /> 
+                    <vertex vid="2" u0="1.0" v0="1.0" /> 
+                </poly> 
+            </polygons> 
+        </primitive> 
+    </primitives> 
+</scene>

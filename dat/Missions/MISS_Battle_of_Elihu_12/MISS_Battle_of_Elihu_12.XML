@@ -1,0 +1,755 @@
+<!-- BATTLE OF ELIHU 12 -->
+<mission_data version="2.2" background_id_arme="">
+  <!-- ************************************************************ -->
+  <!-- The Start block creates everything that exists  -->
+  <!-- the moment the mission starts -->
+  <start name="BATTLE OF ELIHU 12">
+
+    <!-- Players start near the center of the 100,000 x 100,000 sector -->
+     <create type ="player" x="51000" y="0" z="41000" name="Artemis" angle="45" player_slot="0" raceKeys="TSN player" hullKeys="Dreadnought" warp="yes" jump="no"/>
+
+
+    <create type="station" x="50000" y="0" z="39500" name="Elihu Base" raceKeys="USFP friendly" hullKeys="Science Base"/>
+    <set_object_property property="missileStoresNuke" value="2" name="Elihu Base"/>
+    <set_object_property property="missileStoresHoming" value="47" name="Elihu Base"/>
+    <set_object_property property="missileStoresECM" value="12" name="Elihu Base"/>
+    <set_object_property property="missileStoresMine" value="40" name="Elihu Base"/>
+    <set_object_property property="missileStoresPshock" value="40" name="Elihu Base"/>
+
+    <!-- Players have Torgoth allies -->
+    <create type="neutral" x="50000" y="-500" z="38000" angle="45" name="Behemoth 1" raceKeys="Torgoth enemy" hullKeys="Behemoth large"/>
+    <create type="neutral" x="50500" y="0" z="38500" angle="45" name="Goliath 1" raceKeys="Torgoth enemy" hullKeys="Goliath small"/>
+    <create type="neutral" x="50500" y="500" z="38500" angle="45" name="Goliath 2" raceKeys="Torgoth enemy" hullKeys="Goliath small"/>
+    <create type="neutral" x="51000" y="0" z="38000" angle="45" name="Leviathan 1" raceKeys="Torgoth enemy" hullKeys="Leviathan medium"/>
+    <create type="neutral" x="49500" y="0" z="38500" angle="45" name="Leviathan 2" raceKeys="Torgoth enemy" hullKeys="Leviathan medium"/>
+    <set_special name="Behemoth 1" ship="0.0" captain="1.0"/>
+    <set_special name="Goliath 1" ship="1.0" captain="-1.0"/>
+    <set_special name="Goliath 2" ship="-1.0" captain="-1.0"/>
+    <set_special name="Leviathan 2" ship="-1.0" captain="-1.0"/>
+    <set_side_value value="2" name="Behemoth 1"/>
+    <set_side_value value="2" name="Goliath 1"/>
+    <set_side_value value="2" name="Goliath 2"/>
+    <set_side_value value="2" name="Leviathan 1"/>
+    <set_side_value value="2" name="Leviathan 2"/>
+    <set_ship_text name="Behemoth 1" race="Torgoth ally" hailtext="Our ship needs repair parts from Torgoth freighter T21."/>
+    <set_ship_text name="Goliath 1" race="Torgoth ally" hailtext="Please see to it that our flagship Behemoth 1 is repaired before battle."/>
+    <set_ship_text name="Goliath 2" race="Torgoth ally" hailtext="Standing by to follow your orders."/>
+    <set_ship_text name="Leviathan 1" race="Torgoth ally" hailtext="We are ready to crush the Arvonians!"/>
+    <set_ship_text name="Leviathan 2" race="Torgoth ally" hailtext="Awaiting orders, as always."/>
+    <create type ="neutral" x="41990" y="0" z="96010" raceKeys="Terran friendly" hullKeys="Cargo" name="T21" angle="0"/>
+    <set_ship_text name="T21" race="Torgoth ally" hailtext="We are carrying repair parts for Behemoth 1."/>
+    
+    <create type="neutral" x="41500" y="500" z="98000" angle="0" name="Goliath 14" raceKeys="Torgoth enemy" hullKeys="Goliath small"/>
+    <set_special name="Goliath 14" ship="1.0" captain="-1.0"/>
+
+  <create type="neutral" x="12000" y="0" z="66000" angle="270" name="EMP Support 17" raceKeys="USFP friendly" hullKeys="Bulk Cargo"/>
+
+  <create type ="neutral" x="12500" y="0" z="66500" raceKeys="Terran friendly" hullKeys="Destroyer medium" name="Havana" angle="270"/>
+  <set_ship_text name="Havana" race="TSN" class="Heavy Destroyer" hailtext="Captain Gabriella Rodriguez prepared for battle."/>
+  <set_special name="Havana" ship="1.0" captain="1.0"/>
+
+
+    <create type="neutral" x="91990" y="0" z="50010" angle="90" name="Terran Cargo 86" raceKeys="USFP friendly" hullKeys="Bulk Cargo"/>
+    <add_ai name ="TSN Cargo 86" type ="TARGET_THROTTLE" targetName="Elihu Base" value1="1"/>
+
+   <create type ="neutral" x="91900" y="0" z="50200" raceKeys="Terran friendly" hullKeys="Destroyer medium" name="Yokohama" angle="90"/>
+   <set_ship_text name="Yokohama" race="TSN" class="Heavy Destroyer" hailtext="Captain Pamela Petrov awaiting your orders."/>
+   <set_special name="Yokohama" ship="3.0" captain="0.0"/>
+
+    <set_object_property property="energy" value="1100" name="Artemis"/>
+    <set_object_property property="countECM" value="6" name="Artemis"/>
+    <set_object_property property="countMine" value="4" name="Artemis"/>
+    <set_object_property property="countNuke" value="3" name="Artemis"/>
+    <set_object_property property="countHoming" value="12" name="Artemis"/>
+    <set_object_property property="countPshock" value="2" name="Artemis"/>
+
+    <create type="enemy" x="38200" y="0" z="27600" angle="200" name="P11" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="20"/>
+    <create type="enemy" x="38100" y="500" z="27700" angle="200" name="Q12" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="20"/>
+    <create type="enemy" x="38300" y="-500" z="27500" angle="200" name="P13" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="20"/>
+
+    <set_ship_text name="Q12" class="Flag Carrier" desc="Captain LaRala commanding"/>
+
+
+    <create type="enemy" x="38500" y="0" z="27900" angle="200" name="Cloud Demon" raceKeys="Skaraan enemy" hullKeys="Defiler small" fleetnumber="20"/>
+    <set_object_property property="eliteAbilityBits" value="552" name="Cloud Demon"/>
+    <set_object_property property="eliteAIType" value="1" name="Cloud Demon"/>
+    
+    <create type="enemy" x="98200" y="0" z="67600" angle="60" name="P14" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="21"/>
+    <create type="enemy" x="98100" y="500" z="67700" angle="60" name="Q15" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="21"/>
+    <create type="enemy" x="98300" y="-500" z="67500" angle="60" name="P16" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="21"/>
+
+    <set_ship_text name="Q15" class="Flag Carrier" desc="Captain Lady Olnah has been knighted by the Queen."/>
+
+
+    <create type="enemy" x="98500" y="0" z="67900" angle="60" name="Dust Demon" raceKeys="Skaraan enemy" hullKeys="Defiler small" fleetnumber="21"/>
+    <set_object_property property="eliteAbilityBits" value="552" name="Dust Demon"/>
+    <set_object_property property="eliteAIType" value="1" name="Dust Demon"/>
+    
+    <create type="enemy" x="18200" y="0" z="77600" angle="320" name="H17" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="22"/>
+    <create type="enemy" x="18100" y="500" z="77700" angle="320" name="H18" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="22"/>
+    <create type="enemy" x="18300" y="-500" z="77500" angle="320" name="H19" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="22"/>
+    <create type="enemy" x="18800" y="-700" z="78500" angle="320" name="H20" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="22"/>
+    <create type="enemy" x="18800" y="700" z="77000" angle="320" name="H21" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="22"/>
+
+    <set_ship_text name="H17" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H18" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H19" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H20" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H21" class="Strike Carrier" desc="High Performance Light Carrier"/>
+
+
+    <create type="enemy" x="18500" y="0" z="77000" angle="60" name="Wisdom" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="22"/>
+    <set_object_property property="eliteAbilityBits" value="1800" name="Wisdom"/>
+    <set_object_property property="eliteAIType" value="1" name="Wisdom"/>
+
+    <create type="enemy" x="18400" y="0" z="76500" angle="60" name="Violence" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="22"/>
+    <set_object_property property="eliteAbilityBits" value="1800" name="Violence"/>
+    <set_object_property property="eliteAIType" value="1" name="Violence"/>
+    
+    <create type="enemy" x="58400" y="0" z="75500" angle="60" name="Death God" raceKeys="Skaraan enemy" hullKeys="Executor large"/>
+    <set_object_property property="eliteAbilityBits" value="1012" name="Death God"/>
+    <set_object_property property="eliteAIType" value="0" name="Death God"/>
+
+    <create type="enemy" x="47500" y="0" z="61400" angle="350" name="Iron God" raceKeys="Skaraan enemy" hullKeys="Executor large"/>
+    <set_object_property property="eliteAbilityBits" value="948" name="Iron God"/>
+    <set_object_property property="eliteAIType" value="0" name="Iron God"/>
+
+    
+    <create count="90" type="asteroids" startAngle="160" endAngle="200" startX="50000" startY="0" startZ="-50000" radius="100000" randomRange="20000" randomSeed="2"/>
+    <create count="90" type="asteroids" startAngle="160" endAngle="200" startX="50000" startY="-500" startZ="-50000" radius="100000" randomRange="20000" randomSeed="5"/>
+    <create count="90" type="asteroids" startAngle="160" endAngle="200" startX="50000" startY="500" startZ="-50000" radius="100000" randomRange="20000" randomSeed="9"/>
+    <create count="160" type="nebulas" startAngle="160" endAngle="200" startX="50000" startY="0" startZ="-50000" radius="100000" randomRange="30000" randomSeed="2"/>
+    <create type="anomaly" x="24500" y="0" z="21000" name="THX 1138"/>
+    <create type="anomaly" x="24500" y="0" z="21000" name="31337"/>
+    <create type="anomaly" x="76500" y="0" z="31000" name="anomaly 68"/>
+    <create type="anomaly" x="76800" y="0" z="41000" name="anomaly 42"/>
+    <create type="anomaly" x="85500" y="0" z="55500" name="anomaly 77"/>
+    <create type="anomaly" x="41500" y="0" z="56000" name="anomaly 31"/>
+    <create type="anomaly" x="76500" y="0" z="66000" name="anomaly 34"/>
+    <create type="anomaly" x="76000" y="0" z="46000" name="anomaly 32"/>
+    <create type="anomaly" x="96500" y="0" z="76000" name="anomaly 30"/>
+    <create type="anomaly" x="56500" y="0" z="86000" name="anomaly 01"/>
+    <create type="anomaly" x="17940" y="0" z="75000" name="anomaly 02"/>
+    <create type="anomaly" x="23560" y="0" z="64500" name="anomaly 06"/>
+    <create type="anomaly" x="22380" y="0" z="78800" name="anomaly 03"/>
+    <create type="anomaly" x="52380" y="0" z="78800" name="anomaly 04"/>
+    <create type="anomaly" x="50380" y="0" z="49800" name="anomaly 05"/>
+    <set_difficulty_level value="7"/>
+    
+  <create type ="whale" x="91990" y="0" z="58010" name="Biff" angle="275" podnumber="1"/>
+  <create type ="whale" x="91790" y="0" z="58210" name="Harry" angle="275" podnumber="1"/>
+  <create type ="whale" x="91590" y="0" z="58410" name="Maxine" angle="275" podnumber="1"/>
+  <create type ="whale" x="91390" y="0" z="60410" name="Leonid" angle="275" podnumber="1"/>
+
+  <create type ="whale" x="51990" y="0" z="18010" name="Ho Jon" angle="295" podnumber="2"/>
+  <create type ="whale" x="51790" y="0" z="18210" name="Thaddeus" angle="295" podnumber="2"/>
+  <create type ="whale" x="51590" y="0" z="18410" name="Lorain" angle="295" podnumber="2"/>
+  <create type ="whale" x="51390" y="0" z="20410" name="Marne" angle="295" podnumber="2"/>
+    <!-- The Start Block also sets the skybox, which will be the main screen background throughout the mission -->
+    <set_skybox_index index="15"/>
+    <!-- The Start Block also presents players with the mission title -->
+    <big_message title="THE BATTLE OF ELIHU 12" subtitle1="BY MIKE SUBSTELNY" subtitle2="a Canonical Battle for Artemis 2.2"/>
+    <set_difficulty_level value="6"/>
+    <!-- Finally, the start block sets timers and variables to start the game -->
+    <set_ship_text name="EMP Support 17" race="TSN Support" hailtext="We have an EMP torpedo for you."/>
+    <set_variable name="EMP_Ready" value="1"/>
+    <log text="Starting\n\n"/>
+    <set_timer name="credits_timer1" seconds="10"/>
+    <set_timer name="EMP_Fail_timer" seconds="20"/>
+    <set_timer name="Reinforcements_timer1" seconds="700"/>
+    <set_timer name="Reinforcements_timer2" seconds="1000"/>
+    <set_timer name="Reinforcements_timer3" seconds="1400"/>
+  </start>
+
+  <event name="Launch Aegis 1">
+    <if_distance name1="H17" name2="Artemis" comparator="LESS" value ="10000"/>
+    <if_variable name="Launch_Aegis1" comparator="NOT" value="1"/>
+    <create type="enemy" x="50200" y="0" z="36000" angle="200" name="F111" raceKeys="Skaraan enemy" hullKeys="Defiler small" fleetnumber="55"/>
+    <set_object_property property="eliteAbilityBits" value="512" name="F111"/>
+    <set_variable name="Launch_Aegis1" value="1"/>
+  </event>
+
+<event name="Equip Aegis 1">
+    <if_variable name="Launch_Aegis1" comparator="EQUALS" value="1"/>
+    <if_variable name="Equip_Aegis1" comparator="Not" value="1"/>
+    <set_object_property property="turnRate" value="0.2" name="F111"/>
+    <set_object_property property="topSpeed" value="1.35" name="F111"/>
+    <set_object_property name="F111" property="shieldMaxStateFront" value="20"/>
+    <set_object_property name="F111" property="shieldMaxStateBack" value="20"/>
+    <set_variable name="Equip_Aegis1" value="1"/>
+    <set_relative_position name2="F111" name1="H17" angle="0" distance="1500"/>
+    <copy_object_property name1="H17" name2="F111" property ="angle"/>
+    <add_ai name ="F111" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <set_ship_text name="F111" race="Arvonian" class="Aegis Fighter" desc="Equipped with anti-torp beams" scan_desc="The ultimate Arvonian technology."/>
+  </event>
+
+
+  <!-- The enemy is on the board immediately -->
+  <!-- Boost ship abilities to reflect tech level -->
+  <event name="Credits 1">
+    <if_timer_finished name="credits_timer1"/>
+    <if_variable name="credits1" comparator="NOT" value="1"/>
+    <big_message title="Recommended for TSN Dreadnought" subtitle1="with an experienced crew" subtitle2="Difficulty 7"/>
+    <set_ship_text name="Cloud Demon" race="Skaraan" class="Escort Defiler" desc="Designed to escort large fleets"/>
+    <set_variable name="credits1" value="1"/>
+    <set_object_property name="Behemoth 1" property="topSpeed" value="0.5"/>
+    <set_object_property name="Goliath 1" property="topSpeed" value="0.5"/>
+    <set_object_property name="Goliath 2" property="topSpeed" value="0.5"/>
+    <set_object_property name="Leviathan 1" property="topSpeed" value="0.5"/>
+    <set_object_property name="Leviathan 2" property="topSpeed" value="0.5"/>
+    <set_object_property name="Goliath 14" property="topSpeed" value="0.5"/>
+    <set_object_property name="T21" property="topSpeed" value="0.5"/>
+    <set_object_property name="Goliath 1" property="turnRate" value="0.003"/>
+    <set_object_property name="Goliath 2" property="turnRate" value="0.003"/>
+    <set_object_property name="Goliath 14" property="turnRate" value="0.003"/>
+    <set_object_property name="Leviathan 1" property="turnRate" value="0.003"/>
+    <set_object_property name="Leviathan 2" property="turnRate" value="0.003"/>
+    <set_object_property name="EMP Support 17" property="topSpeed" value="0.5"/>
+    <set_object_property name="EMP Support 17" property="topSpeed" value="0.5"/>
+    <set_object_property name="EMP Support 17" property="turnRate" value="0.004"/>
+    <set_object_property name="TSN Cargo 86" property="turnRate" value="0.004"/>
+    <set_object_property name="T21" property="turnRate" value="0.004"/>
+
+    <set_object_property name="P11" property="topSpeed" value="0.35"/>
+    <set_object_property name="Q12" property="topSpeed" value="0.35"/>
+    <set_object_property name="P13" property="topSpeed" value="0.35"/>
+    <set_special name="P11" ship="-1" captain="-1"/>
+    <set_special name="P13" ship="-1" captain="-1"/>
+    <set_special name="Cloud Demon" ship="1" captain="4"/>
+    <set_special name="Q12" ship="1" captain="1"/>
+    <set_object_property name="Q12" property="shieldMaxStateFront" value="400"/>
+    <set_object_property name="Q12" property="shieldMaxStateBack" value="400"/>
+    <set_object_property name="Q12" property="surrenderChance" value="0"/>
+
+    <set_object_property name="P14" property="topSpeed" value="0.35"/>
+    <set_object_property name="Q15" property="topSpeed" value="0.35"/>
+    <set_object_property name="P16" property="topSpeed" value="0.35"/>
+    <set_special name="P14" ship="-1" captain="-1"/>
+    <set_special name="P16" ship="-1" captain="-1"/>
+    <set_special name="Dust Demon" ship="1" captain="4"/>
+    <set_special name="Wisdom" ship="1" captain="4"/>
+    <set_special name="Violence" ship="1" captain="4"/>
+    <set_special name="Death God" ship="1" captain="4"/>
+    <set_special name="Iron God" ship="1" captain="4"/>
+    <set_special name="Q15" ship="1" captain="1"/>
+    <set_object_property name="Q15" property="shieldMaxStateFront" value="400"/>
+    <set_object_property name="Q15" property="shieldMaxStateBack" value="400"/>
+    <set_object_property name="Q15" property="surrenderChance" value="0"/>
+
+    <set_object_property name="H17" property="topSpeed" value="0.75"/>
+    <set_object_property name="H18" property="topSpeed" value="0.75"/>
+    <set_object_property name="H19" property="topSpeed" value="0.75"/>
+    <set_object_property name="H20" property="topSpeed" value="0.75"/>
+    <set_object_property name="H21" property="topSpeed" value="0.75"/>
+
+    <set_object_property name="H17" property="turnRate" value="0.007"/>
+    <set_object_property name="H18" property="turnRate" value="0.007"/>
+    <set_object_property name="H18" property="turnRate" value="0.007"/>
+    <set_object_property name="H20" property="turnRate" value="0.007"/>
+    <set_object_property name="H21" property="turnRate" value="0.007"/>
+
+    <set_object_property name="H17" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H17" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H18" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H18" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H19" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H19" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H20" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H20" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H21" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H21" property="shieldMaxStateBack" value="180"/>
+    <set_variable name="credits1" value="1"/>
+    <add_ai name ="F111" type ="ELITE_AI"/>
+    <set_object_property property="turnRate" value="0.15" name="F111"/>
+    <set_object_property property="topSpeed" value="1.25" name="F111"/>
+    <set_object_property name="F111" property="shieldMaxStateFront" value="15"/>
+    <set_object_property name="F111" property="shieldMaxStateBack" value="15"/>
+    <incoming_comms_text from="Behemoth 1">
+      Attention Human! You must hail your allies for information.
+    </incoming_comms_text>
+
+  </event>
+
+
+  <event name="Reinforcements 1">
+    <if_variable name="Reinforcements1" comparator="NOT" value="1"/>
+    <if_timer_finished name="Reinforcements_timer1"/>
+
+    <create type="enemy" x="38200" y="0" z="1600" angle="200" name="P31" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="23"/>
+    <create type="enemy" x="38100" y="500" z="1700" angle="200" name="Q32" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="23"/>
+    <create type="enemy" x="38300" y="-500" z="1500" angle="200" name="P33" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="23"/>
+
+    <set_ship_text name="Q32" class="Flag Carrier" desc="Captain Lady Dosa has been knighted by the Queen"/>
+
+
+    <create type="enemy" x="38500" y="0" z="1900" angle="200" name="Ice Demon" raceKeys="Skaraan enemy" hullKeys="Defiler small" fleetnumber="23"/>
+    <set_object_property property="eliteAbilityBits" value="552" name="Ice Demon"/>
+    <set_object_property property="eliteAIType" value="1" name="Ice Demon"/>
+    
+    <create type="enemy" x="37500" y="-100" z="27200" angle="200" name="Sickness" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="23"/>
+    <set_object_property property="eliteAbilityBits" value="808" name="Sickness"/>
+    <set_object_property property="eliteAIType" value="1" name="Sickness"/>
+
+    <create type="enemy" x="98200" y="0" z="67600" angle="60" name="P34" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="24"/>
+    <create type="enemy" x="98100" y="500" z="67700" angle="60" name="Q35" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="24"/>
+    <create type="enemy" x="98300" y="-500" z="67500" angle="60" name="P36" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="24"/>
+
+    <set_ship_text name="Q35" class="Flag Carrier" desc="Captain Lady Harolanin has been knighted by the Queen."/>
+
+
+    <create type="enemy" x="98500" y="0" z="67900" angle="60" name="Wind Demon" raceKeys="Skaraan enemy" hullKeys="Defiler small" fleetnumber="24"/>
+    <set_object_property property="eliteAbilityBits" value="552" name="Wind Demon"/>
+    <set_object_property property="eliteAIType" value="1" name="Wind Demon"/>
+
+    <set_variable name="Reinforcements1" value="1"/>
+    <create type="neutral" x="500" y="0" z="38500" angle="255" name="Goliath 8" raceKeys="Torgoth enemy" hullKeys="Goliath small"/>
+    <create type="neutral" x="500" y="0" z="39000" angle="255" name="Goliath 9" raceKeys="Torgoth enemy" hullKeys="Goliath small"/>
+    <set_special name="Goliath 8" ship="1.0" captain="-1.0"/>
+    <set_special name="Goliath 9" ship="-1.0" captain="-1.0"/>
+    <set_side_value value="2" name="Goliath 8"/>
+    <set_side_value value="2" name="Goliath 9"/>
+    <set_ship_text name="Goliath 8" race="Torgoth ally" hailtext="We have come to help out, humans."/>
+    <set_ship_text name="Goliath 9" race="Torgoth ally" hailtext="Greetings, humans. We will follow your orders."/>
+
+  </event>
+  
+  
+
+ <event name="Reinforcements 2">
+    <if_variable name="Reinforcements2" comparator="NOT" value="1"/>
+    <if_timer_finished name="Reinforcements_timer2"/>
+
+    <create type="enemy" x="88200" y="0" z="47600" angle="60" name="H57" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="25"/>
+    <create type="enemy" x="88100" y="500" z="47700" angle="60" name="H58" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="25"/>
+    <create type="enemy" x="88300" y="-500" z="47500" angle="60" name="H59" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="25"/>
+    <create type="enemy" x="88800" y="-700" z="48500" angle="60" name="H50" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="25"/>
+    <create type="enemy" x="88800" y="700" z="47000" angle="60" name="H51" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="25"/>
+
+    <set_ship_text name="H57" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H58" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H59" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H50" class="Strike Carrier" desc="High Performance Light Carrier"/>
+    <set_ship_text name="H51" class="Strike Carrier" desc="High Performance Light Carrier"/>
+
+
+    <create type="enemy" x="88500" y="0" z="47000" angle="60" name="Amusement" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="25"/>
+    <set_object_property property="eliteAbilityBits" value="584" name="Amusement"/>
+    <set_object_property property="eliteAIType" value="1" name="Amusement"/>
+
+    <create type="enemy" x="88400" y="0" z="46500" angle="60" name="Suffering" raceKeys="Skaraan enemy" hullKeys="Enforcer medium" fleetnumber="25"/>
+    <set_object_property property="eliteAbilityBits" value="1544" name="Suffering"/>
+    <set_object_property property="eliteAIType" value="1" name="Suffering"/>
+    <set_variable name="Reinforcements2" value="1"/>
+  </event>
+  
+  
+  <!-- Boost ship abilities to reflect tech level -->
+   <event name="Boost Reinforcements 1">
+    <if_variable name="Reinforcements2" comparator="NOT" value="0"/>
+    <if_variable name="ReinforcementsBoost2" comparator="NOT" value="1"/>
+
+    <set_object_property name="P31" property="topSpeed" value="0.35"/>
+    <set_object_property name="Q32" property="topSpeed" value="0.35"/>
+    <set_object_property name="P33" property="topSpeed" value="0.35"/>
+
+    <set_object_property name="P31" property="turnRate" value="0.007"/>
+    <set_object_property name="Q32" property="turnRate" value="0.007"/>
+    <set_object_property name="P33" property="turnRate" value="0.007"/>
+
+    <set_object_property name="P34" property="topSpeed" value="0.35"/>
+    <set_object_property name="Q35" property="topSpeed" value="0.35"/>
+    <set_object_property name="P36" property="topSpeed" value="0.35"/>
+
+    <set_object_property name="P34" property="turnRate" value="0.007"/>
+    <set_object_property name="Q35" property="turnRate" value="0.007"/>
+    <set_object_property name="P36" property="turnRate" value="0.007"/>
+
+
+    <set_object_property name="Q32" property="shieldMaxStateFront" value="400"/>
+    <set_object_property name="Q32" property="shieldMaxStateBack" value="400"/>
+    <set_object_property name="Q35" property="shieldMaxStateFront" value="400"/>
+    <set_object_property name="Q35" property="shieldMaxStateBack" value="400"/>
+
+    <set_object_property name="Q32" property="surrenderChance" value="0"/>
+    <set_object_property name="Q35" property="surrenderChance" value="0"/>
+    <set_variable name="ReinforcementsBoost2" value="1"/>
+    
+    <set_special name="Ice Demon" ship="1" captain="4"/>
+    <set_special name="Wind Demon" ship="1" captain="4"/>
+    <set_special name="Sickness" ship="1" captain="4"/>
+
+     <set_object_property name="Goliath 8" property="topSpeed" value="0.5"/>
+     <set_object_property name="Goliath 9" property="topSpeed" value="0.5"/>
+     <set_object_property name="Goliath 8" property="turnRate" value="0.003"/>
+     <set_object_property name="Goliath 9" property="turnRate" value="0.003"/>
+   </event>
+  
+  <event name="Boost Reinforcements 2">
+    <if_variable name="Reinforcements2" comparator="NOT" value="0"/>
+    <if_variable name="ReinforcementsBoost2" comparator="NOT" value="1"/>
+
+    <set_object_property name="H57" property="topSpeed" value="0.75"/>
+    <set_object_property name="H58" property="topSpeed" value="0.75"/>
+    <set_object_property name="H59" property="topSpeed" value="0.75"/>
+    <set_object_property name="H50" property="topSpeed" value="0.75"/>
+    <set_object_property name="H51" property="topSpeed" value="0.75"/>
+
+    <set_object_property name="H57" property="turnRate" value="0.007"/>
+    <set_object_property name="H58" property="turnRate" value="0.007"/>
+    <set_object_property name="H58" property="turnRate" value="0.007"/>
+    <set_object_property name="H50" property="turnRate" value="0.007"/>
+    <set_object_property name="H51" property="turnRate" value="0.007"/>
+
+    <set_object_property name="H57" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H57" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H58" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H58" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H59" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H59" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H50" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H50" property="shieldMaxStateBack" value="180"/>
+    <set_object_property name="H51" property="shieldMaxStateFront" value="180"/>
+    <set_object_property name="H51" property="shieldMaxStateBack" value="180"/>
+    <set_variable name="ReinforcementsBoost2" value="1"/>
+    
+    <set_special name="Amusement" ship="1" captain="4"/>
+    <set_special name="Suffering" ship="1" captain="4"/>
+  </event>
+
+  <event name="Launch Aegis 2">
+    <if_distance name1="H57" name2="Artemis" comparator="LESS" value ="10000"/>
+    <if_variable name="Launch_Aegis2" comparator="NOT" value="1"/>
+    <create type="enemy" x="50200" y="0" z="36000" angle="200" name="F117" raceKeys="Skaraan enemy" hullKeys="Defiler small" fleetnumber="55"/>
+    <set_object_property property="eliteAbilityBits" value="512" name="F117"/>
+    <set_variable name="Launch_Aegis2" value="1"/>
+  </event>
+
+<event name="Equip Aegis 2">
+    <if_variable name="Launch_Aegis2" comparator="EQUALS" value="1"/>
+    <if_variable name="Equip_Aegis2" comparator="Not" value="1"/>
+    <set_object_property property="turnRate" value="0.25" name="F117"/>
+    <set_object_property property="topSpeed" value="1.35" name="F117"/>
+    <set_object_property name="F117" property="shieldMaxStateFront" value="20"/>
+    <set_object_property name="F117" property="shieldMaxStateBack" value="20"/>
+    <set_variable name="Equip_Aegis2" value="1"/>
+    <set_relative_position name2="F117" name1="H17" angle="0" distance="1500"/>
+    <copy_object_property name1="H57" name2="F117" property ="angle"/>
+    <add_ai name ="F117" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <set_ship_text name="F117" race="Arvonian" class="Aegis Fighter" desc="Equipped with anti-torp beams" scan_desc="The ultimate Arvonian technology."/>
+  </event>
+  
+   <event name="Boost Reinforcements 3">
+    <if_variable name="Reinforcements3" comparator="NOT" value="0"/>
+    <if_variable name="ReinforcementsBoost3" comparator="NOT" value="1"/>
+
+    <set_object_property name="G97" property="topSpeed" value="0.85"/>
+    <set_object_property name="G98" property="topSpeed" value="0.85"/>
+    <set_object_property name="G99" property="topSpeed" value="0.85"/>
+    <set_object_property name="G90" property="topSpeed" value="0.85"/>
+    <set_object_property name="G91" property="topSpeed" value="0.85"/>
+
+    <set_object_property name="G97" property="turnRate" value="0.008"/>
+    <set_object_property name="G98" property="turnRate" value="0.008"/>
+    <set_object_property name="G98" property="turnRate" value="0.008"/>
+    <set_object_property name="G90" property="turnRate" value="0.008"/>
+    <set_object_property name="G91" property="turnRate" value="0.008"/>
+
+    <set_object_property name="G97" property="shieldMaxStateFront" value="240"/>
+    <set_object_property name="G97" property="shieldMaxStateBack" value="240"/>
+    <set_object_property name="G98" property="shieldMaxStateFront" value="220"/>
+    <set_object_property name="G98" property="shieldMaxStateBack" value="220"/>
+    <set_object_property name="G99" property="shieldMaxStateFront" value="220"/>
+    <set_object_property name="G99" property="shieldMaxStateBack" value="220"/>
+    <set_object_property name="G90" property="shieldMaxStateFront" value="220"/>
+    <set_object_property name="G90" property="shieldMaxStateBack" value="220"/>
+    <set_object_property name="G91" property="shieldMaxStateFront" value="220"/>
+    <set_object_property name="G91" property="shieldMaxStateBack" value="220"/>
+    <set_variable name="ReinforcementsBoost3" value="1"/>
+
+    <set_special name="God of Punishment" ship="1" captain="4"/>
+    <set_special name="God of Fertility" ship="1" captain="4"/>
+
+    <set_ship_text name="G97" class="Strike Carrier" desc="Captain Lady Malysha is a distant member of the Royal Family." scan_desc="Newly commissioned flagship."/>
+    <set_ship_text name="G98" class="Strike Carrier" desc="High Performance Heavy Carrier"/>
+    <set_ship_text name="G99" class="Strike Carrier" desc="High Performance Heavy Carrier"/>
+    <set_ship_text name="G90" class="Strike Carrier" desc="High Performance Escort Carrier"/>
+    <set_ship_text name="G91" class="Strike Carrier" desc="High Performance Escort Carrier"/>
+
+
+  </event>
+
+ <event name="Reinforcements 3">
+    <if_variable name="Reinforcements3" comparator="NOT" value="1"/>
+    <if_timer_finished name="Reinforcements_timer3"/>
+
+    <create type="enemy" x="58200" y="0" z="87600" angle="0" name="G97" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="26"/>
+    <create type="enemy" x="58100" y="500" z="87700" angle="0" name="G98" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="26"/>
+    <create type="enemy" x="58300" y="-500" z="87500" angle="0" name="G99" raceKeys="Arvonian enemy" hullKeys="Carrier carrier" fleetnumber="26"/>
+    <create type="enemy" x="58800" y="-700" z="88500" angle="0" name="G90" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="26"/>
+    <create type="enemy" x="58800" y="700" z="87000" angle="0" name="G91" raceKeys="Arvonian enemy" hullKeys="Light Carrier carrier" fleetnumber="26"/>
+
+    <create type="enemy" x="58500" y="0" z="87000" angle="0" name="God of Fertility" raceKeys="Skaraan enemy" hullKeys="Executor large" fleetnumber="26"/>
+    <set_object_property property="eliteAbilityBits" value="584" name="God of Fertility"/>
+    <set_object_property property="eliteAIType" value="1" name="God of Fertility"/>
+
+    <create type="enemy" x="58400" y="0" z="86500" angle="0" name="God of Punishment" raceKeys="Skaraan enemy" hullKeys="Executor large" fleetnumber="26"/>
+    <set_object_property property="eliteAbilityBits" value="1544" name="God of Punishment"/>
+    <set_object_property property="eliteAIType" value="1" name="God of Punishment"/>
+    <set_variable name="Reinforcements3" value="1"/>
+  </event>
+
+
+
+
+  <event name="Launch Aegis 3">
+    <if_distance name1="G97" name2="Artemis" comparator="LESS" value ="10000"/>
+    <if_variable name="Launch_Aegis3" comparator="NOT" value="1"/>
+    <create type="enemy" x="50200" y="0" z="36000" angle="200" name="F101" raceKeys="Skaraan enemy" hullKeys="Defiler small" fleetnumber="59"/>
+    <set_object_property property="eliteAbilityBits" value="512" name="F101"/>
+    <set_variable name="Launch_Aegis3" value="1"/>
+  </event>
+
+<event name="Equip Aegis 3">
+    <if_variable name="Launch_Aegis3" comparator="EQUALS" value="1"/>
+    <if_variable name="Equip_Aegis3" comparator="Not" value="1"/>
+    <set_object_property property="turnRate" value="0.25" name="F101"/>
+    <set_object_property property="topSpeed" value="1.35" name="F101"/>
+    <set_object_property name="F101" property="shieldMaxStateFront" value="20"/>
+    <set_object_property name="F101" property="shieldMaxStateBack" value="20"/>
+    <set_variable name="Equip_Aegis3" value="1"/>
+    <set_relative_position name2="F101" name1="H17" angle="0" distance="1500"/>
+    <copy_object_property name1="G97" name2="F111" property ="angle"/>
+    <add_ai name ="F101" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <set_ship_text name="F101" race="Arvonian" class="Aegis Fighter" desc="Equipped with anti-torp beams" scan_desc="The ultimate Arvonian technology."/>
+  </event>
+
+  <!-- T21 has three special missions -->
+
+  <event name="Repair Behemoth 1">
+    <if_distance name1="T21" name2="Behemoth 1" comparator="LESS" value ="600"/>
+    <if_variable name="repair_behemoth" comparator="NOT" value="1"/>
+    <set_special name="Behemoth 1" ship="1.0" captain="1.0"/>
+    <set_variable name="repair_behemoth" value="1"/>
+    <set_ship_text name="Behemoth 1" hailtext="Repairs are complete and we are ready for battle!"/>
+    <set_object_property name="Behemoth 1" property="topSpeed" value="0.65"/>
+    <set_object_property name="Behemoth 1" property="topSpeed" value="0.65"/>
+    <set_object_property name="Behemoth 1" property="turnRate" value="0.004"/>
+    <set_ship_text name="Goliath 1" hailtext="The time has come for victory! Let there be no hesitation!"/>
+    <set_ship_text name="T21" hailtext="Send us to a base and we can supply four nukes."/>
+  </event>
+
+  <event name="Make Nukes">
+    <if_distance name1="T21" name2="Elihu Base" comparator="LESS" value ="600"/>
+    <if_variable name="spare_nukes" comparator="NOT" value="1"/>
+    <add_to_object_property name="Elihu Base" property="missileStoresNuke" value="4"/>
+    <set_variable name="spare_nukes" value="1"/>
+    <set_ship_text name="T21" hailtext="Rendezvous with us for an energy boost."/>
+  </event>
+
+
+
+  <event name="Refuel Artemis">
+    <if_distance name1="T21" name2="Artemis" comparator="LESS" value="500"/>
+    <if_object_property property="energy" name="Artemis" comparator="LESS" value="1000"/>
+    <if_variable name="spare_nukes" comparator="NOT" value="0"/>
+    <add_to_object_property property="energy" value="1" name="Artemis"/>
+  </event>
+
+  <event name="Rearm Artemis Trigger">
+    <if_distance name1="EMP Support 17" name2="Artemis" comparator="LESS" value="500"/>
+    <if_variable name="EMP_Ready" comparator="NOT" value="0"/>
+    <if_object_property name="Artemis" property="countECM" comparator="LESS" value="5"/>
+    <set_variable name="EMP_Ready" value="0"/>
+    <set_variable name="EMP_Arming" value="1"/>
+    <set_ship_text name="EMP Support 17" hailtext="We will have another EMP torpedo ready in 5 minutes."/>
+    <set_timer name="EMP_timer5" seconds="6"/>
+    <set_variable name="EMP_4" value="0"/>
+    <set_variable name="EMP_3" value="0"/>
+    <set_variable name="EMP_2" value="0"/>
+    <set_variable name="EMP_1" value="0"/>
+  </event>
+
+ <event name="Make EMP 4">
+    <if_variable name="EMP_Ready" comparator="NOT" value="1"/>
+    <if_variable name="EMP_4" comparator="EQUALS" value="0"/>
+    <if_timer_finished name="EMP_timer5"/>
+    <set_variable name="EMP_4" value="1"/>
+    <set_ship_text name="EMP Support 17" hailtext="We will have another EMP torpedo ready in 4 minutes."/>
+    <set_timer name="EMP_timer4" seconds="60"/>
+  </event>
+  
+  <event name="Make EMP 3">
+    <if_variable name="EMP_Ready" comparator="NOT" value="1"/>
+    <if_variable name="EMP_3" comparator="EQUALS" value="0"/>
+    <if_timer_finished name="EMP_timer4"/>
+    <set_variable name="EMP_3" value="1"/>
+    <set_ship_text name="EMP Support 17" hailtext="We will have another EMP torpedo ready in 3 minutes."/>
+    <set_timer name="EMP_timer3" seconds="60"/>
+  </event>
+
+<event name="Make EMP 2">
+    <if_variable name="EMP_Ready" comparator="NOT" value="1"/>
+    <if_variable name="EMP_2" comparator="EQUALS" value="0"/>
+    <if_timer_finished name="EMP_timer3"/>
+    <set_variable name="EMP_2" value="1"/>
+    <set_ship_text name="EMP Support 17" hailtext="We will have another EMP torpedo ready in 2 minutes."/>
+    <set_timer name="EMP_timer2" seconds="60"/>
+</event>
+
+<event name="Make EMP 1">
+    <if_variable name="EMP_Ready" comparator="NOT" value="1"/>
+    <if_variable name="EMP_1" comparator="EQUALS" value="0"/>
+    <if_timer_finished name="EMP_timer2"/>
+    <set_variable name="EMP_1" value="1"/>
+    <set_ship_text name="EMP Support 17" hailtext="We will have another EMP torpedo ready in 1 minute."/>
+    <set_timer name="EMP_timer1" seconds="60"/>
+</event>
+
+  
+  <event name="Rearm Artemis Fails">
+    <if_distance name1="EMP Support 17" name2="Artemis" comparator="LESS" value="500"/>
+    <if_timer_finished name="EMP_Fail_timer"/>
+    <if_variable name="EMP_Ready" comparator="NOT" value="0"/>
+    <set_variable name="EMP_Ready" value="0"/>
+    <if_object_property name="Artemis" property="countECM" comparator="GREATER" value="4"/>
+    <set_variable name="EMP_Arming" value="0"/>
+    <incoming_comms_text from="EMP Support 17">
+      You have no room for another EMP torpedo.
+    </incoming_comms_text>
+    <set_timer name="EMP_Fail_timer" seconds="20"/>
+  </event>
+
+
+<event name="Rearm Artemis 4">
+    <if_variable name="EMP_Arming" comparator="NOT" value="0"/>
+    <if_object_property name="Artemis" property="countECM" comparator="EQUALS" value="4"/>
+    <set_variable name="EMP_Arming" value="0"/>
+    <set_object_property property="countECM" value="5" name="Artemis"/>
+    <incoming_comms_text from="EMP Support 17">
+      We have transferred an EMP torpedo to your ship.
+    </incoming_comms_text>
+</event>
+
+<event name="Rearm Artemis 3">
+    <if_variable name="EMP_Arming" comparator="NOT" value="0"/>
+    <if_object_property name="Artemis" property="countECM" comparator="EQUALS" value="3"/>
+    <set_variable name="EMP_Arming" value="0"/>
+    <set_object_property property="countECM" value="4" name="Artemis"/>
+    <incoming_comms_text from="EMP Support 17">
+      We have delivered an EMP torpedo to you.
+    </incoming_comms_text>
+</event>
+
+<event name="Rearm Artemis 2">
+    <if_variable name="EMP_Arming" comparator="NOT" value="0"/>
+    <if_object_property name="Artemis" property="countECM" comparator="EQUALS" value="2"/>
+    <set_variable name="EMP_Arming" value="0"/>
+    <set_object_property property="countECM" value="3" name="Artemis"/>
+    <incoming_comms_text from="EMP Support 17">
+      You have received an EMP torpedo from us.
+    </incoming_comms_text>
+
+</event>
+
+<event name="Rearm Artemis 1">
+    <if_variable name="EMP_Arming" comparator="NOT" value="0"/>
+    <if_object_property name="Artemis" property="countECM" comparator="EQUALS" value="1"/>
+    <set_variable name="EMP_Arming" value="0"/>
+    <set_object_property property="countECM" value="2" name="Artemis"/>
+    <incoming_comms_text from="EMP Support 17">
+      You now have another EMP torpedo.
+    </incoming_comms_text>
+
+</event>
+
+<event name="Rearm Artemis 0">
+    <if_variable name="EMP_Arming" comparator="NOT" value="0"/>
+    <if_object_property name="Artemis" property="countECM" comparator="EQUALS" value="0"/>
+    <set_variable name="EMP_Arming" value="0"/>
+    <set_object_property property="countECM" value="1" name="Artemis"/>
+    <incoming_comms_text from="EMP Support 17">
+      You now have one EMP torpedo.
+    </incoming_comms_text>
+
+</event>
+
+
+  <event name="Make a Torp">
+    <if_variable name="EMP_Ready" comparator="NOT" value="1"/>
+    <if_variable name="EMP_4" comparator="EQUALS" value="1"/>
+    <if_variable name="EMP_3" comparator="EQUALS" value="1"/>
+    <if_variable name="EMP_2" comparator="EQUALS" value="1"/>
+    <if_variable name="EMP_1" comparator="EQUALS" value="1"/>
+    <if_timer_finished name="EMP_timer1"/>
+    <set_variable name="EMP_Ready" value="1"/>
+    <set_ship_text name="EMP Support 17" hailtext="We have produced another EMP torpedo for you."/>
+    <set_variable name="EMP_4" value="0"/>
+    <set_variable name="EMP_3" value="0"/>
+    <set_variable name="EMP_2" value="0"/>
+    <set_variable name="EMP_1" value="0"/>
+    <set_timer name="EMP_timer5" seconds="6000"/>
+    <set_timer name="EMP_timer4" seconds="6000"/>
+    <set_timer name="EMP_timer3" seconds="6000"/>
+    <set_timer name="EMP_timer2" seconds="6000"/>
+    <set_timer name="EMP_timer1" seconds="6000"/>
+  </event>
+
+
+  <!-- Winning and losing the mission -->
+  <event name="Victory!">
+    <if_variable name="terminate" comparator="NOT" value="1"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="20"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="21"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="22"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="23"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="24"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="25"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="26"/>
+    <if_exists name="Elihu Base"/>
+    <big_message title="VICTORY!" subtitle1="You vanquished the Enemies" subtitle2="and saved the sector."/>
+    <play_sound_now filename="Fanfare.wav"/>
+    <set_timer name="endint_timer" seconds="15"/>
+    <set_variable name="terminate" value="1"/>
+  </event>
+
+  <event name="Survival">
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="20"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="21"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="22"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="23"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="24"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="25"/>
+    <if_fleet_count comparator="LESS" value="1" fleetnumber="26"/>
+    <if_variable name="terminate" comparator="NOT" value="1"/>
+    <if_variable name="sort_of" comparator="NOT" value="1"/>
+     <if_not_exists name="Elihu Base"/>
+    <big_message title="SURVIVAL" subtitle1="You killed thousands of Enemies" subtitle2="but lost the base."/>
+    <set_timer name="endint_timer" seconds="26"/>
+  </event>
+
+
+  <event name="Defeat">
+    <if_not_exists name="Artemis"/>
+    <if_variable name="terminate" comparator="NOT" value="1"/>
+    <big_message title="DEFEAT" subtitle1="Artemis was blown to smithereens" subtitle2="and the Arvonians conquered the sector."/>
+    <set_timer name="endint_timer" seconds="15"/>
+    <set_variable name="terminate" value="1"/>
+  </event>
+
+  <event name="Game Over">
+    <if_variable name="terminate" comparator="EQUALS" value="1"/>
+    <if_variable name="gameOver" comparator="NOT" value="1"/>
+    <if_timer_finished name="endint_timer"/>
+    <end_mission/>
+    <set_variable name="gameOver" value="1"/>
+  </event>
+
+  <!-- *******************************************************-->
+</mission_data>
+
+
+
+
+
+
+

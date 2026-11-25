@@ -1,0 +1,30 @@
+﻿<!-- mission_data is the big wrapper for all the parts of a mission -->
+<mission_data version="1.61">
+
+  <!-- all the things that exist at the start of the mission -->
+  <start>
+    <create type ="station" raceKeys="friendly" hullKeys="base" x="15000" y="0" z="50000" name="DS1"/>
+    <create type ="station" raceKeys="friendly" hullKeys="base" x="20000" y="0" z="30000" name="DS2"/>
+    <create type ="station" raceKeys="friendly" hullKeys="base" x="15000" y="0" z="70000" name="DS3"/>
+    <create type ="player"  x="50000" y="0" z="50000" name="Artemis"/>
+    <create type ="enemy" raceKeys="enemy standard" hullKeys="small" x="70000" y="0" z="15000" angle="90" fleetnumber="-1"/>
+
+    <set_comms_button text="test me" sideValue="2" />
+    <set_comms_button text="erase me" sideValue="2" />
+  </start>
+
+  <!-- test event -->
+  <event>
+    <if_comms_button text="test me"/>
+    <create type ="enemy" raceKeys="enemy standard" hullKeys="small" x="75000" y="0" z="15000" angle="90" fleetnumber="-1"/>
+  </event>
+
+  <!-- test event -->
+  <event>
+    <if_comms_button text="erase me"/>
+    <clear_comms_button text="test me" sideValue="2" />
+    <clear_comms_button text="erase me" sideValue="2" />
+  </event>
+
+
+</mission_data>

@@ -1,0 +1,29 @@
+
+*** initial state of sector
+3 stations in a vertical line, and the artemis int the exact middle of the screen
+
+*** key list
+1- create small enemy at selected point 
+2- create medium enemy at selected point 
+3- create large enemy at selected point 
+
+4- create small elite enemy at selected point 
+5- create medium elite enemy at selected point 
+6- create large elite enemy at selected point 
+
+0- delete selected object
+
+m- add protective minefield arc at selected point 
+n- add small circle of nebulas at selected point
+a- add small circle of asteroids at selected point
+
+r- remove small circle of unnamed objects centered on selected point
+
+SPACE- teleport selected object to selected point
+
+b- make selected enemy only really care about stations
+c- make selected enemy only really care about players
+
+t- add transport pointing north
+y- add transport pointing east
+u- add alien transport pointing east

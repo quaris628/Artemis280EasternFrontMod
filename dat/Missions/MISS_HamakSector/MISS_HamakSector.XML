@@ -1,0 +1,2191 @@
+ <!-- HAVOK IN THE HAMAK SECTOR -->
+ <!-- by Mike Substelny -->
+<mission_data version="2.3">
+ <!-- ************************************************************ -->
+ <!-- The Start block creates everything that exists in the Hamak Sector -->
+ <!-- the moment the mission starts -->
+<start name="Havoc  in the Hamak Sector 2.3">
+   <!-- Players start in the lower left corner of the 100,000 x 100,000 sector -->
+   <create type ="player" x="88000" y="0" z="85300" name="Artemis" angle="85" player_slot="0" raceKeys="TSN player" hullKeys="Battleship" accent_color="30" warp="yes" jump="no"/>
+
+   <create type ="station" x="12000" y="0" z="80000" raceKeys="Terran friendly" hullKeys="Deep Space Base base" name="Hamak Base"/>
+   <set_object_property name="Hamak Base" property="canBuild" value="0"/>
+   <set_object_property name="Hamak Base" property="missileStoresNuke" value="1"/>
+
+  <create type ="neutral" x="35000" y="0" z="40000" raceKeys="Terran friendly" hullKeys="Cargo" name="GW Unlimited 214" angle="155"/>
+  <!-- create type ="neutral" x="35000" y="0" z="40000" raceKeys="TSN" hullKeys="cargo" name="GW Unlimited 214" sideValue="2" angle="155"/-->
+  <set_special name="GW Unlimited 214" ship="1" captain="0"/>
+  <add_ai name ="GW Unlimited 214" type ="POINT_THROTTLE" value1="12000" value2="0" value3="80000"  value4="1"/>
+  <set_ship_text name="GW Unlimited 214" race="Hamak Syndicate" class="Upgraded Cargo Carrier" desc="Cargo hold contains rare crystals, tobacco products, and large quantities of alcohol."/>
+
+  <create type ="neutral" x="59000" y="0" z="18500" raceKeys="Terran friendly" hullKeys="Destroyer medium" name="Warsaw" angle="0"/>
+  <set_ship_text name="Warsaw" race="TSN" class="Heavy Destroyer" desc="Captain Amelia Haynes commanding" scan_desc="Library Computer: Captain Haynes was repremanded for being overly aggressive at the battle of Helix Aquarius."/>
+  <set_special name="Warsaw" ship="1.0" captain="5.0"/>
+  <add_ai name ="Warsaw" type ="POINT_THROTTLE" value1="59000" value2="0" value3="1600" value4="1"/>
+
+
+  <create type ="neutral" x="11990" y="0" z="80010" raceKeys="Terran friendly" hullKeys="Cargo" name="Acme Arms Dealer" angle="175"/>
+  <clear_ai name ="Acme Arms Dealer"/>
+  <add_ai name ="Acme Arms Dealer" type ="POINT_THROTTLE" value1="12000" value2="0" value3="80000" value4=".1"/>
+  <set_ship_text name="Acme Arms Dealer" race="Moquarian" class="Independant Merchant" desc="Cargo hold contains various TSN weapons, including nukes."/>
+  <set_special name="Acme Arms Dealer" ship="1" captain="0"/>
+  <create type ="whale" x="91990" y="0" z="58010" name="Marjorie" angle="275" podnumber="1"/>
+  <create type ="whale" x="91790" y="0" z="58210" name="Riya" angle="275" podnumber="1"/>
+  <create type ="whale" x="91590" y="0" z="58410" name="Chloe" angle="275" podnumber="1"/>
+  <create type ="whale" x="91390" y="0" z="60410" name="Anastasia" angle="275" podnumber="1"/>
+  
+  <create type ="whale" x="51990" y="0" z="18010" name="Sofia" angle="295" podnumber="2"/>
+  <create type ="whale" x="51790" y="0" z="18210" name="Lilly" angle="295" podnumber="2"/>
+  <create type ="whale" x="51590" y="0" z="18410" name="Julia" angle="295" podnumber="2"/>
+  <create type ="whale" x="51390" y="0" z="20410" name="Hilde" angle="295" podnumber="2"/>
+  
+  <set_object_property name="Artemis" property="energy" value="343"/>
+  <set_object_property name="Artemis" property="countMine" value="4"/>
+  <set_object_property name="Artemis" property="countNuke" value="1"/>
+  <set_object_property name="Artemis" property="countHoming" value="4"/>
+  <set_object_property name="Artemis" property="countECM" value="6"/>
+
+  <create type ="nebulas" count="22" startX="100000" startY="0" startZ="0" radius ="15000" startAngle="95" endAngle="175" randomRange="8000" randomSeed="4"/>
+  <create type ="nebulas" count="32" startX="100000" startY="0" startZ="0" radius ="25000" startAngle="95" endAngle="175" randomRange="5000" randomSeed="4"/>
+  <create type ="nebulas" count="42" startX="100000" startY="0" startZ="0" radius ="30000" startAngle="95" endAngle="175" randomRange="5000" randomSeed="4"/>
+  <create type ="nebulas" count="55" startX="100000" startY="0" startZ="0" radius ="45000" startAngle="95" endAngle="175" randomRange="5000" randomSeed="4"/>
+  <create type ="nebulas" count="60" startX="100000" startY="0" startZ="0" radius ="55000" startAngle="95" endAngle="175" randomRange="5000" randomSeed="4"/>
+  <create type ="nebulas" count="70" startX="100000" startY="0" startZ="0" radius ="65000" startAngle="95" endAngle="175" randomRange="5000" randomSeed="6"/>
+  <create type ="nebulas" count="80" startX="100000" startY="0" startZ="0" radius ="75000" startAngle="95" endAngle="175" randomRange="5000" randomSeed="6"/>
+  <create type ="nebulas" count="100" startX="100000" startY="0" startZ="0" radius ="83500" startAngle="90" endAngle="180" randomRange="3000" randomSeed="2"/>
+
+  <create type ="asteroids" count="20"  startX="100000" startY="0" startZ="0" radius ="55000" startAngle="105" endAngle="170" randomRange="25000" randomSeed="6"/>
+  <create type ="asteroids" count="20"  startX="100000" startY="100" startZ="0" radius ="55000" startAngle="105" endAngle="170" randomRange="25000" randomSeed="5"/>
+  <create type ="asteroids" count="20"  startX="100000" startY="-100" startZ="0" radius ="55000" startAngle="105" endAngle="170" randomRange="25000" randomSeed="4"/>
+  <create type ="asteroids" count="20"  startX="100000" startY="200" startZ="0" radius ="55000" startAngle="105" endAngle="170" randomRange="25000" randomSeed="3"/>
+  <create type ="asteroids" count="20"  startX="100000" startY="-200" startZ="0" radius ="55000" startAngle="105" endAngle="170" randomRange="25000" randomSeed="2"/>
+  <create type ="asteroids" count="20"  startX="100000" startY="400" startZ="0" radius ="55000" startAngle="105" endAngle="170" randomRange="25000" randomSeed="1"/>
+  <create type ="asteroids" count="20"  startX="100000" startY="-400" startZ="0" radius ="55000" startAngle="105" endAngle="170" randomRange="25000" randomSeed="7"/>
+
+
+  
+  <!-- The Start Block also sets the skybox, which will be the main screen background throughout the mission -->
+  <set_skybox_index index="15"/>
+
+  <!-- The Start Block also presents players with the mission title -->
+  <big_message title="HAVOC IN THE HAMAK SECTOR" subtitle1="by Mike Substelny" subtitle2="an adventure for Artemis 2.3"/>
+   <set_difficulty_level value="5"/>
+  <!-- Finally, the start block sets timers and variables for Chapter 1 -->
+    <set_variable name="chapter" value="1"/>
+   <set_timer name="weeks_welcomed_timer" seconds="54"/>
+   <set_timer name="payment_plan_timer" seconds="85"/>
+  <set_timer name="it_squeaks_timer" seconds="94"/>
+   <log text="Starting"/>
+   <set_timer name="starring_timer1" seconds="10"/>
+
+ </start>
+
+
+
+  
+
+  <!-- Chapter 1, wherein we meet the dramatis personae -->
+  <!-- Give the crew twenty seconds to settle in as they adjust the music and read the credits -->
+
+  <event name="Starring Maggie Stahl">
+    <if_timer_finished name="starring_timer1"/>
+    <if_variable name="starring1" comparator="!=" value="1"/>
+    <big_message title="Starring Maggie Stahl" subtitle1="as Captain Haynes"/>
+    <set_variable name="starring1" value="1"/>
+    <set_object_property name="Acme Arms Dealer" property="topSpeed" value="0.001"/>
+    <set_timer name="starring_timer2" seconds="10"/>
+    <set_object_property name="GW Unlimited 214" property="topSpeed" value="3.5"/>
+  </event>
+
+  <!-- After 20 seconds the audio messages start coming in -->
+
+<event name="Haynes Hello">
+    <if_timer_finished name="starring_timer2"/>
+    <if_variable name="starring2" comparator="!=" value="1"/>
+    <big_message title="Also starring Jim Wesolek" subtitle1="as Admiral Weeks"/>
+    <incoming_message from="Capt Haynes hailing Artemis" mediaType="0" fileName="Haynes_ahoy.ogg"/>
+    <set_variable name="starring2" value="1"/>
+    <set_timer name="starring_timer3" seconds="10"/>
+  </event>
+
+  <event name="Starring 3">
+    <if_timer_finished name="starring_timer3"/>
+    <if_variable name="starring3" comparator="!=" value="1"/>
+    <big_message title="With Arcturus Rann" subtitle1="Cressida Niel" subtitle2="and Milo Zond"/>
+    <set_variable name="starring3" value="1"/>
+  </event>
+
+
+ <!-- The popups present plenty of info to Comms and Science -->
+  <!-- Admiral Weeks tells Artemis to get a ramscoop installed . . . -->
+  
+ <event name="Weeks Hello">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_timer_finished name="weeks_welcomed_timer"/>
+   <if_variable name="weeks_welcomed" comparator="!=" value="1"/>
+   <incoming_message from="Adm Weeks hailing Artemis" mediaType="0" fileName="Weeks_Hello.ogg"/>
+   <warning_popup_message message="New message from Admiral Weeks of Hamak Base." consoles="C"/>
+   <create type ="neutral" x="25000" y="0" z="35000" raceKeys="Terran friendly" hullKeys="Cargo" name="GW Unlimited 157" angle="175"/>
+
+   <add_ai name ="GW Unlimited 157" type ="POINT_THROTTLE" value1="12000" value2="0" value3="80000" value4="1"/>
+   <set_special name="GW Unlimited 157" ship="1" captain="5"/>
+   <warning_popup_message message="confirmed at Hamak Base." consoles="S"/>
+   <warning_popup_message message="Admiral Weeks security credentials" consoles="S"/>
+   <set_variable name="weeks_welcomed" value="1"/>
+ </event>
+
+  <!-- . . . then tells them they're lucky to get such an extravagance -->
+
+ <event name="Ramscoop Expensive">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_timer_finished name="payment_plan_timer"/>
+   <if_variable name="weeks_ripoff" comparator="!=" value="1"/>
+   <incoming_message from="Adm Weeks additional" mediaType="0" fileName="Weeks_expensive.ogg"/>
+    <warning_popup_message message="Sensors detecting Cherenkov radiation." consoles="S"/>
+   <set_variable name="weeks_ripoff" value="1"/>
+ </event>
+ 
+ <!-- Captain Haynes tells Artemis what she thinks of Admiral Weeks -->
+
+ <event name="It Squeaks">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_timer_finished name="it_squeaks_timer"/>
+   <if_variable name="haynes_glad" comparator="!=" value="1"/>
+   <incoming_message from="Haynes describes Weeks" mediaType="0" fileName="Haynes_it_squeaks.ogg"/>
+   <set_object_property name="GW Unlimited 157" property="topSpeed" value="3.5"/>
+   <clear_ai name ="GW Unlimited 157"/>
+   <add_ai name ="GW Unlimited 157" type ="POINT_THROTTLE" value1="12000" value2="0" value3="80000" value4="1"/>
+   <set_variable name="haynes_glad" value="1"/>
+ </event>
+
+ <!-- When Artemis docks ramscoop is installed -->
+<event name="Prep for Installation">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_docked name="Hamak Base"/>
+   <set_timer name="confiscate_weapons_timer" seconds="16"/>
+   <set_timer name="wreck_Artemis_timer" seconds="4"/>
+</event>
+
+<!-- While Artemis is docked continuously restart these timers -->
+
+ <event name="Undock during Installation?">
+   <if_variable name="wreck_artemis" comparator="=" value="1"/>
+   <if_timer_finished name="spinning_timer"/>
+   <set_variable name="wreck_artemis" value="0"/>
+</event>
+
+<!-- Ramscoop installation takes four recurrances of 12 second timer -->
+<event name="Ramscoop Begin">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_docked name="Hamak Base"/>
+   <if_variable name="dock01" comparator="!=" value="1"/>
+   <if_variable name="ramscoop_transfer" comparator="!=" value="1"/>
+   <warning_popup_message message="Ramscoop system being transferred aboard." consoles="C"/>
+  <warning_popup_message message="WARNING: DO NOT UNDOCK DURING RAMSCOOP TRANSFER." consoles="E"/>
+  <create type ="genericMesh" meshFileName="dat/asteroid.dxs" textureFileName="dat/electricNoise2.png" colorBlue="1" x="98000" y="0" z="59000" name="Tachyon Source 1"/>
+  <set_object_property name="Tachyon Source 1" property="artScale" value="1.2"/>
+  <incoming_comms_text from="Base Operations Manager">
+      Ramscoop installation beginning. Do not undock during ramscoop installation.
+    </incoming_comms_text>
+  <set_timer name="install_timer" seconds="12"/>
+  <incoming_message from="Ramscoop Instructions" mediaType="0" fileName="Base_explains_scoop.ogg"/>
+  <set_variable name="dock01" value="1"/>
+  <set_variable name="spin_artemis" value="0"/>
+  <set_variable name="ramscoop_transfer" value="1"/>
+ </event>
+ 
+  <event name="Ramscoop 25%">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_timer_finished name="install_timer"/>
+   <if_variable name="dock01" comparator="=" value="1"/>
+   <if_variable name="dock02" comparator="!=" value="1"/>
+   <if_docked name="Hamak Base"/>
+    <set_variable name="dock02" value="1"/>
+   <incoming_comms_text from="Base Operations Manager">
+      Ramscoop installation 25% complete. Do you guys have any spare holo-games? I'll give you a good price.
+    </incoming_comms_text>
+    <set_timer name="install_timer" seconds="12"/>
+   <warning_popup_message message="indicates tachyons." consoles="S"/>
+   <warning_popup_message message="LIBRARY COMPUTER: Cherenkov radiation" consoles="S"/>
+ </event>
+ 
+ <event name="Ramscoop 50%">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_timer_finished name="install_timer"/>
+   <if_variable name="dock02" comparator="=" value="1"/>
+   <if_variable name="dock03" comparator="!=" value="1"/>
+   <if_docked name="Hamak Base"/>
+    <set_variable name="dock03" value="1"/>
+   <incoming_comms_text from="Base Operations Manager">
+      Ramscoop installation 50% complete. How about a hot tub? I have a beauty that will fit in your torpedo bay. Practically brand new.
+    </incoming_comms_text>
+    <warning_popup_message message="Scanning tachyon source in grid C1." consoles="S"/>
+  <set_timer name="install_timer" seconds="12"/>
+ </event>
+ 
+ <event name="Ramscoop 75%">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_timer_finished name="install_timer"/>
+   <if_variable name="dock03" comparator="=" value="1"/>
+   <if_variable name="dock04" comparator="!=" value="1"/>
+   <if_docked name="Hamak Base"/>
+    <set_variable name="dock04" value="1"/>
+   <incoming_comms_text from="Base Operations Manager">
+      Ramscoop installation 75% complete.  Need any cigarettes? Just ten credits a pack - - - even less if you buy in bulk!
+    </incoming_comms_text>
+  <set_timer name="install_timer" seconds="12"/>
+ </event>
+ 
+ <!-- Once Ramscoop is installed they receive orders from Admiral Weeks -->
+ 
+ <event name="Ramscoop Installed">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_docked name="Hamak Base"/>
+   <if_timer_finished name="install_timer"/>
+   <if_variable name="dock05" comparator="!=" value="1"/>
+   <if_variable name="ramscoop" comparator="!=" value="1"/>
+   <incoming_message from="Adm Weeks ORDERS FOR ARTEMIS" mediaType="0" fileName="Weeks_orders.ogg"/>
+  <warning_popup_message message="Scanning tachyon source in grid C1." consoles="S"/>
+  <warning_popup_message message="Engineering team running diagnostics." consoles="E"/>
+  <warning_popup_message message="Ramscoop system is installed." consoles="E"/>
+  <set_timer name="ramscoop_install_timer" seconds="26"/>
+  <incoming_comms_text from="Base Operations Manager">
+      Your ramscoop installation is complete. Come back tomorrow for a deal on French ice cream!
+    </incoming_comms_text>
+  <set_variable name="dock05" value="1"/>
+  <set_variable name="ramscoop" value="1"/>
+ </event>
+ 
+ <!-- If they return later the Ops Manager is gone -->
+
+ <event name="Set Hot Tub Timer">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="weeks_escape3" comparator="=" value="1"/>
+   <if_docked name="Hamak Base"/>
+   <if_variable name="dock06" comparator="!=" value="1"/>
+   <set_timer name="hot_tub_timer" seconds="5"/>
+   <set_variable name="dock06" value="1"/>
+ </event>
+ 
+ <!-- Greenhaw was left behind and he has a story to tell to our Comms officer -->
+
+ <event name="Meet Greenhaw">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_docked name="Hamak Base"/>
+   <if_variable name="dock07" comparator="!=" value="1"/>
+   <if_timer_finished name="hot_tub_timer"/>
+   <incoming_comms_text from="Ensign Greenhaw - Hamak Base">
+      ^Hi Artemis. The Operations Manager left me in charge and gave me this awesome hot tub! Today is a good day to take shore leave, if you know what I mean.
+    </incoming_comms_text>
+  <set_variable name="dock07" value="1"/>
+  <set_timer name="free_nuke_timer" seconds="60"/>
+ </event>
+ 
+ <event name="Greenhaw Finds Nuke">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="found_nuke" comparator="!=" value="1"/>
+   <if_timer_finished name="free_nuke_timer"/>
+   <incoming_comms_text from="Ensign Greenhaw - Hamak Base">
+      ^Hey Artemis! I just found a nuke! It's probably a dud, but it's yours if you want it.
+    </incoming_comms_text>
+  <set_variable name="found_nuke" value="1"/>
+  <addto_object_property name="Hamak Base" property="missileStoresNuke" value="1"/>
+  <addto_object_property name="Hamak Base" property="missileStoresECM" value="2"/>
+  <addto_object_property name="Hamak Base" property="missileStoresMine" value="2"/>
+ </event>
+ 
+ <event name="Greenhaw Snivels">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_docked name="Hamak Base"/>
+   <if_variable name="found_nuke" comparator="=" value="1"/>
+   <if_variable name="greenhaw_snivels" comparator="!=" value="1"/>
+   <incoming_comms_text from="Ensign Greenhaw - Hamak Base">
+      ^Um, Artemis? It's getting kind of scary here. Lieutennant Jowarski is in command now and she says the Torgoths might kill us all. But you're going to protect us, right?
+    </incoming_comms_text>
+  <set_variable name="greenhaw_snivels" value="1"/>
+ </event>
+
+<!-- If they undock too soon something terrible happens -->
+<!-- First the ship is damaged -->
+
+<event name="Wreck Artemis!">
+   <if_variable name="ramscoop" comparator="!=" value="1"/>
+   <if_variable name="spin_artemis" comparator="!=" value="1"/>
+   <if_timer_finished name="wreck_Artemis_timer"/>
+   <log text="Starting\n\n"/>
+   <set_variable name="dock01" value="0"/>
+   <set_variable name="dock02" value="0"/>
+   <set_variable name="dock03" value="0"/>
+   <set_variable name="dock04" value="0"/>
+   <set_timer name="install_timer" seconds="1000"/>
+   <set_timer name="ramscoop_install_timer" seconds="1000"/>
+   <set_variable name="ramscoop_transfer" value="0"/>
+   <set_variable name="wreck_artemis" value="1"/>
+   <set_variable name="spin_artemis" value="1"/>
+   <incoming_comms_text from="Base Operations Manager">
+      Artemis! Are you insane? We weren't done installing your ramscoop!
+    </incoming_comms_text>
+    <incoming_message from="Hamak Base" mediaType="0" fileName="Base_warning.ogg"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="3" value="1.0"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="2" value="1.0"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="1" value="1.0"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="front" index="0" value="1.0"/>
+    <set_player_grid_damage systemType="systemTurning" countFrom="front" index="1" value="0.1"/>
+    <set_player_grid_damage systemType="systemTurning" countFrom="front" index="0" value="0.1"/>
+    <destroy name="Tachyon Source 1"/>
+    <destroy name="Tachyon Source 2"/>
+    <destroy name="Tachyon Source 3"/>
+    <set_damcon_members team_index="0" value="4"/>
+    <set_damcon_members team_index="1" value="4"/>
+    <set_damcon_members team_index="2" value="4"/>
+    <warning_popup_message message="Multiple DamCon team casualties!" consoles="E"/>
+    <set_timer name="spinning_timer" seconds="3"/>
+    <play_sound_now filename="explosion.wav"/>
+</event>
+
+<!-- Then is spins out of control for three seconds -->
+<event name="Artemis Spins">
+   <if_variable name="wreck_artemis" comparator="=" value="1"/>
+   <addto_object_property name="Artemis" property="angle" value="0.02"/>
+   <addto_object_property name="Artemis" property="positionX" value="+4"/>
+   <addto_object_property name="Artemis" property="positionZ" value="-4"/>
+</event>
+
+
+<!-- Fifteen seconds after undocking something unpleasant happens to Artemis's weapons -->
+<!-- The crew gets the bad news from the Admiral as well as pop-ups -->
+
+ <event name="Confiscate Weapons">
+   <if_timer_finished name="confiscate_weapons_timer"/>
+   <if_variable name="dock01" comparator="=" value="1"/>
+   <if_variable name="confiscation" comparator="!=" value="1"/>
+   <set_object_property name="Hamak Base" property="missilestoresnuke" value="0"/>
+   <set_object_property name="Hamak Base" property="missilestoresmine" value="0"/>
+   <set_object_property name="Hamak Base" property="missilestoreshoming" value="0"/>
+   <set_object_property name="Hamak Base" property="missilestoresecm" value="0"/>
+   <set_object_property name="Artemis" property="countMine" value="0"/>
+   <set_object_property name="Artemis" property="countNuke" value="0"/>
+   <set_object_property name="Artemis" property="countHoming" value="0"/>
+   <set_object_property name="Artemis" property="countEcm" value="0"/>
+   <incoming_message from="Adm Weeks weapons explanation" mediaType="0" fileName="Weeks_confiscation.ogg"/>
+   <set_object_property name="Acme Arms Dealer" property="topSpeed" value="8"/>
+   <set_object_property name="Acme Arms Dealer" property="turnRate" value="1/2"/>
+   <set_object_property name="Acme Arms Dealer" property="throttle" value="1"/>
+  <clear_ai name ="Acme Arms Dealer"/>
+  <add_ai name ="Acme Arms Dealer" type ="POINT_THROTTLE" value1="18000" value2="0" value3="100000" value4="1"/>
+  <warning_popup_message message="Admiral Weeks." consoles="W"/>
+  <warning_popup_message message="and Homing Torpedoes confiscated by" consoles="W"/>
+  <warning_popup_message message="WEAPONS BAY reports Mines, Nukes, ECMs," consoles="W"/>
+  <set_variable name="confiscation" value="1"/>
+  <set_timer name="tachyon_timer01" seconds="10"/>
+  <set_timer name="nebula_thick_timer" seconds="45"/>
+</event>
+
+
+<!-- Discourage Artemis from trying to join Warsaw too early in the mission -->
+
+<event name="Going the Wrong Way">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_variable name="dock01" comparator="=" value="1"/>
+   <if_timer_finished name="tachyon_timer01"/>
+   <if_distance name1="Artemis" name2="Hamak Base" comparator="LESS" value ="600"/>
+   <if_variable name="weeks_wasteful" comparator="!=" value="1"/>
+   <incoming_message from="Adm Weeks ORDERS FOR ARTEMIS" mediaType="0" fileName="Weeks_warning.ogg"/>
+   <set_variable name="weeks_wasteful" value="1"/>
+ </event>
+
+<!-- Captain Haynes laments that weapons aren't needed here -->
+<!-- We're 20 parsecs from the fighting. What could happen? -->
+
+ <event name="Haynes not Worried">
+    <if_variable name="chapter" comparator="=" value="1"/>
+    <if_timer_finished name="tachyon_timer01"/>
+    <if_variable name="tachyon01" comparator="!=" value="1"/>
+    <warning_popup_message message="Tachyon energy 9 gigaWatts and rising." consoles="s"/>
+    <set_object_property name="T1A" property="rollDelta" value="4.5"/>
+    <set_object_property name="T1B" property="rollDelta" value="-4.5"/>
+    <incoming_message from="Haynes on weapons" mediaType="0" fileName="Haynes_not_worried.ogg"/>
+    <warning_popup_message message="torpedoes from energy." consoles="W"/>
+    <warning_popup_message message="REMINDER: Weapons Officer can make" consoles="W"/>
+    <set_variable name="tachyon01" value="1"/>
+ </event>
+ 
+ <!-- The popups present plenty of info to Comms and Science -->
+
+   <!-- Set up variables and timers for Chapter 2 -->
+  <!-- Warsaw is created and destroyed peroidically to get alert -->
+  <!-- Science Officers used to having it vanish and reappear -->
+
+ <event name="Begin Chapter 2">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_timer_finished name="nebula_thick_timer"/>
+   <if_timer_finished name="tachyon_timer01"/>
+   <if_variable name="nebula_thick" comparator="!=" value="1"/>
+   <incoming_message from="Haynes status update" mediaType="0" fileName="Haynes_thick.ogg"/>
+     <set_variable name="nebula_thick" value="1"/>
+     <destroy name="Warsaw"/>
+     <warning_popup_message message="Sensor contact with Warsaw lost. Possible nebula interference." consoles="S"/>
+     <set_timer name="bite_me_timer" seconds="28"/>
+     <set_timer name="spotted_something_timer" seconds="59"/>
+     <set_timer name="weeks_foolish_timer" seconds="70"/>
+     <set_timer name="hell_breaks_loose_timer" seconds="100"/>
+     <set_timer name="my_god_timer" seconds="118"/>
+     <set_timer name="no_minefield_timer" seconds="145"/>
+     <set_timer name="Warsaw_gone_timer" seconds="160"/>
+     <set_variable name="chapter" value="2"/>
+     <log text="Chapter 2\n\n"/>
+ </event>
+
+ <!-- Chapter 2, wherein Artemis and Warsaw discover a sinister Torgoth plot -->
+ 
+  <!-- Comms from Warsaw builds suspense. What do the tachyons mean? -->
+
+ <event name="Bite Me">
+   <if_variable name="chapter" comparator="=" value="2"/>
+   <if_timer_finished name="bite_me_timer"/>
+   <if_variable name="bite_me" comparator="!=" value="1"/>
+   <incoming_message from="Haynes closing in" mediaType="0" fileName="Haynes_bet.ogg"/>
+    <warning_popup_message message="Tachyon energy 10 gigaWatts and rising." consoles="s"/>
+    <set_object_property name="T1A" property="rollDelta" value="5"/>
+    <set_object_property name="T1B" property="rollDelta" value="-5"/>
+    <set_variable name="bite_me" value="1"/>
+    <create type ="neutral" x="59000" y="0" z="5000" raceKeys="Terran friendly" hullKeys="Destroyer medium" name="Warsaw" angle="0"/>
+    <add_ai name ="Warsaw" type ="POINT_THROTTLE" value1="59000" value2="0" value3="1600" value4="1"/>
+   <set_object_property name="Warsaw" property="topSpeed" value="1.2"/>
+   <set_object_property name="Warsaw" property="turnRate" value="1/100"/>
+   <set_ship_text name="Warsaw" race="TSN" class="Heavy Destroyer" desc="Captain Amelia Haynes commanding" scan_desc="Library Computer: Captain Haynes was repremanded for being overly aggressive at the battle of Helix Aquarius."/>
+   <set_special name="Warsaw" ship="1.0" captain="5.0"/>
+ </event>
+
+  <!-- Was that a Torgoth Goliath she saw? -->
+
+ <event name="Spotted Something">
+   <if_variable name="chapter" comparator="=" value="2"/>
+   <if_timer_finished name="spotted_something_timer"/>
+   <if_variable name="spotted_something" comparator="!=" value="1"/>
+   <incoming_message from="Haynes reporting CONTACT" mediaType="0" fileName="Haynes_contact.ogg"/>
+    <warning_popup_message message="Tachyon energy 11 gigaWatts and rising." consoles="s"/>
+        <set_object_property name="T1A" property="rollDelta" value="5.5"/>
+    <set_object_property name="T1B" property="rollDelta" value="-5.5"/>
+    <set_variable name="spotted_something" value="1"/>
+    <destroy name="Warsaw"/>
+ </event>
+
+  <!-- Admiral Weeks doesn't want to hear about Torgoths -->
+
+ <event name="Rumors">
+   <if_variable name="chapter" comparator="=" value="2"/>
+   <if_timer_finished name="weeks_foolish_timer"/>
+   <if_variable name="weeks_foolish" comparator="!=" value="1"/>
+   <incoming_message from="INTERCEPT Adm Weeks" mediaType="0" fileName="Weeks_rumors.ogg"/>
+   <set_variable name="weeks_foolish" value="1"/>
+ </event>
+
+ <!-- But everything changes when the Hell Breaks Loose timer reaches zero! -->
+
+ <event name="Set up first round of enemies">
+    <if_variable name="hell_breaks_loose" comparator="=" value="1"/>
+    <if_variable name="setup_1" comparator="=" value="0"/>
+    <if_timer_finished name="setup_1_timer"/>
+    <add_ai name ="DN03" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="BB04" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="BB05" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="DN03" type ="CHASE_WHALE" value1="10000" value2="2000"/>
+    <add_ai name ="BB04" type ="CHASE_WHALE" value1="10000" value2="2000"/>
+    <add_ai name ="BB05" type ="CHASE_WHALE" value1="10000" value2="2000"/>
+    <!-- set_object_property name="DN03" property="shieldMaxStateFront" value="25"/>
+    <set_object_property name="DN03" property="shieldMaxStateBack" value="25"/>
+    <set_object_property name="BB04" property="shieldMaxStateFront" value="20"/>
+    <set_object_property name="BB04" property="shieldMaxStateBack" value="20"/>
+    <set_object_property name="BB05" property="shieldMaxStateFront" value="20"/>
+    <set_object_property name="BB05" property="shieldMaxStateBack" value="20"/>
+    <set_object_property name="DN03" property="shieldStateFront" value="0"/>
+    <set_object_property name="DN03" property="shieldStateBack" value="0"/>
+    <set_object_property name="BB04" property="shieldStateFront" value="0"/>
+    <set_object_property name="BB04" property="shieldStateBack" value="0"/>
+    <set_object_property name="BB05" property="shieldStateFront" value="0"/>
+    <set_object_property name="BB05" property="shieldStateBack" value="0"/-->
+
+    <add_ai name ="DN08" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="BB09" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="BB10" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="DN08" type ="CHASE_WHALE" value1="10000" value2="2000"/>
+    <add_ai name ="BB09" type ="CHASE_WHALE" value1="10000" value2="2000"/>
+    <add_ai name ="BB10" type ="CHASE_WHALE" value1="10000" value2="2000"/>
+
+    <!--set_object_property name="DN08" property="shieldMaxStateFront" value="25"/>
+    <set_object_property name="DN08" property="shieldMaxStateBack" value="25"/>
+    <set_object_property name="BB09" property="shieldMaxStateFront" value="20"/>
+    <set_object_property name="BB09" property="shieldMaxStateBack" value="20"/>
+    <set_object_property name="BB10" property="shieldMaxStateFront" value="20"/>
+    <set_object_property name="BB10" property="shieldMaxStateBack" value="20"/>
+    <set_object_property name="DN08" property="shieldStateFront" value="10"/>
+    <set_object_property name="DN08" property="shieldStateBack" value="10"/>
+    <set_object_property name="BB09" property="shieldStateFront" value="0"/>
+    <set_object_property name="BB09" property="shieldStateBack" value="0"/>
+    <set_object_property name="BB10" property="shieldStateFront" value="0"/>
+    <set_object_property name="BB10" property="shieldStateBack" value="0"/-->
+
+    <add_ai name ="DN13" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="BB14" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="BB15" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="DN13" type ="CHASE_WHALE" value1="10000" value2="2000"/>
+    <add_ai name ="BB14" type ="CHASE_WHALE" value1="10000" value2="2000"/>
+    <add_ai name ="BB15" type ="CHASE_WHALE" value1="10000" value2="2000"/>
+    <!-- set_object_property name="DN13" property="shieldMaxStateFront" value="25"/>
+    <set_object_property name="DN13" property="shieldMaxStateBack" value="25"/>
+    <set_object_property name="BB14" property="shieldMaxStateFront" value="20"/>
+    <set_object_property name="BB14" property="shieldMaxStateBack" value="20"/>
+    <set_object_property name="BB15" property="shieldMaxStateFront" value="20"/>
+    <set_object_property name="BB15" property="shieldMaxStateBack" value="20"/>
+    <set_object_property name="BB14" property="shieldStateFront" value="0"/>
+    <set_object_property name="BB14" property="shieldStateBack" value="0"/>
+    <set_object_property name="BB15" property="shieldStateFront" value="0"/>
+    <set_object_property name="BB15" property="shieldStateBack" value="0"/-->
+    <set_timer name="shield_boost_timer" seconds="95"/>
+    <set_variable name="setup_1" value="1"/>
+    <!-- set_variable name="shield_boostable" value="1"/-->
+ </event>
+ 
+  <!-- event name="Boost enemy shields">
+    <if_variable name="shield_boostable" comparator="=" value="1"/>
+    <if_timer_finished name="shield_boost_timer"/>
+    <set_object_property name="DN03" property="shieldMaxStateFront" value="600"/>
+    <set_object_property name="DN03" property="shieldMaxStateBack" value="600"/>
+    <set_object_property name="DN08" property="shieldMaxStateFront" value="600"/>
+    <set_object_property name="DN08" property="shieldMaxStateBack" value="600"/>
+    <set_object_property name="DN13" property="shieldMaxStateFront" value="600"/>
+    <set_object_property name="DN13" property="shieldMaxStateBack" value="600"/>
+
+    <set_object_property name="BB04" property="shieldMaxStateFront" value="400"/>
+    <set_object_property name="BB04" property="shieldMaxStateBack" value="400"/>
+    <set_object_property name="BB05" property="shieldMaxStateFront" value="400"/>
+    <set_object_property name="BB05" property="shieldMaxStateBack" value="400"/>
+    <set_object_property name="BB09" property="shieldMaxStateFront" value="400"/>
+    <set_object_property name="BB09" property="shieldMaxStateBack" value="400"/>
+    <set_object_property name="BB10" property="shieldMaxStateFront" value="400"/>
+    <set_object_property name="BB10" property="shieldMaxStateBack" value="400"/>
+    
+    
+    <warning_popup_message message="Enemy shields firming up." consoles="S"/>
+    <set_variable name="shield_boostable" value="0"/>
+ </event-->
+
+ 
+<event name="HELL BREAKS LOOSE">
+   <if_variable name="chapter" comparator="=" value="2"/>
+   <if_timer_finished name="hell_breaks_loose_timer"/>
+   <if_variable name="hell_breaks_loose" comparator="!=" value="1"/>
+   <incoming_message from="Haynes PRIORITY ONE" mediaType="0" fileName="Haynes_battlestations.ogg"/>
+     <set_variable name="hell_breaks_loose" value="1"/>
+     <warning_popup_message message="Tachyon energy 12 gigaWatts." consoles="s"/>
+     <log text="First three fleets teleported in.\n\n"/>
+
+
+    <!-- Change Tachyon Sources into Ships with spinning alien technology attached -->
+   <destroy name="Tachyon Source 1"/>
+  <create type ="genericMesh" meshFileName="dat/Missions/MISS_HamakSector_2/teleporter.dxs" textureFileName="dat/electricNoise2.png" colorRed="1" x="98000" y="0" z="59000" name="T1A"/>
+  <set_object_property name="T1A" property="artScale" value="1"/>
+  <set_object_property name="T1A" property="angle" value="1.505"/>
+  <set_object_property name="T1A" property="rollDelta" value="3"/>
+  <!-- To put a generic inside a ship set pushRadius =0 -->
+  <set_object_property name="T1A" property="pushRadius" value="0"/>
+  <create type ="genericMesh" meshFileName="dat/Missions/MISS_HamakSector_2/teleporter.dxs" textureFileName="dat/electricNoise2.png" colorRed="1" x="98001" y="0" z="59000" name="T1B"/>
+  <set_object_property name="T1B" property="artScale" value="1"/>
+  <set_object_property name="T1B" property="angle" value="1.505"/>
+  <set_object_property name="T1B" property="rollDelta" value="-3"/>
+   <set_object_property name="T1B" property="pushRadius" value="0"/>
+   <create type ="enemy" x="98005" y="0" z="59000" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="Tachyon Source 1" angle="90" fleetnumber="99"/>
+   <set_ship_text name="Tachyon Source 1"  class="Unknown" desc="Tachyon energy 0 gigaWatts." scan_desc="Generating a false target image on the edge of the sector. True location appears on the viewscreen."/>
+   <set_special name="Tachyon Source 1" ship="1" captain="4"/>
+   <set_object_property name="Tachyon Source 1" property="topSpeed" value="0.00001"/>
+   <set_object_property name="Tachyon Source 1" property="turnRate" value="0"/>
+   <set_object_property name="Tachyon Source 1" property="systemDamageImpulse" value="1"/>
+   <set_object_property name="Tachyon Source 1" property="systemDamageTurning" value="1"/>
+   <!-- set_object_property name="Tachyon Source 1" property="shieldMaxStateFront" value="20"/>
+   <set_object_property name="Tachyon Source 1" property="shieldMaxStateBack" value="20"/-->
+  <destroy name="Tachyon Source 2"/>
+  <create type ="genericMesh" meshFileName="dat/Missions/MISS_HamakSector_2/teleporter.dxs" textureFileName="dat/electricNoise2.png" colorRed="1" x="98000" y="0" z="19000" name="T2A"/>
+  <set_special name="Tachyon Source 2" ship="1" captain="4"/>
+  <set_object_property name="T2A" property="artScale" value="1"/>
+  <set_object_property name="T2A" property="angle" value="1.505"/>
+  <set_object_property name="T2A" property="rollDelta" value="5"/>
+  <set_object_property name="T2A" property="pushRadius" value="0"/>
+
+  
+  <create type ="genericMesh" meshFileName="dat/Missions/MISS_HamakSector_2/teleporter.dxs" textureFileName="dat/electricNoise2.png" colorRed="1" x="98001" y="0" z="19000" name="T2B"/>
+  <set_object_property name="T2B" property="artScale" value="1"/>
+  <set_object_property name="T2B" property="angle" value="1.505"/>
+  <set_object_property name="T2B" property="rollDelta" value="-5"/>
+  <set_object_property name="T2B" property="pushRadius" value="0"/>
+  
+  <create type ="enemy" x="98005" y="0" z="19000" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="Tachyon Source 2" angle="90" fleetnumber="99"/>
+  <set_special name="Tachyon Source 3" ship="1" captain="4"/>
+  <set_ship_text name="Tachyon Source 2"  class="Unknown" desc="Tachyon energy 0 gigaWatts." scan_desc="Generating a false target image on the edge of the sector. True location appears on the viewscreen."/>
+  <set_object_property name="Tachyon Source 2" property="topSpeed" value="0.00001"/>
+  <set_object_property name="Tachyon Source 2" property="turnRate" value="0"/>
+  <set_object_property name="Tachyon Source 2" property="systemDamageImpulse" value="1"/>
+  <set_object_property name="Tachyon Source 2" property="systemDamageTurning" value="1"/>
+  <!-- set_object_property name="Tachyon Source 2" property="shieldMaxStateFront" value="20"/>
+  <set_object_property name="Tachyon Source 2" property="shieldMaxStateBack" value="20"/-->
+
+  <destroy name="Tachyon Source 3"/>
+  <create type ="genericMesh" meshFileName="dat/Missions/MISS_HamakSector_2/teleporter.dxs" textureFileName="dat/electricNoise2.png" colorRed="1" x="59000" y="0" z="1600" name="T3A"/>
+  <set_object_property name="T3A" property="artScale" value="1"/>
+  <set_object_property name="T3A" property="angle" value="3.1415"/>
+  <set_object_property name="T3A" property="rollDelta" value="5"/>
+  <set_object_property name="T3A" property="pushRadius" value="0"/>
+
+  <create type ="genericMesh" meshFileName="dat/Missions/MISS_HamakSector_2/teleporter.dxs" textureFileName="dat/electricNoise2.png" colorRed="1" x="59001" y="0" z="1600" name="T3B"/>
+  <set_object_property name="T3B" property="artScale" value="1"/>
+  <set_object_property name="T3B" property="angle" value="3.1415"/>
+  <set_object_property name="T3B" property="rollDelta" value="-5"/>
+  <set_object_property name="T3B" property="pushRadius" value="0"/>
+  
+   <create type ="enemy" x="59000" y="0" z="2605" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="Tachyon Source 3" angle="180" fleetnumber="99"/>
+   <set_ship_text name="Tachyon Source 3"  class="Unknown" desc="Tachyon energy 0 gigaWatts." scan_desc="Generating a false target image on the edge of the sector. True location appears on the viewscreen."/>
+   <set_object_property name="Tachyon Source 3" property="topSpeed" value="0.00001"/>
+   <set_object_property name="Tachyon Source 3" property="turnRate" value="0"/>
+   <set_object_property name="Tachyon Source 3" property="systemDamageImpulse" value="1"/>
+   <set_object_property name="Tachyon Source 3" property="systemDamageTurning" value="1"/>
+   <!-- set_object_property name="Tachyon Source 3" property="shieldMaxStateFront" value="20"/>
+   <set_object_property name="Tachyon Source 3" property="shieldMaxStateBack" value="20"/-->
+  
+   <play_sound_now filename="teleport.wav"/>
+   
+   <!--- Deploy the Torgoths -->
+    <create type ="enemy" x="58800" y="0" z="2800" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN03" angle="180" fleetnumber="1"/>
+    <create type ="enemy" x="59400" y="0" z="2900" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB04" angle="180" fleetnumber="1"/>
+    <create type ="enemy" x="58600" y="0" z="2900" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB05" angle="180" fleetnumber="1"/>
+    <set_special name="DN03" ship="1" captain="5"/>
+    <set_special name="BB04" ship="1" captain="5"/>
+    <set_special name="BB05" ship="1" captain="5"/>
+
+    <create type ="enemy" x="98000" y="0" z="59000" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN08" angle="90" fleetnumber="2"/>
+    <create type ="enemy" x="97500" y="0" z="59400" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB09" angle="90" fleetnumber="2"/>
+    <create type ="enemy" x="97500" y="0" z="58600" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB10" angle="90" fleetnumber="2"/>
+    <set_special name="DN08" captain="4"/>
+    <set_special name="BB09" captain="4"/>
+    <set_special name="BB08" captain="0"/>
+
+    <create type ="enemy" x="98000" y="500" z="19000" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN12" angle="180" fleetnumber="3"/>
+    <create type ="enemy" x="98000" y="-500" z="19000" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN13" angle="180" fleetnumber="3"/>
+    <create type ="enemy" x="97500" y="0" z="19400" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB14" angle="90" fleetnumber="3"/>
+    <create type ="enemy" x="97500" y="0" z="18600" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB15" angle="90" fleetnumber="3"/>
+    <set_special name="DN13" ship="2" captain="3"/>
+    <set_special name="BB14" ship="2" captain="4"/>
+    <set_special name="BB15" ship="2" captain="5"/>
+
+    <!-- Science can scan Warsaw again, just in time to see its fate. Or not? -->
+
+    <create type ="neutral" x="59000" y="0" z="4000" raceKeys="Terran friendly" hullKeys="Destroyer medium" name="Warsaw" angle="0"/>
+
+    <set_ship_text name="Warsaw" race="TSN" class="Heavy Destroyer" desc="Captain Amelia Haynes commanding" scan_desc="Library Computer: Captain Haynes has an outstanding battle record."/>
+    <set_special name="Warsaw" ship="1.0" captain="5.0"/>
+    <set_timer name="setup_1_timer" seconds="5"/>
+ </event>
+ 
+
+ 
+ 
+<!-- Keep teleporter ships stationary -->
+ <event>
+   <if_exists name="T1A"/>
+   <if_exists name="Tachyon Source 1"/>
+    <set_relative_position name1="T1A" name2="Tachyon Source 1" angle="0" distance="15"/>
+    <set_object_property name="Tachyon Source 1" property="throttle" value="0"/>
+    <set_object_property name="Tachyon Source 1" property="systemDamageImpulse" value="1"/>
+   <set_object_property name="Tachyon Source 1" property="systemDamageTurning" value="1"/>
+ </event>
+ <event>
+   <if_exists name="T2A"/>
+   <if_exists name="Tachyon Source 2"/>
+  <set_relative_position name1="T2A" name2="Tachyon Source 2" angle="0" distance="15"/>
+    <set_object_property name="Tachyon Source 2" property="throttle" value="0"/>
+    <set_object_property name="Tachyon Source 2" property="systemDamageImpulse" value="1"/>
+   <set_object_property name="Tachyon Source 2" property="systemDamageTurning" value="1"/>
+ </event>
+ 
+ <event>
+   <if_exists name="T3A"/>
+   <if_exists name="Tachyon Source 3"/>
+   <set_relative_position name1="T3A" name2="Tachyon Source 3" angle="0" distance="15"/>
+    <set_object_property name="Tachyon Source 3" property="throttle" value="0"/>
+    <set_object_property name="Tachyon Source 3" property="systemDamageImpulse" value="1"/>
+   <set_object_property name="Tachyon Source 3" property="systemDamageTurning" value="1"/>
+ </event>
+
+
+ 
+ <!-- If Tachyon ships are destroyed also destroy teleporters -->
+ 
+ <event>
+   <if_exists name="T1A"/>
+   <if_not_exists name="Tachyon Source 1"/>
+   <destroy name="T1A"/>
+   <destroy name="T1B"/>
+ </event>
+ 
+ <event>
+   <if_exists name="T2A"/>
+   <if_not_exists name="Tachyon Source 2"/>
+   <destroy name="T2A"/>
+   <destroy name="T2B"/>
+ </event>
+ 
+ <event>
+   <if_exists name="T3A"/>
+   <if_not_exists name="Tachyon Source 3"/>
+   <destroy name="T3A"/>
+   <destroy name="T3B"/>
+ </event>
+ 
+
+<!-- Admiral Weeks doesn't take the news well -->
+
+<event>
+   <if_variable name="chapter" comparator="=" value="2"/>
+   <if_timer_finished name="my_god_timer"/>
+   <if_variable name="my_god" comparator="!=" value="1"/>
+   <incoming_message from="Adm Weeks ORDERS FOR ARTEMIS" mediaType="0" fileName="Weeks_my_god.ogg"/>
+   <set_variable name="my_god" value="1"/>
+   <warning_popup_message message="Tachyon levels now ZERO." consoles="s"/>
+   <set_object_property name="Hamak Base" property="canBuild" value="1"/>
+   <log text="I think Admiral Weeks pooped his pants!\n\n"/>
+ </event>
+ 
+<!-- Captain Haynes sends her final message -->
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="2"/>
+   <if_timer_finished name="no_minefield_timer"/>
+   <if_variable name="no_minefield" comparator="!=" value="1"/>
+   <incoming_message from="Haynes combat intelligence" mediaType="0" fileName="Haynes_fubared.ogg"/>
+   <set_variable name="no_minefield" value="1"/>
+ </event>
+
+ <!-- Looks like Warsaw is toast! -->
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="2"/>
+   <if_timer_finished name="Warsaw_gone_timer"/>
+    <destroy name="Warsaw"/>
+     <warning_popup_message message="Signal from Warsaw lost." consoles="c"/>
+     <set_variable name="chapter" value="3"/>
+     <log text="Chapter 3\n\n"/>
+ </event>
+
+
+ <!-- Chapter 3: Unless Artemis destroys the teleport ships, Torgoth squadrons will never stop coming -->
+
+ <!-- Set squadrons timers the first time -->
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="chapter_3_setup" comparator="!=" value="1"/>
+   <set_timer name="tachyon_warning_timer01" seconds="40"/>
+   <set_timer name="tachyon_warning_timer02" seconds="80"/>
+   <set_timer name="tachyon_warning_timer03" seconds="120"/>
+   <set_timer name="tachyon_warning_timer04" seconds="160"/>
+   <set_timer name="tachyon_warning_timer05" seconds="200"/>
+   <set_timer name="tachyon_warning_timer06" seconds="240"/>
+   <set_timer name="tachyon_warning_timer07" seconds="280"/>
+   <set_timer name="tachyon_warning_timer08" seconds="320"/>
+   <set_timer name="tachyon_warning_timer09" seconds="360"/>
+   <set_timer name="tachyon_warning_timer10" seconds="400"/>
+   <set_timer name="tachyon_warning_timer11" seconds="450"/>
+   <set_timer name="tachyon_warning_timer12" seconds="500"/>
+   <set_timer name="tachyon_warning_timer12b" seconds="550"/>
+   <set_timer name="warsaw_coming_timer" seconds="370"/>
+
+   <set_variable name="chapter_3_setup" value="1"/>
+ </event>
+
+   <!-- A message from Warsaw! -->
+   <!-- Note: Can only happen if Artemis isn't too close to edge of sector -->
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="warsaws_coming" comparator="!=" value="1"/>
+   <if_object_property name="Artemis" property="positionX" comparator="LESS" value="92000"/>
+   <if_object_property name="Artemis" property="positionZ" comparator="GREATER" value="8000"/>
+   <if_timer_finished name="warsaw_coming_timer"/>
+   <incoming_message from="Capt Haynes hailing Artemis!" mediaType="0" fileName="Haynes_not_dead.ogg"/>
+   <set_timer name="warsaw_reappear_timer" seconds="7"/>
+   <set_timer name="weeks_escape_timer1" seconds="30"/>
+   <set_timer name="weeks_escape_timer2" seconds="80"/>
+   <set_timer name="weeks_escape_timer3" seconds="125"/>
+   <set_timer name="weeks_escape_timer4" seconds="170"/>
+   <set_variable name="warsaws_coming" value="1"/>
+</event>
+
+  <!-- Warsaw gets an Advantage -->
+<event name="Prime Warsaw for a Fight">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="warsaws_back2" comparator="!=" value="1"/>
+   <if_variable name="warsaws_back" comparator="=" value="1"/>
+   <set_object_property name="Warsaw" property="topSpeed" value="3.5"/>
+  <set_object_property name="Warsaw" property="turnRate" value="1/100"/>
+  <set_object_property name="BB03" property="shieldMaxStateFront" value="400"/>
+  <set_object_property name="BB03" property="shieldMaxStateBack" value="400"/>
+    <set_object_property name="BB03" property="shieldStateFront" value="327"/>
+  <set_object_property name="BB03" property="shieldStateBack" value="309"/>
+
+  <set_variable name="warsaws_back2" value="1"/>
+</event>
+
+  <!-- Return of the Warsaw -->
+<event name="Warsaw's Back">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="warsaws_back" comparator="!=" value="1"/>
+   <if_timer_finished name="warsaw_reappear_timer"/>
+   <create type ="neutral" x="59000" y="0" z="18500" raceKeys="Terran friendly" hullKeys="Destroyer medium" name="Warsaw" angle="0"/>
+   <set_ship_text name="Warsaw" race="TSN" class="Heavy Destroyer" desc="This ship has sustained severe damage and casualties, but they have made repairs." scan_desc="The Engine Room is bypassed like a plate of spaghetti."/>
+   <set_special name="Warsaw" ship="1.0" captain="5.0"/>
+  <destroy name="BB03"/>
+   <create type ="enemy" x="59000" y="0" z="1600" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB03" angle="180" fleetnumber="90"/>
+   <set_relative_position name1="Artemis" name2="BB03" angle="0" distance="1700"/>
+   <copy_object_property name1="Artemis" name2="BB03" property ="angle"/>
+   <addto_object_property name="BB03" property="angle" value="3.14159"/>
+   <set_relative_position name1="Artemis" name2="Warsaw" angle="0" distance="2400"/>
+   <copy_object_property name1="Artemis" name2="Warsaw" property ="angle"/>
+   <addto_object_property name="Warsaw" property="angle" value="3.14159"/>
+   <set_object_property name="Warsaw" property="shieldMaxStateFront" value="200"/>
+   <set_object_property name="Warsaw" property="shieldMaxStateBack" value="150"/>
+    <clear_ai name ="Warsaw"/>
+    <add_ai name ="Warsaw" type ="CHASE_AI_SHIP" value1="59000" value2="40000"/>
+    <add_ai name ="Warsaw" type ="FOLLOW_COMMS_ORDERS"/>
+    <add_ai name ="Warsaw" type ="DEFEND" value1="9000" value2="4000"/>
+    <set_variable name="warsaws_back" value="1"/>
+</event>
+
+
+
+
+  <!-- Escape of Admiral Weeks -->
+  <!-- First a Freighter -->
+<event name="First GW 214 Escape">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="weeks_escape1" comparator="!=" value="1"/>
+   <if_timer_finished name="weeks_escape_timer1"/>
+  <set_object_property name="GW Unlimited 214" property="topSpeed" value="2"/>
+  <clear_ai name ="GW Unlimited 214"/>
+  <add_ai name ="GW Unlimited 214" type ="POINT_THROTTLE" value1="10000" value2="0" value3="100000" value4="1"/>
+  <incoming_message from="GW 214 General message" mediaType="0" fileName="GW_214_goodbye.ogg"/>
+   <set_variable name="weeks_escape1" value="1"/>
+ </event>
+
+   <!-- Then two freighters -->
+<event name="Two Freighters Escape">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="weeks_escape2" comparator="!=" value="1"/>
+   <if_timer_finished name="weeks_escape_timer2"/>
+   <clear_ai name ="GW Unlimited 157"/>
+   <add_ai name ="GW Unlimited 157" type ="POINT_THROTTLE" value1="10000" value2="0" value3="100000" value4="1"/>
+   <create type ="neutral" x="25100" y="0" z="81110" raceKeys="Terran friendly" hullKeys="Bulk Cargo Cargo" name="GW Unlimited 189" angle="175"/>
+   <clear_ai name ="GW Unlimited 189"/>
+   <set_special name="GW Unlimited 189" ship="1" captain="0"/>
+   <add_ai name ="GW Unlimited 189" type ="POINT_THROTTLE" value1="10000" value2="0" value3="100000" value4="1"/>
+   <set_object_property name="GW Unlimited 214" property="topSpeed" value="2"/>
+   <incoming_message from="Intercept from GW 189" mediaType="0" fileName="GW_189_goodbye.ogg"/>
+   <set_variable name="weeks_escape2" value="1"/>
+ </event>
+
+  <!-- Then two freighters and a destroyer -->
+  <!-- Weeks is aboard Chicago -->
+  
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="weeks_escape3" comparator="!=" value="1"/>
+   <if_timer_finished name="weeks_escape_timer3"/>
+   <create type ="neutral" x="24980" y="0" z="78980" raceKeys="Terran friendly" hullKeys="Bulk Cargo Cargo" name="GW Unlimited 101" angle="175"/>
+   <clear_ai name ="GW Unlimited 101"/>
+   <add_ai name ="GW Unlimited 101" type ="POINT_THROTTLE" value1="10000" value2="0" value3="100000" value4="1"/>
+   <set_special name="GW Unlimited 101" ship="1" captain="0"/>
+   <create type ="neutral" x="25100" y="0" z="81110" raceKeys="Terran friendly" hullKeys="Bulk Cargo Cargo" name="GW Unlimited 115" angle="175"/>
+   <clear_ai name ="GW Unlimited 115"/>
+   <add_ai name ="GW Unlimited 115" type ="POINT_THROTTLE" value1="10000" value2="0" value3="100000" value4="1"/>
+   <set_object_property name="GW Unlimited 189" property="topSpeed" value="2"/>
+   <set_object_property name="GW Unlimited 157" property="topSpeed" value="2"/>
+   <set_special name="GW Unlimited 101" ship="1" captain="0"/>
+   <create type ="neutral" x="25000" y="0" z="81100" raceKeys="Terran friendly" hullKeys="Destroyer medium" name="Chicago" angle="175"/>
+   <clear_ai name ="Chicago"/>
+   <add_ai name ="Chicago" type ="POINT_THROTTLE" value1="10000" value2="0" value3="100000" value4="1"/>
+   <set_object_property name="Chicago" property="topSpeed" value="3"/>
+   <set_special name="Chicago" ship="2" captain="0"/>
+   <incoming_message from="Adm Weeks aboard Starship Chicago" mediaType="0" fileName="Weeks_goodbye.ogg"/>
+   <warning_popup_message message="aboard Starship Chicago." consoles="S"/>
+   <warning_popup_message message="Admiral Weeks security credentials confirmed" consoles="S"/>
+   <set_variable name="weeks_escape3" value="1"/>
+ </event>
+
+  <!-- If something happened to Warsaw bring it back NOW. -->
+  <!-- This can only happen here so Haynes can deliver a line. -->
+  
+  <event name="Re-prime Warsaw">
+  <if_variable name="remake_Warsaw" comparator="=" value="1"/>
+  <set_object_property name="Warsaw" property="topSpeed" value="3.1"/>
+  <set_object_property name="Warsaw" property="turnRate" value="1/60"/>
+   <set_object_property name="Warsaw" property="shieldMaxStateFront" value="150"/>
+   <set_object_property name="Warsaw" property="shieldMaxStateBack" value="140"/>
+   <set_variable name="remake_Warsaw" value="0"/>
+  </event>
+
+  
+  <event name="Remake Warsaw">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="weeks_escape4" comparator="!=" value="1"/>
+   <if_variable name="remake_Warsaw" comparator="!=" value="1"/>
+   <if_timer_finished name="weeks_escape_timer4"/>
+   <if_not_exists name="Warsaw"/>
+  <create type ="neutral" x="50000" y="0" z="50000" raceKeys="Terran friendly" hullKeys="Destroyer medium" name="Warsaw" angle="0"/>
+  <set_ship_text name="Warsaw" race="TSN" class="Heavy Destroyer" desc="This ship has sustained severe damage and casualties but is still battle worthy." scan_desc="The crew is making rude gestures at the Torgoths."/>
+  <set_special name="Warsaw" ship="1.0" captain="5.0"/>
+  <set_variable name="remake_Warsaw" value="1"/>
+  </event>
+  
+
+ <!-- Finally two more freighters -->
+  
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="weeks_escape4" comparator="!=" value="1"/>
+   <if_timer_finished name="weeks_escape_timer4"/>
+  <create type ="neutral" x="24980" y="0" z="79980" raceKeys="Terran friendly" hullKeys="Cargo" name="GW Unlimited 194" angle="175"/>
+  <clear_ai name ="GW Unlimited 194"/>
+  <set_special name="GW Unlimited 194" ship="1" captain="0"/>
+  <add_ai name ="GW Unlimited 194" type ="POINT_THROTTLE" value1="10000" value2="0" value3="100000" value4="1"/>
+  <set_object_property name="GW Unlimited 101" property="topSpeed" value="2"/>
+  <set_object_property name="GW Unlimited 115" property="topSpeed" value="2"/>
+  <set_object_property name="Chicago" property="topSpeed" value="2"/>
+  <create type ="neutral" x="25100" y="0" z="80110" raceKeys="Terran friendly" hullKeys="Bulk Cargo" name="GW Unlimited 208" angle="175"/>
+  <clear_ai name ="GW Unlimited 208"/>
+  <set_special name="GW Unlimited 208" ship="1" captain="0"/>
+  <add_ai name ="GW Unlimited 208" type ="POINT_THROTTLE" value1="10000" value2="0" value3="100000" value4="1"/>
+  <set_object_property name="GW Unlimited 208" property="topSpeed" value="2"/>
+  <incoming_message from="PRIORITY from Capt Haynes" mediaType="0" fileName="Haynes_will_follow.ogg"/>
+  <warning_popup_message message="no reenforcements at Tau Ceti." consoles="S"/>
+  <warning_popup_message message="LIBRARY COMPUTER: TSN has" consoles="S"/>
+  <set_variable name="weeks_escape4" value="1"/>
+ </event>
+ 
+ <!-- Destroy cargo ships as they leave -->
+ 
+  <event>
+   <if_inside_box name="Acme Arms Dealer" leastX="100" leastZ="99000" mostX="92000" mostZ="100000"/>
+   <destroy name="Acme Arms Dealer"/>
+ </event>
+ 
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_inside_box name="GW Unlimited 208" leastX="100" leastZ="99000" mostX="92000" mostZ="100000"/>
+   <destroy name="GW Unlimited 208"/>
+ </event>
+ 
+  <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_inside_box name="GW Unlimited 214" leastX="100" leastZ="99000" mostX="92000" mostZ="100000"/>
+   <incoming_message from="GW 157 General message" mediaType="0" fileName="GW_157_vacating.ogg"/>
+   <destroy name="GW Unlimited 214"/>
+ </event>
+ 
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_inside_box name="GW Unlimited 157" leastX="100" leastZ="99000" mostX="92000" mostZ="100000"/>
+   <destroy name="GW Unlimited 157"/>
+ </event>
+ 
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_inside_box name="GW Unlimited 189" leastX="100" leastZ="99000" mostX="92000" mostZ="100000"/>
+   <destroy name="GW Unlimited 189"/>
+ </event>
+ 
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_inside_box name="GW Unlimited 101" leastX="100" leastZ="99000" mostX="92000" mostZ="100000"/>
+   <destroy name="GW Unlimited 101"/>
+ </event>
+ 
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_inside_box name="GW Unlimited 115" leastX="100" leastZ="99000" mostX="92000" mostZ="100000"/>
+   <destroy name="GW Unlimited 115"/>
+ </event>
+ 
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_inside_box name="Chicago" leastX="100" leastZ="99000" mostX="92000" mostZ="100000"/>
+   <destroy name="Chicago"/>
+ </event>
+ 
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_inside_box name="GW Unlimited 194" leastX="100" leastZ="99000" mostX="92000" mostZ="100000"/>
+   <destroy name="GW Unlimited 194"/>
+ </event>
+ 
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_inside_box name="GW Unlimited 208" leastX="100" leastZ="99000" mostX="92000" mostZ="100000"/>
+   <destroy name="GW Unlimited 208"/>
+ </event>
+
+ <!-- *********************************************************** -->
+
+
+  <!-- Give Science Officer twelve different Tachyon Energy updates -->
+  <!-- if the teleport ships have not been destroyed. -->
+  <!-- The teleport ships are fleet 99. -->
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer01"/>
+   <if_variable name="tach_warning01" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy 1 gigaWatt and rising." consoles="s"/>
+       <set_object_property name="T1A" property="rollDelta" value="0.5"/>
+       <set_object_property name="T1B" property="rollDelta" value="-0.5"/>
+       <set_object_property name="T2A" property="rollDelta" value="0.5"/>
+       <set_object_property name="T2B" property="rollDelta" value="-0.5"/>
+       <set_object_property name="T3A" property="rollDelta" value="0.5"/>
+       <set_object_property name="T3B" property="rollDelta" value="-0.5"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 1 gigaWatt and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 1 gigaWatt and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 1 gigaWatt and rising."/>
+       <set_variable name="tach_warning01" value="1"/>
+ </event>
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer02"/>
+   <if_variable name="tach_warning02" comparator="!=" value="1"/>
+    <warning_popup_message message="Tachyon energy 2 gigaWatts and rising." consoles="s"/>
+       <set_object_property name="T1A" property="rollDelta" value="1"/>
+       <set_object_property name="T1B" property="rollDelta" value="-1"/>
+       <set_object_property name="T2A" property="rollDelta" value="1"/>
+       <set_object_property name="T2B" property="rollDelta" value="-1"/>
+       <set_object_property name="T3A" property="rollDelta" value="1"/>
+       <set_object_property name="T3B" property="rollDelta" value="-1"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 2 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 2 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 2 gigaWatts and rising."/>
+    <set_variable name="tach_warning02" value="1"/>
+ </event>
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer03"/>
+   <if_variable name="tach_warning03" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy 3 gigaWatts and rising." consoles="s"/>
+      <set_object_property name="T1A" property="rollDelta" value="1.5"/>
+       <set_object_property name="T1B" property="rollDelta" value="-1.5"/>
+       <set_object_property name="T2A" property="rollDelta" value="1.5"/>
+       <set_object_property name="T2B" property="rollDelta" value="-1.5"/>
+       <set_object_property name="T3A" property="rollDelta" value="1.5"/>
+       <set_object_property name="T3B" property="rollDelta" value="-1.5"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 3 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 3 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 3 gigaWatts and rising."/>
+       <set_variable name="tach_warning03" value="1"/>
+ </event>
+
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer04"/>
+   <if_variable name="tach_warning04" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy 4 gigaWatts and rising." consoles="s"/>
+      <set_object_property name="T1A" property="rollDelta" value="2"/>
+       <set_object_property name="T1B" property="rollDelta" value="-2"/>
+       <set_object_property name="T2A" property="rollDelta" value="2"/>
+       <set_object_property name="T2B" property="rollDelta" value="-2"/>
+       <set_object_property name="T3A" property="rollDelta" value="2"/>
+       <set_object_property name="T3B" property="rollDelta" value="-2"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 4 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 4 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 4 gigaWatts and rising."/>
+       <set_variable name="tach_warning04" value="1"/>
+ </event>
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer05"/>
+   <if_variable name="tach_warning05" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy 5 gigaWatts and rising." consoles="s"/>
+      <set_object_property name="T1A" property="rollDelta" value="2.5"/>
+       <set_object_property name="T1B" property="rollDelta" value="-2.5"/>
+       <set_object_property name="T2A" property="rollDelta" value="2.5"/>
+       <set_object_property name="T2B" property="rollDelta" value="-2.5"/>
+       <set_object_property name="T3A" property="rollDelta" value="2.5"/>
+       <set_object_property name="T3B" property="rollDelta" value="-2.5"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 5 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 5 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 5 gigaWatts and rising."/>
+       <set_variable name="tach_warning05" value="1"/>
+ </event>
+
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer06"/>
+   <if_variable name="tach_warning06" comparator="!=" value="1"/>
+   <warning_popup_message message="Tachyon energy 6 gigaWatts and rising." consoles="s"/>
+   <set_object_property name="T1A" property="rollDelta" value="3"/>
+       <set_object_property name="T1B" property="rollDelta" value="-3"/>
+       <set_object_property name="T2A" property="rollDelta" value="3"/>
+       <set_object_property name="T2B" property="rollDelta" value="-3"/>
+       <set_object_property name="T3A" property="rollDelta" value="3"/>
+       <set_object_property name="T3B" property="rollDelta" value="-3"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 6 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 6 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 6 gigaWatts and rising."/>
+   <set_variable name="tach_warning06" value="1"/>
+ </event>
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer07"/>
+   <if_variable name="tach_warning07" comparator="!=" value="1"/>
+   <warning_popup_message message="Tachyon energy 7 gigaWatts and rising." consoles="s"/>
+   <incoming_message from="Hamak Base General Broadcast" mediaType="0" fileName="Base_automated.ogg"/>
+       <set_object_property name="T1A" property="rollDelta" value="3.5"/>
+       <set_object_property name="T1B" property="rollDelta" value="-3.5"/>
+       <set_object_property name="T2A" property="rollDelta" value="3.5"/>
+       <set_object_property name="T2B" property="rollDelta" value="-3.5"/>
+       <set_object_property name="T3A" property="rollDelta" value="3.5"/>
+       <set_object_property name="T3B" property="rollDelta" value="-3.5"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 7 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 7 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 7 gigaWatts and rising."/>
+   <set_variable name="tach_warning07" value="1"/>
+ </event>
+
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer08"/>
+   <if_variable name="tach_warning08" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy 8 gigaWatts and rising." consoles="s"/>
+      <set_object_property name="T1A" property="rollDelta" value="4"/>
+       <set_object_property name="T1B" property="rollDelta" value="-4"/>
+       <set_object_property name="T2A" property="rollDelta" value="4"/>
+       <set_object_property name="T2B" property="rollDelta" value="-4"/>
+       <set_object_property name="T3A" property="rollDelta" value="4"/>
+       <set_object_property name="T3B" property="rollDelta" value="-4"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 8 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 8 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 8 gigaWatts and rising."/>
+       <set_variable name="tach_warning08" value="1"/>
+ </event>
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer09"/>
+   <if_variable name="tach_warning09" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy 9 gigaWatts and rising." consoles="s"/>
+      <set_object_property name="T1A" property="rollDelta" value="4.5"/>
+       <set_object_property name="T1B" property="rollDelta" value="-4.5"/>
+       <set_object_property name="T2A" property="rollDelta" value="4.5"/>
+       <set_object_property name="T2B" property="rollDelta" value="-4.5"/>
+       <set_object_property name="T3A" property="rollDelta" value="4.5"/>
+       <set_object_property name="T3B" property="rollDelta" value="-4.5"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 9 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 9 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 9 gigaWatts and rising."/>
+       <set_variable name="tach_warning09" value="1"/>
+ </event>
+
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="once" comparator="!=" value="1"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer10"/>
+   <if_variable name="tach_warning10" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy 10 gigaWatts and rising." consoles="s"/>
+      <warning_popup_message message="Coded Torgoth message intercepted. Decoding in process." consoles="c"/>
+      <set_object_property name="T1A" property="rollDelta" value="5"/>
+       <set_object_property name="T1B" property="rollDelta" value="-5"/>
+       <set_object_property name="T2A" property="rollDelta" value="5"/>
+       <set_object_property name="T2B" property="rollDelta" value="-5"/>
+       <set_object_property name="T3A" property="rollDelta" value="5"/>
+       <set_object_property name="T3B" property="rollDelta" value="-5"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 10 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 10 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 10 gigaWatts and rising."/>
+       <set_variable name="tach_warning10" value="1"/>
+ </event>
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="once" comparator="!=" value="1"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer11"/>
+   <if_variable name="tach_warning11" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy 11 gigaWatts and rising." consoles="s"/>
+      <incoming_message from="DECODED TORGOTH MESSAGE" mediaType="0" fileName="Torgoth_decoded.ogg"/>
+      <warning_popup_message message="Decoding process complete." consoles="C"/>
+      <set_object_property name="T1A" property="rollDelta" value="5.5"/>
+       <set_object_property name="T1B" property="rollDelta" value="-5.5"/>
+       <set_object_property name="T2A" property="rollDelta" value="5.5"/>
+       <set_object_property name="T2B" property="rollDelta" value="-5.5"/>
+       <set_object_property name="T3A" property="rollDelta" value="5.5"/>
+       <set_object_property name="T3B" property="rollDelta" value="-5.5"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 11 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 11 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 11 gigaWatts and rising."/>
+       <set_timer name="teleport_effects_timer" seconds="48"/>
+       <set_variable name="SPFX" value="0"/>
+       <set_variable name="tach_warning11" value="1"/>
+       <set_variable name="once" value="1"/>
+ </event>
+ 
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="once" comparator="=" value="1"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer10"/>
+   <if_variable name="tach_warning10" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy 10 gigaWatts and rising." consoles="s"/>
+      <warning_popup_message message="Coded Torgoth message intercepted. Repeat of previous message." consoles="c"/>
+      <incoming_message from="DECODED TORGOTH MESSAGE" mediaType="0" fileName="Torgoth_decoded.ogg"/>
+      <set_object_property name="T1A" property="rollDelta" value="5"/>
+       <set_object_property name="T1B" property="rollDelta" value="-5"/>
+       <set_object_property name="T2A" property="rollDelta" value="5"/>
+       <set_object_property name="T2B" property="rollDelta" value="-5"/>
+       <set_object_property name="T3A" property="rollDelta" value="5"/>
+       <set_object_property name="T3B" property="rollDelta" value="-5"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 10 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 10 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 10 gigaWatts and rising."/>
+       <set_variable name="tach_warning10" value="1"/>
+ </event>
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_variable name="once" comparator="=" value="1"/>
+   <if_timer_finished name="tachyon_warning_timer11"/>
+   <if_variable name="tach_warning11" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy 11 gigaWatts and rising." consoles="s"/>
+       <set_object_property name="T1A" property="rollDelta" value="5.5"/>
+       <set_object_property name="T1B" property="rollDelta" value="-5.5"/>
+       <set_object_property name="T2A" property="rollDelta" value="5.5"/>
+       <set_object_property name="T2B" property="rollDelta" value="-5.5"/>
+       <set_object_property name="T3A" property="rollDelta" value="5.5"/>
+       <set_object_property name="T3B" property="rollDelta" value="-5.5"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 11 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 11 gigaWatts and rising."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 11 gigaWatts and rising."/>
+       <set_timer name="teleport_effects_timer" seconds="48"/>
+       <set_variable name="SPFX" value="0"/>
+       <set_variable name="tach_warning11" value="1"/>
+ </event>
+
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer12"/>
+   <if_variable name="tach_warning12" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy peaking at 12 gigaWatts." consoles="s"/>
+      <set_object_property name="T1A" property="rollDelta" value="6"/>
+       <set_object_property name="T1B" property="rollDelta" value="-6"/>
+       <set_object_property name="T2A" property="rollDelta" value="6"/>
+       <set_object_property name="T2B" property="rollDelta" value="-6"/>
+       <set_object_property name="T3A" property="rollDelta" value="6"/>
+       <set_object_property name="T3B" property="rollDelta" value="-6"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 12 gigaWatts."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 12 gigaWatts."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 12 gigaWatts."/>
+   <set_variable name="tach_warning12" value="1"/>
+ </event>
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <if_timer_finished name="tachyon_warning_timer12b"/>
+   <if_variable name="tach_warning12b" comparator="!=" value="1"/>
+      <warning_popup_message message="Tachyon energy has fallen to ZERO." consoles="s"/>
+      <set_object_property name="T1A" property="rollDelta" value="0"/>
+       <set_object_property name="T1B" property="rollDelta" value="0"/>
+       <set_object_property name="T2A" property="rollDelta" value="0"/>
+       <set_object_property name="T2B" property="rollDelta" value="0"/>
+       <set_object_property name="T3A" property="rollDelta" value="0"/>
+       <set_object_property name="T3B" property="rollDelta" value="0"/>
+       <set_ship_text name="Tachyon Source 1" desc="Tachyon energy 0 gigaWatts."/>
+       <set_ship_text name="Tachyon Source 2" desc="Tachyon energy 0 gigaWatts."/>
+       <set_ship_text name="Tachyon Source 3" desc="Tachyon energy 0 gigaWatts."/>
+       <set_variable name="tach_warning12b" value="1"/>
+ </event>
+ 
+ <!-- Play teleport sound effect -->
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="SPFX" comparator="!=" value="1"/>
+   <if_timer_finished name="teleport_effects_timer"/>
+   <if_fleet_count fleetnumber="99" comparator="GREATER" value="0"/>
+   <play_sound_now filename="teleport.wav"/>
+   <set_variable name="SPFX" value="1"/>
+</event>
+
+
+  <!-- THE KEY TO THIS MISSION SCRIPT -->
+  <!-- The code below allows this mission to create limitless hordes of Torgoths -->
+
+  <!-- If Teleport Ships Exist Receive Teleported Fleets Second Time -->
+
+  
+  <!-- First teleport ship -->
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="0"/>
+   <if_variable name="deployment1a" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 1"/>
+    <create type ="enemy" x="98000" y="+500" z="58800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB17" angle="90" fleetnumber="4"/>
+    <create type ="enemy" x="98000" y="-500" z="58800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB18" angle="90" fleetnumber="4"/>
+    <create type ="enemy" x="98800" y="0" z="59400" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA19" angle="90" fleetnumber="4"/>
+    <create type ="enemy" x="98800" y="0" z="58600" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA20" angle="90" fleetnumber="4"/>
+    <set_variable name="deployment1a" value="1"/>
+</event>
+
+     <!-- Second teleport ship -->
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="0"/>
+   <if_variable name="deployment1b" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 2"/>
+    <create type ="enemy" x="98000" y="-500" z="18800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB22" angle="90" fleetnumber="5"/>
+    <create type ="enemy" x="98000" y="500" z="18800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB23" angle="90" fleetnumber="5"/>
+    <create type ="enemy" x="98800" y="0" z="19400" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA24" angle="90" fleetnumber="5"/>
+    <create type ="enemy" x="98800" y="0" z="18600" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA25" angle="90" fleetnumber="5"/>
+    <set_variable name="deployment1b" value="1"/>
+</event>
+
+      <!-- Third teleport ship -->
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="0"/>
+   <if_variable name="deployment1c" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 3"/>
+    <create type ="enemy" x="58800" y="500" z="2800" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN27" angle="180" fleetnumbe4r="6"/>
+    <create type ="enemy" x="58800" y="-500" z="2800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB28" angle="180" fleetnumber="6"/>
+    <create type ="enemy" x="59400" y="0" z="2900" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA29" angle="180" fleetnumber="6"/>
+    <create type ="enemy" x="58600" y="0" z="2900" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA30" angle="180" fleetnumber="6"/>
+    <set_variable name="deployment1c" value="1"/>
+    <log text="Second teleport\n\n"/>
+</event>
+
+
+ <!-- If Teleport Ships Exist Receive Teleported Fleets Third Time -->
+ <!-- First teleport ship -->
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="1"/>
+   <if_variable name="deployment2a" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 1"/>
+    <create type ="enemy" x="98000" y="0" z="58800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB33" angle="90" fleetnumber="7"/>
+    <create type ="enemy" x="98800" y="0" z="59400" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA34" angle="90" fleetnumber="7"/>
+    <create type ="enemy" x="98800" y="0" z="58600" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA35" angle="90" fleetnumber="7"/>
+    <set_variable name="deployment2a" value="1"/>
+    <log text="Third teleport\n\n"/>
+</event>
+
+<!-- Second teleport ship -->
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="1"/>
+   <if_variable name="deployment2b" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 2"/>
+    <create type ="enemy" x="98000" y="500" z="18800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB37" angle="90" fleetnumber="8"/>
+    <create type ="enemy" x="98000" y="-500" z="18800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB38" angle="90" fleetnumber="8"/>
+    <create type ="enemy" x="98800" y="0" z="19400" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA39" angle="90" fleetnumber="8"/>
+    <create type ="enemy" x="98800" y="0" z="18600" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA40" angle="90" fleetnumber="8"/>
+    <set_variable name="deployment2b" value="1"/>
+</event>
+
+<!-- Third teleport ship -->
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="1"/>
+   <if_variable name="deployment2c" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 3"/>
+    <create type ="enemy" x="58800" y="500" z="2800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB42" angle="180" fleetnumber="9"/>
+    <create type ="enemy" x="58800" y="-500" z="2800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB43" angle="180" fleetnumber="9"/>
+    <create type ="enemy" x="59400" y="0" z="2900" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA44" angle="180" fleetnumber="9"/>
+    <create type ="enemy" x="58600" y="0" z="2900" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA45" angle="180" fleetnumber="9"/>
+    <set_variable name="deployment2c" value="1"/>
+</event>
+
+
+<!-- If Teleport Ships Exist Receive Teleported Fleets Fourth Time -->
+ <!-- First teleport ship -->
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="2"/>
+   <if_variable name="deployment3a" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 1"/>
+    <create type ="enemy" x="98000" y="0" z="58800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB48" angle="90" fleetnumber="10"/>
+    <create type ="enemy" x="98800" y="0" z="59400" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA49" angle="90" fleetnumber="10"/>
+    <create type ="enemy" x="98800" y="0" z="58600" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA50" angle="90" fleetnumber="10"/>
+      <set_variable name="deployment3a" value="1"/>
+    <log text="Fourth teleport\n\n"/>
+</event>
+
+<!-- Second teleport ship -->
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="2"/>
+   <if_variable name="deployment3b" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 2"/>
+    <create type ="enemy" x="98000" y="0" z="18800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB53" angle="90" fleetnumber="11"/>
+    <create type ="enemy" x="98800" y="0" z="19400" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA54" angle="90" fleetnumber="11"/>
+    <create type ="enemy" x="98800" y="0" z="18600" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA55" angle="90" fleetnumber="11"/>
+    <set_variable name="deployment3b" value="1"/>
+</event>
+
+<!-- Third teleport ship -->
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="2"/>
+   <if_variable name="deployment3c" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 3"/>
+    <create type ="enemy" x="58800" y="0" z="2800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB58" angle="180" fleetnumber="12"/>
+    <create type ="enemy" x="59400" y="0" z="2900" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA59" angle="180" fleetnumber="12"/>
+    <create type ="enemy" x="58600" y="0" z="2900" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA60" angle="180" fleetnumber="12"/>
+    <set_variable name="deployment3c" value="1"/>
+</event>
+
+
+<!-- If Teleport Ships Exist Receive Teleported Fleets Fifth Time -->
+<!-- First teleport ship -->
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="3"/>
+   <if_variable name="deployment4a" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 1"/>
+    <create type ="enemy" x="98000" y="0" z="58800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB63" angle="90" fleetnumber="13"/>
+    <create type ="enemy" x="98800" y="0" z="59400" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA64" angle="90" fleetnumber="13"/>
+    <create type ="enemy" x="98800" y="0" z="58600" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA65" angle="90" fleetnumber="13"/>
+    <set_variable name="deployment4a" value="1"/>
+    <log text="Fifth teleport\n\n"/>
+</event>
+
+<!-- Second teleport ship -->
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="3"/>
+   <if_variable name="deployment4b" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 2"/>
+    <create type ="enemy" x="98000" y="0" z="18800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB68" angle="90" fleetnumber="14"/>
+    <create type ="enemy" x="98800" y="0" z="19400" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA69" angle="90" fleetnumber="14"/>
+    <create type ="enemy" x="98800" y="0" z="18600" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA70" angle="90" fleetnumber="14"/>
+    <set_variable name="deployment4b" value="1"/>
+</event>
+
+<!-- Third teleport ship -->
+<event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="3"/>
+   <if_variable name="deployment4c" comparator="=" value="0"/>
+   <if_exists name="Tachyon Source 3"/>
+    <create type ="enemy" x="58800" y="0" z="2800" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan medium" name="BB73" angle="180" fleetnumber="15"/>
+    <create type ="enemy" x="59400" y="0" z="2900" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA74" angle="180" fleetnumber="15"/>
+    <create type ="enemy" x="58600" y="0" z="2900" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="CA75" angle="180" fleetnumber="15"/>
+     <set_variable name="deployment4c" value="1"/>
+</event>
+
+
+
+<!-- After Teleport Recycle the timers -->
+<event name="Recycle Tachyon Timers">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="tach_warning12b" comparator="=" value="1"/>
+   <set_timer name="tachyon_warning_timer01" seconds="40"/>
+   <set_timer name="tachyon_warning_timer02" seconds="80"/>
+   <set_timer name="tachyon_warning_timer03" seconds="120"/>
+   <set_timer name="tachyon_warning_timer04" seconds="160"/>
+   <set_timer name="tachyon_warning_timer05" seconds="200"/>
+   <set_timer name="tachyon_warning_timer06" seconds="240"/>
+   <set_timer name="tachyon_warning_timer07" seconds="280"/>
+   <set_timer name="tachyon_warning_timer08" seconds="320"/>
+   <set_timer name="tachyon_warning_timer09" seconds="360"/>
+   <set_timer name="tachyon_warning_timer10" seconds="400"/>
+   <set_timer name="tachyon_warning_timer11" seconds="450"/>
+   <set_timer name="tachyon_warning_timer12" seconds="500"/>
+   <set_timer name="tachyon_warning_timer12b" seconds="550"/>
+   <set_variable name="tach_warning01" value="0"/>
+   <set_variable name="tach_warning02" value="0"/>
+   <set_variable name="tach_warning03" value="0"/>
+   <set_variable name="tach_warning04" value="0"/>
+   <set_variable name="tach_warning05" value="0"/>
+   <set_variable name="tach_warning06" value="0"/>
+   <set_variable name="tach_warning07" value="0"/>
+   <set_variable name="tach_warning08" value="0"/>
+   <set_variable name="tach_warning09" value="0"/>
+   <set_variable name="tach_warning10" value="0"/>
+   <set_variable name="tach_warning11" value="0"/>
+   <set_variable name="tach_warning12" value="0"/>
+   <set_variable name="tach_warning12b" value="0"/>
+   <set_variable name="cycling" value="1"/>
+</event>
+
+<!-- Cycle through the possible deployments -->
+
+<event>
+   <if_variable name="cycling" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="0"/>
+   <set_variable name="deployment_cycle" value="1"/>
+   <set_variable name="cycling" value="0"/>
+</event>
+
+<event>
+   <if_variable name="cycling" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="1"/>
+   <set_variable name="deployment_cycle" value="2"/>
+   <set_variable name="cycling" value="0"/>
+</event>
+
+<event>
+   <if_variable name="cycling" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="2"/>
+   <set_variable name="deployment_cycle" value="3"/>
+   <set_variable name="cycling" value="0"/>
+</event>
+
+<!-- After Cycling through start over -->
+
+<event name="Reset All Deployment Variables">
+   <if_variable name="cycling" comparator="=" value="1"/>
+   <if_variable name="deployment_cycle" comparator="=" value="3"/>
+   <set_variable name="deployment_cycle" value="0"/>
+   <set_variable name="deployment1" value="0"/>
+   <set_variable name="deployment1a" value="0"/>
+   <set_variable name="deployment1b" value="0"/>
+   <set_variable name="deployment1c" value="0"/>
+   <set_variable name="deployment2" value="0"/>
+   <set_variable name="deployment2a" value="0"/>
+   <set_variable name="deployment2b" value="0"/>
+   <set_variable name="deployment2c" value="0"/>
+   <set_variable name="deployment3" value="0"/>
+   <set_variable name="deployment3a" value="0"/>
+   <set_variable name="deployment3b" value="0"/>
+   <set_variable name="deployment3c" value="0"/>
+   <set_variable name="deployment4" value="0"/>
+   <set_variable name="deployment4a" value="0"/>
+   <set_variable name="deployment4b" value="0"/>
+   <set_variable name="deployment4c" value="0"/>
+   <set_variable name="cycling" value="0"/>
+   <log text="Start teleport cycle again\n\n"/>
+ </event>
+
+
+  <!-- If Artemis strays north too early, first give them a warning -->
+
+<event name="Wise Guys Warning">
+   <if_variable name="chapter" comparator="=" value="1"/>
+   <if_inside_box name="Artemis" leastX="0" leastZ="0" mostX="100000" mostZ="45000"/>
+   <if_variable name="weeks_unauthorized" comparator="!=" value="1"/>
+   <incoming_message from="PRIORITY from Admiral Weeks" mediaType="0" fileName="Weeks_warning.ogg"/>
+   <set_variable name="weeks_unauthorized" value="1"/>
+ </event>
+
+<!-- If Artemis strays north too early and ignores the warning, hit them with a massive Torgoth squadron -->
+
+ <event name="Wise Guys">
+   <if_variable name="chapter" comparator="LESS" value="3"/>
+   <if_inside_box name="Artemis" leastX="0" leastZ="0" mostX="100000" mostZ="40000"/>
+   <if_variable name="wise_guys" comparator="=" value="0"/>
+    <create type ="enemy" x="50000" y="0" z="55600" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN101" angle="180" fleetnumber="20"/>
+    <create type ="enemy" x="50200" y="0" z="55800" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN102" angle="180" fleetnumber="20"/>
+    <create type ="enemy" x="49800" y="0" z="55800" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN103" angle="180" fleetnumber="20"/>
+    <create type ="enemy" x="49800" y="0" z="55400" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN104" angle="180" fleetnumber="20"/>
+    <create type ="enemy" x="50200" y="0" z="55400" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN105" angle="180" fleetnumber="20"/>
+    <create type ="enemy" x="50400" y="0" z="55000" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN106" angle="180" fleetnumber="20"/>
+    <create type ="enemy" x="49600" y="1000" z="55000" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN107" angle="180" fleetnumber="20"/>
+    <create type ="enemy" x="50400" y="-1000" z="55200" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN108" angle="180" fleetnumber="20"/>
+    <create type ="enemy" x="49600" y="-1000" z="55200" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth large" name="DN109" angle="180" fleetnumber="20"/>
+    <set_fleet_property fleetIndex="20" property="fleetSpacing" value="800"/>
+    <set_fleet_property fleetIndex="20" property="fleetMaxRadius" value="2500"/>
+    <warning_popup_message message="Tachyon energy surging to 12 gigaWatts!" consoles="s"/>
+<set_variable name="wise_guys" value="1"/>
+</event>
+
+<event name="Wise Guys 2">
+   <if_variable name="chapter" comparator="LESS" value="3"/>
+   <if_variable name="wise_guys" comparator="=" value="1"/>
+   <set_object_property name="DN101" property="topSpeed" value="3.5"/>
+    <set_object_property name="DN102" property="topSpeed" value="3.5"/>
+    <set_object_property name="DN103" property="topSpeed" value="3.5"/>
+    <set_object_property name="DN104" property="topSpeed" value="3.5"/>
+    <set_object_property name="DN105" property="topSpeed" value="3.5"/>
+    <set_object_property name="DN106" property="topSpeed" value="3.5"/>
+    <set_object_property name="DN107" property="topSpeed" value="3.5"/>
+    <set_object_property name="DN108" property="topSpeed" value="3.5"/>
+    <set_object_property name="DN109" property="topSpeed" value="3.5"/>
+    <set_object_property name="DN101" property="turnRate" value="1/50"/>
+    <set_object_property name="DN102" property="turnRate" value="1/50"/>
+    <set_object_property name="DN103" property="turnRate" value="1/50"/>
+    <set_object_property name="DN104" property="turnRate" value="1/50"/>
+    <set_object_property name="DN105" property="turnRate" value="1/50"/>
+    <set_object_property name="DN106" property="turnRate" value="1/50"/>
+    <set_object_property name="DN107" property="turnRate" value="1/50"/>
+    <set_object_property name="DN108" property="turnRate" value="1/50"/>
+    <set_relative_position name2="DN101" name1="Artemis" angle="0" distance="1800"/>
+    <set_relative_position name2="DN102" name1="Artemis" angle="10" distance="1900"/>
+    <set_relative_position name2="DN103" name1="Artemis" angle="350" distance="1900"/>
+    <set_relative_position name2="DN104" name1="Artemis" angle="20" distance="1900"/>
+    <set_relative_position name2="DN105" name1="Artemis" angle="340" distance="1900"/>
+    <set_relative_position name2="DN106" name1="Artemis" angle="30" distance="2000"/>
+    <set_relative_position name2="DN107" name1="Artemis" angle="330" distance="2000"/>
+    <set_relative_position name2="DN108" name1="Artemis" angle="0" distance="2200"/>
+    <add_ai name ="DN101" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="DN102" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="DN103" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="DN104" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="DN105" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="DN106" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="DN107" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <add_ai name ="DN108" type ="CHASE_PLAYER" value1="20000" value2="10000"/>
+    <set_variable name="wise_guys" value="2"/>
+</event>
+
+ 
+ 
+   <!-- Here is how the ramscoop works -->
+   <!-- Activate Ramscoop when Engineering has checed it out -->
+
+<event name="Ramscoop Checked Out">
+   <if_timer_finished name="ramscoop_install_timer"/>
+   <if_variable name="ramscoop" comparator="=" value="1"/>
+   <if_variable name="ramscoop_install" comparator="!=" value="1"/>
+   <warning_popup_message message="Engineering Team reports Ramscoop ready for use." consoles="E"/>
+   <set_variable name="ramscoop_active" value="1"/>
+   <set_variable name="ramscoop_install" value="1"/>
+ </event>
+
+ <!-- Under right conditions Ramscoop gathers some energy every 3 seconds -->
+ <!-- First see if energy gather is valid -->
+<event name="Ramscoop Can Gather">
+   <if_variable name="ramscoop" comparator="=" value="1"/>
+   <if_variable name="ramscoop_active" comparator="=" value="1"/>
+   <if_inside_sphere name="Artemis" centerX="100000" centerY="0" centerZ="0" radius ="85000"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="0.099"/>
+   <if_object_property name="Artemis" property="warpState" comparator="LESS" value="1"/>
+   <if_object_property name="Artemis" property="energy" comparator="less" value="1200"/>
+   <if_object_property name="Artemis" property="shieldsOn" comparator="=" value="0"/>
+   <set_timer name="ramscoop_timer" seconds="3"/>
+   <set_variable name="ramscoop_triggered" value="1"/>
+   <set_variable name="ramscoop_gathering" value="1"/>
+   <set_variable name="ramscoop_active" value="0"/>
+   <play_sound_now filename="ramscoopQ.wav"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+ <!-- Then cascade the energy gathering. -->
+ <event name="Scooping 1">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="0.199"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+ <event name="Scooping 2">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="0.299"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+  <event name="Scooping 3">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="0.4"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+ 
+ <event name="Scooping 4">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="0.5"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+ 
+ <event name="Scooping 5">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="0.6"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+ 
+ <event name="Scooping 6">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="0.7"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+ 
+ <event name="Scooping 7">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="0.8"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+ 
+ <event name="Scooping 8">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="0.9"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+ 
+ <event name="Scooping 9">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="1.0"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+ 
+ <event name="Scooping 10">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="1.1"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+ 
+ <event name="Scooping 11">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="1.2"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+ 
+ <event name="Scooping 12">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="1.3"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+<event name="Scooping 13">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="1.4"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+ <event name="Scooping 14">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="1.5"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+ <event name="Scooping 15">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="1.6"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+ <event name="Scooping 16">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="1.7"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+ <event name="Scooping 17">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="1.8"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+ <event name="Scooping 18">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="1.9"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+  <event name="Scooping 19">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="2.0"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+ <event name="Scooping 20">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="2.1"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+ </event>
+
+<event name="Scooping 21">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="2.2"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+</event>
+
+<event name="Scooping 22">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="2.3"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+</event>
+
+<event name="Scooping 23">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="2.4"/>
+   <addto_object_property name="Artemis" property="energy" value="10"/>
+</event>
+
+<event name="Scooping 24">
+   <if_variable name="ramscoop_gathering" comparator="=" value="1"/>
+   <set_variable name="ramscoop_gathering" value="0"/>
+ </event>
+
+
+
+  <!-- Let them know if they are too far from nebula -->
+<event>
+   <if_variable name="ramscoop" comparator="=" value="1"/>
+   <if_variable name="ramscoop_active" comparator="=" value="1"/>
+   <if_variable name="ramscoop_warning" comparator="!=" value="1"/>
+   <if_outside_sphere name="Artemis" centerX="100000" centerY="0" centerZ="0" radius ="85000"/>
+   <if_object_property name="Artemis" property="warpState" comparator="=" value="0"/>
+   <if_object_property name="Artemis" property="currentRealSpeed" comparator="GREATER" value="0.099"/>
+   <if_object_property name="Artemis" property="shieldsOn" comparator="=" value="0"/>
+   <if_object_property name="Artemis" property="energy" comparator="less" value="160"/>
+   <warning_popup_message message="Ramscoop cannot operate outside nebula" consoles="E"/>
+   <set_timer name="ramscoop_warning_timer" seconds="5"/>
+   <set_variable name="ramscoop_warning" value="1"/>
+ </event>
+
+ <!-- Check to see if Ramscoop is ready to gather energy -->
+<event>
+   <if_timer_finished name="ramscoop_timer"/>
+   <if_variable name="ramscoop" comparator="=" value="1"/>
+   <if_variable name="ramscoop_active" comparator="!=" value="1"/>
+   <set_variable name="ramscoop_active" value="1"/>
+</event>
+
+ <!-- Popup explains ramscoop sound -->
+
+<event>
+   <if_variable name="ramscoop_sound_popup" comparator="!=" value="1"/>
+   <if_variable name="ramscoop_triggered" comparator="=" value="1"/>
+   <warning_popup_message message="Sound indicates Ramscoop operation." consoles="E"/>
+   <set_variable name="ramscoop_sound_popup" value="1"/>
+</event>
+
+ <!-- Check to see if Ramscoop warning has expired -->
+<event>
+   <if_timer_finished name="ramscoop_warning_timer"/>
+   <if_variable name="ramscoop_warning" comparator="=" value="1"/>
+   <set_variable name="ramscoop_warning" value="0"/>
+</event>
+
+<!-- First time they are far from the base take away some energy -->
+<!-- so they need to use the ramscoop. -->
+
+ <event>
+   <if_variable name="ramscoop" comparator="=" value="1"/>
+   <if_variable name="base_explains" comparator="!=" value="1"/>
+   <if_inside_sphere name="Artemis" centerX="100000" centerY="0" centerZ="0" radius ="75500"/>
+   <addto_object_property name="Artemis" property="energy" value="-650"/>
+   <set_variable name="base_explains" value="1"/>
+ </event>
+
+
+  <!-- Comms chatter reveals info about The Syndicate -->
+
+ <event name="GW 214 Bargain">
+    <if_exists name="GW Unlimited 214"/>
+    <if_variable name="cigars" comparator="!=" value="1"/>
+      <if_distance name1="GW Unlimited 214" name2="Hamak Base" comparator="LESS_EQUAL" value="33000"/>
+      <incoming_message from="GW 214 and Hamak Base" mediaType="0" fileName="GW_214_bargain.ogg"/>
+      <set_variable name="cigars" value="1"/>
+ </event>
+
+  <event name="GW 214 Parks">
+    <if_exists name="GW Unlimited 214"/>
+     <if_variable name="chapter" comparator="=" value="1"/>
+      <if_distance name1="GW Unlimited 214" name2="Hamak Base" comparator="LESS_EQUAL" value="500"/>
+      <add_ai name ="GW Unlimited 214" type ="POINT_THROTTLE" value1="12100" value2="0" value3="79900" value4=".1"/>
+  </event>
+
+ <event>
+    <if_exists name="GW Unlimited 157"/>
+    <if_variable name="blood" comparator="!=" value="1"/>
+      <if_distance name1="GW Unlimited 157" name2="Hamak Base" comparator="LESS_EQUAL" value="37900"/>
+       <incoming_message from="GW 157 and Hamak Base" mediaType="0" fileName="GW_157_blood.ogg"/>
+      <set_variable name="blood" value="1"/>
+    </event>
+
+    <event name="GW 157 Parks">
+    <if_exists name="GW Unlimited 157"/>
+    <if_variable name="chapter" comparator="=" value="1"/>
+    <if_distance name1="GW Unlimited 157" name2="Hamak Base" comparator="LESS_EQUAL" value="600"/>
+    <add_ai name ="GW Unlimited 157" type ="POINT_THROTTLE" value1="11900" value2="0" value3="79900" value4=".1"/>
+    </event>
+
+
+ <!-- Compliments from Captain Haynes as fleets 1, 2 and 3 are destroyed -->
+
+  <event name="Haynes Compliment 1">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="defeated_1" comparator="!=" value="1"/>
+    <if_exists name="Warsaw"/>
+    <if_fleet_count fleetnumber="1" comparator="LESS_EQUAL" value="0"/>
+    <incoming_message from="Haynes calling Artemis" mediaType="0" fileName="Haynes_kick.ogg"/>
+    <set_variable name="defeated_1" value="1"/>
+  </event>
+
+  <event name="Haynes Compliment 2">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="defeated_2" comparator="!=" value="1"/>
+    <if_exists name="Warsaw"/>
+    <if_fleet_count fleetnumber="2" comparator="LESS_EQUAL" value="1"/>
+    <incoming_message from="Haynes calling Artemis" mediaType="0" fileName="Haynes_shooting.ogg"/>
+      <set_variable name="defeated_2" value="1"/>
+  </event>
+
+  <event name="Haynes Compliment 3">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="defeated_3" comparator="!=" value="1"/>
+    <if_exists name="Warsaw"/>
+    <if_fleet_count fleetnumber="3" comparator="LESS_EQUAL" value="0"/>
+    <incoming_message from="Haynes calling Artemis" mediaType="0" fileName="Haynes_fun.ogg"/>
+      <set_variable name="defeated_3" value="1"/>
+  </event>
+  
+  <!-- Help Warsaw escape a tough situation -->
+  <!-- using The Haynes Maneuver -->
+
+ <event name="The Haynes Maneuver 1">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="Warsaw_running" comparator="!=" value="1"/>
+   <if_exists name="Warsaw"/>
+   <if_object_property name="Warsaw" property="shieldStateBack" comparator="less" value="40"/>
+   <set_object_property name="Warsaw" property="topSpeed" value="3"/>
+   <set_object_property name="Warsaw" property="systemDamageImpulse" value="0"/>
+   <set_object_property name="Warsaw" property="turnRate" value="1/12"/>
+   <addto_object_property name="Warsaw" property="positionY" value="+60"/>
+   <add_ai name ="Warsaw" type ="POINT_THROTTLE" value1="50000" value2="0" value3="50000" value4="1"/>
+   <set_timer name="Warsaw_runs_timer" seconds="12"/>
+   <set_variable name="Warsaw_running" value="1"/>
+  </event>
+
+  <event name="The Haynes Maneuver 2">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="Warsaw_running" comparator="!=" value="1"/>
+   <if_exists name="Warsaw"/>
+   <if_object_property name="Warsaw" property="shieldStateFront" comparator="less" value="40"/>
+   <set_object_property name="Warsaw" property="topSpeed" value="3"/>
+   <set_object_property name="Warsaw" property="systemDamageImpulse" value="0"/>
+   <set_object_property name="Warsaw" property="turnRate" value="1/12"/>
+   <addto_object_property name="Warsaw" property="positionY" value="+60"/>
+   <add_ai name ="Warsaw" type ="POINT_THROTTLE" value1="50000" value2="0" value3="50000" value4="1"/>
+   <set_timer name="Warsaw_runs_timer" seconds="12"/>
+   <set_variable name="Warsaw_running" value="1"/>
+  </event>
+
+
+  <event name="The Haynes Maneuver end">
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_variable name="Warsaw_running" comparator="=" value="1"/>
+   <if_exists name="Warsaw"/>
+   <if_timer_finished name="Warsaw_runs_timer"/>
+   <set_variable name="Warsaw_running" value="0"/>
+   <set_object_property name="Warsaw" property="topSpeed" value="2.1"/>
+   <set_object_property name="Warsaw" property="turnRate" value="1/100"/>
+   <set_object_property name="Warsaw" property="positionY" value="0"/>
+    <clear_ai name ="Warsaw"/>
+    <add_ai name ="Warsaw" type ="CHASE_AI_SHIP" value1="59000" value2="40000"/>
+    <add_ai name ="Warsaw" type ="FOLLOW_COMMS_ORDERS"/>
+    <add_ai name ="Warsaw" type ="DEFEND" value1="9000" value2="4000"/>
+  </event>
+
+
+   
+<!-- Keep Warsaw from leaving to the north, south, east, or west -->
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_exists name="Warsaw"/>
+   <if_object_property name="Warsaw" property="positionZ" comparator="less" value="800"/>
+   <set_object_property name="Warsaw" property="positionZ" value="3000"/>
+  </event>
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_exists name="Warsaw"/>
+   <if_object_property name="Warsaw" property="positionX" comparator="less" value="800"/>
+   <set_object_property name="Warsaw" property="positionX" value="3000"/>
+ </event>
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_exists name="Warsaw"/>
+   <if_object_property name="Warsaw" property="positionZ" comparator="greater" value="99200"/>
+   <set_object_property name="Warsaw" property="positionZ" value="97000"/>
+  </event>
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_exists name="Warsaw"/>
+   <if_object_property name="Warsaw" property="positionX" comparator="greater" value="99200"/>
+   <set_object_property name="Warsaw" property="positionX" value="97000"/>
+ </event>
+
+
+  <!-- Winning and losing the mission -->
+
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+    <if_fleet_count sideValue="1" comparator="=" value="0"/>
+    <if_variable name="terminate" comparator="!=" value="1"/>
+    <big_message title="VICTORY!" subtitle1="You drove away the Torgoths" subtitle2="and saved the sector."/>
+    <play_sound_now filename="Fanfare.wav"/>
+   <set_timer name="endint_timer" seconds="25"/>
+   <set_timer name="funny_timer" seconds="13"/>
+   <create type ="neutral" x="10000" y="0" z="97100" raceKeys="Terran friendly" hullKeys="Destroyer medium" name="Chicago" angle="345"/>
+   <clear_ai name ="Chicago"/>
+   <add_ai name ="Chicago" type ="TARGET_THROTTLE" targetName="Hamak Base" value1="1"/>
+   <incoming_message from="Adm Weeks aboard Starship Chicago" mediaType="0" fileName="Weeks_last_line.ogg"/>
+   <warning_popup_message message="Admiral Weeks security credentials confirmed aboard Starship Chicago." consoles="S"/>
+    <set_variable name="terminate" value="1"/>
+ </event>
+  
+ <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_timer_finished name="funny_timer"/>
+   <if_variable name="terminate" comparator="=" value="1"/>
+   <if_variable name="funny" comparator="!=" value="1"/>
+   <big_message subtitle1="Maybe now you can" subtitle2="buy yourself a promotion."/>
+  <set_object_property name="Chicago" property="topSpeed" value="1"/>
+   <set_timer name="endint_timer" seconds="10"/>
+    <set_variable name="funny" value="1"/>
+  </event>
+
+
+  <event>
+   <if_variable name="chapter" comparator="=" value="3"/>
+   <if_not_exists name="Hamak Base"/>
+   <if_variable name="terminate" comparator="!=" value="1"/>
+   <big_message title="DEFEAT!" subtitle1="Hamak Base was destroyed and the" subtitle2="Torgoths conquered the sector."/>
+   <set_timer name="endint_timer" seconds="10"/>
+    <set_variable name="terminate" value="1"/>
+  </event>
+  
+
+
+ <event>
+   <if_not_exists name="Artemis"/>
+   <if_variable name="terminate" comparator="!=" value="1"/>
+   <big_message title="DEFEAT!" subtitle1="Artemis was destroyed and the" subtitle2="Torgoths conquered the sector."/>
+   <set_timer name="endint_timer" seconds="10"/>
+    <set_variable name="terminate" value="1"/>
+  </event>
+
+
+
+<event>
+   <if_variable name="terminate" comparator="=" value="1"/>
+   <if_variable name="gameOver" comparator="!=" value="1"/>
+   <if_timer_finished name="endint_timer"/>
+   <end_mission/>
+   <set_variable name="gameOver" value="1"/>
+</event>
+
+ <!-- *******************************************************-->
+
+ </mission_data>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

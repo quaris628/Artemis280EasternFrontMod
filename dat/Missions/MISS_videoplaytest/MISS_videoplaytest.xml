@@ -1,0 +1,65 @@
+﻿<!-- mission_data is the big wrapper for all the parts of a mission -->
+<mission_data version="2.3">
+
+  <!-- all the things that exist at the start of the mission -->
+  <start>
+    <create type="player" x="50000" y="0" z="50000" name="TSN Jack" accent_color="90" warp="yes"/>
+
+    <set_timer name="start" seconds="10"/>
+
+
+    
+    
+    <create type="enemy" x="70500" y="0" z="60000" angle="180" name="TSN Dude" raceKeys="TSN" hullKeys="Scout" fleetnumber="3"/>
+    <set_side_value value="2" name="TSN Dude"/>
+    <set_special name="TSN Dude" ability="Drones"/>
+    <add_ai name="TSN Dude" type="FOLLOW_COMMS_ORDERS"/>
+
+    <create type="enemy" x="74000" y="500" z="60000" angle="90" name="Ximni Dude" raceKeys="Ximni" hullKeys="Scout" fleetnumber="5"/>
+    <set_special name="Ximni Dude" ability="Drones"/>
+
+    <create type="enemy" x="74000" y="500" z="60100" angle="90" name="Ximni Dude 2" raceKeys="Ximni" hullKeys="Scout" fleetnumber="5"/>
+    <set_special name="Ximni Dude 2" ability="Drones"/>
+
+  </start>
+
+
+
+  <!-- ******************************************************************************************** -->
+  <event name="start timer">
+    <if_variable name="startTimerDone" comparator="=" value="0"/>
+    <if_timer_finished name="start"/>
+
+    <spawn_external_program id="vid1" name="C:/Program Files/VideoLAN/VLC/vlc.exe" arguments=" --no-video-title-show --play-and-exit --fullscreen dat/Missions/MISS_videoplaytest/vid1.MOV"/>
+
+    <set_variable name="startTimerDone" value="1"/>
+  </event>
+
+
+
+  <!-- ******************************************************************************************** -->
+  <event name="check video 1">
+    <if_variable name="startTimerDone" comparator="=" value="1"/>
+    <if_external_program_finished id="vid1"/>
+
+    <spawn_external_program id="vid2" name="C:/Program Files/VideoLAN/VLC/vlc.exe" arguments=" --no-video-title-show --play-and-exit --fullscreen dat/Missions/MISS_videoplaytest/vid2.MOV"/>
+
+    <set_variable name="startTimerDone" value="2"/>
+  </event>
+
+
+
+  <!-- ******************************************************************************************** -->
+  <event name="check video 2">
+    <if_variable name="startTimerDone" comparator="=" value="2"/>
+    <if_external_program_finished id="vid2"/>
+
+    <big_message title="TEST DONE"/>
+
+    <set_variable name="startTimerDone" value="3"/>
+  </event>
+
+
+
+</mission_data>
+

@@ -1,0 +1,280 @@
+﻿<!-- mission_data is the big wrapper for all the parts of a mission -->
+<mission_data version="1.60">
+
+  <!-- ******************************************************************************************** -->
+  <!-- all the things that exist at the start of the mission -->
+  <start>
+    <create type ="station" raceKeys="friendly" hullKeys="base" x="70000" y="0" z="20000" name="DS45"/>
+    <create type ="station" raceKeys="friendly" hullKeys="base" x="30000" y="0" z="23000" name="DS49"/>
+    <create type ="player" x="30100" y="0" z="23300" name="Artemis"/>
+    <create type ="neutral" raceKeys="friendly" hullKeys="cargo" x="70100" y="0" z="45000" name="Borland Cargo" angle="0"/>
+    <set_object_property name="Borland Cargo" property="willAcceptCommsOrders" value="0" />
+    <clear_ai name="Borland Cargo"/>
+    <add_ai name="Borland Cargo" type="DIR_THROTTLE" value1="0" value2="1" />
+    
+    <create type ="nebulas" count="20" startX="80000" startY="0" startZ="60000" radius ="4000" startAngle="0" endAngle="360" randomRange="2000" randomSeed="2"/>
+
+    <create type ="nebulas" count="20" startX="50000" startY="0" startZ="80000" radius ="6000" startAngle="0" endAngle="360" randomRange="3000" randomSeed="3"/>
+
+    <create type ="nebulas" count="20" startX="20000" startY="0" startZ="80000" radius ="6000" startAngle="0" endAngle="360" randomRange="4000" randomSeed="4"/>
+
+    <create type ="nebulas" count="50" startX="80000" startY="0" startZ="80000" radius ="50000" startAngle="0" endAngle="70" randomRange="4000" randomSeed="5"/>
+
+    <create type ="asteroids" count="30" startX="80000" startY="0" startZ="80000" radius ="50000" startAngle="0" endAngle="40" randomRange="1000" randomSeed="6"/>
+
+    <create type ="mines" count="30" startX="65000" startY="0" startZ="30000" endX="45000" endY="0" endZ="30000"/>
+
+    <big_message title="THE WANING DARK" subtitle1="written by Thom Robertson"/>
+
+    <incoming_message from="Admiral Grankov" mediaType="0" fileName="Grankov1.ogg"/>
+
+    <incoming_comms_text from="Admiral Grankov">
+      Hello, Captain.  Kraliens and their allies seem^
+      to be moving, and there are reports of battles along^
+      the frontier.  Use extreme caution in this sector.^
+      You have a scientist on board, a Doctor Barnard.^
+      Help him collect the data he needs on this sector.^   Good luck, Artemis!
+    </incoming_comms_text>
+
+    <set_timer name="doctor_bug_timer" seconds="60"/>
+
+    <log text="Starting\n\n"/>
+
+  </start>
+
+
+  <!-- ******************************************************************************************** -->
+  <!-- inhibit warp in the rightmost nebula -->
+  <event>
+    <if_inside_sphere name="Artemis" centerX="20000" centerY="0" centerZ="80000" radius ="8000"/>
+    <set_player_grid_damage systemType="systemWarp" countFrom="left" index="0" value="1" />
+    <set_player_grid_damage systemType="systemWarp" countFrom="left" index="1" value="1" />
+    <set_player_grid_damage systemType="systemWarp" countFrom="left" index="2" value="1" />
+    <set_player_grid_damage systemType="systemWarp" countFrom="left" index="3" value="1" />
+  </event>
+
+  <!-- inhibit shields in the middlemost nebula -->
+  <event>
+    <if_inside_sphere name="Artemis" centerX="50000" centerY="0" centerZ="80000" radius ="8000"/>
+    <set_object_property name="Artemis" property="shieldStateFront" value="0" />
+    <set_object_property name="Artemis" property="shieldStateBack" value="0" />
+  </event>
+
+  <!-- inhibit maneuvering in the leftmost nebula -->
+  <event>
+    <if_inside_sphere name="Artemis" centerX="80000" centerY="0" centerZ="60000" radius ="6000"/>
+    <set_player_grid_damage systemType="systemTurning" countFrom="left" index="0" value="1" />
+    <set_player_grid_damage systemType="systemTurning" countFrom="left" index="1" value="1" />
+    <set_player_grid_damage systemType="systemTurning" countFrom="left" index="2" value="1" />
+  </event>
+
+
+  <!-- ******************************************************************************************** -->
+  <!-- enemies in the rightmost nebula -->
+  <event>
+    <if_variable name="attackRight" comparator="!=" value="1"/>
+    <if_inside_sphere name="Artemis" centerX="20000" centerY="0" centerZ="80000" radius ="3000"/>
+
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="20000" y="0" z="80000" angle="0" name="KR01" fleetnumber="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="20000" y="0" z="80100" angle="0" name="KR02" fleetnumber="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="medium" x="20000" y="0" z="80200" angle="0" name="KR03" fleetnumber="1"/>
+
+    <log text="Created fleet 1\n"/>
+    <set_variable name="attackRight" value="1"/>
+  </event>
+
+  <!-- enemies in the center nebula -->
+  <event>
+    <if_variable name="attackCenter" comparator="!=" value="1"/>
+    <if_inside_sphere name="Artemis" centerX="50000" centerY="0" centerZ="80000" radius ="3000"/>
+
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="50000" y="0" z="80000" angle="0" name="KR11" fleetnumber="2"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="50000" y="0" z="80100" angle="0" name="KR12" fleetnumber="2"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="medium" x="50000" y="0" z="80200" angle="0" name="KR13" fleetnumber="2"/>
+
+    <log text="Created fleet 2\n"/>
+    <set_variable name="attackCenter" value="1"/>
+  </event>
+
+  <!-- enemies in the leftmost nebula -->
+  <event>
+    <if_variable name="attackLeft" comparator="!=" value="1"/>
+    <if_inside_sphere name="Artemis" centerX="80000" centerY="0" centerZ="60000" radius ="3000"/>
+
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="80000" y="0" z="60000" angle="0" name="KR21" fleetnumber="3"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="80000" y="0" z="60100" angle="0" name="KR22" fleetnumber="3"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="medium" x="80000" y="0" z="60200" angle="0" name="KR23" fleetnumber="3"/>
+
+    <log text="Created fleet 3\n"/>
+    <set_variable name="attackLeft" value="1"/>
+  </event>
+
+  <!-- ******************************************************************************************** -->
+  <!-- science in the rightmost nebula -->
+  <event>
+    <if_variable name="scienceRight" comparator="!=" value="1"/>
+    <if_inside_sphere name="Artemis" centerX="20000" centerY="0" centerZ="80000" radius ="2000"/>
+
+    <incoming_comms_text from="Doctor Barnard">
+      Yes, yes, I'm getting good readings here.^
+      Yes, I've gathered enough data now.  We don't ^
+      need to be in this nebula anymore.
+    </incoming_comms_text>
+
+    <log text="completed science 1\n"/>
+    <set_variable name="scienceRight" value="1"/>
+  </event>
+
+  <!-- science in the center nebula -->
+  <event>
+    <if_variable name="scienceCenter" comparator="!=" value="1"/>
+    <if_inside_sphere name="Artemis" centerX="50000" centerY="0" centerZ="80000" radius ="2000"/>
+
+    <incoming_comms_text from="Doctor Barnard">
+      Yes, yes, I'm getting good readings here.^
+      Yes, I've gathered enough data now.  We don't ^
+      need to be in this nebula anymore.
+    </incoming_comms_text>
+
+    <log text="completed science 2\n"/>
+    <set_variable name="scienceCenter" value="1"/>
+  </event>
+
+  <!-- science in the leftmost nebula -->
+  <event>
+    <if_variable name="scienceLeft" comparator="!=" value="1"/>
+    <if_inside_sphere name="Artemis" centerX="80000" centerY="0" centerZ="60000" radius ="2000"/>
+
+    <incoming_comms_text from="Doctor Barnard">
+      Yes, yes, I'm getting good readings here.^
+      Yes, I've gathered enough data now.  We don't ^
+      need to be in this nebula anymore.
+    </incoming_comms_text>
+
+    <log text="completed science 3\n"/>
+    <set_variable name="scienceLeft" value="1"/>
+  </event>
+
+  <!-- ******************************************************************************************** -->
+  <!-- handle end of game -->
+  <event>
+    <if_variable name="missionComplete" comparator="less" value="1"/>
+    <if_variable name="scienceComplete" comparator="=" value="1"/>
+    <if_fleet_count fleetnumber="1" comparator="<=" value="0"/>
+    <if_fleet_count fleetnumber="2" comparator="<=" value="0"/>
+    <if_fleet_count fleetnumber="3" comparator="<=" value="0"/>
+    <if_fleet_count fleetnumber="4" comparator="<=" value="0"/>
+    <if_fleet_count fleetnumber="5" comparator="<=" value="0"/>
+
+    <set_timer name="missionComplete_timer" seconds="10"/>
+    <set_variable name="missionComplete" value="1"/>
+  </event>
+
+  <event>
+    <if_variable name="missionComplete" comparator="=" value="1"/>
+    <if_timer_finished name="missionComplete_timer"/>
+
+    <set_variable name="missionComplete" value="2"/>
+    <end_mission/>
+  </event>
+
+
+  <!-- ******************************************************************************************** -->
+  <!-- handle doctor bugging player to visit the nebulas -->
+  <event name="doctor bugging player">
+    <if_variable name="firstDoctorComm" comparator="!=" value="1"/>
+    <if_timer_finished name="doctor_bug_timer"/>
+
+    <incoming_message from="Doctor Barnard" mediaType="0" fileName="Barnard1.ogg" />
+
+    <incoming_comms_text from="Doctor Barnard">
+      Hello, there, Captain.  Thanks for having me aboard.^
+      I've set up my sensors here in science bay 2, and all^
+      of them are in tip top shape!^
+      Now, there are three very interesting nebulas in the south side^
+      of this sector, and I'd like to take readings in the center of each^
+      of them.  Be aware that these nebulas may have unexpected effects^
+      on your ship.  So off we go then!
+    </incoming_comms_text>
+
+    <set_variable name="firstDoctorComm" value="1"/>
+    <set_timer name="doctor_bug_timer" seconds="60"/>
+  </event>
+
+  <event>
+    <if_variable name="firstDoctorComm" comparator="=" value="1"/>
+    <if_variable name="scienceComplete" comparator="!=" value="1"/>
+    <if_timer_finished name="doctor_bug_timer"/>
+
+    <incoming_comms_text from="Doctor Barnard">
+      Hello, there, Captain.  I'm still hoping to get readings^
+      from all three of those nebulas.  Chop chop, daylight's wasting!  Heh heh.
+    </incoming_comms_text>
+
+    <set_timer name="doctor_bug_timer" seconds="60"/>
+  </event>
+
+  <event>
+    <if_variable name="scienceComplete" comparator="!=" value="1"/>
+    <if_variable name="scienceRight" comparator="=" value="1"/>
+    <if_variable name="scienceCenter" comparator="=" value="1"/>
+    <if_variable name="scienceLeft" comparator="=" value="1"/>
+
+    <set_variable name="scienceComplete" value="1"/>
+  </event>
+
+  <!-- ******************************************************************************************** -->
+  <!-- handle the sloop turning out to be a super bomb -->
+  <event>
+    <if_exists name="Borland Cargo"/>
+    <if_exists name="DS45"/>
+    <if_distance name1="Borland Cargo" name2="DS45" comparator="<" value="10000"/>
+
+    <set_object_property name="Borland Cargo" property="systemDamageImpulse" value ="90"/>
+  </event>
+
+  <event>
+    <if_exists name="Borland Cargo"/>
+    <if_exists name="Artemis"/>
+    <if_distance name1="Borland Cargo" name2="Artemis" comparator=">" value="30000"/>
+    <if_exists name="DS45"/>
+    <if_distance name1="Borland Cargo" name2="DS45" comparator="<" value="10100"/>
+
+    <incoming_message from="Borland Cargo" mediaType="0" fileName="Borland.ogg" />
+    <destroy name="Borland Cargo"/>
+    <incoming_comms_text from="Alien transmission">
+      You fool!  This pathetic earth cargo vessel is^
+      the instrument of our wrath!  Watch as we pulverize^
+      your space station!  You are powerless against us!^
+      Wait, you fool, don't touch that!  That's the b.....
+    </incoming_comms_text>
+
+    <destroy_near type="nebulas" centerX="70000" centerY="0" centerZ="30000" radius ="9000"/>
+    <destroy_near type="mines" centerX="70000" centerY="0" centerZ="30000" radius ="9000"/>
+    <destroy_near type="asteroids" centerX="70000" centerY="0" centerZ="30000" radius ="9000"/>
+
+  </event>
+
+  <!-- ******************************************************************************************** -->
+  <!-- handle the 4th enemy fleet appearing just when you don't want it to -->
+
+  <event>
+    <if_variable name="fleet4Appears" comparator="!=" value="1"/>
+    <if_inside_box name="Artemis" leastX="18000" leastZ="78000" mostX="22000" mostZ="82000"/>
+
+    <create type ="enemy" raceKeys="Argonian enemy" hullKeys="small" x="60000" y="0" z="30000" angle="0" name="TG11" fleetnumber="4"/>
+    <create type ="enemy" raceKeys="Argonian enemy" hullKeys="medium" x="60000" y="0" z="30100" angle="0" name="TG12" fleetnumber="4"/>
+    <create type ="enemy" raceKeys="Argonian enemy" hullKeys="large" x="60000" y="0" z="30200" angle="0" name="TG13" fleetnumber="4"/>
+
+    <!-- add a cloaked Skaraan to shadow this fleet -->
+    <create type ="enemy" raceKeys="Skaraan enemy elite" hullKeys="small" x="60000" y="0" z="30400" angle="0" name="Skar01" fleetnumber="5"/>
+    <set_object_property name="Skar01" property="eliteAIType" value="1"/>
+    <set_object_property name="Skar01" property="eliteAbilityBits" value="17"/>
+
+    <set_variable name="fleet4Appears" value="1"/>
+  </event>
+
+
+
+  <!-- ******************************************************************************************** -->
+</mission_data>

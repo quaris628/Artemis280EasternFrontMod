@@ -1,0 +1,105 @@
+***Mod updates***
+EF Mod by Davis Whitley, Updated by Starry, Eric, and Quaris
+
+-------------------------------------------------------------------------------------------
+
+Version 3.5.1
+2025 Oct 22
+Contributors: Quaris, Eric (aka PirateLord), Starry
+
+ ----- Patches to bugs in the EF mod -----
+
+[X] 1. (artemis.ini) Fix torpedoTubeLoadingCoef typo, which made tubes never load
+
+[X] 2. (vesseldata.xml) Fixed Ventacon taunt immunity not being deducible from science info. Their 3 taunts are now about drunk crew, marine biology, and pirates.
+
+[X] 3. (vesseldata.xml) Retired TSN ship efficiencies are now 10% worse than vanilla (before, they were a 10% improvement)
+
+[X] 4. (vesseldata.xml) Fixed Advanced Longbow shield strength - Set to 80/60 to better match the standard longbow's 60/60 (before, they were a measly 20/15)
+
+ ----- Patches to bugs in vanilla 2.8 -----
+
+[X] 5. (Artemis.exe) Made more resistant to memory-related crashes, by flipping a single bit that makes it handle larger amounts of memory being allocated (LargeAddressAware). Put together by Starry.
+
+[X] 6. (controls.ini) Fix weapons keybind K being used for both target previous and raise shields; rebound select previous to N
+
+[X] 7. (controls.ini) Fix weapons keybinds 7,8,9, and 0 being used for both load/unload tubes and selecting ordinance type; rebound load/unload tubes to nothing
+
+ ----- Non-functional/technical changes -----
+
+[X] 8. (artemis.ini) - Undid a lot of unnecessary edits to the order of the settings, comments, and whitespace. Now the file much more closely matches the vanilla 2.8 version.
+
+-------------------------------------------------------------------------------------------
+
+6/10/2023
+Eastern Front Mod 3.5 ("Ghosts of the Stars")
+IN HONOR OF
+
+Our dear friend and good pirate "GreyBeard" is lost to the stars and to honor his memory we are commissioning a new ship. The GreyBeards Ghost.
+
+
+2/28/2022
+
+Easter Front Mod 3.1 ("Edge of the Frontier")
+
+Things added:
+
+[X] (artemis.ini) Added command "torpedoTubeLoadCoeff=1.0"
+
+[X] (controls.ini) Changed Default Joystick control to non-twist
+
+[X] (artemis.ini) Changed "useJoystick" setting to 1 (which gives helm ability to use joystick)
+
+-------------------------------------------------------------------------------------------
+  
+Version 3.0 - ("The Dawn of a New Age") 
+
+[X] 1. ALL TSN class ship are "retired", salvaged ships from a previous war and thus have a 10% less energy efficiancy and beam damage. Descriptions are adjusted as such. (V1.2 mod)
+
+[X] 2. There are no "Super Heavy" TSN class ships (ie Juggernaught, Dreadnaught, Minelayer), as they are "front Line" ships and we are a "forgotten front/Wild West" of the Artemis Genre. (v1.2 mod), They reappeared in v2.2   -NOTE TO REVERSION- On this note I belive that mission scripts were written with these ships IN the roster so as to not interfere with those scripts, these ships have been made to be usless if a player has selected them (player damage will be 0 but AI will remain the same), They will now have Scraped in the description to help with Identification.
+
+[X] 3. NPC TSN ships (Escort and Destroyer) will be turned into "Militia Escort" and  "Pirate/Privateer/CAP (?) Enforcer" - stats stay same, just name change
+
+[X] 4. TSN Luxery Liner will be turned into Hospital or Colony ship (not in mod currently)
+
+[X] 5. Introduce new playable ship "Gunboat" class (Pirate or Ximni?), I think in TSN mod it's a Loki, but I'd want to check out stats to see if it's OP. My thought is lotsta beams, 1-2 tubes (lght cruiser type), limited sheilds (scout type?), but lotsa hallways to handle more damage without critical systems hit.                                                                                                                                                                                                 [X] 6. Change name of Civilian Base (or create a new base with same stats) labeld Pirate Hideout/Smugglers Den.
+
+[X] 7. on the Toranado, slow down beam recharge (maybe increase power slightly). I think we had it as Light Cruiser shields, should be good there.
+
+[X] 8. Terran Civilian ships (Science, Cargo, Transport and Luxury Liners don't have warp. Pirate science, cargo and transport should.   Because that is not an option in the vessle data for NPC - slowed their speed.
+
+[X] 9. Lower sound files DB
+
+[] 10. a playable pirate Starbase. Maybe "Smugglers Den" or "Tortuga Prime". Based upon Industrial Base? Max speed impulse or  low efficiency warp/jump (takes a lot of juice). 360 defense turrets, as fighter are primary offensive/defense. 4 tunes with 30 homing, 10 emp, 2 nukes, 5 photos, and assorted beacons/probes/etc. I don't want this to be OP....
+
+[] 11. Created new skin for the Pirate Gunboat based of the TSN loki class
+
+[] 12. New Bad Guy
+
+[] 13. You need a pirate starbase with 10 fighter slots.
+
+[] 14. Pirate "Barque" (bar-kay) class light attack carrier. Advanced Longbow stats, 3 fighter bay. We can play with the stats.
+
+[] 15. maybe consider changing the engineering overheat sound back?
+
+
+[] 16. now that torpedos can be altered in the ini file I would consider that so they arent just batteries (remeber to alter bomber torp numbers if you do that, they are already overpowered in ef mod IMO)
+
+[] 17.consider altering pshocks in some way - damage maybe? and maybe bumping the # off of stations, I think at their current point of inavaibilty and how weak enemy ship hulls are they arent as good as they could be, I dont really mind what they are - cheap and numerous or powerful and rare are both possibly interesting trade offs
+
+[X] 18. reduce missles fire,sheild off  
+
+------------------------------------------------------------------------------------------
+
+V1.0 - making EF mod  Made pirates first, added advanced longbow and Toranado along with edited TSN vessles to be "retired".  also edited pirate vessles for mod and story lines.
+
+V1.1 - edit because of bug found  removed transport and shoshushen station mod.  found that shoshushesn station was causing crash during ship selection. 
+
+V1.2 - Edited Pirate ships information to better equlize the play between ships, Brought back Ximni, Brought back transport.  Added more notes to clear up information through out the vesselData file.
+
+V2.0 - added Vintacon
+
+V2.1 - added jump gates, added planets
+
+V2.2 - cleared some extraneous files, rebased to 2.7.4, added nodes to ships without them
+

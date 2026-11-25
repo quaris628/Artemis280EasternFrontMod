@@ -1,0 +1,71 @@
+﻿<!-- mission_data is the big wrapper for all the parts of a mission -->
+<mission_data version="1.60">
+
+  <!-- all the things that exist at the start of the mission -->
+  <start>
+    <set_variable name="ds38ZVAL" value="93000"/>
+    <create type ="station" raceKeys="friendly" hullKeys="base" x="70000" y="0" z="(5000* 10 + 50000) / 4" name="DS187"/>
+    <create type ="station" raceKeys="friendly" hullKeys="base" x="30000" y="0" z="ds38ZVAL/2.5" name="DS38"/>
+    <create type ="player" x="10000" y="0" z="10000" name="Artemis"/>
+
+    <big_message title="THE END OF PEACE" subtitle1="written by Thom Robertson"/>
+ 
+    
+    <incoming_comms_text from="Admiral Grankov">
+      Hello, Captain.  Your mission is to^
+      proceed to DS38 and deliver your supplies.^^
+      You should be aware of a possibility of Kralien patrols in the sector.^   Good luck, Artemis!
+    </incoming_comms_text>
+
+    <set_timer name="enemy_timer" seconds="20"/>
+    <set_timer name="game_timer" seconds="60"/>
+  </start>
+
+  <!-- add enemies to attack DS187 when you dock with DS38 -->
+  <event>
+    <if_docked name="DS38"/>
+    <if_variable name="attack1" comparator="!=" value="1"/>
+
+    <set_variable name="attack1" value="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="70000" y="0" z="45000" angle="180" name="KR01" fleetnumber="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="70000" y="0" z="45100" angle="180" name="KR02" fleetnumber="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="70000" y="0" z="45200" angle="180" name="KR03" fleetnumber="1"/>
+
+    <incoming_comms_text from="DS187">
+      Artemis, we've got incoming ships.  They don't respond to our hails. ^ ^
+      My god, they're Kralien!  Help us, Artemis!
+    </incoming_comms_text>
+
+  </event>
+
+
+  <!-- add enemies to attack DS38 when you destroy fleet 1 -->
+  <event>
+    <if_fleet_count fleetnumber="1" comparator="<=" value="0"/>
+    <if_variable name="attack1" comparator="=" value="1"/>
+    <if_variable name="attack2" comparator="NOT" value="1"/>
+
+    <set_variable name="attack2" value="1"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="30000" y="0" z="45000" angle="180" name="KR11" fleetnumber="2"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="30000" y="0" z="45100" angle="180" name="KR12" fleetnumber="2"/>
+    <create type ="enemy" raceKeys="Kralien enemy" hullKeys="small" x="30000" y="0" z="45200" angle="180" name="KR13" fleetnumber="2"/>
+
+    <incoming_comms_text from="DS38">
+      Artemis, we've got incoming Kralien ships, too.  Please assist!
+    </incoming_comms_text>
+
+  </event>
+
+  <!-- end game when you destroy fleet 2 -->
+  <event>
+    <if_variable name="attack2" comparator="=" value="1"/>
+    <if_fleet_count fleetnumber="2" comparator="LESS_EQUAL" value="0"/>
+    <if_variable name="endgame" comparator="!=" value="1"/>
+
+    <set_variable name="endgame" value="1"/>
+    <end_mission/>
+
+  </event>
+
+
+</mission_data>

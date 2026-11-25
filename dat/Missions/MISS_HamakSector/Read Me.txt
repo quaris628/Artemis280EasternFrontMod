@@ -1,0 +1,37 @@
+"Havok in the Hamak Sector"
+
+(an adventure for Artemis 2.0)
+
+by Mike Substelny
+
+This mission script lets an Artemis crew experience an adventure with a real story.
+It has characters, a plot with plot twists, a mystery to solve, new tactics to learn,
+and a desperate battle for survival.
+
+This script will override to difficulty setting 5.
+
+The author recommends a full crew of six experienced players playing the TSN Battleship or Dreadnought.
+The Communications and Science Officers are very important and should
+not be doubled up with any other role, including the Captain.
+No one will be bored in the Hamak Sector!
+
+Please turn down the music to 25% (lower if you have small speakers) so your crew can hear the audio messages.
+Leave audio comms at 100%.
+
+DO NOT RENAME YOUR sHIP TO ANYTHING OTHER THAN ARTEMIS.
+ 
+This version includes some special effects and sound effects. It is much more
+difficult and more hectic than the previous releases. 
+
+Good luck and have fun!
+
+Hints:
+Remember that the Weapons Officer can turn energy into torpedoes.
+The Communications Officer should micro-manage the Warsaw. It's a great asset and you should not let it leave the map.
+The faster you go the more energy the Ramscoop makes. Engineering should have an impulse-heavy preset for energy gathering.
+
+
+
+If you like "Havoc in the Hamak Sector" look for its sequel "Catch 22.1" to be released in Spring 2014.
+See my website sites.google.com/site/mikesartemismissions/home/upcoming-missions/ for info.
+

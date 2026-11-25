@@ -1,0 +1,1005 @@
+<!-- Author: David Trinh, November 7, 2018 -->
+<!-- email: a1on5678@tsn-artemis.ca  -->
+<!-- MIT License -->
+<!-- Copyright (c) 2018 David Trinh -->
+<!-- Permission is hereby granted, free of charge, to any person obtaining a copy -->
+<!-- of this software and associated documentation files (the "Software"), to deal -->
+<!-- in the Software without restriction, including without limitation the rights -->
+<!-- to use, copy, modify, merge, publish, distribute, sublicense, and/or sell -->
+<!-- copies of the Software, and to permit persons to whom the Software is -->
+<!-- furnished to do so, subject to the following conditions: -->
+<!-- The above copyright notice and this permission notice shall be included in all -->
+<!-- copies or substantial portions of the Software. -->
+<!-- THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR -->
+<!-- IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, -->
+<!-- FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE -->
+<!-- AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER -->
+<!-- LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, -->
+<!-- OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE -->
+<!-- SOFTWARE. -->
+<!-- SECTOR SUMMARY-->
+<!-- Sector (0,0): -->
+<!-- Command Base with nebulas and asteroids. -->
+<!-- Sector (1,0), (1,1), (-1,0), (-1,-1): -->
+<!-- Nebulas and asteroids. -->
+<!-- Sector (2,2): -->
+<!-- Black holes, anomolies, whales -->
+<!-- Sector (-10,-1): nebulas and asteroids. -->
+<!-- Sector (4,5): pods of whales -->
+<mission_data version="1.0" background_id_arme="" playerShipNames_arme="Artemis\Intrepid\Aegis\Horatio\Excalibur\Hera\Ceres\Diana">
+  <start>
+    <create type="player" x="50100.0" y="0" z="50000" angle="0" name="Excalibur" accent_color="22" hullID="0" warp="yes" jump="no" />
+    <!-- Starting sector -->
+    <set_variable name="x" value="2.0" integer="yes" />
+    <set_variable name="z" value="2.0" integer="yes" />
+    <!-- Sets the flag to create a sector based on the start position -->
+    <set_variable name="IsCreate" value="1" integer="yes" />
+    <!-- Comms gets a message for current sector location -->
+    <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
+    <!-- Sets the flag to destroy the sector we are leaving, the flag is reset as soon as it is done -->
+    <set_variable name="IsDestroy" value="0" integer="yes" />
+    <set_variable name="destroy_x" value="0" integer="yes" />
+    <set_variable name="destroy_z" value="0" integer="yes" />
+    <!--Mission Var for Excalibur-->
+    <set_variable name="PirateOnOff" value="0.0" integer="yes" />
+    <set_variable name="KilledEnemy" value="0.0" integer="yes" />
+    <set_variable name="MissionNum" value="2.0" integer="yes" />
+    <set_variable name="DoYouHaveANewMission" value="1.0" integer="yes" />
+    <set_variable name="StartMission" value="1.0" integer="yes" />
+    <!-- BEGIN GM BUTTON DEFINITIONS -->
+    <set_gm_button text="Sector/Lock" menu_w="120" />
+    <set_gm_button text="Sector/Unlock" />
+    <set_gm_button text="Delete\Selected ship" />
+    <set_gm_button text="Delete\non-ships near" />
+    <set_gm_button text="Create Cargo/going north" />
+    <set_gm_button text="Create/Friendly Targets" />
+    <set_gm_button text="Create Enemy/Small Standard" />
+    <set_gm_button text="Create Enemy/Medium Standard" />
+    <set_gm_button text="Create Enemy/Large Standard" />
+    <set_gm_button text="Create Enemy/Small Skaraan" />
+    <set_gm_button text="Create Enemy/Medium Skaraan" />
+    <set_gm_button text="Create Enemy/Large Skaraan" />
+    <set_gm_button text="Give Command/Go To GM Selection" />
+    <set_gm_button text="Give Command/Atack Player" />
+    <gm_instructions title="Sector Locking">
+
+			You must unlock the sector in order for the vessels to continue the transition after you lock it.
+
+			^^
+
+			Use GM selection to define start location when creating vessels
+
+			</gm_instructions>
+    <!-- END GM BUTTON DEFINITIONS -->
+  </start>
+  <!-- START SECTOR DEFINITION, CREATION AND DESTRUCTION -->
+  <event name="CreateObjectGrid00" id_arme="9d086d5c-a0f9-4963-8881-02b385793da9">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="0" />
+    <if_variable name="z" comparator="EQUALS" value="0" />
+    <if_variable name="w_sector_now_x" comparator="EQUALS" value="0" />
+    <if_variable name="w_sector_now_y" comparator="EQUALS" value="0" />
+  </event>
+  <!-- Sector 0,0 where the create and destroy pattern becomes active when transitioned -->
+  <event name="CreateGrid00" id_arme="5038e708-5fa4-4f00-b38f-a9956a912b7e">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="0" />
+    <if_variable name="z" comparator="EQUALS" value="0" />
+    <!-- This is where all the objects are created and configured -->
+    <create type="station" x="50000.0" y="300.0" z="50000.0" angle="0" name="DS00" hullID="1002" />
+    <create count="170" type="nebulas" startX="78834.0" startY="0.0" startZ="12132.0" endX="32761.0" endY="0.0" endZ="44203.0" randomRange="10723" />
+    <!-- create unnamed objects -->
+    <create count="20" type="nebulas" startX="30352.0" startY="0.0" startZ="42396.0" endX="30352.0" endY="0.0" endZ="42396.0" randomRange="7449" />
+    <create count="60" type="asteroids" startX="89825.0" startY="0.0" startZ="11380.0" endX="76123.0" endY="0.0" endZ="30953.0" randomRange="5941" />
+    <create count="30" type="asteroids" startX="75822.0" startY="0.0" startZ="28845.0" endX="61067.0" endY="0.0" endZ="38180.0" randomRange="4153" />
+    <create count="10" type="asteroids" startX="61368.0" startY="0.0" startZ="36373.0" endX="57002.0" endY="0.0" endZ="39234.0" randomRange="2381" />
+    <create count="30" type="asteroids" startX="93137.0" startY="0.0" startZ="9422.0" endX="96149.0" endY="0.0" endZ="3099.0" randomRange="2989" />
+    <create count="24" type="asteroids" startX="95396.0" startY="0.0" startZ="12735.0" endX="86964.0" endY="0.0" endZ="16951.0" randomRange="3011" />
+    <create count="52" type="asteroids" startX="70101.0" startY="0.0" startZ="81693.0" endX="65283.0" endY="0.0" endZ="85156.0" randomRange="6858" />
+    <create count="50" type="nebulas" startX="88018.0" startY="0.0" startZ="79585.0" endX="76274.0" endY="0.0" endZ="80338.0" randomRange="5347" />
+    <create count="30" type="asteroids" startX="87265.0" startY="0.0" startZ="76273.0" endX="76575.0" endY="0.0" endZ="81392.0" randomRange="3089" />
+    <create count="60" type="nebulas" startX="11381.0" startY="0.0" startZ="94341.0" endX="16952.0" endY="0.0" endZ="63776.0" randomRange="6057" />
+    <!--create mines from Officer A10N5678-->
+    <create count="10" type="mines" startX="55957.0" startY="0.0" startZ="30096.0" endX="55957.0" endY="0.0" endZ="30096.0" />
+    <create count="10" type="mines" startX="57555.0" startY="0.0" startZ="30387.0" endX="57555.0" endY="0.0" endZ="30387.0" />
+    <create count="10" type="mines" startX="58717.0" startY="0.0" startZ="30242.0" endX="58717.0" endY="0.0" endZ="30242.0" />
+    <create count="10" type="mines" startX="59589.0" startY="0.0" startZ="30968.0" endX="59589.0" endY="0.0" endZ="30968.0" />
+    <create count="10" type="mines" startX="60751.0" startY="0.0" startZ="31549.0" endX="60751.0" endY="0.0" endZ="31549.0" />
+    <create count="10" type="mines" startX="62204.0" startY="0.0" startZ="32421.0" endX="62204.0" endY="0.0" endZ="32421.0" />
+    <create count="10" type="mines" startX="63366.0" startY="0.0" startZ="33292.0" endX="63366.0" endY="0.0" endZ="33292.0" />
+    <create count="10" type="mines" startX="64819.0" startY="0.0" startZ="34164.0" endX="64819.0" endY="0.0" endZ="34164.0" />
+    <create count="10" type="mines" startX="65981.0" startY="0.0" startZ="35617.0" endX="65981.0" endY="0.0" endZ="35617.0" />
+    <create count="10" type="mines" startX="67289.0" startY="0.0" startZ="37215.0" endX="67289.0" endY="0.0" endZ="37215.0" />
+    <create count="10" type="mines" startX="68741.0" startY="0.0" startZ="38377.0" endX="68741.0" endY="0.0" endZ="38377.0" />
+    <create count="10" type="mines" startX="69904.0" startY="0.0" startZ="40702.0" endX="69904.0" endY="0.0" endZ="40702.0" />
+    <create count="10" type="mines" startX="70630.0" startY="0.0" startZ="42881.0" endX="70630.0" endY="0.0" endZ="42881.0" />
+    <create count="10" type="mines" startX="71066.0" startY="0.0" startZ="45205.0" endX="71066.0" endY="0.0" endZ="45205.0" />
+    <create count="10" type="mines" startX="70921.0" startY="0.0" startZ="47384.0" endX="70921.0" endY="0.0" endZ="47384.0" />
+    <create count="10" type="mines" startX="43899.0" startY="0.0" startZ="28644.0" endX="43899.0" endY="0.0" endZ="28644.0" />
+    <create count="10" type="mines" startX="44335.0" startY="0.0" startZ="26900.0" endX="44335.0" endY="0.0" endZ="26900.0" />
+    <create count="10" type="mines" startX="45061.0" startY="0.0" startZ="26755.0" endX="45061.0" endY="0.0" endZ="26755.0" />
+    <create count="10" type="mines" startX="45352.0" startY="0.0" startZ="25883.0" endX="45352.0" endY="0.0" endZ="25883.0" />
+    <create count="10" type="mines" startX="46223.0" startY="0.0" startZ="25593.0" endX="46223.0" endY="0.0" endZ="25593.0" />
+    <create count="10" type="mines" startX="46659.0" startY="0.0" startZ="25302.0" endX="46659.0" endY="0.0" endZ="25302.0" />
+    <create count="10" type="mines" startX="47531.0" startY="0.0" startZ="24721.0" endX="47531.0" endY="0.0" endZ="24721.0" />
+    <create count="10" type="mines" startX="45497.0" startY="0.0" startZ="29661.0" endX="45497.0" endY="0.0" endZ="29661.0" />
+    <create count="10" type="mines" startX="45497.0" startY="0.0" startZ="28644.0" endX="45497.0" endY="0.0" endZ="28644.0" />
+    <create count="10" type="mines" startX="46078.0" startY="0.0" startZ="27627.0" endX="46078.0" endY="0.0" endZ="27627.0" />
+    <create count="10" type="mines" startX="46659.0" startY="0.0" startZ="27046.0" endX="46659.0" endY="0.0" endZ="27046.0" />
+    <create count="10" type="mines" startX="47531.0" startY="0.0" startZ="26900.0" endX="47531.0" endY="0.0" endZ="26900.0" />
+    <create count="10" type="mines" startX="48112.0" startY="0.0" startZ="26610.0" endX="48112.0" endY="0.0" endZ="26610.0" />
+    <create count="10" type="mines" startX="48838.0" startY="0.0" startZ="26174.0" endX="48838.0" endY="0.0" endZ="26174.0" />
+    <create count="10" type="mines" startX="60751.0" startY="0.0" startZ="44479.0" endX="60751.0" endY="0.0" endZ="44479.0" />
+    <create count="10" type="mines" startX="61332.0" startY="0.0" startZ="45932.0" endX="61332.0" endY="0.0" endZ="45932.0" />
+    <create count="10" type="mines" startX="62059.0" startY="0.0" startZ="47094.0" endX="62059.0" endY="0.0" endZ="47094.0" />
+    <create count="10" type="mines" startX="62494.0" startY="0.0" startZ="48401.0" endX="62494.0" endY="0.0" endZ="48401.0" />
+    <create count="10" type="mines" startX="62785.0" startY="0.0" startZ="50145.0" endX="62785.0" endY="0.0" endZ="50145.0" />
+    <create count="10" type="mines" startX="62640.0" startY="0.0" startZ="51888.0" endX="62640.0" endY="0.0" endZ="51888.0" />
+    <create count="10" type="mines" startX="62640.0" startY="0.0" startZ="53486.0" endX="62640.0" endY="0.0" endZ="53486.0" />
+    <create count="10" type="mines" startX="62059.0" startY="0.0" startZ="55230.0" endX="62059.0" endY="0.0" endZ="55230.0" />
+    <create count="10" type="mines" startX="60461.0" startY="0.0" startZ="56392.0" endX="60461.0" endY="0.0" endZ="56392.0" />
+    <create count="10" type="mines" startX="59589.0" startY="0.0" startZ="57118.0" endX="59589.0" endY="0.0" endZ="57118.0" />
+    <create count="10" type="mines" startX="58281.0" startY="0.0" startZ="57263.0" endX="58281.0" endY="0.0" endZ="57263.0" />
+    <create count="10" type="mines" startX="57264.0" startY="0.0" startZ="57990.0" endX="57264.0" endY="0.0" endZ="57990.0" />
+    <create count="10" type="mines" startX="55521.0" startY="0.0" startZ="58861.0" endX="55521.0" endY="0.0" endZ="58861.0" />
+    <create count="10" type="mines" startX="53487.0" startY="0.0" startZ="58861.0" endX="53487.0" endY="0.0" endZ="58861.0" />
+    <create count="10" type="mines" startX="52034.0" startY="0.0" startZ="59152.0" endX="52034.0" endY="0.0" endZ="59152.0" />
+    <create count="10" type="mines" startX="50436.0" startY="0.0" startZ="59007.0" endX="50436.0" endY="0.0" endZ="59007.0" />
+    <create count="10" type="mines" startX="49129.0" startY="0.0" startZ="59007.0" endX="49129.0" endY="0.0" endZ="59007.0" />
+    <create count="10" type="mines" startX="47531.0" startY="0.0" startZ="58426.0" endX="47531.0" endY="0.0" endZ="58426.0" />
+    <create count="10" type="mines" startX="45933.0" startY="0.0" startZ="57699.0" endX="45933.0" endY="0.0" endZ="57699.0" />
+    <create count="10" type="mines" startX="44625.0" startY="0.0" startZ="56682.0" endX="44625.0" endY="0.0" endZ="56682.0" />
+    <create count="10" type="mines" startX="43463.0" startY="0.0" startZ="55665.0" endX="43463.0" endY="0.0" endZ="55665.0" />
+    <create count="10" type="mines" startX="42446.0" startY="0.0" startZ="54503.0" endX="42446.0" endY="0.0" endZ="54503.0" />
+    <create count="10" type="mines" startX="41720.0" startY="0.0" startZ="52469.0" endX="41720.0" endY="0.0" endZ="52469.0" />
+    <create count="10" type="mines" startX="41720.0" startY="0.0" startZ="50726.0" endX="41720.0" endY="0.0" endZ="50726.0" />
+    <create count="10" type="mines" startX="41865.0" startY="0.0" startZ="49273.0" endX="41865.0" endY="0.0" endZ="49273.0" />
+    <create count="10" type="mines" startX="42155.0" startY="0.0" startZ="47966.0" endX="42155.0" endY="0.0" endZ="47966.0" />
+    <create count="10" type="mines" startX="43027.0" startY="0.0" startZ="46513.0" endX="43027.0" endY="0.0" endZ="46513.0" />
+    <create count="10" type="mines" startX="43754.0" startY="0.0" startZ="45351.0" endX="43754.0" endY="0.0" endZ="45351.0" />
+    <create count="10" type="mines" startX="44480.0" startY="0.0" startZ="43898.0" endX="44480.0" endY="0.0" endZ="43898.0" />
+    <create count="10" type="mines" startX="45787.0" startY="0.0" startZ="42445.0" endX="45787.0" endY="0.0" endZ="42445.0" />
+    <create count="10" type="mines" startX="47240.0" startY="0.0" startZ="41138.0" endX="47240.0" endY="0.0" endZ="41138.0" />
+    <create count="10" type="mines" startX="48693.0" startY="0.0" startZ="40702.0" endX="48693.0" endY="0.0" endZ="40702.0" />
+    <create count="10" type="mines" startX="50146.0" startY="0.0" startZ="40702.0" endX="50146.0" endY="0.0" endZ="40702.0" />
+    <create count="10" type="mines" startX="51599.0" startY="0.0" startZ="40702.0" endX="51599.0" endY="0.0" endZ="40702.0" />
+    <create count="10" type="mines" startX="53051.0" startY="0.0" startZ="40992.0" endX="53051.0" endY="0.0" endZ="40992.0" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid00" id_arme="34505faa-e065-4cf6-bba2-2fc067fe8eb0">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="0" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="0" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <destroy name="DS00" />
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" />
+  </event>
+  <!-- Thus, ever sector that is defined hereafter, will have a create and destroy pattern which identifies the sector number in the name_arme attributes. The x,z coordinates will reflect that sector. -->
+  <!-- Unamed objects will destroy per the destroy command. However, each named object will need be explicitly destroyed one line at a time. -->
+  <!-- Sector 1,0 where the create and destroy pattern becomes active when transitioned -->
+  <event name="CreateGrid10" id_arme="ed6182d3-c4e9-4e1f-b7e7-9663e5e5f0cc">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="1" />
+    <if_variable name="z" comparator="EQUALS" value="0" />
+    <!-- This is where all the objects are created and configured -->
+    <!-- create unnamed objects -->
+    <create count="125" type="nebulas" startAngle="251" endAngle="27" startX="33637.0" startY="0.0" startZ="67024.0" radius="18750" randomRange="8125" />
+    <create count="70" type="nebulas" startAngle="31" endAngle="230" startX="38934.0" startY="0.0" startZ="41191.0" radius="10245" randomRange="8050" />
+    <create count="71" type="nebulas" startX="55768.0" startY="0.0" startZ="67991.0" endX="73564.0" endY="0.0" endZ="89974.0" randomRange="8548" />
+    <create count="41" type="nebulas" startX="39085.0" startY="0.0" startZ="42547.0" endX="59110.0" endY="0.0" endZ="69347.0" randomRange="6036" />
+    <create count="71" type="nebulas" startX="53358.0" startY="0.0" startZ="82109.0" endX="51431.0" endY="0.0" endZ="96298.0" randomRange="8548" />
+    <create count="273" type="asteroids" startX="83610.0" startY="0.0" startZ="16887.0" radius="10521" randomRange="9717" />
+    <create count="167" type="asteroids" startX="43224.0" startY="0.0" startZ="8181.0" endX="68182.0" endY="0.0" endZ="7520.0" randomRange="9077" />
+    <create count="70" type="asteroids" startX="88513.0" startY="0.0" startZ="36611.0" endX="99422.0" endY="0.0" endZ="45206.0" randomRange="8817" />
+    <create count="16" type="nebulas" startX="17855.0" startY="0.0" startZ="39385.0" radius="1684" randomRange="1664" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid10" id_arme="9502dcb4-4564-4725-adc1-83cde4f62987">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="0" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" />
+  </event>
+  <!-- Sector 1,1 where the create and destroy pattern becomes active when transitioned -->
+  <event name="CreateGrid11" id_arme="9c7ab628-96f8-4bf8-bf7f-6665f77dcbb7">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="1" />
+    <if_variable name="z" comparator="EQUALS" value="1" />
+    <!-- create unnamed objects -->
+    <create count="187" type="asteroids" startX="89373.0" startY="0.0" startZ="19811.0" endX="39235.0" endY="0.0" endZ="8218.0" randomRange="10518" />
+    <create count="72" type="asteroids" startX="71757.0" startY="0.0" startZ="93588.0" endX="8068.0" endY="0.0" endZ="62722.0" randomRange="11768" />
+    <create count="92" type="asteroids" startX="28696.0" startY="0.0" startZ="75671.0" endX="4906.0" endY="0.0" endZ="53538.0" randomRange="8054" />
+    <create count="81" type="asteroids" startX="18307.0" startY="0.0" startZ="73563.0" endX="7466.0" endY="0.0" endZ="50828.0" randomRange="6503" />
+    <create count="52" type="asteroids" startX="2497.0" startY="0.0" startZ="39234.0" endX="12886.0" endY="0.0" endZ="63023.0" randomRange="5128" />
+    <create count="94" type="asteroids" startX="61368.0" startY="0.0" startZ="11229.0" endX="42096.0" endY="0.0" endZ="1141.0" randomRange="7761" />
+    <create count="73" type="asteroids" startX="50527.0" startY="0.0" startZ="7917.0" endX="35320.0" endY="0.0" endZ="2797.0" randomRange="5480" />
+    <create count="201" type="nebulas" startX="84706.0" startY="0.0" startZ="68444.0" endX="84706.0" endY="0.0" endZ="68444.0" randomRange="22678" />
+    <create count="138" type="nebulas" startX="96341.0" startY="0.0" startZ="5716.0" endX="89144.0" endY="0.0" endZ="45960.0" randomRange="11915" />
+    <create count="54" type="nebulas" startX="78128.0" startY="0.0" startZ="75630.0" endX="95313.0" endY="0.0" endZ="96780.0" randomRange="12612" />
+    <create count="82" type="nebulas" startAngle="77" endAngle="222" startX="32309.0" startY="0.0" startZ="65734.0" radius="19375" randomRange="9368" />
+    <create count="99" type="nebulas" startX="28244.0" startY="0.0" startZ="89523.0" endX="70931.0" endY="0.0" endZ="94430.0" randomRange="11051" />
+    <create count="50" type="nebulas" startX="4455.0" startY="0.0" startZ="68594.0" endX="8972.0" endY="0.0" endZ="81693.0" randomRange="8734" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid11" id_arme="a08f6a4b-1160-4cb0-8ebd-645978a02b8e">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="1" />
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" />
+  </event>
+  <!-- Sector 0,1 where the create and destroy pattern becomes active when transition -->
+  <event name="CreateGrid01" id_arme="ed3358dc-82f3-45d6-b7d7-ade3c5a50f05">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="0" />
+    <if_variable name="z" comparator="EQUALS" value="1" />
+    <!-- create unnamed objects -->
+    <create count="145" type="asteroids" startX="84254.0" startY="0.0" startZ="45106.0" endX="69800.0" endY="0.0" endZ="86662.0" randomRange="20349" />
+    <create count="49" type="nebulas" startX="86211.0" startY="0.0" startZ="32308.0" endX="84405.0" endY="0.0" endZ="46612.0" randomRange="4491" />
+    <create count="53" type="nebulas" startX="84103.0" startY="0.0" startZ="74466.0" endX="74768.0" endY="0.0" endZ="84855.0" randomRange="5811" />
+    <create count="37" type="nebulas" startX="75220.0" startY="0.0" startZ="2797.0" endX="79737.0" endY="0.0" endZ="9272.0" randomRange="5573" />
+    <create count="67" type="asteroids" startAngle="280" endAngle="154" startX="16540.0" startY="0.0" startZ="15826.0" radius="23003" randomRange="4139" />
+    <create count="42" type="asteroids" startX="34278.0" startY="0.0" startZ="14216.0" endX="31567.0" endY="0.0" endZ="1024.0" randomRange="9218" />
+    <create count="19" type="asteroids" startX="30302.0" startY="0.0" startZ="18373.0" endX="31386.0" endY="0.0" endZ="28855.0" randomRange="2942" />
+    <create count="20" type="asteroids" startX="25422.0" startY="0.0" startZ="27590.0" endX="17470.0" endY="0.0" endZ="32289.0" randomRange="3725" />
+    <create count="71" type="nebulas" startX="18374.0" startY="0.0" startZ="10060.0" endX="13314.0" endY="0.0" endZ="22891.0" randomRange="10307" />
+    <create count="33" type="asteroids" startX="22169.0" startY="0.0" startZ="41686.0" endX="4278.0" endY="0.0" endZ="51084.0" randomRange="7959" />
+    <create count="10" type="asteroids" startX="7531.0" startY="0.0" startZ="37168.0" endX="1928.0" endY="0.0" endZ="38433.0" randomRange="3615" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid01" id_arme="c3a567fb-ff54-4a8e-a56e-33b0feae1119">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="0" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="1" />
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" />
+  </event>
+  <!-- Sector -1,0 where the create and destroy pattern becomes active when transitioned -->
+  <event name="CreateGrid-10" id_arme="20821902-14fd-477c-912b-6b8d88ce8c76">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="-1" />
+    <if_variable name="z" comparator="EQUALS" value="0" />
+    <!-- create unnamed objects -->
+    <create count="216" type="nebulas" startX="72962.0" startY="0.0" startZ="7164.0" endX="11230.0" endY="0.0" endZ="17553.0" randomRange="13999" />
+    <create count="46" type="asteroids" startX="67993.0" startY="0.0" startZ="7917.0" endX="87566.0" endY="0.0" endZ="13337.0" randomRange="6941" />
+    <create count="97" type="asteroids" startX="63476.0" startY="0.0" startZ="78080.0" endX="39536.0" endY="0.0" endZ="73563.0" randomRange="9096" />
+    <create count="57" type="nebulas" startX="75521.0" startY="0.0" startZ="78080.0" endX="54442.0" endY="0.0" endZ="77478.0" randomRange="10160" />
+    <create count="43" type="asteroids" startX="46462.0" startY="0.0" startZ="44956.0" endX="32610.0" endY="0.0" endZ="39234.0" randomRange="6647" />
+    <create count="32" type="asteroids" startX="44655.0" startY="0.0" startZ="52634.0" endX="37579.0" endY="0.0" endZ="44203.0" randomRange="5939" />
+    <create count="32" type="asteroids" startX="50829.0" startY="0.0" startZ="67089.0" endX="45559.0" endY="0.0" endZ="51430.0" randomRange="6687" />
+    <create count="6" type="asteroids" startX="74919.0" startY="0.0" startZ="7917.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="71155.0" startY="0.0" startZ="12885.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="77629.0" startY="0.0" startZ="15144.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="40289.0" startY="0.0" startZ="39987.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="38934.0" startY="0.0" startZ="47515.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="45107.0" startY="0.0" startZ="57904.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="51431.0" startY="0.0" startZ="67089.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="47064.0" startY="0.0" startZ="72358.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="56098.0" startY="0.0" startZ="77478.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="58507.0" startY="0.0" startZ="70100.0" radius="100" randomRange="550" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid-10" id_arme="6d9f84b1-026e-4d8f-baae-54a1424e6a9c">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="-1" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="0" />
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" />
+  </event>
+  <!-- Sector -1,-1 where the create and destroy pattern becomes active when transitioned -->
+  <event name="CreateGrid-1-1" id_arme="6134b7d4-c7e5-4803-9c80-bc8032ac5be0">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="-1" />
+    <if_variable name="z" comparator="EQUALS" value="-1" />
+    <!-- create unnamed objects -->
+    <create count="4" type="asteroids" startAngle="180" endAngle="359" startX="69970.0" startY="-250.0" startZ="56594.0" radius="2000" randomRange="1000" randomSeed="564" />
+    <create count="4" type="asteroids" startAngle="180" endAngle="359" startX="69970.0" startY="250.0" startZ="56594.0" radius="2000" randomRange="1000" randomSeed="4546" />
+    <create count="4" type="asteroids" startAngle="180" endAngle="359" startX="69970.0" startY="0.0" startZ="56594.0" radius="2000" randomRange="1000" randomSeed="1265" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid-1-1" id_arme="fc3039d1-34ae-40ac-b150-1ae3e2967429">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="-1" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="-1" />
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" />
+  </event>
+  <!-- Sector 2,2 where the create and destroy pattern becomes active when transitioned -->
+  <event name="CreateGrid22" id_arme="621d1c9b-7964-489d-9f1c-53561e0e8514">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="2" />
+    <if_variable name="z" comparator="EQUALS" value="2" />
+    <!-- This is where all the objects are created and configured -->
+    <create type="blackHole" x="60435.0" y="0.0" z="27135.0" name="BH2-085" />
+    <create type="blackHole" x="71330.0" y="0.0" z="69795.0" name="BH2-315" />
+    <!-- create unnamed objects -->
+    <create type="anomaly" x="20077.0" y="0.0" z="22992.0" />
+    <create type="anomaly" x="27903.0" y="0.0" z="22685.0" />
+    <create type="anomaly" x="11944.0" y="0.0" z="20383.0" />
+    <create type="anomaly" x="87750.0" y="0.0" z="21611.0" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="60000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="50000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="1" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="60000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="50000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="1" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="60000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="50000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="1" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="60000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="50000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="1" />
+    <set_variable name="RandomX" randomIntLow="90000" randomIntHigh="99000" />
+    <set_variable name="RandomZ" randomIntLow="25000" randomIntHigh="27000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="166" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="90000" randomIntHigh="99000" />
+    <set_variable name="RandomZ" randomIntLow="25000" randomIntHigh="27000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="166" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="90000" randomIntHigh="99000" />
+    <set_variable name="RandomZ" randomIntLow="25000" randomIntHigh="27000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="166" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="90000" randomIntHigh="99000" />
+    <set_variable name="RandomZ" randomIntLow="25000" randomIntHigh="27000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="166" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="90000" randomIntHigh="99000" />
+    <set_variable name="RandomZ" randomIntLow="25000" randomIntHigh="27000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="166" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="90000" randomIntHigh="99000" />
+    <set_variable name="RandomZ" randomIntLow="25000" randomIntHigh="27000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="166" name="Xeno" podnumber="2" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+    <create type="station" x="50000.0" y="0.0" z="50000.0" angle="0" name="DS02" hullID="1003" sideValue="2" />
+  </event>
+  <event name="DestroyGrid22" id_arme="d1f65a20-da42-4a14-a993-1813e6916728">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="2" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="2" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <destroy name="BH2-085" />
+    <destroy name="BH2-315" />
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" />
+    <destroy name="DS02" />
+  </event>
+  <!-- Sector -6,0 where the create and destroy pattern becomes active when transitioned -->
+  <event name="CreateGrid-6,0" id_arme="90b15df4-df8d-4b81-9aea-795dda5d8269">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="-6.0" />
+    <if_variable name="z" comparator="EQUALS" value="0.0" />
+    <!--Activate Create whale and set amount-->
+    <set_variable name="Whalewillhappen" randomIntLow="1" randomIntHigh="2" />
+    <set_variable name="AmountofWhale" randomIntLow="1" randomIntHigh="5" />
+    <!-- create Enviroment-->
+    <create count="100" type="nebulas" nebType="3" startX="85537.0" startY="0.0" startZ="91471.0" endX="85537.0" endY="0.0" endZ="91471.0" randomRange="15311" />
+    <create count="50" type="nebulas" startX="21267.0" startY="0.0" startZ="21845.0" endX="21267.0" endY="0.0" endZ="21845.0" randomRange="11394" />
+    <create count="30" type="nebulas" startX="12148.0" startY="0.0" startZ="8817.0" endX="31545.0" endY="0.0" endZ="28938.0" />
+    <create count="30" type="nebulas" startX="7660.0" startY="0.0" startZ="13305.0" endX="38637.0" endY="0.0" endZ="28359.0" />
+    <create count="30" type="nebulas" startX="16925.0" startY="0.0" startZ="6646.0" endX="29228.0" endY="0.0" endZ="34294.0" />
+    <create count="100" type="asteroids" startX="50073.0" startY="0.0" startZ="50651.0" endX="50073.0" endY="0.0" endZ="50651.0" randomRange="34922" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid-6,0" id_arme="e770b8b2-787a-4549-b4ea-f990544ba397">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="-6.0" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="0.0" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" />
+  </event>
+  <!-- Sector -6,-4 where the create and destroy pattern becomes active when transitioned -->
+  <event name="CreateGrid-6-4" id_arme="0dda5ec6-c55f-446f-a9a9-a4ce794a6c86">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="-6.0" />
+    <if_variable name="z" comparator="EQUALS" value="-4.0" />
+    <!--Activate Create whale and set amount-->
+    <set_variable name="Whalewillhappen" randomIntLow="1" randomIntHigh="2" />
+    <set_variable name="AmountofWhale" randomIntLow="1" randomIntHigh="10" />
+    <!-- create Enviroment-->
+    <create count="0" type="nebulas" nebType="1" startX="0.0" startY="0.0" startZ="0.0" endX="0.0" endY="0.0" endZ="0.0" />
+    <create count="10" type="nebulas" startX="38782.0" startY="0.0" startZ="24595.0" endX="15766.0" endY="0.0" endZ="44716.0" />
+    <create count="30" type="nebulas" startX="35887.0" startY="0.0" startZ="18371.0" endX="18227.0" endY="0.0" endZ="46453.0" randomRange="14023" />
+    <create count="60" type="nebulas" nebType="3" startX="32124.0" startY="0.0" startZ="26043.0" endX="32124.0" endY="0.0" endZ="26043.0" randomRange="17743" />
+    <create count="100" type="nebulas" startX="47612.0" startY="0.0" startZ="17647.0" endX="14029.0" endY="0.0" endZ="34728.0" randomRange="17743" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid-6-4" id_arme="26c733a4-e636-4bec-a1a9-2b5136058804">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="-6.0" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="-4.0" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsDestroy" value="0" />
+    <set_variable name="IsCreate" value="1" />
+  </event>
+  <!-- Sector -10, -1 where the create and destroy pattern becomes active when transition -->
+  <event name="CreateGrid-10-1" id_arme="85a797c2-12f1-4117-bbe1-bdf67b607646">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="-10" />
+    <if_variable name="z" comparator="EQUALS" value="-1" />
+    <!-- create unnamed objects -->
+    <create count="216" type="nebulas" startX="72962.0" startY="0.0" startZ="7164.0" endX="11230.0" endY="0.0" endZ="17553.0" randomRange="13999" />
+    <create count="46" type="asteroids" startX="67993.0" startY="0.0" startZ="7917.0" endX="87566.0" endY="0.0" endZ="13337.0" randomRange="6941" />
+    <create count="97" type="asteroids" startX="63476.0" startY="0.0" startZ="78080.0" endX="39536.0" endY="0.0" endZ="73563.0" randomRange="9096" />
+    <create count="57" type="nebulas" startX="75521.0" startY="0.0" startZ="78080.0" endX="54442.0" endY="0.0" endZ="77478.0" randomRange="10160" />
+    <create count="43" type="asteroids" startX="46462.0" startY="0.0" startZ="44956.0" endX="32610.0" endY="0.0" endZ="39234.0" randomRange="6647" />
+    <create count="32" type="asteroids" startX="44655.0" startY="0.0" startZ="52634.0" endX="37579.0" endY="0.0" endZ="44203.0" randomRange="5939" />
+    <create count="32" type="asteroids" startX="50829.0" startY="0.0" startZ="67089.0" endX="45559.0" endY="0.0" endZ="51430.0" randomRange="6687" />
+    <create count="6" type="asteroids" startX="74919.0" startY="0.0" startZ="7917.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="71155.0" startY="0.0" startZ="12885.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="77629.0" startY="0.0" startZ="15144.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="40289.0" startY="0.0" startZ="39987.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="38934.0" startY="0.0" startZ="47515.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="45107.0" startY="0.0" startZ="57904.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="51431.0" startY="0.0" startZ="67089.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="47064.0" startY="0.0" startZ="72358.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="56098.0" startY="0.0" startZ="77478.0" radius="100" randomRange="550" />
+    <create count="6" type="asteroids" startX="58507.0" startY="0.0" startZ="70100.0" radius="100" randomRange="550" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid-10-1" id_arme="ec8d48fd-60dc-4d1d-9f84-0665a5c0a39c">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="-10" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="-1" />
+    <set_variable name="IsCreate" value="1" />
+    <set_variable name="IsDestroy" value="0" />
+  </event>
+  <!-- Sector 4,5 where the create and destroy pattern becomes active when transitioned -->
+  <event name="CreateGrid45" id_arme="cacc5eda-47a8-4520-ab12-461da6a23d4e">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1" />
+    <if_variable name="x" comparator="EQUALS" value="4" />
+    <if_variable name="z" comparator="EQUALS" value="5" />
+    <!-- This is where all the objects are created and configured -->
+    <!-- create unnamed objects -->
+    <set_variable name="RandomX" randomIntLow="55000" randomIntHigh="70000" />
+    <set_variable name="RandomZ" randomIntLow="10000" randomIntHigh="22000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="1" />
+    <set_variable name="RandomX" randomIntLow="55000" randomIntHigh="70000" />
+    <set_variable name="RandomZ" randomIntLow="10000" randomIntHigh="22000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="1" />
+    <set_variable name="RandomX" randomIntLow="55000" randomIntHigh="70000" />
+    <set_variable name="RandomZ" randomIntLow="10000" randomIntHigh="22000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="1" />
+    <set_variable name="RandomX" randomIntLow="55000" randomIntHigh="70000" />
+    <set_variable name="RandomZ" randomIntLow="10000" randomIntHigh="22000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="1" />
+    <set_variable name="RandomX" randomIntLow="55000" randomIntHigh="70000" />
+    <set_variable name="RandomZ" randomIntLow="10000" randomIntHigh="22000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="1" />
+    <set_variable name="RandomX" randomIntLow="55000" randomIntHigh="70000" />
+    <set_variable name="RandomZ" randomIntLow="10000" randomIntHigh="22000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="1" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="37000" randomIntHigh="44000" />
+    <set_variable name="RandomZ" randomIntLow="76000" randomIntHigh="80000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="2" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <set_variable name="RandomX" randomIntLow="40000" randomIntHigh="90000" />
+    <set_variable name="RandomZ" randomIntLow="46000" randomIntHigh="60000" />
+    <create type="whale" x="RandomX" y="0.0" z="RandomZ" angle="0" name="Xeno" podnumber="3" />
+    <!-- end create unnamed objects -->
+    <set_variable name="IsCreate" value="0" />
+  </event>
+  <event name="DestroyGrid45" id_arme="68654883-6fac-4cb5-8ac9-0aa5a5f30a1f">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1" />
+    <if_variable name="destroy_x" comparator="EQUALS" value="4" />
+    <if_variable name="destroy_z" comparator="EQUALS" value="5" />
+    <!-- This is where all the objects are destroyed in the sector. -->
+    <!-- Flag the creation of a new sector if an event name_arme exists. -->
+    <set_variable name="IsCreate" value="1" />
+    <set_variable name="IsDestroy" value="0" />
+  </event>
+  <!-- END SECTOR DEFINITION, CREATION AND DESTRUCTION -->
+  <!-- BEGIN BLOCK FOR TRANSITION -->
+  <!-- When the vessel moves out of the sector on the left side, it will appear on the right side -->
+  <event name="PositionLeftX" id_arme="dbd10902-8de9-4487-9aca-0829d7ca5d2d">
+    <if_object_property property="positionX" name="Excalibur" comparator="GREATER" value="99990" />
+    <set_object_property property="positionX" value="100" name="Excalibur" />
+    <!-- Initiate the destroy pattern by setting the flag and recording the current sector position -->
+    <set_variable name="IsDestroy" value="1" />
+    <set_variable name="destroy_x" value="x" />
+    <set_variable name="destroy_z" value="z" />
+    <!-- This records the next sector, once the destroy pattern finishes, the create pattern will start using the new coordinates. -->
+    <set_variable name="x" value="x-1" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0.0" centerZ="50000" />
+    <!-- Comms gets a message for current sector location -->
+    <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
+  </event>
+  <!-- When the vessel moves out of the sector on the bottom side, it will appear on the top side -->
+  <event name="PositionBottomZ" id_arme="46422154-5c39-4e46-a108-7569a584d20c">
+    <if_object_property property="positionZ" name="Excalibur" comparator="GREATER" value="99990" />
+    <set_object_property property="positionZ" value="100" name="Excalibur" />
+    <!-- Initiate the destroy pattern by setting the flag and recording the current sector position -->
+    <set_variable name="IsDestroy" value="1" />
+    <set_variable name="destroy_x" value="x" />
+    <set_variable name="destroy_z" value="z" />
+    <!-- This records the next sector, once the destroy pattern finishes, the create pattern will start using the new coordinates. -->
+    <set_variable name="z" value="z-1" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0.0" centerZ="50000" />
+    <!-- Comms gets a message for current sector location -->
+    <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
+  </event>
+  <!-- When the vessel moves out of the sector on the right side, it will appear on the left side -->
+  <event name="PositionRightX" id_arme="10b69b50-f87f-4eaa-a225-2cd7bb1c4835">
+    <if_object_property property="positionX" name="Excalibur" comparator="LESS" value="10" />
+    <set_object_property property="positionX" value="99900" name="Excalibur" />
+    <set_variable name="IsDestroy" value="1" />
+    <set_variable name="destroy_x" value="x" />
+    <set_variable name="destroy_z" value="z" />
+    <set_variable name="x" value="x+1" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0.0" centerZ="50000" />
+    <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
+  </event>
+  <!-- When the vessel moves out of the sector on the top side, it will appear on the bottom side -->
+  <event name="PositionTopZ" id_arme="0542b9b7-4c07-4291-9c43-2bac3984b9a0">
+    <if_object_property property="positionZ" name="Excalibur" comparator="LESS" value="10" />
+    <set_object_property property="positionZ" value="99900" name="Excalibur" />
+    <set_variable name="IsDestroy" value="1" />
+    <set_variable name="destroy_x" value="x" />
+    <set_variable name="destroy_z" value="z" />
+    <set_variable name="z" value="z+1" />
+    <destroy_near type="all" radius="100000" centerX="50000" centerY="0.0" centerZ="50000" />
+    <incoming_comms_text from="DSTAN AND ONBOARD NAV">Current position (|x|, |z|)</incoming_comms_text>
+  </event>
+  <!--other folders added later-->
+  <folder_arme name="Other elements added" id_arme="84f46813-e093-4841-8aa5-b37db676fb6e" expanded_arme="" />
+  <event name="Create Mature Whales" id_arme="ec866c91-129f-4037-9a77-1d4a414bccc4" parent_id_arme="84f46813-e093-4841-8aa5-b37db676fb6e">
+    <if_variable name="Whalewillhappen" comparator="EQUALS" value="1.0" />
+    <if_variable name="AmountofWhale" comparator="GREATER" value="0.0" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <create type="monster" monsterType="1" age="2" x="RandomA*RandomTimesNumA" y="RandomhighthA" z="RandomB*RandomTimesNumB" angle="RandomBarring" />
+    <set_variable name="AmountofWhale" value="AmountofWhale-1" integer="yes" />
+  </event>
+  <folder_arme name="Pirates!" id_arme="d673a91b-a67e-4805-9664-14567df38ff3" parent_id_arme="84f46813-e093-4841-8aa5-b37db676fb6e" expanded_arme="" />
+  <event name="Pirates can hapen" id_arme="8d603aa1-b8ab-4830-b831-9712a6b4ecfd" parent_id_arme="d673a91b-a67e-4805-9664-14567df38ff3">
+    <if_variable name="IsCreate" comparator="EQUALS" value="1.0" />
+    <if_variable name="KilledEnemy" comparator="EQUALS" value="1.0" />
+    <if_variable name="x" comparator="NOT" value="0.0" />
+    <if_variable name="z" comparator="NOT" value="0.0" />
+    <if_variable name="Create Pirates" comparator="EQUALS" value="0.0" />
+    <set_variable name="Create Pirates" value="1.0" integer="yes" />
+  </event>
+  <event name="MIght make Pirates" id_arme="f2d6902b-fe1c-4bfb-9e7f-948421e56ec4" parent_id_arme="d673a91b-a67e-4805-9664-14567df38ff3">
+    <if_variable name="Create Pirates" comparator="EQUALS" value="1.0" />
+    <set_variable name="WillcreatePirates" randomIntLow="1" randomIntHigh="3" />
+    <set_variable name="HowmanyPirates" randomIntLow="1" randomIntHigh="10" integer="yes" />
+    <set_variable name="KillPirates" value="HowmanyPirates" integer="yes" />
+    <set_variable name="Create Pirates" value="0.0" integer="yes" />
+  </event>
+  <event name="Making Pirates" id_arme="28fbfb50-d1fc-4264-b958-b65fb618881d" parent_id_arme="d673a91b-a67e-4805-9664-14567df38ff3">
+    <if_variable name="WillcreatePirates" comparator="EQUALS" value="2.0" />
+    <if_variable name="HowmanyPirates" comparator="GREATER" value="0.0" />
+    <set_variable name="RandomhighthB" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomTimesNumD" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumC" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomD" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomC" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RanomamountThings" randomIntLow="1" randomIntHigh="30" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <create type="enemy" x="RandomA*RandomTimesNumA" y="RandomhighthA" z="RandomB*RandomTimesNumB" angle="RandomBarring" name="S|HowmanyPirates|" raceKeys="Pirate" hullKeys="Longbow" sideValue="1" />
+    <set_variable name="HowmanyPirates" value="HowmanyPirates-1" integer="yes" />
+  </event>
+  <event name="Destroy Pirate" id_arme="2ff94cd1-ccec-4c98-8f98-f67fa868d71a" parent_id_arme="d673a91b-a67e-4805-9664-14567df38ff3">
+    <if_variable name="IsDestroy" comparator="EQUALS" value="1.0" />
+    <if_variable name="Create Pirates" comparator="EQUALS" value="1.0" />
+    <set_variable name="KillPirateloop" value="1.0" integer="yes" />
+    <set_variable name="Create Pirates" value="0.0" integer="yes" />
+  </event>
+  <event name="KillallPiratesloop" id_arme="f49d7002-390d-43d1-88f2-7eb54bf46415" parent_id_arme="d673a91b-a67e-4805-9664-14567df38ff3">
+    <if_variable name="KillPirateloop" comparator="EQUALS" value="1.0" />
+    <if_variable name="KillPirates" comparator="GREATER" value="0.0" />
+    <destroy name="S|KillPirats|" />
+    <set_variable name="KillPirates" value="KillPirates-1" integer="yes" />
+  </event>
+  <folder_arme name="Missions" id_arme="15782636-99cf-471b-9fef-cfbde6940915" expanded_arme="" />
+  <folder_arme name="Universal Script" id_arme="42fe6d2c-ecbd-4068-a0e7-dab91b4ce04e" parent_id_arme="15782636-99cf-471b-9fef-cfbde6940915" expanded_arme="" />
+  <event name="Docking With no mission active" id_arme="9680251c-7390-4acb-b6cb-46f63b68069f" parent_id_arme="42fe6d2c-ecbd-4068-a0e7-dab91b4ce04e">
+    <if_docked player_name="Excalibur" name="DS00" />
+    <if_variable name="ReadIncomingMessage" comparator="NOT" value="1.0" />
+    <if_variable name="DoYouHaveANewMission" comparator="EQUALS" value="0.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="0.0" />
+    <incoming_comms_text from="DS00" type="STATION">No further Missions are available at this moment</incoming_comms_text>
+    <set_variable name="ReadIncomingMessage" value="1.0" integer="yes" />
+  </event>
+  <event name="Undocking for mission update" id_arme="c30cf856-fedf-4199-a109-7ffd6710bfde" parent_id_arme="42fe6d2c-ecbd-4068-a0e7-dab91b4ce04e">
+    <if_variable name="ReadIncomingMessage" comparator="EQUALS" value="1.0" />
+    <if_docked player_name="Excalibur" not="1" name="DS00" />
+    <set_variable name="ReadIncomingMessage" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="Mission1" id_arme="093501a7-a1be-4c5c-9cd0-f7e41820ae47" parent_id_arme="15782636-99cf-471b-9fef-cfbde6940915" expanded_arme="" />
+  <folder_arme name="Start" id_arme="a85acca6-c0a8-41c9-b88b-8e33d404a2e8" parent_id_arme="093501a7-a1be-4c5c-9cd0-f7e41820ae47" expanded_arme="" />
+  <event name="Docking for mission" id_arme="cf0ba6ac-abde-40d0-bd60-6b661a406a4b" parent_id_arme="a85acca6-c0a8-41c9-b88b-8e33d404a2e8">
+    <if_docked player_name="Excalibur" name="DS00" />
+    <if_variable name="ReadIncomingMessage" comparator="NOT" value="1.0" />
+    <if_variable name="DoYouHaveANewMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="StartMission" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="DS00" sideValue="2" type="STATION">We Need you to go investigate sector (-6.-4) When you have arrived in the sector your Intell will update you for futher information.</incoming_comms_text>
+    <set_variable name="MiddleMission" value="1.0" integer="yes" />
+    <set_variable name="EndMission" value="0.0" integer="yes" />
+    <set_variable name="InLocation" value="0.0" integer="yes" />
+    <set_variable name="MX" value="-6.0" integer="yes" />
+    <set_variable name="MZ" value="-4.0" integer="yes" />
+    <set_variable name="InLocation" value="0.0" integer="yes" />
+    <set_variable name="ReadIncomingMessage" value="1.0" integer="yes" />
+    <set_variable name="StartMission" value="0.0" integer="yes" />
+  </event>
+  <event name="Docking with current mission not compleated" id_arme="60259ce0-e372-4078-8b0d-0db690a766f5" parent_id_arme="a85acca6-c0a8-41c9-b88b-8e33d404a2e8">
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="MiddleMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="DoYouHaveANewMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="ReadIncomingMessage" comparator="NOT" value="1.0" />
+    <if_docked player_name="Excalibur" name="DS00" />
+    <incoming_comms_text from="DS00" sideValue="2" type="STATION">We Need you to go investigate sector (-6.-4) When you have arrived in the sector your Intell will update you for futher information.</incoming_comms_text>
+    <set_variable name="ReadIncomingMessage" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Middle" id_arme="508c6321-54ca-4221-b0b2-97e0d28ee402" parent_id_arme="093501a7-a1be-4c5c-9cd0-f7e41820ae47" expanded_arme="" />
+  <event name="In area" id_arme="d9eb5a12-2e62-40ec-a42c-059d4bdc76c2" parent_id_arme="508c6321-54ca-4221-b0b2-97e0d28ee402">
+    <if_variable name="z" comparator="EQUALS" value="MZ" />
+    <if_variable name="x" comparator="EQUALS" value="MX" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="MiddleMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="InLocation" comparator="EQUALS" value="0.0" />
+    <set_variable name="RandomA" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomB" randomIntLow="1" randomIntHigh="10000" />
+    <set_variable name="RandomTimesNumA" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomTimesNumB" randomIntLow="1" randomIntHigh="10" />
+    <set_variable name="RandomhighthA" randomIntLow="-499" randomIntHigh="499" />
+    <set_variable name="RandomBarring" randomIntLow="0" randomIntHigh="360" />
+    <incoming_comms_text from="Intelligence" sideValue="2" type="STATUS">We have information that a Pirate Ship named the Whydah is in this area. You are clear to take what ever action you find necessary to dispose of this threat in this sector.</incoming_comms_text>
+    <create type="enemy" x="RandomA*RandomTimesNumA" y="RandomhighthA" z="RandomB*RandomTimesNumB" angle="RandomBarring" name="Whydah" raceKeys="Pirate" hullKeys="Longbow" sideValue="1" fleetnumber="90" />
+    <add_ai type="CHASE_FLEET" value1="50000" name="Excalibur" />
+    <add_ai type="ATTACK" targetName="Excalibur" value1="5.0" name="Killer Class" />
+    <set_variable name="Triger set" value="1.0" integer="yes" />
+    <set_variable name="InLocation" value="1.0" integer="yes" />
+  </event>
+  <event name="If not in top or bottem" id_arme="1d1e97ce-f175-4c4e-b5cb-11fc0328cb19" parent_id_arme="508c6321-54ca-4221-b0b2-97e0d28ee402">
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="1.0" />
+    <if_variable name="z" comparator="NOT" value="MZ" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="InLocation" comparator="EQUALS" value="1.0" />
+    <destroy name="Whydah" />
+    <set_variable name="InLocation" value="0.0" integer="yes" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+  </event>
+  <event name="If not left of right" id_arme="92a6086b-50f2-469e-ad0a-6edeaebf5092" parent_id_arme="508c6321-54ca-4221-b0b2-97e0d28ee402">
+    <if_variable name="Middle" comparator="EQUALS" value="1.0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="1.0" />
+    <if_variable name="x" comparator="NOT" value="MX" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="2.0" />
+    <if_variable name="InLocation" comparator="EQUALS" value="1.0" />
+    <destroy name="Whydah" />
+    <set_variable name="InLocation" value="0.0" integer="yes" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+  </event>
+  <event name="Killed Enemy" id_arme="c2226209-b2f4-4c84-84ee-dbff5d52e265" parent_id_arme="508c6321-54ca-4221-b0b2-97e0d28ee402">
+    <if_variable name="InLocation" comparator="EQUALS" value="1.0" />
+    <if_variable name="MiddleMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="x" comparator="EQUALS" value="MX" />
+    <if_variable name="z" comparator="EQUALS" value="MZ" />
+    <if_not_exists name="Whydah" />
+    <incoming_comms_text from="DS00" type="STATION">We received the update on your mission. Please return back to base for further updates.</incoming_comms_text>
+    <set_variable name="EnemySurendered" value="0.0" integer="yes" />
+    <set_variable name="KilledEnemy" value="1.0" integer="yes" />
+    <set_variable name="EndMission" value="1.0" integer="yes" />
+    <set_variable name="MiddleMission" value="0.0" integer="yes" />
+  </event>
+  <event name="Surenered Enemy" id_arme="b9d3aad6-9961-4323-9360-78d0a72a759a" parent_id_arme="508c6321-54ca-4221-b0b2-97e0d28ee402">
+    <if_object_property property="hasSurrendered" name="Whydah" comparator="EQUALS" value="1" />
+    <if_variable name="z" comparator="EQUALS" value="MZ" />
+    <if_variable name="x" comparator="EQUALS" value="MX" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="MiddleMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="InLocation" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="DS00" type="STATION">We received the update on your mission. Please return back to base for further updates.</incoming_comms_text>
+    <set_variable name="KilledEnemy" value="0.0" integer="yes" />
+    <set_variable name="EnemySurendered" value="1.0" integer="yes" />
+    <set_variable name="EndMission" value="1.0" integer="yes" />
+    <set_variable name="MiddleMission" value="0.0" integer="yes" />
+  </event>
+  <folder_arme name="End" id_arme="5cafd0db-2daa-4062-ac82-0f60a9517dee" parent_id_arme="093501a7-a1be-4c5c-9cd0-f7e41820ae47" expanded_arme="" />
+  <event name="If not left of right" id_arme="3b4f4406-bf07-4689-bbb1-dec2af8c66f9" parent_id_arme="5cafd0db-2daa-4062-ac82-0f60a9517dee">
+    <if_variable name="EndMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="1.0" />
+    <if_variable name="x" comparator="NOT" value="MX" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="2.0" />
+    <destroy name="Whydah" />
+    <set_variable name="InLocation" value="0.0" integer="yes" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+  </event>
+  <event name="If not in top or bottem" id_arme="2df234c1-695c-4bbe-9384-19dc1d75608c" parent_id_arme="5cafd0db-2daa-4062-ac82-0f60a9517dee">
+    <if_variable name="EndMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="Triger set" comparator="EQUALS" value="1.0" />
+    <if_variable name="z" comparator="NOT" value="MZ" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <destroy name="Whydah" />
+    <set_variable name="InLocation" value="0.0" integer="yes" />
+    <set_variable name="Triger set" value="0.0" integer="yes" />
+  </event>
+  <event name="Docking for END mission For Kill" id_arme="83bfcfa0-02b2-468b-a02b-677642de7c5d" parent_id_arme="5cafd0db-2daa-4062-ac82-0f60a9517dee">
+    <if_docked player_name="Excalibur" name="DS00" />
+    <if_variable name="ReadIncomingMessage" comparator="NOT" value="1.0" />
+    <if_variable name="DoYouHaveANewMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="EndMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="KilledEnemy" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="DS00" sideValue="2" type="STATION">We Understand you have destroyed the Whydah. They won't be pestering us anymore.</incoming_comms_text>
+    <set_variable name="StartMission" value="1.0" integer="yes" />
+    <set_variable name="MissionNum" value="MissionNum+1" integer="yes" />
+  </event>
+  <event name="Docking for END mission For Surender" id_arme="e6a6f436-342b-41ae-afe8-a1670b81ebd3" parent_id_arme="5cafd0db-2daa-4062-ac82-0f60a9517dee">
+    <if_docked player_name="Excalibur" name="DS00" />
+    <if_variable name="ReadIncomingMessage" comparator="NOT" value="1.0" />
+    <if_variable name="DoYouHaveANewMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="1.0" />
+    <if_variable name="EndMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="EnemySurendered" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="DS00" sideValue="2" type="STATION">We Understand you Made the Whydah surender. Hopefully they won't be bothering anyone anymore.</incoming_comms_text>
+    <set_variable name="KilledEnemy" value="0.0" integer="yes" />
+    <set_variable name="StartMission" value="1.0" integer="yes" />
+    <set_variable name="MissionNum" value="MissionNum+1" integer="yes" />
+  </event>
+  <folder_arme name="Mission 2" id_arme="0c991b0b-f74b-4d4a-8717-2c0ca3d38fa9" parent_id_arme="15782636-99cf-471b-9fef-cfbde6940915" expanded_arme="" />
+  <folder_arme name="Start" id_arme="d732d987-0a4e-4f4b-8b9b-f50f8128a24b" parent_id_arme="0c991b0b-f74b-4d4a-8717-2c0ca3d38fa9" expanded_arme="" />
+  <event name="Docking for mission" id_arme="1205a90d-e3f8-4ded-b230-a41c55e2d465" parent_id_arme="d732d987-0a4e-4f4b-8b9b-f50f8128a24b">
+    <if_docked player_name="Excalibur" name="DS00" />
+    <if_variable name="ReadIncomingMessage" comparator="NOT" value="1.0" />
+    <if_variable name="DoYouHaveANewMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="MissionNum" comparator="EQUALS" value="2.0" />
+    <if_variable name="StartMission" comparator="EQUALS" value="1.0" />
+    <incoming_comms_text from="DS00" sideValue="2" type="STATION">We Need you to go investigate sector (-6.-4) When you have arrived in the sector your Intell will update you for futher information.</incoming_comms_text>
+    <set_variable name="MiddleMission" value="1.0" integer="yes" />
+    <set_variable name="EndMission" value="0.0" integer="yes" />
+    <set_variable name="InLocation" value="0.0" integer="yes" />
+    <set_variable name="MX" value="-6.0" integer="yes" />
+    <set_variable name="MZ" value="-4.0" integer="yes" />
+    <set_variable name="InLocation" value="0.0" integer="yes" />
+    <set_variable name="ReadIncomingMessage" value="1.0" integer="yes" />
+    <set_variable name="StartMission" value="0.0" integer="yes" />
+  </event>
+  <event name="Docking with current mission not compleated" id_arme="48dc1cdd-c1f3-4c49-bd84-0085e9dde6ed" parent_id_arme="d732d987-0a4e-4f4b-8b9b-f50f8128a24b">
+    <if_variable name="MissionNum" comparator="EQUALS" value="2.0" />
+    <if_variable name="MiddleMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="DoYouHaveANewMission" comparator="EQUALS" value="1.0" />
+    <if_variable name="ReadIncomingMessage" comparator="NOT" value="1.0" />
+    <if_docked player_name="Excalibur" name="DS00" />
+    <incoming_comms_text from="DS00" sideValue="2" type="STATION">We Need you to go investigate sector (-6.-4) When you have arrived in the sector your Intell will update you for futher information.</incoming_comms_text>
+    <set_variable name="ReadIncomingMessage" value="1.0" integer="yes" />
+  </event>
+  <folder_arme name="Middle" id_arme="5b631baa-03c7-4f19-bb69-f067f3fbc777" parent_id_arme="0c991b0b-f74b-4d4a-8717-2c0ca3d38fa9" expanded_arme="" />
+  <folder_arme name="End" id_arme="c6d0c6fd-02ed-47e6-b664-86491228b7a3" parent_id_arme="0c991b0b-f74b-4d4a-8717-2c0ca3d38fa9" expanded_arme="" />
+  <folder_arme name="Fuel collection" id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab" expanded_arme="" />
+  <event name="not fast enough" id_arme="9ce7e2bc-15c1-47a2-abc6-392d3cc84558" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_in_nebula name="Excalibur" compare="2" />
+    <if_timer_finished name="FGSinput" />
+    <if_variable name="startticker" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Excalibur" comparator="LESS" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">We are not going fast enough</incoming_comms_text>
+    <set_variable name="startticker" value="0.0" integer="yes" />
+  </event>
+  <event name="End FGS" id_arme="acae631b-e0e0-4d79-89c0-a44feb94442c" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_object_property property="energy" name="Excalibur" comparator="GREATER_EQUAL" value="1000" />
+    <if_variable name="startticker" comparator="EQUALS" value="1.0" />
+    <set_variable name="startticker" value="0.0" integer="yes" />
+    <set_variable name="FGSactive" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">We are all toped off</incoming_comms_text>
+  </event>
+  <event name="not in nebula" id_arme="fd084d3f-6f6a-4303-b65c-41f6ffdda345" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_in_nebula name="Excalibur" compare="0" />
+    <if_variable name="FGSactive" comparator="EQUALS" value="1.0" />
+    <set_variable name="FGSactive" value="0.0" integer="yes" />
+    <set_variable name="startticker" value="0.0" integer="yes" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">We have left the nebula for fuel collection.</incoming_comms_text>
+  </event>
+  <event name="activation on purple" id_arme="04da40ab-b9b3-4cf6-8e74-e6b6f88845c3" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_in_nebula name="Excalibur" compare="1" />
+    <if_variable name="startticker" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Excalibur" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Excalibur" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput" seconds="10" />
+    <set_variable name="startticker" value="1.0" integer="yes" />
+    <set_variable name="FGSactive" value="1.0" integer="yes" />
+    <set_variable name="amounttogive" value="50.0" />
+  </event>
+  <event name="activation on yellow" id_arme="0ac687f0-373e-4682-bd5f-4bd7f6ad3186" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_in_nebula name="Excalibur" compare="3" />
+    <if_variable name="startticker" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Excalibur" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Excalibur" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput" seconds="10" />
+    <set_variable name="startticker" value="1.0" integer="yes" />
+    <set_variable name="FGSactive" value="1.0" integer="yes" />
+    <set_variable name="amounttogive" value="30.0" />
+  </event>
+  <event name="activation on blue" id_arme="7eae04c4-a976-40c5-a128-ff5c2b8b96b2" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_in_nebula name="Excalibur" compare="2" />
+    <if_variable name="startticker" comparator="EQUALS" value="0.0" />
+    <if_object_property property="energy" name="Excalibur" comparator="LESS_EQUAL" value="900" />
+    <if_object_property property="currentRealSpeed" name="Excalibur" comparator="GREATER_EQUAL" value="0.325" />
+    <incoming_comms_text from="Engineering" sideValue="2" type="STATUS">FGS is active</incoming_comms_text>
+    <set_timer name="FGSinput" seconds="10" />
+    <set_variable name="startticker" value="1.0" integer="yes" />
+    <set_variable name="FGSactive" value="1.0" integer="yes" />
+    <set_variable name="amounttogive" value="20.0" />
+  </event>
+  <event name="FGSticker" id_arme="003a935c-fd7a-4272-964f-be0926b61d43" parent_id_arme="a5e1e18a-3044-4d74-b1f2-3d02da1f21ab">
+    <if_timer_finished name="FGSinput" />
+    <if_variable name="startticker" comparator="EQUALS" value="1.0" />
+    <if_variable name="FGSactive" comparator="EQUALS" value="1.0" />
+    <if_object_property property="currentRealSpeed" name="Excalibur" comparator="GREATER_EQUAL" value="0.325" />
+    <addto_object_property value="amounttogive" property="energy" name="Excalibur" />
+    <set_timer name="FGSinput" seconds="5" />
+  </event>
+  <!-- END BLOCK FOR TRANSITION -->
+  <folder_arme name="GM Functions" id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1" expanded_arme="" />
+  <event name="SectorLocking" id_arme="0e223870-db04-47ac-afea-11b6286fd1f2" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Sector/Lock" />
+    <if_variable name="IsSectorLocked" comparator="EQUALS" value="0" />
+    <set_variable name="IsSectorLocked" value="1" />
+    <big_message title="Priority Message" subtitle1="Incoming Transmission" subtitle2="See Communications Console" />
+    <warning_popup_message message="Incoming Transmission" consoles="MHWESCO" />
+    <incoming_comms_text from="Command">Hold your position in this sector, Priority Message for Commanding Officer incoming.</incoming_comms_text>
+  </event>
+  <event name="SectorUnLocking" id_arme="dcd76216-740c-4ccf-b42c-838a4d202d78" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Sector/Unlock" />
+    <if_variable name="IsSectorLocked" comparator="EQUALS" value="1" />
+    <set_variable name="IsSectorLocked" value="0" />
+    <incoming_comms_text from="Command">Commanding Officer, carry out debrief session with your crew if neccessary, then carry on.</incoming_comms_text>
+  </event>
+  <event name="friendly_targets" id_arme="5468d916-6ef0-4abe-ba54-f619392b1b53" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Create/Friendly Targets" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="friendly" hullKeys="light" fleetnumber="-1" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="friendly" hullKeys="medium" fleetnumber="-1" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="friendly" hullKeys="heavy" fleetnumber="-1" />
+  </event>
+  <event name="cargo_going_0" id_arme="46effacf-ceae-4d64-b30e-ddac675385b1" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Create Cargo/going north" />
+    <create type="neutral" use_gm_position="yes" angle="0" name="CARGO_1" raceKeys="friendly" hullKeys="cargo" />
+    <add_ai type="FOLLOW_COMMS_ORDERS" name="CARGO_1" />
+    <add_ai type="AVOID_BLACK_HOLE" value1="5000" name="CARGO_1" />
+    <set_ship_text name="CARGO_1" desc="We are enroute through the sector for The Telleron Consortium. Moving passenger and cargo across the galaxy." scan_desc="More info at www.telleron.com" hailtext="We are enroute through the sector for The Telleron Consortium. Moving passenger and cargo across the galaxy." />
+  </event>
+  <event name="delete_selectedship" id_arme="a23e75ac-68ae-4d66-94be-4d89c924aa65" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Delete\Selected ship" />
+    <destroy use_gm_selection="yes" />
+  </event>
+  <event name="Create Enemy Small Standard" id_arme="5b2b5dba-5f98-4d8c-ae19-de5851102965" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Create Enemy/Small Standard" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy standard" hullKeys="small" fleetnumber="-1" />
+  </event>
+  <event name="Create Enemy Medium Standard" id_arme="09f96709-0742-4048-b115-b263d68b7d9f" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Create Enemy/Medium Standard" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy standard" hullKeys="medium" fleetnumber="-1" />
+  </event>
+  <event name="Create Enemy Large Standard" id_arme="b141bae4-6a8f-421e-bdef-efeb9c0308a2" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Create Enemy/Large Standard" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy standard" hullKeys="large" fleetnumber="-1" />
+  </event>
+  <event name="Create Enemy Small Skaraan" id_arme="a540804b-b87c-4922-b5cf-77b55c4a729d" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Create Enemy/Small Skaraan" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy hasspecials" hullKeys="small" fleetnumber="-1" />
+  </event>
+  <event name="Create Enemy Medium Skaraan" id_arme="4d9fd73c-f143-4e59-8d6c-900daeedd2b8" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Create Enemy/Medium Skaraan" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy hasspecials" hullKeys="medium" fleetnumber="-1" />
+  </event>
+  <event name="Create Enemy Large Skaraan" id_arme="29f50576-2b01-4d67-83b7-0574561430d1" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Create Enemy/Large Skaraan" />
+    <create type="enemy" use_gm_position="yes" angle="90" raceKeys="enemy hasspecials" hullKeys="large" fleetnumber="-1" />
+  </event>
+  <event name="Delete non-ships near" id_arme="e8ffcc80-54b1-4de0-8d74-1072cef92818" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Delete\non-ships near" />
+    <destroy_near type="asteroids" radius="5000" use_gm_position="yes" />
+    <destroy_near type="nebulas" radius="5000" use_gm_position="yes" />
+    <destroy_near type="mines" radius="5000" use_gm_position="yes" />
+  </event>
+  <event name="Go To" id_arme="7eb116aa-0fda-44ac-bc9c-472041f3c9cc" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Give Command/Go To GM Selection" />
+    <add_ai type="PROCEED_TO_EXIT" use_gm_selection="" />
+  </event>
+  <event name="AI Atack" id_arme="ce75bb9f-20a5-419a-bb73-7f564068f6d0" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1">
+    <if_gm_button text="Give Command/Atack Player" />
+    <add_ai type="ATTACK" targetName="Excalibur" value1="0.0" />
+  </event>
+  <event name="Increese Speed" id_arme="3a39d9d9-fd0a-41ad-83e3-f76fc9ead8f4" parent_id_arme="1ee0b777-deda-479c-8dd1-3ad2428487a1" />
+</mission_data>

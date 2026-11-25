@@ -1,0 +1,129 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<help>
+  <text>
+    The Helm station lets you steer the ship.  The weapons station controls your beams and your torpedoes.
+    The engineering station lets you control the energy allocation and the DamCon teams. The science station
+    is the eyes of the ship, and shows a big map of the sector. The comms station has a text scroll, and is the
+    voice of the ship.
+  </text>
+
+  <text>
+    Since the Helm is busy half the time with tricky maneuvering, responsibility for changing the main screen view
+    will likely fall to the Weapons officer, who has less micromanaging to do. Be ready to jump on orders to change views quickly.
+  </text>
+
+  <text>
+    As the Weapons officer, keep an eye on the enemy ship's shields, especially which hemisphere is weaker. 
+    When you are ordered to fire torpedoes (especially at will), keep an eye on the relative position of the Artemis' fore 
+    relative to the enemy so that you can place those torpedo hits on their weaker hemisphere.
+  </text>
+
+  <text>
+    As the Weapons officer, remember shields significantly increase energy consumption. Be prepared to drop shields if the captain calls for a high warp. By the same token, be prepared to quickly raise shields if the Artemis is coming within range of an enemy ship's weapons.
+  </text>
+
+  <text>
+  The Weapons officer should coordinate with Helm to stay on a single shield facing of the enemy. 
+  Depending on the skill of your pilot, he/she may start to drift into the wrong 
+  (That is to say, less damaged) shield facing, and having WEAP request a course change to compensate is sometimes helpful, 
+  especially if the captain is busy issuing other commands.
+  </text>
+
+  <text>
+    WEAP needs to make sure that SCI is feeding him the weakest (lowest) shield frequency of the current enemy target.
+  </text>
+
+  <text>
+    Engineering can adjust power to ship systems. For beams, more power means more shots per second.  For tubes, more power means a
+    faster reload speed.
+    For shields, more power means you can take more hits to the shields before they go down.
+    For impulse and warp, more power means more sheer speed. For maneuver, more power means faster turning.
+    No power in tactical means that you lose sensors.
+  </text>
+
+  <text>
+    Don't play Science or Comms if you can't speak up!  These stations have lots of information that everyone else needs, and your job is to tell them.
+  </text>
+
+  <text>
+    The steering of the ship can be done with the drag bars, OR the arrow keys, OR the WASD keys, or a USB joystick.
+  </text>
+
+  <text>
+    Helm officer: Your maneuvering bar is not an on/off switch. When you stop adjusting it, you will not automatically level out and fly straight, you will continue turning at whatever rate you left it at.
+  </text>
+
+  <text>
+    Artemis is more maneuverable than the enemy ships and roughly twice as fast at full impulse, 
+    so be prepared to drop your impulse speed to maintain the ideal rotation relative to the enemy.
+  </text>
+
+  <text>
+    A good Helms officer will make use of Artemis's speed advantage. The enemies move at roughly half impulse. 
+    You can easily use your warp drive to get in their weapons' blind spot and come about at low impulse before they can. 
+    Then you simply match their speed and direction keeping them in your sights. Of course it gets more complicated when there are more 
+    than one enemy ship, but the same basic premise applies. Just use your warp whenever you are about to get caught in the crossfire.
+  </text>
+
+  <text>
+    Helm officer: Do NOT stay at one speed in combat. You make tighter turns at lower speeds, 
+    and wider turns at higher speeds, so depending on where you are trying to go, and when you want to be there, you adjust your speed to fit your goal.
+  </text>
+
+  <text>
+    The comms station has a 'RED ALERT' button which is entirely cosmetic.  However, if your crew is falling asleep, your captain can ask for
+    a red alert, and you can give it to her.
+  </text>
+
+  <text>
+    The comms station can taunt enemies, but there are three different
+    taunts, and each enemy will respond to each taunt only once (at most), so don't waste your taunts.
+  </text>
+
+  <text>
+    On the Science console, enemies can be scanned more than once, to reveal more information about them.
+  </text>
+
+  <text>
+    A good captain understands the line between micromanaging and leadership. 
+    A captain shouldn't be shouting "now go more left, no more right" but "Helm, keep us behind O21 and her rear shields in target".
+  </text>
+
+  <text>
+    A good captain doesn't keep the main screen for herself; she understands that every crew member needs to see the main screen too. 
+    Every crew member knows that the captain will lean over them and look at their screen, too. Which is why a good captain wears deodorant. :)
+  </text>
+
+  <text>
+    A good captain keeps communicating with Engineering. The engineer has the most power over the ship and 
+    the least tactical information about the situation. The captain should coordinate the execution of tasks like firing torpedoes 
+    with engineering closely to maximise their effect.
+  </text>
+
+  <text>
+    As Captain, don't let your engineer take down *all* power from warp drive, or either shield, unless you directly order her to.  
+    There's a good chance she'll be slow to put those systems back online when it's imperative that they are working. 
+    On this point, don't fall prey to overly dramatic speech - don't say 'full power to the forward shield' unless you actually mean it - 
+    you'll only have yourself to blame when there's no power left for beams or torpedoes
+  </text>
+
+  <text>
+    On the Weapons console, two small buttons on the right allow you to trade Mark 1 torpedoes for energy, and vice versa.
+  </text>
+
+  <text>
+    Oh no!  You've run out of energy far from a base!  1) The weapons officer can trade a homing torpedo for energy.  Does she have one?
+    2) the ship WILL recover energy slowly, if the engineer shuts down every system (this works better at lower difficulty levels).
+    3) space anomalies can be found by the Science officer.  If you can reach one, you'll recover energy from it.
+  </text>
+
+  <text>
+    The ship has a self-destruct sequence.
+    -(helm/weapons) lower shields
+    -(helm) stop dead
+    -(engineer) reduce all systems power to zero.
+    -(engineer) increase power to warp, to cause an overload.
+    On overload, your ship flares up like an exploding sun!
+  </text>
+</help>

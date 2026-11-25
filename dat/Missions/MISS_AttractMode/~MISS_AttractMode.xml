@@ -1,0 +1,279 @@
+  <!-- ATTRACT MODE -->
+  <!-- by Mike Substelny -->
+<mission_data version="2.3.107">
+
+  <!-- all the things that exist at the start of the mission -->
+<start>
+     <create type ="blackHole" x="50000" y="0" z="50000"/>
+     <create type ="player"  x="40000" y="0" z="50000" angle="270" name="Artemis"/>
+
+     <set_variable name="sector" value="1"/>
+     <big_message title="ATTRACT MODE" subtitle1="written by Mike Soobstelny"/>
+     <create type ="nebulas" count="60" startX="50000" startY="0" startZ="50000" radius ="20000" randomRange="1000" randomSeed="3"/>
+     <create type ="whale" x="61990" y="0" z="58010" name="Whale 1" angle="275" podnumber="1"/>
+     <create type ="whale" x="61790" y="0" z="58210" name="Whale 2" angle="275" podnumber="1"/>
+     <create type ="whale" x="61590" y="0" z="58410" name="Whale 3" angle="275" podnumber="1"/>
+     <create type ="whale" x="61390" y="0" z="60410" name="Whale 4" angle="275" podnumber="1"/>
+
+     <set_timer name="replenish_timer" seconds="20"/>
+     <set_skybox_index index="14"/>
+   </start>
+   
+   <!-- Always replenish Artemis every 20 seconds -->
+
+<event>
+    <if_timer_finished name="replenish_timer"/>
+    <set_object_property name="Artemis" property="countnuke" value="2"/>
+    <set_object_property name="Artemis" property="countmine" value="6"/>
+    <set_object_property name="Artemis" property="counthoming" value="8"/>
+    <set_object_property name="Artemis" property="countECM" value="8"/>
+    <set_object_property name="Artemis" property="energy" value="1000"/>
+    <set_timer name="replenish_timer" seconds="20"/>
+</event>
+
+<!-- Constantly populate Whales -->
+<event>
+     <if_variable name="spawn1" comparator="=" value="1"/>
+    <set_relative_position name1="Whale 2" name2="Whale 1" angle="0" distance="1500"/>
+    <set_variable name="spawn1" value="0"/>
+</event>
+
+<event>
+     <if_variable name="spawn2" comparator="=" value="1"/>
+    <set_relative_position name1="Whale 3" name2="Whale 2" angle="30" distance="1500"/>
+    <set_variable name="spawn2" value="0"/>
+</event>
+
+<event>
+     <if_variable name="spawn3" comparator="=" value="1"/>
+    <set_relative_position name1="Whale 4" name2="Whale 3" angle="330" distance="1500"/>
+    <set_variable name="spawn3" value="0"/>
+</event>
+
+<event>
+     <if_variable name="spawn4" comparator="=" value="1"/>
+    <set_relative_position name1="Whale 1" name2="Whale 4" angle="180" distance="1500"/>
+    <set_variable name="spawn4" value="0"/>
+</event>
+
+
+<event>
+    <if_not_exists name="Whale 1"/>
+     <create type ="whale" x="91990" y="0" z="58010" name="Whale 1" angle="275" podnumber="1"/>
+    <set_variable name="spawn1" value="1"/>
+</event>
+
+<event>
+    <if_not_exists name="Whale 2"/>
+     <create type ="whale" x="91990" y="0" z="58010" name="Whale 2" angle="275" podnumber="1"/>
+    <set_variable name="spawn2" value="1"/>
+</event>
+
+<event>
+    <if_not_exists name="Whale 3"/>
+     <create type ="whale" x="91990" y="0" z="58010" name="Whale 3" angle="275" podnumber="1"/>
+    <set_variable name="spawn3" value="1"/>
+</event>
+
+<event>
+    <if_not_exists name="Whale 4"/>
+     <create type ="whale" x="91990" y="0" z="58010" name="Whale 4" angle="275" podnumber="1"/>
+    <set_variable name="spawn4" value="1"/>
+</event>
+
+
+<!-- Constantly populate Bad Guys -->
+
+
+
+<!-- Populate Kraleans -->
+
+<event>
+    <if_not_exists name="Kr01"/>
+    <create type ="Enemy" x="45000" y="0" z="45200" angle ="0" raceKeys="Kralien enemy" side="1" hullKeys="Cruiser small" name="Kr01" fleetnumber="11"/>
+</event>
+
+<event>
+    <if_not_exists name="Kr02"/>
+    <create type ="Enemy" x="45000" y="0" z="45700" angle ="0" raceKeys="Kralien enemy" side="1" hullKeys="Cruiser small" name="Kr02" fleetnumber="11"/>
+</event>
+
+<event>
+    <if_not_exists name="Kr03"/>
+    <create type ="Enemy" x="45500" y="0" z="45700" angle ="0" raceKeys="Kralien enemy" side="1" hullKeys="Cruiser small" name="Kr03" fleetnumber="11"/>
+</event>
+
+<event>
+    <if_not_exists name="Kr04"/>
+    <create type ="Enemy" x="45500" y="0" z="45900" angle ="0" raceKeys="Kralien enemy" side="1" hullKeys="Battleship medium" name="Kr04" fleetnumber="11"/>
+</event>
+
+<event>
+    <if_not_exists name="Kr05"/>
+    <create type ="Enemy" x="46500" y="0" z="46700" angle ="0" raceKeys="Kralien enemy" side="1" hullKeys="Dreadnought large" name="Kr05" fleetnumber="11"/>
+</event>
+
+<!-- Populate Argonians -->
+
+<event>
+    <if_not_exists name="Ar06"/>
+    <create type ="Enemy" x="45500" y="0" z="51500" angle ="135" raceKeys="Arvonian enemy" side="1" hullKeys="Light Carrier medium" name="Ar06" fleetnumber="12"/>
+</event>
+
+<event>
+    <if_not_exists name="Ar07"/>
+    <create type ="Enemy" x="45900" y="0" z="50900" angle ="135" raceKeys="Arvonian enemy" side="1" hullKeys="Light Carrier medium" name="Ar07" fleetnumber="12"/>
+</event>
+
+<event>
+    <if_not_exists name="Ar08"/>
+    <create type ="Enemy" x="45100" y="0" z="50900" angle ="135" raceKeys="Arvonian enemy" side="1" hullKeys="Carrier large" name="Ar08" fleetnumber="12"/>
+</event>
+
+<event>
+    <if_not_exists name="Ar09"/>
+    <create type ="Enemy" x="45900" y="0" z="51100" angle ="135" raceKeys="Arvonian enemy" side="1" hullKeys="Carrier large" name="Ar09" fleetnumber="12"/>
+</event>
+
+<event>
+    <if_not_exists name="Ar10"/>
+    <create type ="Enemy" x="45900" y="0" z="52100" angle ="135" raceKeys="Arvonian enemy" side="1" hullKeys="Carrier large" name="Ar10" fleetnumber="12"/>
+</event>
+
+<!-- Populate Torgoths -->
+
+<event>
+    <if_not_exists name="Tg11"/>
+    <create type ="Enemy" x="52500" y="0" z="52500" angle ="180" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="Tg11" fleetnumber="13"/>
+</event>
+
+<event>
+    <if_not_exists name="Tg12"/>
+    <create type ="Enemy" x="52900" y="0" z="52900" angle ="180" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="Tg12" fleetnumber="13"/>
+</event>
+
+<event>
+    <if_not_exists name="Tg13"/>
+    <create type ="Enemy" x="53500" y="0" z="53500" angle ="180" raceKeys="Torgoth enemy" side="1" hullKeys="Goliath small" name="Tg13" fleetnumber="13"/>
+</event>
+
+<event>
+    <if_not_exists name="Tg14"/>
+    <create type ="Enemy" x="54000" y="0" z="54000" angle ="180" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth medium" name="Tg14" fleetnumber="13"/>
+</event>
+
+<event>
+    <if_not_exists name="Tg15"/>
+    <create type ="Enemy" x="54000" y="0" z="53000" angle ="180" raceKeys="Torgoth enemy" side="1" hullKeys="Behemoth medium" name="Tg15" fleetnumber="13"/>
+</event>
+
+<event>
+    <if_not_exists name="Tg16"/>
+    <create type ="Enemy" x="54000" y="0" z="53000" angle ="180" raceKeys="Torgoth enemy" side="1" hullKeys="Leviathan large" name="Tg16" fleetnumber="13"/>
+</event>
+
+<!-- Populate Skaraans -->
+
+<event>
+    <if_not_exists name="Sk17"/>
+    <create type ="Enemy" x="54000" y="0" z="43000" angle ="90" raceKeys="Skaraan enemy" side="1" hullKeys="Defiler small" name="Sk17" fleetnumber="14"/>
+    <set_object_property name="Sk17" property="eliteabilitybits" value="40"/>
+    <set_object_property name="Sk17" property="eliteAItype" value="2"/>
+</event>
+
+<event>
+    <if_not_exists name="Sk18"/>
+    <create type ="Enemy" x="54000" y="0" z="43500" angle ="90" raceKeys="Skaraan enemy" side="1" hullKeys="Enforcer medium" name="Sk18" fleetnumber="15"/>
+    <set_object_property name="Sk17" property="eliteabilitybits" value="64"/>
+    <set_object_property name="Sk17" property="eliteAItype" value="1"/>
+</event>
+
+<event>
+    <if_not_exists name="Sk19"/>
+    <create type ="Enemy" x="54000" y="0" z="43500" angle ="90" raceKeys="Skaraan enemy" side="1" hullKeys="Executor large" name="Sk19" fleetnumber="16"/>
+    <set_object_property name="Sk17" property="eliteabilitybits" value="16"/>
+    <set_object_property name="Sk17" property="eliteAItype" value="0"/>
+</event>
+
+
+<!-- Populate Neutrals by Sector -->
+
+<!-- Populate Sector 1 -->
+
+<event>
+    <if_variable name="sector" comparator="=" value="1"/>
+    <if_not_exists name="SL20"/>
+    <create type ="neutral" x="30000" y="0" z="31000" raceKeys="TSN friendly" hullKeys="Cargo" name="SL20" angle="180"/>
+</event>
+
+<event>
+    <if_variable name="sector" comparator="=" value="1"/>
+    <if_not_exists name="SL21"/>
+    <create type ="neutral" x="30000" y="0" z="30000" raceKeys="TSN friendly" hullKeys="Cargo" name="SL21" angle="180"/>
+</event>
+
+<event>
+    <if_variable name="sector" comparator="=" value="1"/>
+    <if_not_exists name="SL22"/>
+    <create type ="neutral" x="30000" y="0" z="69000" raceKeys="TSN friendly" hullKeys="Cargo" name="SL22" angle="180"/>
+</event>
+
+<event>
+    <if_variable name="sector" comparator="=" value="1"/>
+    <if_not_exists name="SL23"/>
+    <create type ="neutral" x="30000" y="0" z="68500" raceKeys="TSN friendly" hullKeys="Cargo" name="SL23" angle="180"/>
+</event>
+
+<event>
+    <if_variable name="sector" comparator="=" value="1"/>
+    <if_not_exists name="DD30"/>
+    <create type ="neutral" x="31500" y="0" z="31000" raceKeys="TSN friendly" hullKeys="Destroyer medium" name="DD30" angle="210"/>
+</event>
+
+<event>
+    <if_variable name="sector" comparator="=" value="1"/>
+    <if_not_exists name="DD31"/>
+    <create type ="neutral" x="31000" y="0" z="31500" raceKeys="TSN friendly" hullKeys="Destroyer medium" name="DD31" angle="210"/>
+</event>
+
+<event>
+    <if_variable name="sector" comparator="=" value="1"/>
+    <if_not_exists name="ES32"/>
+    <create type ="neutral" x="31000" y="0" z="51500" raceKeys="TSN friendly" hullKeys="Escort small" name="ES32" angle="260"/>
+</event>
+
+<event>
+    <if_variable name="sector" comparator="=" value="1"/>
+    <if_not_exists name="ES33"/>
+    <create type ="neutral" x="31000" y="0" z="51900" raceKeys="TSN friendly" hullKeys="Escort small" name="ES33" angle="260"/>
+</event>
+
+<event>
+    <if_variable name="sector" comparator="=" value="1"/>
+    <if_not_exists name="DS1"/>
+    <create type ="station" x="30000" y="0" z="30000" name="DS1"/>
+</event>
+
+<event>
+    <if_variable name="sector" comparator="=" value="1"/>
+    <if_not_exists name="Depot"/>
+    <create type ="station" x="30000" y="0" z="70000" name="Depot"/>
+</event>
+
+
+
+
+</mission_data>
+
+
+
+
+
+
+
+
+
+
+
+
+

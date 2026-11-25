@@ -1,0 +1,28 @@
+"The Battle of Elihu 12"
+
+(a Canonical Battle © for Artemis 2.2x)
+
+by Mike Substelny
+
+This mission script lets an Artemis crew experience a canonical battle, facing the actual conditions of a critical battle
+from the Artemis universe.
+
+This was the decisive naval battle in the First Spiral Arm War. A small TSN force with Torgoth support elements defended a key
+sector against an assault by ten Arvonian carrier groups. The Arvonians were equipped with their most advanced carriers and fighters,
+and they were escorted by the finest Skaraan elites that money could buy. 
+
+This script will override to difficulty setting 7 to refelect the technology level of your ship.
+
+The author recommends a full crew of six experienced players playing the TSN Dreadnought.
+
+DO NOT RENAME YOUR sHIP TO ANYTHING OTHER THAN ARTEMIS.
+ 
+
+Good luck and have fun!
+
+Hints:
+The Communications Officer should hail your Torgoth allies to find out the condition of their ships. These allies are important
+and you should lend any reasonable assistance that they may request.
+The Communications Officer should micro-manage the Torgoths. The mission "Go defend Artemis" is very effective.
+The mission "Attack nearest enemy" means the Torgoths will wander off after defeating one Arvonian.
+

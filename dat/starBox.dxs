@@ -1,0 +1,157 @@
+<scene version="1.6">
+  <settings name="new scene" author="" comments="" shadowOpacity="75">
+    <ambient r="255" g="255" b="255" />
+  </settings>
+  <materials highestID="15">
+    <category name="System">
+      <material id="10" name="sky2_right1.png" used="true" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="alphablend">
+          <texture file="3drt-skybox\sky2_right1.png" />
+        </layer>
+      </material>
+      <material id="11" name="sky2_left2.png" used="true" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="alphablend">
+          <texture file="3drt-skybox\sky2_left2.png" />
+        </layer>
+      </material>
+      <material id="12" name="sky2_top3.png" used="true" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="alphablend">
+          <texture file="3drt-skybox\sky2_top3.png" />
+        </layer>
+      </material>
+      <material id="13" name="sky2_bottom4.png" used="true" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="alphablend">
+          <texture file="3drt-skybox\sky2_bottom4.png" />
+        </layer>
+      </material>
+      <material id="14" name="sky2_front5.png" used="true" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="alphablend">
+          <texture file="3drt-skybox\sky2_front5.png" />
+        </layer>
+      </material>
+      <material id="15" name="sky2_back6.png" used="true" lightmap="true" castShadows="true" receiveShadows="true">
+        <raytracing ambientReflection="0.1" diffuseReflection="0.9">
+          <specularColor r="255" g="255" b="255" />
+          <reflectiveColor r="255" g="255" b="255" />
+        </raytracing>
+        <layer type="texture" blend="alphablend">
+          <texture file="3drt-skybox\sky2_back6.png" />
+        </layer>
+      </material>
+    </category>
+  </materials>
+  <primitives highestID="1">
+    <primitive id="1" name="mesh" type="cube" visible="true" snap="vertex" autoUV="false" groupID="-1" skeletonID="-1">
+      <vertices>
+        <vertex id="0" x="-400" y="400" z="400" jointID="-1" />
+        <vertex id="1" x="-400" y="-400" z="400" jointID="-1" />
+        <vertex id="2" x="-400" y="400" z="-400" jointID="-1" />
+        <vertex id="3" x="-400" y="-400" z="-400" jointID="-1" />
+        <vertex id="4" x="400" y="400" z="400" jointID="-1" />
+        <vertex id="5" x="400" y="-400" z="400" jointID="-1" />
+        <vertex id="6" x="400" y="400" z="-400" jointID="-1" />
+        <vertex id="7" x="400" y="-400" z="-400" jointID="-1" />
+        <vertex id="8" x="-400" y="400" z="400" jointID="-1" />
+        <vertex id="9" x="400" y="400" z="400" jointID="-1" />
+        <vertex id="10" x="-400" y="400" z="-400" jointID="-1" />
+        <vertex id="11" x="400" y="400" z="-400" jointID="-1" />
+        <vertex id="12" x="-400" y="-400" z="400" jointID="-1" />
+        <vertex id="13" x="400" y="-400" z="400" jointID="-1" />
+        <vertex id="14" x="-400" y="-400" z="-400" jointID="-1" />
+        <vertex id="15" x="400" y="-400" z="-400" jointID="-1" />
+        <vertex id="16" x="-400" y="400" z="-400" jointID="-1" />
+        <vertex id="17" x="400" y="400" z="-400" jointID="-1" />
+        <vertex id="18" x="-400" y="-400" z="-400" jointID="-1" />
+        <vertex id="19" x="400" y="-400" z="-400" jointID="-1" />
+        <vertex id="20" x="-400" y="400" z="400" jointID="-1" />
+        <vertex id="21" x="400" y="400" z="400" jointID="-1" />
+        <vertex id="22" x="-400" y="-400" z="400" jointID="-1" />
+        <vertex id="23" x="400" y="-400" z="400" jointID="-1" />
+      </vertices>
+      <polygons>
+        <poly mid="10">
+          <vertex vid="0" u0="1" v0="0" />
+          <vertex vid="2" u0="0" v0="0" />
+          <vertex vid="1" u0="1" v0="1" />
+        </poly>
+        <poly mid="10">
+          <vertex vid="2" u0="0" v0="0" />
+          <vertex vid="3" u0="0" v0="1" />
+          <vertex vid="1" u0="1" v0="1" />
+        </poly>
+        <poly mid="11">
+          <vertex vid="4" u0="0" v0="0" />
+          <vertex vid="5" u0="0" v0="1" />
+          <vertex vid="6" u0="1" v0="0" />
+        </poly>
+        <poly mid="11">
+          <vertex vid="6" u0="1" v0="0" />
+          <vertex vid="5" u0="0" v0="1" />
+          <vertex vid="7" u0="1" v0="1" />
+        </poly>
+        <poly mid="12">
+          <vertex vid="8" u0="1" v0="0" />
+          <vertex vid="9" u0="0" v0="0" />
+          <vertex vid="10" u0="1" v0="1" />
+        </poly>
+        <poly mid="12">
+          <vertex vid="10" u0="1" v0="1" />
+          <vertex vid="9" u0="0" v0="0" />
+          <vertex vid="11" u0="0" v0="1" />
+        </poly>
+        <poly mid="13">
+          <vertex vid="12" u0="1" v0="1" />
+          <vertex vid="14" u0="1" v0="0" />
+          <vertex vid="13" u0="0" v0="1" />
+        </poly>
+        <poly mid="13">
+          <vertex vid="14" u0="1" v0="0" />
+          <vertex vid="15" u0="0" v0="0" />
+          <vertex vid="13" u0="0" v0="1" />
+        </poly>
+        <poly mid="14">
+          <vertex vid="16" u0="1" v0="0" />
+          <vertex vid="17" u0="0" v0="0" />
+          <vertex vid="18" u0="1" v0="1" />
+        </poly>
+        <poly mid="14">
+          <vertex vid="18" u0="1" v0="1" />
+          <vertex vid="17" u0="0" v0="0" />
+          <vertex vid="19" u0="0" v0="1" />
+        </poly>
+        <poly mid="15">
+          <vertex vid="20" u0="0" v0="0" />
+          <vertex vid="22" u0="0" v0="1" />
+          <vertex vid="21" u0="1" v0="0" />
+        </poly>
+        <poly mid="15">
+          <vertex vid="22" u0="0" v0="1" />
+          <vertex vid="23" u0="1" v0="1" />
+          <vertex vid="21" u0="1" v0="0" />
+        </poly>
+      </polygons>
+    </primitive>
+  </primitives>
+  <skeletons />
+  <lights highestID="1" />
+</scene>
